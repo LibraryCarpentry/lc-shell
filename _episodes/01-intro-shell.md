@@ -7,7 +7,10 @@ questions:
 - "What is the command line?"
 - "Why should I use it?"
 objectives:
-- "TODO: add objectives"
+- "understand the basics of the Unix shell"
+- "understand why and how to use the command line"
+- "use shell commands to work with directories and files"
+- "use shell commands to find and manipulate data"
 keypoints:
 - "TODO: add key points"
 ---
