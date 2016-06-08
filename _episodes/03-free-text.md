@@ -8,7 +8,9 @@ objectives:
 - "TODO: add objectives"
 keypoints:
 - "TODO: add key points"
----### Working with free text
+---
+
+### Working with free text
 
 So far we have looked at how to use the Unix shell to manipulate, count, and 
 mine tabulated data. Most libary data, especially digitised documents used by 
