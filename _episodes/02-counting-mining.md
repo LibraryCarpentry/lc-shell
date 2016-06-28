@@ -1,5 +1,5 @@
 ---
-title: "Counting and mini9ng with the shell"
+title: "Counting and mining with the shell"
 teaching: 10
 exercises: 0
 questions:
