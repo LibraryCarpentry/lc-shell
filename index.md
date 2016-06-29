@@ -1,7 +1,7 @@
 ---
 layout: lesson_homepage
 ---
-This Library Carpentry lesson introduces librarians to the unix shell. At the conclusion of the lesson you will: understand the basics of the Unix shell; understand why and how to use the command line; use shell commands to work with directories and files; use shell commands to find and manipulate data
+This Library Carpentry lesson introduces librarians to the unix shell. At the conclusion of the lesson you will: understand the basics of the Unix shell; understand why and how to use the command line; use shell commands to work with directories and files; use shell commands to find and manipulate data.
 
 > ## Prerequisites
 >
