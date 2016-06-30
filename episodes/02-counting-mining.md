@@ -1,7 +1,7 @@
 ---
 title: "Counting and mining with the shell"
-teaching: 10
-exercises: 0
+teaching: 40
+exercises: 20
 questions:
 - "How do you find data within files?"
 - "How do you count data?"
