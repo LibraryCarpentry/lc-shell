@@ -1,7 +1,7 @@
 ---
 title: "Working with free text"
-teaching: 60
-exercises: 0
+teaching: 20
+exercises: 40
 questions:
 - "How do we work with complex files?"
 objectives:
