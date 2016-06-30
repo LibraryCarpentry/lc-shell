@@ -12,7 +12,8 @@ objectives:
 - "use shell commands to work with directories and files"
 - "use shell commands to find and manipulate data"
 keypoints:
-- "TODO: add key points"
+- "the shell is powerful"
+- "the shell can be used to copy, move, and combine multiple files"
 ---
 ## Introduction
 
