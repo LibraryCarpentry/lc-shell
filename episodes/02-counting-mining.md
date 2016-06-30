@@ -6,9 +6,12 @@ questions:
 - "How do you find data within files?"
 - "How do you count data?"
 objectives:
-- "TODO: add objectives"
+- "understand how to count lines, words, and characters with the shell"
+- "understand how to mine files and extract matched lines with the shell"
+- "understand how to combine mining with the shell and regular expressions"
 keypoints:
-- "TODO: add key points"
+- "wc is a command that counts"
+- "grep is command that searches inside texts"
 ---
 ###  Manipulating, counting and mining research data
 
