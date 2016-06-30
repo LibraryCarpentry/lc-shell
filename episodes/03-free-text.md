@@ -5,9 +5,9 @@ exercises: 0
 questions:
 - "How do we work with complex files?"
 objectives:
-- "TODO: add objectives"
+- "to understand how to use shell tools to clean and tranform free text"
 keypoints:
-- "TODO: add key points"
+- "shell tools can be combined to powerful effect"
 ---
 
 ### Working with free text
