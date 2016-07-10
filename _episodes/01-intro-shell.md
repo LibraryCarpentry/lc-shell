@@ -20,6 +20,8 @@ keypoints:
 In this session we will introduce programming by looking at how data can be manipulated, counted, and mined using the Unix shell, 
 a command line interface to your computer and the files to which it has access.
 
+The shell is one of the most productive programming environments ever created. Its syntax may be cryptic, but people who have mastered it can experiment with different commands interactively, then use what they have learned to automate their work. Graphical user interfaces may be better at the first, but the shell is still unbeaten at the second. 
+
 A Unix shell is a command-line interpreter that provides a user interface for the Linux 
 operating system and for Unix-like systems (such as iOS). 
 
