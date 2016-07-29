@@ -39,7 +39,7 @@ To give you some idea of what the shell can do, I will demonstrate how to find t
 First, let's use a shell command to see how big this file is.
 
 ~~~
-wc -l 2014-01_JA.tsv
+`wc -l 2014-01_JA.tsv`
 ~~~
 {: .bash}
 
@@ -48,10 +48,10 @@ wc -l 2014-01_JA.tsv
 ~~~
 {: .output}
 
-The shell command wc with the argument -l (for lines) tells us this is a 500,000 line data file. Excel will struggle to manipulate that, but the shell won’t. Let’s look at this shell command:
+The shell command `wc` with the flag `-l` (for lines) tells us this is a 500,000 line data file. Excel will struggle to manipulate that, but the shell won’t. Let’s look at this shell command:
 
 ~~~
-grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort | uniq -c`
+`grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort | uniq -c`
 ~~~
 {: .bash}
 
@@ -91,14 +91,15 @@ grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort |
 This is simple, powerful, and does what we want. 
 It may seem intimidating but it is deeply logical and eminently within your reach. Let us go through each part in turn:
 
-- `grep 2009 2014-01_JA.tsv` `grep` is the command here. It tells the machine to look in the spreadsheet 2014-01_JA.tsv for all the lines that contain the string **2009** and to store those in memory. The pipe then tells the machine to hold those in memory for the minute as we have something else we want to do.
+- `grep 2009 2014-01_JA.tsv` `grep` is the command here. It tells the machine to look in the spreadsheet 2014-01_JA.tsv for all the lines that contain the string **2009** and to store those in memory. The pipe symbol `|` then tells the machine to hold those in memory for the minute as we have something else we want to do.
+
 - `grep INTERNATIONAL` This tells the computer to look for the capitalised string **international** on those lines that have **2009** in them. 
 
 The shell is case sensitive by default. Again it holds this subset in memory. 
 
 - `awk -F'\t' '{print $5}'` 
 
-This will not be covered in detail but it identifies `2014-01_JA.tsv` is a tab-separated spreadsheet and instructs the computer to print to the shell the 5th column which contains journal titles of all the lines we’ve queried down to (those with 2009 in them, and then those with `INTERNATIONAL` in them) and to hold that in memory.
+This will not be covered in detail but it identifies `2014-01_JA.tsv` as a tab-separated spreadsheet and instructs the computer to print to the shell the 5th column which contains journal titles of all the lines we’ve queried down to (those with `2009` in them, and then those with `INTERNATIONAL` in them) and to hold that in memory.
 
 - `sort` 
 
@@ -106,8 +107,7 @@ This command will sort that column.
 
 - `uniq -c` The final command will tell the computer to remove duplicates but, as it is doing so, to count those duplicates and hold that data in memory.
 
-As this is the last bit, the shell then - by default - prints the results to a shell, i.e. the number of articles published in 2009 in academic journals whose title contains the word 'International', 
-with counts separated by journal. 
+As this is the last bit, the shell then - by default - prints the results to the shell (the screen), i.e. the number of articles published in 2009 in academic journals whose title contains the word 'International', with counts separated by journal. 
 
 There are a few false positives, but this is still a good start: from 500,000 lines of journal article metadata to a few numbers and names just by typing one line of code.
 
@@ -120,7 +120,7 @@ This is our command line, and the `$` is the command **prompt** to show the syst
 
 If, when opening a command window or at any other time today, 
 you are unsure of where you are in a computer's file system, 
-you can find out what directory you are in using `pwd` command, 
+you can find out what directory you are in by using `pwd` command, 
 which stands for "print working directory", and hitting enter - which executes commands in the shell. 
 
 ~~~
@@ -148,11 +148,11 @@ Desktop      Downloads    Movies       Pictures
 {: .output}
 
 You may want more information than just a list of files. 
-You can do this by specifying various **flags** to go with our basic commands. 
+You can do this by specifying various **flags** (also known as arguments or parameters) to go with our basic commands. 
 These are additions to a command that provide the computer with a bit more guidance 
 of what sort of output or manipulation you want.
 
-If you type `ls -l` and hit enter the computer returns a long list of files that contains 
+If you type `ls -l` and hit enter, the computer returns a long list of files that contains 
 information similar to what you'd find in your finder or explorer: 
 the size of the files in bytes, the date it was created or last modified, and the file name.
 
@@ -239,7 +239,7 @@ And as you become more comfortable, you'll soon find yourself skipping directly 
 >For example, `man ls` displays all the flags/options available to you - which saves 
 >you remembering them all! Try this for each command you've learned so far. 
 >Use the `spacebar` to navigate the manual pages, and `q` to quit. 
->*Note:* this command is for Mac and Linux users only. It may not work for Windows users.
+>*Note:* this command is for Mac and Linux users only. It will probably not work for Windows users.
 {: .callout}
 
 ~~~
