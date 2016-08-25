@@ -14,6 +14,16 @@ objectives:
 keypoints:
 - "the shell is powerful"
 - "the shell can be used to copy, move, and combine multiple files"
+- "use the command pwd to find out where you are in on your computer"
+- "use the command ls to list directory contents"
+- "use flags -l and -lh to guide the output of the ls command"
+- "use the command cd to move around your computer"
+- "use the man command to check the manual page"
+- "use the command `mv` to rename and move files."
+- "use the command `cp` to create a file from an existing file."
+- "use the command `cat` to combine more than one file of the same file type."
+- "use the wildcards `*` and `?` as place holders that delimit which files are to be manipulated by a given an action."
+- "use the `rm` command to delete unwanted files."
 ---
 ## Introduction
 
@@ -39,7 +49,7 @@ To give you some idea of what the shell can do, I will demonstrate how to find t
 First, let's use a shell command to see how big this file is.
 
 ~~~
-`wc -l 2014-01_JA.tsv`
+wc -l 2014-01_JA.tsv
 ~~~
 {: .bash}
 
@@ -51,7 +61,7 @@ First, let's use a shell command to see how big this file is.
 The shell command `wc` with the flag `-l` (for lines) tells us this is a 500,000 line data file. Excel will struggle to manipulate that, but the shell won’t. Let’s look at this shell command:
 
 ~~~
-`grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort | uniq -c`
+grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort | uniq -c
 ~~~
 {: .bash}
 
@@ -130,7 +140,7 @@ pwd
 
 ~~~
 /Users/riley
-~~~~
+~~~
 {: .output}
 
 To orient ourselves, let's get a listing of what files are in this directory. 
@@ -158,7 +168,7 @@ the size of the files in bytes, the date it was created or last modified, and th
 
 ~~~
 ls -l
-~~~~
+~~~
 {: .bash}
 
 ~~~
@@ -634,16 +644,6 @@ BSD                              May 19, 2002                              BSD
 ~~~
 {: .output}
 
-### Summary
-
-Within the Unix shell you can now:
-
-- use the command `pwd` to find out where you are in on your computer
-- use the command `ls` to list directory contents
-- use flags `-l` and `-lh` to guide the output of the `ls` command
-- use the command `cd` to move around your computer
-- use the `man` command to check the manual page
-
 ## Basics
 
 As well as navigating directories, you can interact with files on the command line: 
@@ -760,7 +760,6 @@ with this eBook or online at www.gutenberg.org
 ~~~
 {: .output}
 
-
 This provides a view of the first ten lines,
 whereas `tail 829-0.txt` provides a perspective on the last ten lines. 
 This is a good way to quickly determine the contents of the file.
@@ -770,7 +769,6 @@ tail 829-0.txt
 ~~~
 {: .bash}
 
-~~~
 Most people start at our Web site which has the main PG search facility:
 
      http://www.gutenberg.org
@@ -781,7 +779,7 @@ Archive Foundation, how to help produce our new eBooks, and how to
 subscribe to our email newsletter to hear about new eBooks.
 ~~~
 {: .output}
-
+~~~
 
 Another way to navigate files is to view the contents one screen at a time. 
 Type `less 829-0.txt` to see the first screen, `spacebar` to see the 
@@ -926,14 +924,4 @@ rm gulliver-twice.txt
 ~~~
 {: .bash}
  
-adding wildcards as appropriate to specify the files to delete.
-
-## Summary
-
-Within the Unix shell you can now:
-
-- use the command `mv` to rename and move files.
-- use the command `cp` to create a file from an existing file.
-- use the command `cat` to combine more than one file of the same file type.
-- use the wildcards `*` and `?` as place holders that delimit which files are to be manipulated by a given an action.
-- use the `rm` command to delete unwanted files.
+We can add wildcards above as appropriate to specify the files to delete.
