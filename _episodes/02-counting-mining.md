@@ -10,8 +10,14 @@ objectives:
 - "understand how to mine files and extract matched lines with the shell"
 - "understand how to combine mining with the shell and regular expressions"
 keypoints:
-- "wc is a command that counts"
-- "grep is command that searches inside texts"
+- "`wc` is a command that counts"
+- "use the `wc` command with the flags `-w` and `-l` to count the words and lines in a file or a series of files"
+- "use the redirector and structure `> subdirectory/filename` to save results into a subdirectory"
+- "use the `grep` command to search for instances of a string inside files"
+- "use `grep` with the `-c` flag to count instances of a string, the `-i` flag to return a case insensitive search for a string, the `-v` flag to exclude a string from the results, and `-w` to return a whole word only search"
+- "use `--file=list.txt` to use the file `list.txt` as the source of strings used in a query"
+- "combine these commands and flags to build complex queries in a way that suggests the potential for using the Unix shell to count and mine your research data and research projects"
+
 ---
 ##  Manipulating, counting and mining research data
 
@@ -500,18 +506,7 @@ wc -l FILENAMES
 
 Open both files in a text editor (Notepad++, Atom, Kate, 
 whatever you prefer) or Excel-like program to see the difference 
-between searching strings and searching whole words using `grep`
-
-## Recap
-
-Within the Unix shell you can now:
-
-- use the `wc` command with the flags `-w` and `-l` to count the words and lines in a file or a series of files.
-- use the redirector and structure `> subdirectory/filename` to save results into a subdirectory.
-- use the `grep` command to search for instances of a string.
-- use with `grep` the `-c` flag to count instances of a string, the `-i` flag to return a case insensitive search for a string, the `-v` flag to exclude a string from the results, and -w to return a whole word only search
-- use - `--file=list.txt` to use the file `list.txt` as the source of strings used in a query
-- combine these commands and flags to build complex queries in a way that suggests the potential for using the Unix shell to count and mine your research data and research projects.
+between searching strings and searching whole words using `grep`.
 
 **DATA CAPTURE**
 
