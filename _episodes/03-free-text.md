@@ -37,7 +37,7 @@ I've left some of the figuring out to do to you - so please refer to your notes 
 Head to:
 
 ~~~
-cd data
+$ cd data
 ~~~
 {: .bash}
 
@@ -46,10 +46,9 @@ We're going to work again with the `gulliver.txt` file we saw earlier.
 Let's look at the file. 
 
 ~~~
-less -N gulliver.txt
+$ less -N gulliver.txt
 ~~~
 {: .bash}
-
 ~~~
   1 <U+FEFF>The Project Gutenberg eBook, Gulliver's Travels, by Jonatha      1 n Swift
       2 
@@ -92,10 +91,9 @@ less -N gulliver.txt
 We're going to start by using the `sed` command. The command allows you to edit files directly.
 
 ~~~
-sed '9352,9714d' gulliver.txt > gulliver-nofoot.txt 
+$ sed '9352,9714d' gulliver.txt > gulliver-nofoot.txt 
 ~~~
 {: .bash}
-
 
 The command `sed` in combination with the `d` 
 value will look at `gulliver.txt` and delete all 
@@ -103,7 +101,7 @@ values between the rows specified. The `>` action then
 prompts the script to this edited text to the new file specified.
 
 ~~~
-sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
+$ sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
 ~~~
 {: .bash}
 
@@ -116,7 +114,7 @@ We now use the `tr` command, used for translating or
 deleting characters. Type and run:
 
 ~~~
-tr -d [:punct:] < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
+$ tr -d [:punct:] < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
 ~~~
 {: .bash}
 
@@ -126,7 +124,7 @@ It also requires the use of both the output redirect `>` we have seen and the in
 Finally regularise the text by removing all the uppercase lettering. 
 
 ~~~
-tr [:upper:] [:lower:] < gulliver-noheadfootpunct.txt > gulliver-clean.txt
+$ tr [:upper:] [:lower:] < gulliver-noheadfootpunct.txt > gulliver-clean.txt
 ~~~
 {: .bash}
 
@@ -137,7 +135,7 @@ Open the `gulliver-clean.txt` in a text editor. Note how the text has been trans
 We are now ready to pull the text apart.
 
 ~~~
-tr ' ' '\n' < gulliver-clean.txt > gulliver-linebyline.txt
+$ tr ' ' '\n' < gulliver-clean.txt > gulliver-linebyline.txt
 ~~~
 {: .bash}
 
@@ -148,7 +146,7 @@ This isn't much use, so to get a better sense of the data we need to use another
 new command called `sort`.  
 
 ~~~
-sort gulliver-linebyline.txt > gulliver-ordered.txt
+$ sort gulliver-linebyline.txt > gulliver-ordered.txt
 ~~~
 {: .bash}
 
@@ -160,7 +158,7 @@ begin to see some numbers and finally words, or at least lots of copies of 'a'!
 This is looking more useful, but we can go one step further. 
 
 ~~~
-uniq -c gulliver-ordered.txt > gulliver-final.txt
+$ uniq -c gulliver-ordered.txt > gulliver-final.txt
 ~~~
 {: .bash}
 
@@ -170,20 +168,21 @@ with the `-c` flag to both remove duplicate lines and produce a word count of th
 **Note: there is a windows/linux issue here worth flagging 
 about special characters** 
 
-Might need to use the below to remove windows line ending. 
+Might need to use the below to Remove windows line ending.
+
 ~~~
-tr -d '\r' < stmtn10-lowercase.txt > stmtn10-lowercaself.txt
+$ tr -d '\r' < stmtn10-lowercase.txt > stmtn10-lowercaself.txt
 ~~~
 {: .bash}
 
-Note that these steps can be simplified by building 'pipes'. So...
+Note that these steps can be simplified by building 'pipes'. So:
 
 ~~~
-tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c > gulliver-final.txt
+$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c > gulliver-final.txt
 ~~~
 {: .bash}
 
-...would have done the line-by-line, sorting, and removal of duplicates in one go.
+would have done the line-by-line, sorting, and removal of duplicates in one go.
 
 Either way we have now taken the text apart and produced a 
 count for each word in it. This is data we can prod and poke 
@@ -201,7 +200,7 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 Before we move on, we'll go back to the opening command:
 
 ~~~
-grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort | uniq -c`
+$ grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort | uniq -c`
 ~~~
 {: .bash}
 
@@ -237,7 +236,7 @@ critique, it can be run across texts quickly and simply from the command line.
 We start by setting the named entity recognition running on a txt (here on a text with punctuation removed). Check out this website for how the below was put together: https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/
 
 ~~~
-stanford-ner/ner.sh gulliver-noheadfootpunct.txt > gulliver_ner.txt
+$ stanford-ner/ner.sh gulliver-noheadfootpunct.txt > gulliver_ner.txt
 ~~~
 {: .bash}
 
@@ -245,23 +244,23 @@ Looking at the text now, we can see that the NER has tagged some
 words with what it thinks are people, places, et al. We then clean up loose tags.
 
 ~~~
-sed 's/\/O / /g' < gulliver_ner.txt > gulliver_ner-clean.txt`
+$ sed 's/\/O / /g' < gulliver_ner.txt > gulliver_ner-clean.txt`
 ~~~
 {: .bash}
 
-From which we can count persons...
+From which we can count persons:
 
 ~~~
-egrep -o -f personpattr gulliver_ner-clean.txt | sed 's/\/PERSON//g' | sort | uniq -c | sort -nr > gulliver_ner-pers-freq.txt
+$ egrep -o -f personpattr gulliver_ner-clean.txt | sed 's/\/PERSON//g' | sort | uniq -c | sort -nr > gulliver_ner-pers-freq.txt
 ~~~
 {: .bash}
 
-*note: `egrep` is merely a variant of grep that looks for patterns*
+*Note: `egrep` is merely a variant of grep that looks for patterns*
 
-And count places....
+And count places:
 
 ~~~
-egrep -o -f locpattr gulliver_ner-clean.txt | sed 's/\/LOCATION//g' | sort | uniq -c | sort -nr > gulliver_ner-loc-freq.txt
+$ egrep -o -f locpattr gulliver_ner-clean.txt | sed 's/\/LOCATION//g' | sort | uniq -c | sort -nr > gulliver_ner-loc-freq.txt
 ~~~
 {: .bash}
 
@@ -274,9 +273,9 @@ that work well on the command line.
 
 ## Conclusion
 
- In this session you have learned to navigate the Unix shell, to undertake some 
- basic file counting, concatenation and deletion, to query across data for common 
- strings, to save results and derived data, and to prepare textual data for rigorous computational analysis.
+In this session you have learned to navigate the Unix shell, to undertake some 
+basic file counting, concatenation and deletion, to query across data for common 
+strings, to save results and derived data, and to prepare textual data for rigorous computational analysis.
 
 This only scratches the surface of what the Unix environment is capable of. 
 It is hoped, however, that this session has provided a taster sufficient to 

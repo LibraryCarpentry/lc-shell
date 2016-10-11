@@ -30,18 +30,16 @@ In the Unix shell, use the `cd` command to navigate to the directory
 that contains our data. 
 
 ~~~
-cd data
+$ cd data
 ~~~
 {: .bash}
-
 
 Remember, if at any time you are not sure where you are in your directory structure, type `pwd` and hit enter.
 
 ~~~
-pwd
+$ pwd
 ~~~
 {: .bash}
-
 ~~~
 /Users/riley/Desktop/data
 ~~~
@@ -50,10 +48,9 @@ pwd
 Type `ls -lh` and then hit enter. This prints, or displays, a list that includes a file and a subdirectory.
 
 ~~~
-ls -lh
+$ ls -lh
 ~~~
 {: .bash}
-
 ~~~
 total 90120
 -rwxr-xr-x  1 riley  staff   3.6M Jul 17 14:33 2014-01-31_JA-africa.tsv
@@ -70,24 +67,25 @@ The data directory contains a zipped up version of the dataset `2014-01_JA.tsv` 
 appears in the 'Title' field of `2014-01_JA.tsv`. Before we start, please unzip the `2014-01_JA.tsv.zip` file into it's containing directory (`data/`). 
 
 > ## TSV Files
->TSV files are those in which within each row the units of data 
->(or cells) are separated by tabs. They are similar to CSV (comma separated value) 
->files were the values are separated by commas. The latter are more common
->but can cause problems with the kind of data we have, where commas can be 
->found within the cells (though with the right encoding this can be overcome). 
->Either way both can be read in simple text editors or in spreadsheet programs 
->such as Libre Office Calc or Microsoft Excel.*
+> TSV files are those in which within each row the units of data 
+> (or cells) are separated by tabs. They are similar to CSV (comma separated value) 
+> files were the values are separated by commas. The latter are more common
+> but can cause problems with the kind of data we have, where commas can be 
+> found within the cells (though with the right encoding this can be overcome). 
+> Either way both can be read in simple text editors or in spreadsheet programs 
+> such as Libre Office Calc or Microsoft Excel.*
 {: .callout}
 
 From within the `data/` directory, we can count the contents of the files.
 
-The Unix command for counting is `wc`. The flag `-w` combined with `wc` instructs the computer to print a word count, and the name of the file that has been counted, into the shell.
+The Unix command for counting is `wc`.
+The flag `-w` combined with `wc` instructs the computer to print a word count,
+and the name of the file that has been counted, into the shell.
 
 ~~~~
-wc -w 2014-01-31_JA-africa.tsv 
+$ wc -w 2014-01-31_JA-africa.tsv 
 ~~~~
 {: .bash}
-
 ~~~
 511261 2014-01-31_JA-africa.tsv
 ~~~
@@ -100,10 +98,9 @@ If your reader request or piece of work is more concerned number of entries (or 
 than the number of words, you can use the line count flag. 
 
 ~~~
-wc -l 2014-01-31_JA-africa.tsv
+$ wc -l 2014-01-31_JA-africa.tsv
 ~~~
 {: .bash}
-
 ~~~
 13712 2014-01-31_JA-africa.tsv
 ~~~
@@ -114,10 +111,9 @@ Combined with `wc` the flag `-l` prints a line count and the name of the file th
 Finally, type
 
 ~~~
-wc -c 2014-01-31_JA-africa.tsv 
+$ wc -c 2014-01-31_JA-africa.tsv 
 ~~~
 {: .bash}
-
 ~~~
 3773660 2014-01-31_JA-africa.tsv
 ~~~
@@ -135,23 +131,25 @@ a collection of newspapers, the average line lengths used by poets.
 You can also use `wc` with a combination of wildcards and flags to build more complex queries.
 
 > ## WC on Multiple Files
->Can you guess what the line `wc -l 2014-01-31_JA-a*.tsv` will do? 
+> Can you guess what the line `wc -l 2014-01-31_JA-a*.tsv` will do? 
 >
->~~~
->wc -l 2014-01-31_JA-a*.tsv
->~~~
->{: .bash}
->> ## Solution
->>~~~
->>13712 2014-01-31_JA-africa.tsv
->>27392 2014-01-31_JA-america.tsv
->>41104 total
->>~~~
->>This prints the line counts for `2014-01-31_JA-africa.tsv` 
->>and `2014-01-31_JA-america.tsv`, offering a simple means of comparing 
->>these two sets of research data.
->{: .solution}
-{: .output}
+> ~~~
+> $ wc -l 2014-01-31_JA-a*.tsv
+> ~~~
+> {: .bash}
+>
+> > ## Solution
+> > ~~~
+> > 13712 2014-01-31_JA-africa.tsv
+> > 27392 2014-01-31_JA-america.tsv
+> > 41104 total
+> > ~~~
+> > {: .output}
+> > This prints the line counts for `2014-01-31_JA-africa.tsv` 
+> > and `2014-01-31_JA-america.tsv`, offering a simple means of comparing 
+> > these two sets of research data.
+> {: .solution}
+{: .challenge}
 
 Of course, it may be faster if you 
 only have a handful of files to compare the line count for the two 
@@ -165,10 +163,9 @@ print screen, or by copy and paste methods. Using the `>` redirect
 operator we saw earlier you can export our query results to a new file. 
 
 ~~~
-wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
+$ wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
 ~~~
 {: .bash}
-
 ~~~
 -bash: results/2016-07-19_JA-a-wc.txt: No such file or directory
 ~~~
@@ -177,15 +174,10 @@ wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
 Here we've received a bash error message letting us know that there isn't a `results/` directory to save our new file in. Let's remedy this by creating that directory. 
 
 ~~~
-mkdir results
+$ mkdir results
+$ ls -F
 ~~~
 {: .bash}
-
-~~~
-ls -F
-~~~
-{: .bash}
-
 ~~~
 2014-01-31_JA-africa.tsv*	2014-02-02_JA-britain.tsv*
 2014-01-31_JA-america.tsv*	gallic.txt*
@@ -198,7 +190,7 @@ ls -F
 Ok, once the `results/` directory exists, we can try our `wc` to a file command again. 
 
 ~~~
-wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
+$ wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
 ~~~
 {: .bash}
 
@@ -209,24 +201,22 @@ file to the `results` sub-directory. To check this, navigate to the `results`
 subdirectory:  
 
 ~~~
-cd results
-ls 
+$ cd results
+$ ls 
 ~~~
 {: .bash}
-
 ~~~
 2016-07-19_JA-a-wc.txt
 ~~~
-{: . output}
+{: .output}
 
 To see the file contents in the shell (as it 
 is 10 lines or fewer in length, all the file contents will be shown here): 
 
 ~~~
-head 2016-07-19_JA-a-wc.txt
+$ head 2016-07-19_JA-a-wc.txt
 ~~~
 {: .bash}
-
 ~~~
    13712 2014-01-31_JA-africa.tsv
    27392 2014-01-31_JA-america.tsv
@@ -250,7 +240,7 @@ thousands or millions of files - the processing power at your disposal.
 To begin using `grep`, first navigate to the `data` directory (from results/ type `cd ..`). 
 
 ~~~
-grep 1999 *.tsv
+$ grep 1999 *.tsv
 ~~~
 {: .bash}
 
@@ -260,10 +250,9 @@ Press the up arrow once in order to cycle back to your most recent action.
 Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and hit enter. 
 
 ~~~
-grep -c 1999 *.tsv
+$ grep -c 1999 *.tsv
 ~~~
 {: .bash}
-
 ~~~
 2014-01-31_JA-africa.tsv:804
 2014-01-31_JA-america.tsv:1478
@@ -280,11 +269,9 @@ date field for each journal article.
 Strings need not be numbers. 
 
 ~~~
-grep -c revolution *.tsv
+4 grep -c revolution *.tsv
 ~~~
 {: .bash}
-
-
 ~~~
 2014-01-31_JA-africa.tsv:20
 2014-01-31_JA-america.tsv:34
@@ -299,10 +286,9 @@ the instances of the string `revolution` within the defined files and prints
 those counts to the shell. Now, amend the above command to the below and observer how the outpu of each is different: 
 
 ~~~
-grep -ci revolution *.tsv
+$ grep -ci revolution *.tsv
 ~~~
 {: .bash}
-
 ~~~
 2014-01-31_JA-africa.tsv:118
 2014-01-31_JA-america.tsv:1018
@@ -324,7 +310,7 @@ also use it to create subsets of tabulated data (or indeed any data)
 from one or multiple files.  
 
 ~~~
-grep -i revolution *.tsv
+$ grep -i revolution *.tsv
 ~~~
 {: .bash}
 
@@ -332,7 +318,7 @@ This script looks in the defined files and prints any lines containing `revoluti
 (without regard to case) to the shell. 
 
 ~~~
-grep -i revolution *.tsv > results/2016-07-19_JAi-revolution.tsv
+$ grep -i revolution *.tsv > results/2016-07-19_JAi-revolution.tsv
 ~~~
 {: .bash}
 
@@ -345,7 +331,7 @@ Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search. 
 
 ~~~
-grep -iw revolution *.tsv > results/DATE_JAiw-revolution.tsv
+$ grep -iw revolution *.tsv > results/DATE_JAiw-revolution.tsv
 ~~~
 {: .bash} 
 
@@ -356,10 +342,9 @@ to the specified .tsv file.
 We can show the difference between the files we created.
 
 ~~~
-wc -l results/*.tsv
+$ wc -l results/*.tsv
 ~~~
 {: .bash}
-
 ~~~
    10695 2016-07-19_JAi-revolution.tsv
     7859 2016-07-19_JAw-revolution.tsv
@@ -367,30 +352,28 @@ wc -l results/*.tsv
 ~~~
 {: .output}
 
-
 Finally, you can use the **regular expression syntax** covered earlier to search for similar words. 
 
 In `gallic.txt` we have the string `fr[ae]nc[eh]`. 
 
 ~~~
-cat gallic.txt
+$ cat gallic.txt
 ~~~
 {: .bash}
-
 ~~~
 fr[ae]nc[eh]
 ~~~
 {: .output}
 
 The square brackets here ask the machine to match any character 
-in the range specified. So when used with grep ...
+in the range specified. So when used with grep:
 
 ~~~
-grep -iw --file=gallic.txt *.tsv
+$ grep -iw --file=gallic.txt *.tsv
 ~~~
 {: .bash}
 
-... the shell will print out each line containing the string:
+the shell will print out each line containing the string:
 
 ~~~
 - france
@@ -403,92 +386,92 @@ grep -iw --file=gallic.txt *.tsv
 Include the `-o` flag to print only the matching part of the lines e.g. (handy for isolating/checking results).
 
 ~~~
-grep -iwo revolution *.tsv
+$ grep -iwo revolution *.tsv
 ~~~
 {: .bash}
 
 OR: 
 
 ~~~
-grep -iwo --file=gallic.txt *.tsv
+$ grep -iwo --file=gallic.txt *.tsv
 ~~~
 {: .bash}
 
 Pair up with your neighbor and work on these exercies: 
 
->## Case sensitive search
->Search for all case sensitive instances of 
->a word you choose in all four derived tsv files in this directory. 
->Print your results to the shell.
->
->>## Solution
->>~~~
->>grep hero *.tsv
->>~~~
->>{: .bash}
->{: .solution}
+> ## Case sensitive search
+> Search for all case sensitive instances of 
+> a word you choose in all four derived tsv files in this directory. 
+> Print your results to the shell.
+> 
+> > ## Solution
+> > ~~~
+> > grep hero *.tsv
+> > ~~~
+> > {: .bash}
+> {: .solution}
 {: .challenge}
 
->## Case sensitive search in select files
->Search for all case sensitive instances of a word you choose in 
->the 'America' and 'Africa' tsv files in this directory. 
->Print your results to the shell.
+> ## Case sensitive search in select files
+> Search for all case sensitive instances of a word you choose in 
+> the 'America' and 'Africa' tsv files in this directory. 
+> Print your results to the shell.
 >
->>## Solution
->>~~~
->>grep hero *a.tsv
->>~~~
->>{: .bash}
->{: .solution}
+> > ## Solution
+> > ~~~
+> > grep hero *a.tsv
+> > ~~~
+> > {: .bash}
+> {: .solution}
 {: .challenge}
 
->## Count words (case sensitive) 
->Count all case sensitive instances of a word you choose in 
->the 'America' and 'Africa' tsv files in this directory. 
->Print your results to the shell.
+> ## Count words (case sensitive) 
+> Count all case sensitive instances of a word you choose in 
+> the 'America' and 'Africa' tsv files in this directory. 
+> Print your results to the shell.
 >
->>## Solution
->>~~~
->>grep -c hero *a.tsv
->>~~~
->>{: .bash}
->{: .solution}
+> > ## Solution
+> > ~~~
+> > grep -c hero *a.tsv
+> > ~~~
+> > {: .bash}
+> {: .solution}
 {: .challenge}
 
->## Count words (case insensitive) 
->Count all case insensitive instances of that word in the 'America' and 'Africa' tsv files 
->in this directory. Print your results to the shell.
+> ## Count words (case insensitive) 
+> Count all case insensitive instances of that word in the 'America' and 'Africa' tsv files 
+> in this directory. Print your results to the shell.
 >
->>## Solution
->>~~~
->>grep -ci hero *a.tsv
->>~~~
->>{: .bash}
->{: .solution}
+> > ## Solution
+> > ~~~
+> > grep -ci hero *a.tsv
+> > ~~~
+> > {: .bash}
+> {: .solution}
 {: .challenge}
 
->## Case insensitive search in select files
->Search for all case insensitive instances of that 
->word in the 'America' and 'Africa' tsv files in this directory. Print your results to a `new >.tsv` file. 
+> ## Case insensitive search in select files
+> Search for all case insensitive instances of that 
+> word in the 'America' and 'Africa' tsv files in this directory. Print your results to a `new >.tsv` file. 
 >
->>## Solution
->>~~~
->>grep -i hero *a.tsv > new.tsv
->>~~~
->>{: .bash}
->{: .solution}
+> > ## Solution
+> > ~~~
+> > grep -i hero *a.tsv > new.tsv
+> > ~~~
+> > {: .bash}
+> {: .solution}
 {: .challenge}
 
->## Case insensitive search in select files (whole word)
->Search for all case insensitive instances of that whole word 
->in the 'America' and 'Africa' tsv files in this directory. Print your results to a new.tsv > file.
+> ## Case insensitive search in select files (whole word)
+> Search for all case insensitive instances of that whole word 
+> in the 'America' and 'Africa' tsv files in this directory. Print your results to a new.tsv > file.
 >
->>## Solution
->>~~~
->>grep -iw hero *a.tsv > new2.tsv
->>~~~
->>{: .bash}
->{: .solution}
+> > ## Solution
+> > ~~~
+> > grep -iw hero *a.tsv > new2.tsv
+> > ~~~
+> > {: .bash}
+> {: .solution}
 {: .challenge}
 
 Compare the line counts of the last two files you created.
