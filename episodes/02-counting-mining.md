@@ -490,7 +490,3 @@ wc -l FILENAMES
 Open both files in a text editor (Notepad++, Atom, Kate, 
 whatever you prefer) or Excel-like program to see the difference 
 between searching strings and searching whole words using `grep`.
-
-**DATA CAPTURE**
-
-At this point, I'd like you to describe on your sticky note, briefly, a use case for this that might change your practice.
