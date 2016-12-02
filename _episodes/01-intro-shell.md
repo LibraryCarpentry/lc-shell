@@ -210,7 +210,7 @@ Let's go somewhere else. You can do that through the `cd` or Change Directory co
 
 If you type `cd desktop` you are now on your desktop 
 (note: for Windows users, the case of the file/directory doesn't matter. 
-For Linux users like me, it does, and I believe that is the same for Mac people). 
+For Linux and Mac users it does). 
 To double check, type `pwd` and you should see something that represents your desktop.
 
 ~~~
