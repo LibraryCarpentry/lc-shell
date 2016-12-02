@@ -137,10 +137,10 @@ a collection of newspapers, the average line lengths used by poets.
 You can also use `wc` with a combination of wildcards and flags to build more complex queries.
 
 > ## WC on Multiple Files
-> Can you guess what the line `wc -l 2014-01-31_JA-a*.tsv` will do? 
+> Can you guess what the line `wc -l 2014-01-31_JA-a*` will do? 
 >
 > ~~~
-> $ wc -l 2014-01-31_JA-a*.tsv
+> $ wc -l 2014-01-31_JA-a*
 > ~~~
 > {: .bash}
 >
