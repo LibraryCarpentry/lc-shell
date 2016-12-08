@@ -275,7 +275,7 @@ date field for each journal article.
 Strings need not be numbers. 
 
 ~~~
-4 grep -c revolution *.tsv
+$ grep -c revolution *.tsv
 ~~~
 {: .bash}
 ~~~
