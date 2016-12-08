@@ -33,11 +33,11 @@ a command line interface to your computer and the files to which it has access.
 The shell is one of the most productive programming environments ever created. Its syntax may be cryptic, but people who have mastered it can experiment with different commands interactively, then use what they have learned to automate their work. Graphical user interfaces may be better at the first, but the shell is still unbeaten at the second.
 
 A Unix shell is a command-line interpreter that provides a user interface for the Linux 
-operating system and for Unix-like systems (such as iOS). 
+operating system and for Unix-like systems (such as Mac OS). 
 
 For Windows users, popular shells such as Cygwin or Git Bash provide a Unix-like 
 interface.  This session will cover a small number of basic commands using Git Bash for Windows users, 
-Terminal for iOS. These commands constitute building blocks upon which more 
+Terminal for Mac OS. These commands constitute building blocks upon which more 
 complex commands can be constructed to fit your data or project.
 
 
