@@ -369,11 +369,11 @@ total 92040
 ~~~
 {: .output}
 
-The file we are interested in is `820-0.txt`, which corresponds to eBook #829 on Project Gutenberg and is the book *Gulliver's Travels*.
+The file we are interested in is `829-0.txt`, which corresponds to eBook #829 on Project Gutenberg and is the book *Gulliver's Travels*.
 You can read the text on the command line by using the `cat` command. 
 
 ~~~
-$ cat 820-0.txt
+$ cat 829-0.txt
 ~~~
 {: .bash}
 
