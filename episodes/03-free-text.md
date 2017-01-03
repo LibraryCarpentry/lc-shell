@@ -200,7 +200,7 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 Before we move on, we'll go back to the opening command:
 
 ~~~
-$ grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort | uniq -c`
+$ grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F '\t' '{print $5}' | sort | uniq -c
 ~~~
 {: .bash}
 
@@ -233,7 +233,7 @@ The second lesson you did today was based on a lesson Bill has on [his website](
 
 Although [Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) relies on a number of processes we need to 
 critique, it can be run across texts quickly and simply from the command line. 
-We start by setting the named entity recognition running on a txt (here on a text with punctuation removed). Check out this website for how the below was put together: https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/
+We start by setting the named entity recognition running on a txt (here on a text with punctuation removed). Check out this website for how the below was put together: [https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/](https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)
 
 ~~~
 $ stanford-ner/ner.sh gulliver-noheadfootpunct.txt > gulliver_ner.txt
