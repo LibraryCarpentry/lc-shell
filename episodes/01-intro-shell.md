@@ -167,7 +167,9 @@ us right back to the home directory, right where we started.**
 Being able to navigate the file system using the bash shell is very important for using the Unix shell effectively. 
 And as we become more comfortable, we may skip directly to the directory that we want.
 
->## Getting help
+
+> ## Getting help
+>
 > Use the `man` command to invoke the manual page (documentation) for a Shell command. 
 > For example, `man ls` displays all the flags/options available to you - which saves 
 > you remembering them all! Try this for each command you've learned so far. 
@@ -175,53 +177,56 @@ And as we become more comfortable, we may skip directly to the directory that we
 > ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users. 
 > If you use windows, you can enter the command on [http://man.he.net/](http://man.he.net/),
 > where you can search for a command and view the associated manual page.
-{: .callout}
+>
+> >## Answer 
+> >~~~
+> >$ man ls
+> >~~~
+> >{: .bash}
+> >~~~
+> >LS(1)                     BSD General Commands Manual                    LS(1)
+> >
+> >NAME
+> >     ls -- list directory contents
+> >
+> >SYNOPSIS
+> >     ls [-ABCFGHLOPRSTUW@abcdefghiklmnopqrstuwx1] [file ...]
+> >
+> >DESCRIPTION
+> >     For each operand that names a file of a type other than directory, ls
+> >     displays its name as well as any requested, associated information.  For
+> >     each operand that names a file of type directory, ls displays the names
+> >     of files contained within that directory, as well as any requested, asso-
+> >     ciated information.
+> >
+> >     If no operands are given, the contents of the current directory are dis-
+> >     played.  If more than one operand is given, non-directory operands are
+> >     displayed first; directory and non-directory operands are sorted sepa-
+> >     rately and in lexicographical order.
+> >
+> >     The following options are available:
+> >
+> >     -@      Display extended attribute keys and sizes in long (-l) output.
+> >
+> >     -1      (The numeric digit ``one''.)  Force output to be one entry per
+> >             line.  This is the default when output is not to a terminal.
+> >
+> >     -A      List all entries except for . and ...  Always set for the super-
+> >             user.
+> >
+> >...several more pages...
+> >
+> >BUGS
+> >     To maintain backward compatibility, the relationships between the many
+> >     options are quite complex.
+> >
+> >BSD                              May 19, 2002                              BSD
+> >
+> >~~~
+> >{: .output}
+> {: .solution}
+{: .challenge}
 
-~~~
-$ man ls
-~~~
-{: .bash}
-~~~
-LS(1)                     BSD General Commands Manual                    LS(1)
-
-NAME
-     ls -- list directory contents
-
-SYNOPSIS
-     ls [-ABCFGHLOPRSTUW@abcdefghiklmnopqrstuwx1] [file ...]
-
-DESCRIPTION
-     For each operand that names a file of a type other than directory, ls
-     displays its name as well as any requested, associated information.  For
-     each operand that names a file of type directory, ls displays the names
-     of files contained within that directory, as well as any requested, asso-
-     ciated information.
-
-     If no operands are given, the contents of the current directory are dis-
-     played.  If more than one operand is given, non-directory operands are
-     displayed first; directory and non-directory operands are sorted sepa-
-     rately and in lexicographical order.
-
-     The following options are available:
-
-     -@      Display extended attribute keys and sizes in long (-l) output.
-
-     -1      (The numeric digit ``one''.)  Force output to be one entry per
-             line.  This is the default when output is not to a terminal.
-
-     -A      List all entries except for . and ...  Always set for the super-
-             user.
-
-...several more pages...
-
-BUGS
-     To maintain backward compatibility, the relationships between the many
-     options are quite complex.
-
-BSD                              May 19, 2002                              BSD
-
-~~~
-{: .output}
 
 ## Basics
 
