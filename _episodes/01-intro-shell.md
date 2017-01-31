@@ -23,7 +23,7 @@ keypoints:
 - "use the command `cp` to create a file from an existing file."
 - "use the command `cat` to combine more than one file of the same file type."
 - "use the wildcards `*` and `?` as place holders that delimit which files are to be manipulated by a given an action."
-- "use the `rm` command to delete unwanted files."
+- "use the `rm` command to delete unwanted files, with caution."
 ---
 ## Introduction
 
@@ -44,6 +44,8 @@ The motivations for wanting to learn shell commands are many and various.
 
 [](# From SW Carpentry)
 What you can quickly learn is how to query lots of data for the information you want super fast. Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows us to combine existing tools into powerful pipelines and handle large volumes of data automatically. This automation not only makes us more productive, but also improves the reproducibility of our workflows by allowing us to repeat them with few simple commands.
+[](# Added)
+Also, understanding the basics of the shell is very useful as a foundation before learning to program, since most programming languages necessitate working with the shell.
 
 ## Basics - navigating the shell
 
@@ -147,8 +149,8 @@ $ cd Desktop
 You'll note that this only takes you 'down' through your directory structure 
 (as in into more nested directories). If you want to go back, you can type `cd ..`. 
 This moves us 'up' one directory, putting us back where we started. 
-*If you ever get completely lost, the command `cd` will bring 
-you right back to the home directory, right where you started.*
+**If you ever get completely lost, the command `cd` will bring 
+you right back to the home directory, right where you started.**
 
 > ## Previous Directory
 > To switch back and forth between two directories use `cd -`.
@@ -476,8 +478,8 @@ Finally, onto deleting. We won't use it now, but if you do want to delete a file
 for whatever reason, the command is `rm`, or remove. 
 
 **Be careful with the `rm` command**, as you don't want to delete files that you do not mean to. 
-Unlike deleting from within your Graphical User Interface, there is **no** recycling bin 
-or undo options. For that reason, if you are in doubt, you may want to exercise caution 
+**Unlike deleting from within your Graphical User Interface, there is *no* recycling bin 
+or undo options**. For that reason, if you are in doubt, you may want to exercise caution 
 or maintain a regular backup of your data.
 
 The syntax for `rm` is the same as `cp` and `mv`: 
