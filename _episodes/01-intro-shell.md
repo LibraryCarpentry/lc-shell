@@ -44,7 +44,7 @@ The motivations for wanting to learn shell commands are many and various.
 
 [](# From SW Carpentry)
 What you can quickly learn is how to query lots of data for the information you want super fast. Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows us to combine existing tools into powerful pipelines and handle large volumes of data automatically. This automation not only makes us more productive, but also improves the reproducibility of our workflows by allowing us to repeat them with few simple commands.
-[](# Added)
+[](# Custom addition)
 Also, understanding the basics of the shell is very useful as a foundation before learning to program, since most programming languages necessitate working with the shell.
 
 ## Basics - navigating the shell
@@ -52,7 +52,7 @@ Also, understanding the basics of the shell is very useful as a foundation befor
 We will begin with the basics of navigating the Unix shell.
 
 Let's start by opening the shell. This likely results in seeing a black window with a cursor flashing next to a dollar sign. 
-This is our command line, and the `$` is the command **prompt** to show the system is ready for your input.
+This is our command line, and the `$` is the command **prompt** to show the system is ready for our input.
 
 If, when opening a command window or at any other time today, 
 we are unsure of where we are in a computer's file system, 
@@ -69,7 +69,7 @@ $ pwd
 {: .output}
 
 To orient ourselves, let's get a listing of what files are in this directory. 
-By typing `ls` we will see a list of every file and directory within your current location.
+By typing `ls` we will see a list of every file and directory within our current location.
 
 ~~~
 $ ls
@@ -149,8 +149,8 @@ $ cd Desktop
 Note that this only takes you 'down' through our directory structure 
 (as in into more nested directories). If we want to go back, we can type `cd ..`. 
 This moves us 'up' one directory, putting us back where we started. 
-**If you ever get completely lost, the command `cd` will bring 
-you right back to the home directory, right where you started.**
+**If we ever get completely lost, the command `cd` will bring 
+us right back to the home directory, right where we started.**
 
 > ## Previous Directory
 > To switch back and forth between two directories use `cd -`.
@@ -161,12 +161,6 @@ you right back to the home directory, right where you started.**
 > Move around the computer, get used to moving in and out of directories, 
 > see how different file types appear in the Unix shell. 
 >
-> > ## Answer 
-> > ~~~
-> > Try to use all the commands.
-> > ~~~
-> > {: .bash}
-> {: .solution}
 {: .challenge}
 
 
@@ -178,8 +172,10 @@ And as we become more comfortable, we may skip directly to the directory that we
 > For example, `man ls` displays all the flags/options available to you - which saves 
 > you remembering them all! Try this for each command you've learned so far. 
 > Use the `spacebar` to navigate the manual pages, and `q` to quit. 
-> ** *Note:* this command is for Mac and Linux users only**. It does not work directly for Windows users. An online alternative is for instance [http://man.he.net/](http://man.he.net/), where one can search for a command and view the associated manual page.
-{: .callout}
+> ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users. 
+> If you use windows, you can enter the command on [http://man.he.net/](http://man.he.net/),
+> where you can search for a command and view the associated manual page.
+{: .challenge}
 
 ~~~
 $ man ls
@@ -268,7 +264,7 @@ $ cd ..
 {: .bash}
 
 To navigate to the `firstdir` directory we could type `cd firstdir`. 
-Alternatively, we can type `cd f` and then hit tab
+Alternatively, we can type `cd f` and then hit tab. 
 We notice that the interface completes the line to `cd firstdir`. 
 
 > ## Tab for Auto-complete
@@ -402,7 +398,8 @@ $ cp 829-0.txt gulliver.txt
 That would have created a a new file with the title `gulliver.txt` while leaving the original file `829-0.txt` intact.
 
 Now that we have seen and used several new commands, it's time for another trick. 
-Hit the up arrow twice on your keyboard. Notice that `mv 829-0.txt gulliver.txt` 
+Hit the up arrow twice on 
+keyboard. Notice that `mv 829-0.txt gulliver.txt` 
 appears before your cursor. We can continue pressing the up arrow to cycle 
 through your previous commands. The down arrow cycles back toward your most recent command. 
 This is another important labour-saving function and something we'll use a lot.
@@ -488,9 +485,9 @@ now, note again that they are similar to but not excatly the same as the Regex w
 Finally, onto deleting. We won't use it now, but if you do want to delete a file, 
 for whatever reason, the command is `rm`, or remove. 
 
-**Be careful with the `rm` command**, as you don't want to delete files that you do not mean to. 
-**Unlike deleting from within your Graphical User Interface, there is *no* recycling bin 
-or undo options**. For that reason, if you are in doubt, you may want to exercise caution 
+**We have to be careful with the `rm` command**, as we don't want to delete files that we do not mean to. 
+**Unlike deleting from within our Graphical User Interface, there is *no* recycling bin 
+or undo options**. For that reason, if in doubt, we may want to exercise caution 
 or maintain a regular backup of your data.
 
 The syntax for `rm` is the same as `cp` and `mv`: 
