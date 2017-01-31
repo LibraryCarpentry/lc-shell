@@ -70,7 +70,7 @@ total 90120
 {: .output}
 
 The data directory contains a zipped up version of the dataset `2014-01_JA.tsv` that contains journal article metadata, four .tsv files derived from `2014-01_JA.tsv`, the gulliver.txt file we created in episode 1, and a gallic.txt file we'll talk about later. Each of these four .tsv files includes all data where a keyword such as `africa` or `america` 
-appears in the 'Title' field of `2014-01_JA.tsv`. Before we start, please unzip the `2014-01_JA.tsv.zip` file into it's containing directory (`data/`). 
+appears in the 'Title' field of `2014-01_JA.tsv`. Before we start, please unzip the `2014-01_JA.tsv.zip` file into its containing directory (`data/`). 
 
 > ## TSV Files
 > TSV files are those in which within each row the units of data 
