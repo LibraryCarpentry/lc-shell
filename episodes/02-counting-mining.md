@@ -21,10 +21,10 @@ keypoints:
 ---
 ##  Manipulating, counting and mining research data
 
-Now you can work with the unix shell you can move onto learning how to count and mine data. 
-These are rather simple and are unlikely to totally revolutionise your work. 
-They are, however, alongside the consistent file structure and naming I touched on last week, 
-the foundation of a more powerful set of commands that can count and mine your data.
+Now that you know a little bit about navigating the shell, we will move onto
+learning how to count and mine data using a few of the standard shell commands.
+While these commands are unlikely to revolutionise your work by themselves,
+they're very versatile and will add to your foundation for working in the shell.
 
 ## Counting
 
