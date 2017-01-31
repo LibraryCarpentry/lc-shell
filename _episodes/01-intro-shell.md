@@ -57,67 +57,7 @@ $ wc -l 2014-01_JA.tsv
 ~~~
 {: .output}
 
-The shell command `wc` with the flag `-l` (for lines) tells us this is a 500,000 line data file. Excel will struggle to manipulate that, but the shell won’t. Let’s look at this shell command:
-
-~~~
-$ grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F'\t' '{print $5}' | sort | uniq -c
-~~~
-{: .bash}
-~~~
-40 AFRICA -LONDON- INTERNATIONAL AFRICAN INSTITUTE-
-1 ARCHAEOLOGY ETHNOLOGY AND ANTHROPOLOGY OF EURASIA
-34 AUSTRALIAN JOURNAL OF INTERNATIONAL AFFAIRS
-947 BAR INTERNATIONAL SERIES
-105 CHINA REVIEW INTERNATIONAL
-70 FOREIGN POLICY -WASHINGTON-
-13 GESTA
-38 INDONESIAN QUARTERLY
-2 INTERNATIONAL AFRICAN LIBRARY
-274 INTERNATIONAL HISTORY REVIEW
-80 INTERNATIONAL JOURNAL OF AFRICAN HISTORICAL STUDIES
-17 INTERNATIONAL JOURNAL OF AFRICAN RENAISSANCE STUDIES
-23 INTERNATIONAL JOURNAL OF CONTEMPORARY IRAQI STUDIES
-16 INTERNATIONAL JOURNAL OF HISTORICAL ARCHAEOLOGY
-13 INTERNATIONAL JOURNAL OF IBERIAN STUDIES
-217 INTERNATIONAL JOURNAL OF MARITIME HISTORY
-169 INTERNATIONAL JOURNAL OF MIDDLE EAST STUDIES
-95 INTERNATIONAL JOURNAL OF NAUTICAL ARCHAEOLOGY
-70 INTERNATIONAL JOURNAL OF OSTEOARCHAEOLOGY
-25 INTERNATIONAL JOURNAL OF REGIONAL AND LOCAL STUDIES
-55 INTERNATIONAL JOURNAL OF THE CLASSICAL TRADITION
-46 INTERNATIONAL REVIEW OF SOCIAL HISTORY
-42 INTERNATIONALES ASIENFORUM
-28 JEUNE AFRIQUE
-1 JOURNAL OF AFRICAN AMERICAN HISTORY
-31 JOURNAL OF CONTEMPORARY AFRICAN STUDIES
-1 JOURNAL OF MODERN AFRICAN STUDIES
-2 RESEARCH IN INTERNATIONAL STUDIES SOUTHEAST ASIA SERIES
-1 REVOLUTIONARY RUSSIA
-~~~
-{: .output}
-
-This is simple, powerful, and does what we want. 
-It may seem intimidating but it is deeply logical and eminently within your reach. Let us go through each part in turn:
-
-- `grep 2009 2014-01_JA.tsv` `grep` is the command here. It tells the machine to look in the spreadsheet 2014-01_JA.tsv for all the lines that contain the string **2009** and to store those in memory. The pipe symbol `|` then tells the machine to hold those in memory for the minute as we have something else we want to do.
-
-- `grep INTERNATIONAL` This tells the computer to look for the capitalised string **international** on those lines that have **2009** in them. 
-
-The shell is case sensitive by default. Again it holds this subset in memory. 
-
-- `awk -F'\t' '{print $5}'` 
-
-This will not be covered in detail but it identifies `2014-01_JA.tsv` as a tab-separated spreadsheet and instructs the computer to print to the shell the 5th column which contains journal titles of all the lines we’ve queried down to (those with `2009` in them, and then those with `INTERNATIONAL` in them) and to hold that in memory.
-
-- `sort` 
-
-This command will sort that column.
-
-- `uniq -c` The final command will tell the computer to remove duplicates but, as it is doing so, to count those duplicates and hold that data in memory.
-
-As this is the last bit, the shell then - by default - prints the results to the shell (the screen), i.e. the number of articles published in 2009 in academic journals whose title contains the word 'International', with counts separated by journal. 
-
-There are a few false positives, but this is still a good start: from 500,000 lines of journal article metadata to a few numbers and names just by typing one line of code.
+The shell command `wc` with the flag `-l` (for lines) tells us this is a 500,000 line data file. Excel will struggle to manipulate that, but the shell won’t. At the end of this module we will look at a concrete example of a single command to obtain a count of all journals with the name 'international' in their title.
 
 ## Basics - navigating the shell
 
