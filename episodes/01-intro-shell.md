@@ -156,7 +156,7 @@ us right back to the home directory, right where we started.**
 > To switch back and forth between two directories use `cd -`.
 {: .callout}
 
-> ## Try Exploring
+> ## Try exploring
 >
 > Move around the computer, get used to moving in and out of directories, 
 > see how different file types appear in the Unix shell. 
@@ -168,17 +168,18 @@ Being able to navigate the file system using the bash shell is very important fo
 And as we become more comfortable, we may skip directly to the directory that we want.
 
 
-> ## Getting help
+> ## Try getting help
 >
 > Use the `man` command to invoke the manual page (documentation) for a Shell command. 
 > For example, `man ls` displays all the flags/options available to you - which saves 
 > you remembering them all! Try this for each command you've learned so far. 
 > Use the `spacebar` to navigate the manual pages, and `q` to quit. 
-> ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users. 
-> If you use windows, you can enter the command on [http://man.he.net/](http://man.he.net/),
-> where you can search for a command and view the associated manual page.
 >
-> >## Answer 
+> ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users. 
+> If you use windows, you can search for the Shell command on [http://man.he.net/](http://man.he.net/),
+> and view the associated manual page.
+>
+> >## Answer
 > >~~~
 > >$ man ls
 > >~~~
