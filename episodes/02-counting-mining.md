@@ -72,15 +72,18 @@ total 90120
 The data directory contains a zipped up version of the dataset `2014-01_JA.tsv` that contains journal article metadata, four .tsv files derived from `2014-01_JA.tsv`, the gulliver.txt file we created in episode 1, and a gallic.txt file we'll talk about later. Each of these four .tsv files includes all data where a keyword such as `africa` or `america` 
 appears in the 'Title' field of `2014-01_JA.tsv`. Before we start, please unzip the `2014-01_JA.tsv.zip` file into its containing directory (`data/`). 
 
-> ## TSV Files
-> TSV files are those in which within each row the units of data 
-> (or cells) are separated by tabs. They are similar to CSV (comma separated value) 
-> files were the values are separated by commas. The latter are more common
-> but can cause problems with the kind of data we have, where commas can be 
-> found within the cells (though with the right encoding this can be overcome). 
-> Either way both can be read in simple text editors or in spreadsheet programs 
-> such as Libre Office Calc or Microsoft Excel.*
+> ## CSV and TSV Files
+> CSV (Comma-separated values) is a common plain text format for storing tabular
+> data, where each record occupies one line and the values are separated by commas.
+> TSV (Tab-separated values) is just the same except that values are separated by
+> tabs rather than commas. Confusingly, CSV is sometimes used to refer to both CSV,
+> TSV and variations of them. The simplicity of the formats make them great for
+> exchange and archival. They are not bound to a specific program (unlike Excel
+> files, say, there is no `CSV` program, just lots and lots of programs that
+> support the format, including Excel by the way.), and you wouldn't have any
+> problems opening a 40 year old file today if you came across one.
 {: .callout}
+<!-- hm, reminds me of MARC -->
 
 From within the `data/` directory, we can count the contents of the files.
 
