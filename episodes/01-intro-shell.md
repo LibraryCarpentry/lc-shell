@@ -40,24 +40,10 @@ interface.  This session will cover a small number of basic commands using Git B
 Terminal for Mac OS. These commands constitute building blocks upon which more 
 complex commands can be constructed to fit your data or project.
 
-
 The motivations for wanting to learn shell commands are many and various. 
-What you can quickly learn is how to query lots of data for the information you want super fast. 
 
-To give you some idea of what the shell can do, I will demonstrate how to find the number of articles published in 2009 in academic history journals whose title contains the word ‘International’.
-
-First, let's use a shell command to see how big this file is.
-
-~~~
-$ wc -l 2014-01_JA.tsv
-~~~
-{: .bash}
-~~~
-507732 2014-01_JA.tsv
-~~~
-{: .output}
-
-The shell command `wc` with the flag `-l` (for lines) tells us this is a 500,000 line data file. Excel will struggle to manipulate that, but the shell won’t. At the end of this module we will look at a concrete example of a single command to obtain a count of all journals with the name 'international' in their title.
+[comment] # From SW Carpentry.
+What you can quickly learn is how to query lots of data for the information you want super fast. Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows us to combine existing tools into powerful pipelines and handle large volumes of data automatically. This automation not only makes us more productive, but also improves the reproducibility of our workflows by allowing us to repeat them with few simple commands.
 
 ## Basics - navigating the shell
 
