@@ -167,7 +167,7 @@ And as you become more comfortable, you'll soon find yourself skipping directly 
 > For example, `man ls` displays all the flags/options available to you - which saves 
 > you remembering them all! Try this for each command you've learned so far. 
 > Use the `spacebar` to navigate the manual pages, and `q` to quit. 
-> *Note:* this command is for Mac and Linux users only. It will probably not work for Windows users.
+> ** *Note:* this command is for Mac and Linux users only**. It does not work directly for Windows users. An online alternative is for instance [http://man.he.net/](http://man.he.net/), where one can search for a command and view the associated manual page.
 {: .callout}
 
 ~~~
