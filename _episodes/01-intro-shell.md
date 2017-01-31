@@ -175,7 +175,7 @@ And as we become more comfortable, we may skip directly to the directory that we
 > ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users. 
 > If you use windows, you can enter the command on [http://man.he.net/](http://man.he.net/),
 > where you can search for a command and view the associated manual page.
-{: .challenge}
+{: .callout}
 
 ~~~
 $ man ls
@@ -480,7 +480,7 @@ a text analysis program.
 
 Another wildcard worth remembering is `?` which is a place holder 
 for a single character or number. We shall return to shell wildcards later - for 
-now, note again that they are similar to but not excatly the same as the Regex we saw in the previous episode.
+now, note again that they are similar to but not exactly the same as the Regex we saw in the previous episode.
 
 Finally, onto deleting. We won't use it now, but if you do want to delete a file, 
 for whatever reason, the command is `rm`, or remove. 
