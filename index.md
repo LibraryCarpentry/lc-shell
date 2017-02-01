@@ -10,5 +10,6 @@ use shell commands to find and manipulate data.
 
 > ## Prerequisites
 >
-> Software: Windows users, see the section entitled 'Installing Git Bash' in the Programming Historian lesson [*Introduction to the Bash Command Line*](http://programminghistorian.org/lessons/intro-to-bash). OS X and Linux users, simply make sure you know how to find your 'Terminal'. Data: download the .tsv, .txt, and .zip files at [https://github.com/data-lessons/library-shell/tree/gh-pages/data](https://github.com/data-lessons/library-shell/tree/gh-pages/data) and save them to a folder on your computer called 'Data'.
+> Data: Download the file **[shell-lesson.zip](https://github.com/uio-carpentry/2017-02-02-librarycarpentry/raw/gh-pages/data/shell-lesson.zip)** from GitHub to your *desktop* and extract it there.
+> You should now have a folder called "shell-lesson" there.
 {: .prereq}
