@@ -53,6 +53,7 @@ We will begin with the basics of navigating the Unix shell.
 
 Let's start by opening the shell. This likely results in seeing a black window with a cursor flashing next to a dollar sign. 
 This is our command line, and the `$` is the command **prompt** to show the system is ready for our input.
+The prompt can look somewhat different from system to system, but it usually ends with a `$`.
 
 If, when opening a command window or at any other time today, 
 we are unsure of where we are in a computer's file system, 
