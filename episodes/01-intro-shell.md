@@ -331,15 +331,14 @@ $ ls -lh
 ~~~
 {: .bash}
 ~~~
-total 92040
--rwxr-xr-x  1 riley  staff   3.6M Jul 16 11:50 2014-01-31_JA-africa.tsv
--rwxr-xr-x  1 riley  staff   7.4M Jul 16 11:50 2014-01-31_JA-america.tsv
--rw-r--r--  1 riley  staff    30M Jul 16 12:54 2014-01_JA.tsv.zip
--rwxr-xr-x  1 riley  staff   1.8M Jul 16 11:50 2014-02-01_JA-art .tsv
--rwxr-xr-x  1 riley  staff   1.4M Jul 16 11:50 2014-02-02_JA-britain.tsv
--rwxr-xr-x  1 riley  staff   598K Jul 16 11:50 829-0.txt
--rwxr-xr-x  1 riley  staff   598K Jul 16 11:50 33504-0.txt
--rwxr-xr-x  1 riley  staff    13B Jul 16 11:50 gallic.txt
+total 139M
+-rw-r--r-- 1 riley staff 3.6M Jan 31 18:47 2014-01-31_JA-africa.tsv
+-rw-r--r-- 1 riley staff 7.4M Jan 31 18:47 2014-01-31_JA-america.tsv
+-rw-rw-r-- 1 riley staff 126M Jun 10  2015 2014-01_JA.tsv
+-rw-r--r-- 1 riley staff 1.4M Jan 31 18:47 2014-02-02_JA-britain.tsv
+-rw-r--r-- 1 riley staff 583K Feb  1 22:53 33504-0.txt
+-rw-r--r-- 1 riley staff 598K Jan 31 18:47 829-0.txt
+-rw-r--r-- 1 riley staff   13 Jan 31 18:47 gallic.txt
 ~~~
 {: .output}
 
@@ -501,9 +500,9 @@ $ ls
 ~~~
 {: .bash}
 ~~~
-2014-01-31_JA-africa.tsv    2014-02-01_JA-art .tsv      gulliver.txt
-2014-01-31_JA-america.tsv   2014-02-02_JA-britain.tsv
-2014-01_JA.tsv.zip      gallic.txt
+2014-01-31_JA-africa.tsv   2014-02-02_JA-britain.tsv  gulliver.txt
+2014-01-31_JA-america.tsv  33504-0.txt
+2014-01_JA.tsv             gallic.txt
 ~~~
 {: .output}
 
