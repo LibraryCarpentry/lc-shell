@@ -27,20 +27,20 @@ keypoints:
 ---
 ## Introduction
 
-In this session we will introduce programming by looking at how data can be manipulated, counted, and mined using the Unix shell, 
+In this session we will introduce programming by looking at how data can be manipulated, counted, and mined using the Unix shell,
 a command line interface to your computer and the files to which it has access.
 
 The shell is one of the most productive programming environments ever created. Its syntax may be cryptic, but people who have mastered it can experiment with different commands interactively, then use what they have learned to automate their work. Graphical user interfaces may be better at the first, but the shell is still unbeaten at the second.
 
-A Unix shell is a command-line interpreter that provides a user interface for the Linux 
-operating system and for Unix-like systems (such as Mac OS). 
+A Unix shell is a command-line interpreter that provides a user interface for the Linux
+operating system and for Unix-like systems (such as Mac OS).
 
-For Windows users, popular shells such as Cygwin or Git Bash provide a Unix-like 
-interface.  This session will cover a small number of basic commands using Git Bash for Windows users, 
-Terminal for Mac OS. These commands constitute building blocks upon which more 
+For Windows users, popular shells such as Cygwin or Git Bash provide a Unix-like
+interface.  This session will cover a small number of basic commands using Git Bash for Windows users,
+Terminal for Mac OS. These commands constitute building blocks upon which more
 complex commands can be constructed to fit your data or project.
 
-The motivations for wanting to learn shell commands are many and various. 
+The motivations for wanting to learn shell commands are many and various.
 
 [](# From SW Carpentry)
 What you can quickly learn is how to query lots of data for the information you want super fast. Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows us to combine existing tools into powerful pipelines and handle large volumes of data automatically. This automation not only makes us more productive, but also improves the reproducibility of our workflows by allowing us to repeat them with few simple commands.
@@ -51,7 +51,7 @@ Also, understanding the basics of the shell is very useful as a foundation befor
 
 We will begin with the basics of navigating the Unix shell.
 
-Let's start by opening the shell. This likely results in seeing a black window with a cursor flashing next to a dollar sign. 
+Let's start by opening the shell. This likely results in seeing a black window with a cursor flashing next to a dollar sign.
 This is our command line, and the `$` is the command **prompt** to show the system is ready for our input.
 The prompt can look somewhat different from system to system, but it usually ends with a `$`.
 
@@ -80,7 +80,7 @@ by listing the contents of the directory. To do that, we use the `ls` command:
 $ ls
 ~~~
 {: .bash}
-~~~ 
+~~~
 Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
 ~~~
@@ -112,13 +112,13 @@ drwxr-xr-x+  5 riley  staff   170 Jul 16 11:30 Public
 ~~~
 {: .output}
 
-In everyday usage we are more used to units of measurement like kilobytes, megabytes, and gigabytes. 
-Luckily, there's another flag `-h` that when used with the -l option, use unit suffixes: 
-Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to reduce the 
+In everyday usage we are more used to units of measurement like kilobytes, megabytes, and gigabytes.
+Luckily, there's another flag `-h` that when used with the -l option, use unit suffixes:
+Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to reduce the
 number of digits to three or less using base 2 for sizes.
 
-Now `ls -h` won't work on its own. When we want to combine two flags, 
-we can just run them together. So, by typing `ls -lh` and hitting 
+Now `ls -h` won't work on its own. When we want to combine two flags,
+we can just run them together. So, by typing `ls -lh` and hitting
 enter we receive an output in a human-readable format (note: the order here doesn't matter).
 
 ~~~
@@ -189,24 +189,24 @@ us right back to the home directory, right where we started.**
 
 > ## Try exploring
 >
-> Move around the computer, get used to moving in and out of directories, 
-> see how different file types appear in the Unix shell. 
+> Move around the computer, get used to moving in and out of directories,
+> see how different file types appear in the Unix shell.
 >
 {: .challenge}
 
 
-Being able to navigate the file system using the bash shell is very important for using the Unix shell effectively. 
+Being able to navigate the file system using the bash shell is very important for using the Unix shell effectively.
 And as we become more comfortable, we may skip directly to the directory that we want.
 
 
 > ## Try getting help
 >
-> Use the `man` command to invoke the manual page (documentation) for a Shell command. 
-> For example, `man ls` displays all the flags/options available to you - which saves 
-> you remembering them all! Try this for each command you've learned so far. 
-> Use the `spacebar` to navigate the manual pages, and `q` to quit. 
+> Use the `man` command to invoke the manual page (documentation) for a Shell command.
+> For example, `man ls` displays all the flags/options available to you - which saves
+> you remembering them all! Try this for each command you've learned so far.
+> Use the `spacebar` to navigate the manual pages, and `q` to quit.
 >
-> ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users. 
+> ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users.
 > If you use windows, you can search for the Shell command on [http://man.he.net/](http://man.he.net/),
 > and view the associated manual page.
 >
@@ -262,17 +262,17 @@ And as we become more comfortable, we may skip directly to the directory that we
 
 ## Basics
 
-As well as navigating directories, we can interact with files on the command line: 
-we can read them, open them, run them, and even edit them, often without ever 
-having to leave the shell. Sometimes it is easier to do this using a 
+As well as navigating directories, we can interact with files on the command line:
+we can read them, open them, run them, and even edit them, often without ever
+having to leave the shell. Sometimes it is easier to do this using a
 Graphical User Interface, such as Word or the normal explorer,
 but the more we work here, the more it is useful, and the more we write scripts, the more we'll need this basic knowledge.
 
-Here are a few basic ways to interact with files. 
+Here are a few basic ways to interact with files.
 
 First, we can create a new directory.
-For convenience's sake, we will create it in the directory where we extracted the 
-data provided in advance. Let's confirm that. 
+For convenience's sake, we will create it in the directory where we extracted the
+data provided in advance. Let's confirm that.
 
 ~~~
 $ pwd
@@ -283,7 +283,7 @@ $ pwd
 ~~~
 {: .output}
 
-Now let's create the directory. 
+Now let's create the directory.
 
 ~~~
 $ mkdir firstdir
@@ -300,29 +300,29 @@ $ cd ..
 ~~~
 {: .bash}
 
-To navigate to the `firstdir` directory we could type `cd firstdir`. 
-Alternatively, we can type `cd f` and then hit tab. 
-We notice that the interface completes the line to `cd firstdir`. 
+To navigate to the `firstdir` directory we could type `cd firstdir`.
+Alternatively, we can type `cd f` and then hit tab.
+We notice that the interface completes the line to `cd firstdir`.
 
 > ## Tab for Auto-complete
 > Hitting tab at any time within the shell will prompt it to attempt to auto-complete
-> the line based on the files or sub-directories in the current directory. 
-> Where two or more files have the same characters, the auto-complete will only fill up to the 
-> first point of difference, after which we can add more characters, and 
-> try using tab again. We would encourage using this method throughout 
+> the line based on the files or sub-directories in the current directory.
+> Where two or more files have the same characters, the auto-complete will only fill up to the
+> first point of difference, after which we can add more characters, and
+> try using tab again. We would encourage using this method throughout
 > today to see how it behaves (as it saves loads of time and effort!).
 {: .callout}
 
 The next step is to manipulate files.
 
-Therefore, we navigate to the `data` directory in the pre-circulated data directory. 
+Therefore, we navigate to the `data` directory in the pre-circulated data directory.
 
 ~~~
 $ cd data
 ~~~
 {: .bash}
 
-In here there is a copy of Jonathan Swift's *Gulliver's Travels* downloaded from 
+In here there is a copy of Jonathan Swift's *Gulliver's Travels* downloaded from
 Project Gutenberg along with other files we will cover later. Type `ls -lh` and hit enter to see details of this file.
 
 ~~~
@@ -342,21 +342,21 @@ total 92040
 {: .output}
 
 The file we are interested in is `829-0.txt`, which corresponds to eBook #829 on Project Gutenberg and is the book *Gulliver's Travels*.
-We can read the text on the command line by using the `cat` command. 
+We can read the text on the command line by using the `cat` command.
 
 ~~~
 $ cat 829-0.txt
 ~~~
 {: .bash}
 
-The terminal window erupts and *Gulliver's Travels* cascades by: this is what is known as printing to the shell. 
-And it is great, in theory, but we can't really make any sense of that amount of text. 
+The terminal window erupts and *Gulliver's Travels* cascades by: this is what is known as printing to the shell.
+And it is great, in theory, but we can't really make any sense of that amount of text.
 
 > ## Canceling Commands
 > To cancel this print of `829-0.txt`, or indeed any ongoing processes in the Unix shell, hit `ctrl+c`
 {: .callout}
 
-Instead, we may want to just look at the first or the last bit of the file. 
+Instead, we may want to just look at the first or the last bit of the file.
 
 ~~~
 $ head 829-0.txt
@@ -374,7 +374,7 @@ with this eBook or online at www.gutenberg.org
 {: .output}
 
 This provides a view of the first ten lines,
-whereas `tail 829-0.txt` provides a perspective on the last ten lines. 
+whereas `tail 829-0.txt` provides a perspective on the last ten lines.
 This is a good way to quickly determine the contents of the file.
 
 ~~~
@@ -393,8 +393,8 @@ subscribe to our email newsletter to hear about new eBooks.
 ~~~
 {: .output}
 
-Another way to navigate files is to view the contents one screen at a time. 
-Type `less 829-0.txt` to see the first screen, `spacebar` to see the 
+Another way to navigate files is to view the contents one screen at a time.
+Type `less 829-0.txt` to see the first screen, `spacebar` to see the
 next screen and so on, then `q` to quit (return to the command prompt).
 
 ~~~
@@ -402,8 +402,8 @@ $ less 829-0.txt
 ~~~
 {: .bash}
 
-We may also want to change the file name to something more descriptive. 
-We can **move** it to a new name by using the `mv` or move command. 
+We may also want to change the file name to something more descriptive.
+We can **move** it to a new name by using the `mv` or move command.
 
 ~~~
 $ mv 829-0.txt gulliver.txt
@@ -415,7 +415,7 @@ This is equivalent to the 'rename file' function.
 Afterwards, when we perform a `ls` command, we will see that it is now `gulliver.txt`.
 
 ~~~
-$ ls 
+$ ls
 ~~~
 {: .bash}
 ~~~
@@ -434,28 +434,28 @@ $ cp 829-0.txt gulliver.txt
 
 That would have created a a new file with the title `gulliver.txt` while leaving the original file `829-0.txt` intact.
 
-Now that we have seen and used several new commands, it's time for another trick. 
-Hit the up arrow twice on 
-keyboard. Notice that `mv 829-0.txt gulliver.txt` 
-appears before your cursor. We can continue pressing the up arrow to cycle 
-through your previous commands. The down arrow cycles back toward your most recent command. 
+Now that we have seen and used several new commands, it's time for another trick.
+Hit the up arrow twice on
+keyboard. Notice that `mv 829-0.txt gulliver.txt`
+appears before your cursor. We can continue pressing the up arrow to cycle
+through your previous commands. The down arrow cycles back toward your most recent command.
 This is another important labour-saving function and something we'll use a lot.
 
 > ## Using `history`
-> Use the `history` command to see a list of all the commands 
-> you've entered during the current session. You can also use `Ctrl + r` to do 
-> a reverse lookup. Hit `Ctrl + r`, then start typing any part of the command you're 
-> looking for. The past command will autocomplete. Hit `enter` to run the command again, 
-> or press the arrow keys to start editing the command. If you can't find what you're 
+> Use the `history` command to see a list of all the commands
+> you've entered during the current session. You can also use `Ctrl + r` to do
+> a reverse lookup. Hit `Ctrl + r`, then start typing any part of the command you're
+> looking for. The past command will autocomplete. Hit `enter` to run the command again,
+> or press the arrow keys to start editing the command. If you can't find what you're
 > looking for in the reverse lookup, use `Ctrl + c` to return to the prompt.
 {: .callout}
 
 > ## Duplicating a File
 >
-> Use `cp` to duplicate the Gulliver 
-> file and give it the filename `gulliver-backup.txt`: any ideas how you do that? 
+> Use `cp` to duplicate the Gulliver
+> file and give it the filename `gulliver-backup.txt`: any ideas how you do that?
 >
-> > ## Answer 
+> > ## Answer
 > > ~~~
 > > cp gulliver.txt gulliver-backup.txt
 > > ~~~
@@ -463,22 +463,22 @@ This is another important labour-saving function and something we'll use a lot.
 > {: .solution}
 {: .challenge}
 
-After having read and renamed several files, we may wish to bring their text together into one file. Let's 
-put them together to make an **even longer** book. 
+After having read and renamed several files, we may wish to bring their text together into one file. Let's
+put them together to make an **even longer** book.
 
-To combine, or concatenate, two or more files let's use the `cat` command again. 
+To combine, or concatenate, two or more files let's use the `cat` command again.
 
 ~~~
 $ cat gulliver.txt gulliver-backup.txt
 ~~~
 {: .bash}
 
-This prints, or displays, the combined files within the shell. 
-However, it is too long to read on this window! 
-Luckily, by using the `>` redirector, we can send the output to 
-a new file, rather than the terminal window. 
+This prints, or displays, the combined files within the shell.
+However, it is too long to read on this window!
+Luckily, by using the `>` redirector, we can send the output to
+a new file, rather than the terminal window.
 
-Hit up arrow to get to your last command and amend the line to: 
+Hit up arrow to get to your last command and amend the line to:
 
 ~~~
 $ cat gulliver.txt gulliver-backup.txt > gulliver-twice.txt
@@ -498,10 +498,10 @@ $ ls
 ~~~
 {: .output}
 
-When combining more than two files, using a wildcard can 
-help avoid having to write out each filename individually. 
-Again, labour saving! A useful wildcard is `*` which is a place holder for zero or 
-more characters or numbers (note: this is slightly different from regex...). 
+When combining more than two files, using a wildcard can
+help avoid having to write out each filename individually.
+Again, labour saving! A useful wildcard is `*` which is a place holder for zero or
+more characters or numbers (note: this is slightly different from regex...).
 So, if we type:
 
 ~~~
@@ -509,30 +509,30 @@ $ cat *.txt > everything-together.txt
 ~~~
 {: .bash}
 
-and hit enter, a combination of all the `.txt` files in the current directory 
-are combined in alphabetical order as `everything-together.txt`. 
-This can be very useful if we need to combine a large number of 
-smaller files within a directory so that we can work with them in 
-a text analysis program. 
+and hit enter, a combination of all the `.txt` files in the current directory
+are combined in alphabetical order as `everything-together.txt`.
+This can be very useful if we need to combine a large number of
+smaller files within a directory so that we can work with them in
+a text analysis program.
 
-Another wildcard worth remembering is `?` which is a place holder 
-for a single character or number. We shall return to shell wildcards later - for 
+Another wildcard worth remembering is `?` which is a place holder
+for a single character or number. We shall return to shell wildcards later - for
 now, note again that they are similar to but not exactly the same as the Regex we saw in the previous episode.
 
-Finally, onto deleting. We won't use it now, but if you do want to delete a file, 
-for whatever reason, the command is `rm`, or remove. 
+Finally, onto deleting. We won't use it now, but if you do want to delete a file,
+for whatever reason, the command is `rm`, or remove.
 
-**We have to be careful with the `rm` command**, as we don't want to delete files that we do not mean to. 
-**Unlike deleting from within our Graphical User Interface, there is *no* recycling bin 
-or undo options**. For that reason, if in doubt, we may want to exercise caution 
+**We have to be careful with the `rm` command**, as we don't want to delete files that we do not mean to.
+**Unlike deleting from within our Graphical User Interface, there is *no* recycling bin
+or undo options**. For that reason, if in doubt, we may want to exercise caution
 or maintain a regular backup of your data.
 
-The syntax for `rm` is the same as `cp` and `mv`: 
+The syntax for `rm` is the same as `cp` and `mv`:
 for example:  
 
 ~~~
 $ rm gulliver-twice.txt
 ~~~
 {: .bash}
- 
+
 We can add wildcards above as appropriate to specify the files to delete.
