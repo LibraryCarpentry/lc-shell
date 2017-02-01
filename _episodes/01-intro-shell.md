@@ -55,10 +55,14 @@ Let's start by opening the shell. This likely results in seeing a black window w
 This is our command line, and the `$` is the command **prompt** to show the system is ready for our input.
 The prompt can look somewhat different from system to system, but it usually ends with a `$`.
 
-If, when opening a command window or at any other time today, 
-we are unsure of where we are in a computer's file system, 
-we can find out what directory we are in by using `pwd` command, 
-which stands for "print working directory", and hitting enter - which executes commands in the shell. 
+When working in the shell, you are always *somewhere* in the computer's
+file system, in some folder (directory). We will therefore start by finding out
+where we are by using the `pwd` command, which you can use whenever you are unsure
+about where you are. It stands for "print working directory" and the result of the
+command is printed to your standard output, which is the terminal, not your office
+printer.
+
+Let's type `pwd` and hit enter to execute the command:
 
 ~~~
 $ pwd
@@ -69,8 +73,8 @@ $ pwd
 ~~~
 {: .output}
 
-To orient ourselves, let's get a listing of what files are in this directory. 
-By typing `ls` we will see a list of every file and directory within our current location.
+The output will be a path to your home directory. Let's check if we recognize it
+by listing the contents of the directory. To do that, we use the `ls` command:
 
 ~~~
 $ ls
