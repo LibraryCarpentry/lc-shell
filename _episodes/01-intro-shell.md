@@ -394,6 +394,10 @@ subscribe to our email newsletter to hear about new eBooks.
 ~~~
 {: .output}
 
+If ten lines is not enough (or too much), we would check `man head`
+to see if there exists an option to specify the number of lines to get
+(there is: `head -n 20` will print 20 lines).
+
 Another way to navigate files is to view the contents one screen at a time.
 Type `less 829-0.txt` to see the first screen, `spacebar` to see the
 next screen and so on, then `q` to quit (return to the command prompt).
