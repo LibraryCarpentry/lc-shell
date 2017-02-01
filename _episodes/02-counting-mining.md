@@ -36,7 +36,7 @@ In the Unix shell, use the `cd` command to navigate to the directory
 that contains our data. 
 
 ~~~
-$ cd data
+$ cd shell-lesson
 ~~~
 {: .bash}
 
@@ -47,7 +47,7 @@ $ pwd
 ~~~
 {: .bash}
 ~~~
-/Users/riley/Desktop/data
+/Users/riley/Desktop/shell-lesson
 ~~~
 {: .output}
 
@@ -69,8 +69,10 @@ total 90120
 ~~~
 {: .output}
 
-The data directory contains a zipped up version of the dataset `2014-01_JA.tsv` that contains journal article metadata, four .tsv files derived from `2014-01_JA.tsv`, the gulliver.txt file we created in episode 1, and a gallic.txt file we'll talk about later. Each of these four .tsv files includes all data where a keyword such as `africa` or `america` 
-appears in the 'Title' field of `2014-01_JA.tsv`. Before we start, please unzip the `2014-01_JA.tsv.zip` file into its containing directory (`data/`). 
+In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains
+journal article metadata, and the three `.tsv` files derived from the original
+dataset. Each of these three .tsv files includes all data where a keyword such
+as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 
 > ## CSV and TSV Files
 > CSV (Comma-separated values) is a common plain text format for storing tabular
@@ -85,7 +87,6 @@ appears in the 'Title' field of `2014-01_JA.tsv`. Before we start, please unzip 
 {: .callout}
 <!-- hm, reminds me of MARC -->
 
-From within the `data/` directory, we can count the contents of the files.
 
 The Unix command for counting is `wc`.
 The flag `-w` combined with `wc` instructs the computer to print a word count,
@@ -266,7 +267,6 @@ $ grep -c 1999 *.tsv
 2014-01-31_JA-africa.tsv:804
 2014-01-31_JA-america.tsv:1478
 2014-01_JA.tsv:28767
-2014-02-01_JA-art .tsv:407
 2014-02-02_JA-britain.tsv:284
 ~~~
 {: .output}
@@ -285,7 +285,6 @@ $ grep -c revolution *.tsv
 2014-01-31_JA-africa.tsv:20
 2014-01-31_JA-america.tsv:34
 2014-01_JA.tsv:867
-2014-02-01_JA-art .tsv:11
 2014-02-02_JA-britain.tsv:9
 ~~~
 {: .output}
@@ -302,7 +301,6 @@ $ grep -ci revolution *.tsv
 2014-01-31_JA-africa.tsv:118
 2014-01-31_JA-america.tsv:1018
 2014-01_JA.tsv:9327
-2014-02-01_JA-art .tsv:110
 2014-02-02_JA-britain.tsv:122
 ~~~
 {: .output}

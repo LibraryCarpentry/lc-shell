@@ -272,18 +272,18 @@ documents (Word or OpenOffice), browsing the web, editing images, etc. But if we
 wanted to make the same crop on hundreds of images, say, the pages of a scanned book,
 then we could automate the cropping using shell commands.
 
-Here are a few basic ways to interact with files.
-
-First, we can create a new directory.
-For convenience's sake, we will create it in the directory where we extracted the
-data provided in advance. Let's confirm that.
+We will try a few basic ways to interact with files. Let's first move into the
+`shell-lesson` directory on your desktop (if you don't have this directory,
+please use a red sticky note to attract help).
 
 ~~~
+$ cd
+$ cd Desktop/shell-lesson
 $ pwd
 ~~~
 {: .bash}
 ~~~
-/Users/riley
+/Users/riley/Desktop/shell-lesson
 ~~~
 {: .output}
 
@@ -317,17 +317,12 @@ We notice that the interface completes the line to `cd firstdir`.
 > today to see how it behaves (as it saves loads of time and effort!).
 {: .callout}
 
-The next step is to manipulate files.
+Our next step is to manipulate files. If you are in `firstdir`, use `cd ..` to get
+back to the `shell-lesson` directory.
 
-Therefore, we navigate to the `data` directory in the pre-circulated data directory.
-
-~~~
-$ cd data
-~~~
-{: .bash}
-
-In here there is a copy of Jonathan Swift's *Gulliver's Travels* downloaded from
-Project Gutenberg along with other files we will cover later. Type `ls -lh` and hit enter to see details of this file.
+Here there are copies of two public domain books downloaded from
+[Project Gutenberg](https://www.gutenberg.org/) along with other files we will
+cover later.
 
 ~~~
 $ ls -lh
