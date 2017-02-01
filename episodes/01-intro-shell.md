@@ -198,13 +198,12 @@ us right back to the home directory, right where we started.**
 {: .challenge}
 
 
-Being able to navigate the file system using the bash shell is very important for using the Unix shell effectively.
-And as we become more comfortable, we may skip directly to the directory that we want.
+Being able to navigate the file system is very important for using the Unix shell effectively.
+As we become more comfortable, we can get very quickly to the directory that we want.
 
-
-> ## Try getting help
+> ## Getting help
 >
-> Use the `man` command to invoke the manual page (documentation) for a Shell command.
+> Use the `man` command to invoke the manual page (documentation) for a shell command.
 > For example, `man ls` displays all the flags/options available to you - which saves
 > you remembering them all! Try this for each command you've learned so far.
 > Use the `spacebar` to navigate the manual pages, and `q` to quit.
@@ -266,10 +265,12 @@ And as we become more comfortable, we may skip directly to the directory that we
 ## Basics
 
 As well as navigating directories, we can interact with files on the command line:
-we can read them, open them, run them, and even edit them, often without ever
-having to leave the shell. Sometimes it is easier to do this using a
-Graphical User Interface, such as Word or the normal explorer,
-but the more we work here, the more it is useful, and the more we write scripts, the more we'll need this basic knowledge.
+we can read them, open them, run them, and even edit them. There's no limit to what
+we *can* do in the shell, but even experienced shell users still switch to
+graphical user interfaces (GUIs) for many tasks, such as editing formatted text
+documents (Word or OpenOffice), browsing the web, editing images, etc. But if we
+wanted to make the same crop on hundreds of images, say, the pages of a scanned book,
+then we could automate the cropping using shell commands.
 
 Here are a few basic ways to interact with files.
 
