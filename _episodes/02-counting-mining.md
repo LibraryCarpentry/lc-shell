@@ -28,7 +28,6 @@ they're very versatile and will add to your foundation for working in the shell.
 
 ## Counting
 
-You will begin by counting the contents of files using the Unix shell. 
 The Unix shell can be used to quickly generate counts from across files, 
 something that is tricky to achieve using the graphical user interfaces of standard office suites.
 
@@ -58,14 +57,15 @@ $ ls -lh
 ~~~
 {: .bash}
 ~~~
-total 90120
--rwxr-xr-x  1 riley  staff   3.6M Jul 17 14:33 2014-01-31_JA-africa.tsv
--rwxr-xr-x  1 riley  staff   7.4M Jul 17 14:33 2014-01-31_JA-america.tsv
--rw-r--r--  1 riley  staff    29M Jul 17 14:33 2014-01_JA.tsv.zip
--rwxr-xr-x  1 riley  staff   1.8M Jul 17 14:33 2014-02-01_JA-art .tsv
--rwxr-xr-x  1 riley  staff   1.4M Jul 17 14:33 2014-02-02_JA-britain.tsv
--rwxr-xr-x  1 riley  staff    13B Jul 17 14:33 gallic.txt
--rwxr-xr-x  1 riley  staff   598K Jul 17 14:33 gulliver.txt
+total 139M
+-rw-r--r-- 1 riley staff 3.6M Jan 31 18:47 2014-01-31_JA-africa.tsv
+-rw-r--r-- 1 riley staff 7.4M Jan 31 18:47 2014-01-31_JA-america.tsv
+-rw-rw-r-- 1 riley staff 126M Jun 10  2015 2014-01_JA.tsv
+-rw-r--r-- 1 riley staff 1.4M Jan 31 18:47 2014-02-02_JA-britain.tsv
+-rw-r--r-- 1 riley staff 583K Feb  1 22:53 33504-0.txt
+drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
+-rw-r--r-- 1 riley staff 598K Jan 31 18:47 gulliver.txt
+-rw-r--r-- 1 riley staff   13 Jan 31 18:47 gallic.txt
 ~~~
 {: .output}
 
@@ -189,11 +189,9 @@ $ ls -F
 ~~~
 {: .bash}
 ~~~
-2014-01-31_JA-africa.tsv*	2014-02-02_JA-britain.tsv*
-2014-01-31_JA-america.tsv*	gallic.txt*
-2014-01_JA.tsv			gulliver.txt*
-2014-01_JA.tsv.zip		results/
-2014-02-01_JA-art .tsv*
+2014-01-31_JA-africa.tsv   2014-02-02_JA-britain.tsv  gallic.txt
+2014-01-31_JA-america.tsv  33504-0.txt                gulliver.txt
+2014-01_JA.tsv             backup                     results
 ~~~
 {: .output}
 
