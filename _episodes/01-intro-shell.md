@@ -36,9 +36,10 @@ A Unix shell is a command-line interpreter that provides a user interface for th
 operating system and for Unix-like systems (such as Mac OS).
 
 For Windows users, popular shells such as Cygwin or Git Bash provide a Unix-like
-interface.  This session will cover a small number of basic commands using Git Bash for Windows users,
+interface. This session will cover a small number of basic commands using Git Bash for Windows users,
 Terminal for Mac OS. These commands constitute building blocks upon which more
 complex commands can be constructed to fit your data or project.
+<!-- Mention native Bash in Windows 10 -->
 
 The motivations for wanting to learn shell commands are many and various.
 
@@ -47,7 +48,7 @@ What you can quickly learn is how to query lots of data for the information you 
 [](# Custom addition)
 Also, understanding the basics of the shell is very useful as a foundation before learning to program, since most programming languages necessitate working with the shell.
 
-## Basics - navigating the shell
+## Navigating the shell
 
 We will begin with the basics of navigating the Unix shell.
 
@@ -262,11 +263,11 @@ As we become more comfortable, we can get very quickly to the directory that we 
 {: .challenge}
 
 
-## Basics
+## Working with files and folders
 
 As well as navigating directories, we can interact with files on the command line:
-we can read them, open them, run them, and even edit them. There's no limit to what
-we *can* do in the shell, but even experienced shell users still switch to
+we can read them, open them, run them, and even edit them. In fact, there's really
+no limit to what we *can* do in the shell, but even experienced shell users still switch to
 graphical user interfaces (GUIs) for many tasks, such as editing formatted text
 documents (Word or OpenOffice), browsing the web, editing images, etc. But if we
 wanted to make the same crop on hundreds of images, say, the pages of a scanned book,
@@ -287,7 +288,7 @@ $ pwd
 ~~~
 {: .output}
 
-Now let's create the directory.
+Here, we will create a new directory and move into it:
 
 ~~~
 $ mkdir firstdir
@@ -295,7 +296,8 @@ $ cd firstdir
 ~~~
 {: .bash}
 
-This used the `mkdir` command (meaning 'make directories') to create a directory named 'firstdir'. Then we move into that directory using the `cd` command.
+Here we used the `mkdir` command (meaning 'make directories') to create a directory
+named 'firstdir'. Then we moved into that directory using the `cd` command.
 
 But wait! There's a trick to make things a bit quicker. Let's go up one directory.
 
@@ -304,9 +306,8 @@ $ cd ..
 ~~~
 {: .bash}
 
-To navigate to the `firstdir` directory we could type `cd firstdir`.
-Alternatively, we can type `cd f` and then hit tab.
-We notice that the interface completes the line to `cd firstdir`.
+Instead of typing `cd firstdir`, let's try to type `cd f` and then hit the Tab key.
+We notice that the shell completes the line to `cd firstdir/`.
 
 > ## Tab for Auto-complete
 > Hitting tab at any time within the shell will prompt it to attempt to auto-complete
@@ -352,10 +353,12 @@ The terminal window erupts and *Gulliver's Travels* cascades by: this is what is
 And it is great, in theory, but we can't really make any sense of that amount of text.
 
 > ## Canceling Commands
-> To cancel this print of `829-0.txt`, or indeed any ongoing processes in the Unix shell, hit `ctrl+c`
+> To cancel this print of `829-0.txt`, or indeed any ongoing processes in the Unix shell, hit `Ctrl+C`
 {: .callout}
 
-Instead, we may want to just look at the first or the last bit of the file.
+Often we just want a quick glimpse of the first or the last part of a file to
+get an idea about what the file is about. To let us do that, the Unix shell
+provides us with the commands `head` and `tail`.
 
 ~~~
 $ head 829-0.txt
@@ -373,8 +376,7 @@ with this eBook or online at www.gutenberg.org
 {: .output}
 
 This provides a view of the first ten lines,
-whereas `tail 829-0.txt` provides a perspective on the last ten lines.
-This is a good way to quickly determine the contents of the file.
+whereas `tail 829-0.txt` provides a perspective on the last ten lines:
 
 ~~~
 $ tail 829-0.txt
@@ -402,7 +404,9 @@ $ less 829-0.txt
 {: .bash}
 
 We may also want to change the file name to something more descriptive.
-We can **move** it to a new name by using the `mv` or move command.
+We can **move** it to a new name by using the `mv` or move command,
+giving it the old name as the first argument and the new name as the second
+argument:
 
 ~~~
 $ mv 829-0.txt gulliver.txt
@@ -411,7 +415,7 @@ $ mv 829-0.txt gulliver.txt
 
 This is equivalent to the 'rename file' function.
 
-Afterwards, when we perform a `ls` command, we will see that it is now `gulliver.txt`.
+Afterwards, when we perform a `ls` command, we will see that it is now `gulliver.txt`:
 
 ~~~
 $ ls
