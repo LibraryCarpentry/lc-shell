@@ -318,8 +318,9 @@ We notice that the shell completes the line to `cd firstdir/`.
 > today to see how it behaves (as it saves loads of time and effort!).
 {: .callout}
 
-Our next step is to manipulate files. If you are in `firstdir`, use `cd ..` to get
-back to the `shell-lesson` directory.
+### Reading files
+
+If you are in `firstdir`, use `cd ..` to get back to the `shell-lesson` directory.
 
 Here there are copies of two public domain books downloaded from
 [Project Gutenberg](https://www.gutenberg.org/) along with other files we will
@@ -337,20 +338,22 @@ total 92040
 -rwxr-xr-x  1 riley  staff   1.8M Jul 16 11:50 2014-02-01_JA-art .tsv
 -rwxr-xr-x  1 riley  staff   1.4M Jul 16 11:50 2014-02-02_JA-britain.tsv
 -rwxr-xr-x  1 riley  staff   598K Jul 16 11:50 829-0.txt
+-rwxr-xr-x  1 riley  staff   598K Jul 16 11:50 33504-0.txt
 -rwxr-xr-x  1 riley  staff    13B Jul 16 11:50 gallic.txt
 ~~~
 {: .output}
 
-The file we are interested in is `829-0.txt`, which corresponds to eBook #829 on Project Gutenberg and is the book *Gulliver's Travels*.
-We can read the text on the command line by using the `cat` command.
+The files `829-0.txt` and `33504-0.txt` holds the content of book #829
+and #33504 on Project Gutenberg. But we've forgot *which* books, so
+we try the `cat` command to read the text of the first file:
 
 ~~~
 $ cat 829-0.txt
 ~~~
 {: .bash}
 
-The terminal window erupts and *Gulliver's Travels* cascades by: this is what is known as printing to the shell.
-And it is great, in theory, but we can't really make any sense of that amount of text.
+The terminal window erupts and the whole book cascades by (it is printed to
+your terminal). Great, but we can't really make any sense of that amount of text.
 
 > ## Canceling Commands
 > To cancel this print of `829-0.txt`, or indeed any ongoing processes in the Unix shell, hit `Ctrl+C`
@@ -406,6 +409,78 @@ next screen and so on, then `q` to quit (return to the command prompt).
 $ less 829-0.txt
 ~~~
 {: .bash}
+
+Like many other shell commands, the commands `cat`, `head`, `tail` and `less`
+can take any number of arguments (they can work with any number of files).
+We will see how we can get the first lines of several files at once.
+To save some typing, we introduce a very useful trick first.
+
+> ## Re-using commands
+> On a blank command prompt, hit the up arrow key and notice that the previous
+> command you typed appears before your cursor. We can continue pressing the
+> up arrow to cycle through your previous commands. The down arrow cycles back
+> toward your most recent command. This is another important labour-saving
+> function and something we'll use a lot.
+{: .callout}
+
+Hit the up arrow until you get to the `head 829-0.txt` command. Add a space
+and then `33504-0.txt` (Remember your friend Tab? Type `3` followed by Tab to
+get `33504-0.txt`), to produce the following command:
+
+~~~
+$ head 829-0.txt 33504-0.txt
+~~~
+{: .bash}
+~~~
+==> 829-0.txt <==
+The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
+
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+
+
+==> 33504-0.txt <==
+The Project Gutenberg EBook of Opticks, by Isaac Newton
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Opticks
+       or, a Treatise of the Reflections, Refractions, Inflections,
+~~~
+{: .output}
+
+All good so far, but if we had *lots* of books, it would be tedious to enter
+all the filenames. Luckily the shell supports wildcards! The `?` (matches exactly
+one character) and `*` (matches zero or more characters) are probably familiar
+from library search systems. We can use the `*` wildcard to write the above `head`
+command in a more compact way:
+
+~~~
+$ head *0.txt
+~~~
+{: .bash}
+
+We included the `0` since we weren't interested in the file `gallic.txt`.
+
+> ## More on wildcards
+> Wildcards are a feature of the shell and will therefore work with *any* command.
+> The shell will expand wildcards to a list of files and/or directories before
+> the command is executed, and the command will never see the wildcards.
+> As an exception, if a wildcard expression does not match any file, Bash
+> will pass the expression as a parameter to the command as it is. For example
+> typing `ls *.pdf` results in an error message that there is no file called *.pdf.
+{: .callout}
+
+### Moving, copying and deleting files
 
 We may also want to change the file name to something more descriptive.
 We can **move** it to a new name by using the `mv` or move command,
@@ -484,12 +559,20 @@ $ ls
 > {: .solution}
 {: .challenge}
 
-Now that we have seen and used several new commands, it's time for another trick.
-Hit the up arrow twice on
-keyboard. Notice that `mv 829-0.txt gulliver.txt`
-appears before your cursor. We can continue pressing the up arrow to cycle
-through your previous commands. The down arrow cycles back toward your most recent command.
-This is another important labour-saving function and something we'll use a lot.
+> ## The wildcards and regular expressions
+>
+> The `?` wildcard matches one character. The `*` wildcard matches zero or
+> more characters. If you attended the lesson on regular expressions, do you
+> remember how you would express that as regular expressions?
+>
+> (Regular expressions are not a feature of the shell, but some commands support
+> them, we'll get back to that.)
+>
+> > ## Answer
+> > * The `?` wildcard matches the regular expression `.` (a dot)
+> > * The `*` wildcard matches the regular expression `.*`
+> {: .solution}
+{: .challenge}
 
 > ## Using `history`
 > Use the `history` command to see a list of all the commands
@@ -498,78 +581,15 @@ This is another important labour-saving function and something we'll use a lot.
 > looking for. The past command will autocomplete. Hit `enter` to run the command again,
 > or press the arrow keys to start editing the command. If you can't find what you're
 > looking for in the reverse lookup, use `Ctrl + c` to return to the prompt.
-{: .callout}
+{: .challenge}
 
-After having read and renamed several files, we may wish to bring their text together into one file. Let's
-put them together to make an **even longer** book.
-
-To combine, or concatenate, two or more files let's use the `cat` command again.
-
-~~~
-$ cat gulliver.txt gulliver-backup.txt
-~~~
-{: .bash}
-
-This prints, or displays, the combined files within the shell.
-However, it is too long to read on this window!
-Luckily, by using the `>` redirector, we can send the output to
-a new file, rather than the terminal window.
-
-Hit up arrow to get to your last command and amend the line to:
-
-~~~
-$ cat gulliver.txt gulliver-backup.txt > gulliver-twice.txt
-~~~
-{: .bash}
-
-Now, when we type `ls` we'll see `gulliver-twice.txt` appear in our directory.
-
-~~~
-$ ls
-~~~
-{: .bash}
-~~~
-2014-01-31_JA-africa.tsv    2014-02-01_JA-art .tsv      gulliver-backup.txt
-2014-01-31_JA-america.tsv   2014-02-02_JA-britain.tsv   gulliver-twice.txt
-2014-01_JA.tsv.zip      gallic.txt          gulliver.txt
-~~~
-{: .output}
-
-When combining more than two files, using a wildcard can
-help avoid having to write out each filename individually.
-Again, labour saving! A useful wildcard is `*` which is a place holder for zero or
-more characters or numbers (note: this is slightly different from regex...).
-So, if we type:
-
-~~~
-$ cat *.txt > everything-together.txt
-~~~
-{: .bash}
-
-and hit enter, a combination of all the `.txt` files in the current directory
-are combined in alphabetical order as `everything-together.txt`.
-This can be very useful if we need to combine a large number of
-smaller files within a directory so that we can work with them in
-a text analysis program.
-
-Another wildcard worth remembering is `?` which is a place holder
-for a single character or number. We shall return to shell wildcards later - for
-now, note again that they are similar to but not exactly the same as the Regex we saw in the previous episode.
 
 Finally, onto deleting. We won't use it now, but if you do want to delete a file,
 for whatever reason, the command is `rm`, or remove.
 
-**We have to be careful with the `rm` command**, as we don't want to delete files that we do not mean to.
-**Unlike deleting from within our Graphical User Interface, there is *no* recycling bin
-or undo options**. For that reason, if in doubt, we may want to exercise caution
-or maintain a regular backup of your data.
+Using wildcards, we can even delete lots of files. And adding the `-r` flag we
+can delete folders with all their content.
 
-The syntax for `rm` is the same as `cp` and `mv`:
-for example:  
-
-~~~
-$ rm gulliver-twice.txt
-~~~
-{: .bash}
-
-We can add wildcards above as appropriate to specify the files to delete.
+**Unlike deleting from within our graphical user interface, there is *no* warning,
+*no* recycling bin from which you can get the files back and no other undo options!**
+For that reason, please be very careful with `rm` and extremely careful with `rm -r`.
