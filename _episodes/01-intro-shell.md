@@ -190,7 +190,10 @@ us right back to the home directory, right where we started.**
 > ## Try exploring
 >
 > Move around the computer, get used to moving in and out of directories,
-> see how different file types appear in the Unix shell.
+> see how different file types appear in the Unix shell. If you run Windows,
+> also try typing `explorer .` to open Explorer for the current directory
+> (the single dot means "current directory"). If you're on Mac or Linux,
+> try `open .` instead.
 >
 {: .challenge}
 
