@@ -86,13 +86,13 @@ Desktop      Downloads    Movies       Pictures
 ~~~
 {: .output}
 
-We may want more information than just a list of files. 
-We can do this by specifying various **flags** (also known as arguments or parameters) to go with our basic commands. 
-These are additions to a command that provide the computer with a bit more guidance 
+We may want more information than just a list of files and directories.
+We can get this by specifying various **flags** (also known as options or switches) to go with our basic commands.
+These are additions to a command that provide the computer with a bit more guidance
 of what sort of output or manipulation you want.
 
-If we type `ls -l` and hit enter, the computer returns a long list of files that contains 
-information similar to what we would find in our finder or explorer: 
+If we type `ls -l` and hit enter, the computer returns a list of files that contains
+information similar to what we would find in our Finder (Mac) or Explorer (Windows):
 the size of the files in bytes, the date it was created or last modified, and the file name.
 
 ~~~
