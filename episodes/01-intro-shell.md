@@ -432,14 +432,57 @@ $ ls
 ~~~
 {: .output}
 
-Had we wanted to duplicate it, we could have used the `cp` or copy command.
+> ## Copying a file
+>
+> Instead of *moving* a file, you might want to *copy* a file (make a duplicate),
+> for instance to make a backup before modifying a file using some script you're
+> not quite sure how works.
+> Just like the `mv` command, the `cp` command takes two arguments: the old name
+> and the new name. How would you make a copy of the file `gulliver.txt` called
+> `gulliver-backup.txt`? Try it!
+>
+> > ## Answer
+> > ~~~
+> > cp gulliver.txt gulliver-backup.txt
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
 
-~~~
-$ cp 829-0.txt gulliver.txt
-~~~
-{: .bash}
+> ## Renaming a directory
+>
+> Renaming a directory works in the same way as renaming a file. Try using the
+> `mv` command to rename the `firstdir` directory to `backup`.
+>
+> > ## Answer
+> > ~~~
+> > mv firstdir backup
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
 
-That would have created a a new file with the title `gulliver.txt` while leaving the original file `829-0.txt` intact.
+> ## Moving a file into a directory
+>
+> If the last argument you give to the `mv` command is a directory, not a file,
+> the file given in the first argument will be moved to that directory. Try
+> using the `mv` command to move the file `gulliver-backup.txt` into the
+> `backup` folder.
+>
+> > ## Answer
+> > ~~~
+> > mv gulliver-backup.txt backup
+> > ~~~
+> > {: .bash}
+> >
+> > This would also work:
+> >
+> > ~~~
+> > mv gulliver-backup.txt backup/gulliver-backup.txt
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
 
 Now that we have seen and used several new commands, it's time for another trick.
 Hit the up arrow twice on
@@ -456,19 +499,6 @@ This is another important labour-saving function and something we'll use a lot.
 > or press the arrow keys to start editing the command. If you can't find what you're
 > looking for in the reverse lookup, use `Ctrl + c` to return to the prompt.
 {: .callout}
-
-> ## Duplicating a File
->
-> Use `cp` to duplicate the Gulliver
-> file and give it the filename `gulliver-backup.txt`: any ideas how you do that?
->
-> > ## Answer
-> > ~~~
-> > cp gulliver.txt gulliver-backup.txt
-> > ~~~
-> > {: .bash}
-> {: .solution}
-{: .challenge}
 
 After having read and renamed several files, we may wish to bring their text together into one file. Let's
 put them together to make an **even longer** book.
