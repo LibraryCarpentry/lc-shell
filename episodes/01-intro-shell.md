@@ -138,23 +138,49 @@ drwxr-xr-x+  5 riley  staff   170B Jul 16 11:30 Public
 ~~~
 {: .output}
 
-We've now spent a great deal of time in our home directory. 
-Let's go somewhere else. We can do that through the `cd` or Change Directory command. 
-
-After typing `cd desktop` we are now on our desktop 
-(note: for Windows users, the case of the file/directory doesn't matter. 
-For Linux and Mac users it does). 
-To double check, let's type `pwd` and we should see something that represents our desktop.
+We've now spent a great deal of time in our home directory.
+Let's go somewhere else. We can do that through the `cd` or Change Directory command:
+(Note: On Windows and Mac, by default, the case of the file/directory doesn't matter
+On Linux it does.)
 
 ~~~
 $ cd Desktop
 ~~~
 {: .bash}
 
-Note that this only takes you 'down' through our directory structure 
-(as in into more nested directories). If we want to go back, we can type `cd ..`. 
-This moves us 'up' one directory, putting us back where we started. 
-**If we ever get completely lost, the command `cd` will bring 
+Notice that the command didn't output anything. This means that it was carried
+out successfully. Let's check by using `pwd`:
+
+~~~
+$ pwd
+~~~
+{: .bash}
+~~~
+/Users/riley/Desktop
+~~~
+{: .output}
+
+If something had gone wrong, however, the command would have told you. Let's
+see by trying to move into a (hopefully) non-existing directory:
+
+~~~
+$ cd "Evil plan to destroy the world"
+~~~
+{: .bash}
+~~~
+bash: cd: Evil plan to destroy the world: No such file or directory
+~~~
+{: .output}
+
+Notice that we surrounded the name by quotation marks. The *arguments* given
+to any shell command are separated by spaces, so a way to let them know that
+we mean 'one single thing called "Evil plan to destroy the world"', not
+'six different things', is to use (single or double) quotation marks.
+
+We've now seen how we can do 'down' through our directory structure
+(as in into more nested directories). If we want to go back, we can type `cd ..`.
+This moves us 'up' one directory, putting us back where we started.
+**If we ever get completely lost, the command `cd` without any arguments will bring
 us right back to the home directory, right where we started.**
 
 > ## Previous Directory
