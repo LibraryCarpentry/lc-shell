@@ -28,18 +28,20 @@ they're very versatile and will add to your foundation for working in the shell.
 
 ## Counting
 
-The Unix shell can be used to quickly generate counts from across files, 
+We will begin by counting the contents of files using the Unix shell.
+We can use the Unix shell to quickly generate counts from across files,
 something that is tricky to achieve using the graphical user interfaces of standard office suites.
 
-In the Unix shell, use the `cd` command to navigate to the directory 
-that contains our data. 
+Let's start by navigating to the directory that contains our data using the
+`cd` command:
 
 ~~~
 $ cd shell-lesson
 ~~~
 {: .bash}
 
-Remember, if at any time you are not sure where you are in your directory structure, type `pwd` and hit enter.
+Remember, if at any time you are not sure where you are in your directory structure,
+use the `pwd` command to find out:
 
 ~~~
 $ pwd
@@ -50,7 +52,8 @@ $ pwd
 ~~~
 {: .output}
 
-Type `ls -lh` and then hit enter. This prints, or displays, a list that includes a file and a subdirectory.
+And let's just check what files are in the directory and how large they
+are with `ls -lh`:
 
 ~~~
 $ ls -lh
@@ -87,8 +90,10 @@ as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 {: .callout}
 <!-- hm, reminds me of MARC -->
 
+`wc` is the "word count" command: it counts the number of lines, words, and
+characters in files. Let's run the command `wc *.tsv` to get counts for all
+the `.tsv` files in the current directory.
 
-The Unix command for counting is `wc`.
 The flag `-w` combined with `wc` instructs the computer to print a word count,
 and the name of the file that has been counted, into the shell.
 
