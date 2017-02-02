@@ -65,6 +65,8 @@ command is printed to your standard output, which is the terminal, not your offi
 printer.
 
 Let's type `pwd` and hit enter to execute the command:
+(The `$` sign is used to indicate a command to be typed on the command prompt,
+ but we never type the `$` sign itself, just what follows after it.)
 
 ~~~
 $ pwd
