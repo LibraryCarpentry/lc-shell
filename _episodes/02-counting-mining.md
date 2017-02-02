@@ -19,14 +19,14 @@ keypoints:
 - "combine these commands and flags to build complex queries in a way that suggests the potential for using the Unix shell to count and mine your research data and research projects"
 
 ---
-##  Manipulating, counting and mining research data
+##  Manipulating, counting and mining (research) data
 
 Now that you know a little bit about navigating the shell, we will move onto
 learning how to count and mine data using a few of the standard shell commands.
 While these commands are unlikely to revolutionise your work by themselves,
 they're very versatile and will add to your foundation for working in the shell.
 
-## Counting
+## Counting and sorting
 
 We will begin by counting the contents of files using the Unix shell.
 We can use the Unix shell to quickly generate counts from across files,
@@ -92,134 +92,111 @@ as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 
 `wc` is the "word count" command: it counts the number of lines, words, and
 characters in files. Let's run the command `wc *.tsv` to get counts for all
-the `.tsv` files in the current directory.
-
-The flag `-w` combined with `wc` instructs the computer to print a word count,
-and the name of the file that has been counted, into the shell.
+the `.tsv` files in the current directory (it takes a little time to complete):
 
 ~~~~
-$ wc -w 2014-01-31_JA-africa.tsv
+$ wc *.tsv
 ~~~~
 {: .bash}
 ~~~
-511261 2014-01-31_JA-africa.tsv
+    13712    511261   3773660 2014-01-31_JA-africa.tsv
+    27392   1049601   7731914 2014-01-31_JA-america.tsv
+   507732  17606310 131122144 2014-01_JA.tsv
+     5375    196999   1453418 2014-02-02_JA-britain.tsv
+   554211  19364171 144081136 total
 ~~~
 {: .output}
 
-As was seen earlier today flags such as `-w` are an essential part of getting
-the most out of the Unix shell as they give you better control over commands.
+If we only have a handful of files to compare, it might be faster or more convenient
+to just check with Microsoft Excel, OpenRefine or your favourite text editor, but
+when we have tens, hundres or thousands of documents, the Unix shell has a clear
+speed advantage. The real power of the shell comes from being able to combine commands
+and automate tasks, though. We will touch upon this slightly.
 
-If your reader request or piece of work is more concerned number of entries (or lines)
-than the number of words, you can use the line count flag.
+For now though, we're only interested in the number of lines, so we could use the `-l`
+flag to ask the command for just that:
 
-~~~
-$ wc -l 2014-01-31_JA-africa.tsv
-~~~
+~~~~
+$ wc -l *.tsv
+~~~~
 {: .bash}
 ~~~
-13712 2014-01-31_JA-africa.tsv
+    13712 2014-01-31_JA-africa.tsv
+    27392 2014-01-31_JA-america.tsv
+   507732 2014-01_JA.tsv
+     5375 2014-02-02_JA-britain.tsv
+   554211 total~~~
 ~~~
 {: .output}
 
-Combined with `wc` the flag `-l` prints a line count and the name of the file that has been counted.
+But which is the shortest file in terms of number of lines?
 
-With these three flags, the most obvious thing we can use `wc` for is to
-quickly compare the shape of sources in digital format - for example word
-counts per page of a book, the distribution of characters per page across
-a collection of newspapers, the average line lengths used by poets.
-You can also use `wc` with a combination of wildcards and flags to build more complex queries.
+First: redirect operator (greater than sign)
 
-> ## WC on Multiple Files
-> Can you guess what the line `wc -l 2014-01-31_JA-a*` will do?
+~~~
+$ wc -l *.tsv > counts.txt
+~~~
+{: .bash}
+
+There's no output since the output went into the file `counts.txt`.
+
+@TODO: Copy stuff from https://swcarpentry.github.io/shell-novice/04-pipefilter/
+
+Finally:
+
+~~~~
+$ wc -l *.tsv | sort -n
+~~~~
+{: .bash}
+~~~
+     5375 2014-02-02_JA-britain.tsv
+    13712 2014-01-31_JA-africa.tsv
+    27392 2014-01-31_JA-america.tsv
+   507732 2014-01_JA.tsv
+   554211 total
+~~~
+{: .output}
+
+Notice that no output occurs on the screen before everything suddenly occurs at
+the same time. This is because the `sort` command cannot output anything before
+it's sure about the order, which it cannot be before it has received all the
+output from the `wc` command.
+
+> ## Pipes and Filters
+> This simple idea is why Unix has been so successful. Instead of creating enormous
+> programs that try to do many different things, Unix programmers focus on creating
+> lots of simple tools that each do one job well, and that work well with each other.
+> This programming model is called “pipes and filters”. We’ve already seen pipes; a
+> filter is a program like `wc` or `sort` that transforms a stream of input into a
+> stream of output. Almost all of the standard Unix tools can work this way: unless
+> told to do otherwise, they read from standard input, do something with what they’ve
+> read, and write to standard output.
 >
-> ~~~
-> $ wc -l 2014-01-31_JA-a*
-> ~~~
-> {: .bash}
+> The key is that any program that reads lines of text from standard input and writes
+> lines of text to standard output can be combined with every other program that
+> behaves this way as well. You can and should write your programs this way so that
+> you and other people can put those programs into pipes to multiply their power.
+{: .callout}
+<!-- Copied from https://swcarpentry.github.io/shell-novice/04-pipefilter/ -->
+
+> ## Findind the shortest file
+> We saw how to use `wc -l *.tsv | sort -n` to output a file list sorted
+> by number of lines. How could you combine this with `head` to print
+> only the shortest file? Tip: Use `man head` or `head --help` if you
+> don't remember the flag to use.
 >
 > > ## Solution
 > > ~~~
-> > 13712 2014-01-31_JA-africa.tsv
-> > 27392 2014-01-31_JA-america.tsv
-> > 41104 total
+> > $ wc -l *.tsv | sort -n | head -n 1
 > > ~~~
-> > {: .output}
-> > This prints the line counts for `2014-01-31_JA-africa.tsv`
-> > and `2014-01-31_JA-america.tsv`, offering a simple means of comparing
-> > these two sets of research data.
+> > or
+> > ~~~
+> > $ wc -l *.tsv | sort -n | head -1
+> > ~~~
+> > {: .bash}
 > {: .solution}
 {: .challenge}
 
-Of course, it may be faster if you
-only have a handful of files to compare the line count for the two
-documents in Libre Office Calc, Microsoft Excel, or a similar spreadsheet
-program. But when wishing to compare the line count for tens, hundreds, or
-thousands of documents, the Unix shell has a clear speed advantage.
-
-Moreover, as our datasets increase in size you can use the Unix
-shell to do more than copy these line counts by hand, by the use of
-print screen, or by copy and paste methods. Using the `>` redirect
-operator we saw earlier you can export our query results to a new file.
-
-~~~
-$ wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
-~~~
-{: .bash}
-~~~
--bash: results/2016-07-19_JA-a-wc.txt: No such file or directory
-~~~
-{: .error}
-
-Here we've received a bash error message letting us know that there isn't a `results` directory to save our new file in. Let's remedy this by creating that directory.
-
-~~~
-$ mkdir results
-$ ls
-~~~
-{: .bash}
-~~~
-2014-01-31_JA-africa.tsv   2014-02-02_JA-britain.tsv  gallic.txt
-2014-01-31_JA-america.tsv  33504-0.txt                gulliver.txt
-2014-01_JA.tsv             backup                     results
-~~~
-{: .output}
-
-Ok, once the `results` directory exists, we can try our `wc` to a file command again.
-
-~~~
-$ wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
-~~~
-{: .bash}
-
-This runs the same query as before, but rather than print the
-results within the Unix shell it saves the results as `DATE_JA_a-wc.txt`.
-By prefacing this with `results/` the shell is instructed to save the .txt
-file to the `results` sub-directory. To check this, navigate to the `results`
-subdirectory:  
-
-~~~
-$ cd results
-$ ls
-~~~
-{: .bash}
-~~~
-2016-07-19_JA-a-wc.txt
-~~~
-{: .output}
-
-To see the file contents in the shell (as it
-is 10 lines or fewer in length, all the file contents will be shown here):
-
-~~~
-$ head 2016-07-19_JA-a-wc.txt
-~~~
-{: .bash}
-~~~
-   13712 2014-01-31_JA-africa.tsv
-   27392 2014-01-31_JA-america.tsv
-   41104 total
-~~~
-{: .output}
 
 ## Mining
 
