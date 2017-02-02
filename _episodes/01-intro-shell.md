@@ -23,6 +23,7 @@ keypoints:
 - "use the command `cp` to create a file from an existing file."
 - "use the command `cat` to combine more than one file of the same file type."
 - "use the wildcards `*` and `?` as place holders that delimit which files are to be manipulated by a given an action."
+- "use the command `echo` to output text to the screen."
 - "use the `rm` command to delete unwanted files, with caution."
 ---
 ## Introduction
@@ -616,6 +617,31 @@ $ ls
 > looking for in the reverse lookup, use `Ctrl + c` to return to the prompt.
 {: .challenge}
 
+> ## Using the `echo` command
+> The `echo` command simply prints out a text you specify. Try it out: `echo "Library Carpentry is awesome!"`. 
+> Interesting, isn't it? 
+>
+> You can also specify a variable, for instance `NAME=` followed by your name. 
+> Then type `echo "$NAME is a fantastic library carpentry student"`. What happens?
+>
+> You can combine both text and normal shell commands using `echo`, for example the 
+> `pwd` command you have learned earlier today. You do this by enclosing a shell 
+> command in `$(` and `)`, for instance `$(pwd)`. Now, try out the following: 
+> `echo "Finally, it is nice and sunny on" $(date)`.
+> Note that the output of the `date` command is printed together with the text 
+> you specified. You can try the same with some of the other commands you have learned so far.
+>
+> **Why do you think the echo command is actually quite important in the shell environment?**
+>
+> > ## Answer 
+> > You may think there is not much value in such a basic command like `echo`. However, from the moment you
+> > start writing automated shell scripts, it becomes very useful. For instance, you often need 
+> > to output text to the screen, such as the current status of a script.
+> >
+> > Moreover, you just used a shell variable for the first time, which can be used to temporarily store information, 
+> > that you can reuse later on. It will give many opportunities from the moment you start writing automated scripts.
+> {: .solution}
+{: .challenge}
 
 Finally, onto deleting. We won't use it now, but if you do want to delete a file,
 for whatever reason, the command is `rm`, or remove.
