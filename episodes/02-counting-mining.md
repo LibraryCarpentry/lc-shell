@@ -3,12 +3,17 @@ title: "Counting and mining with the shell"
 teaching: 40
 exercises: 20
 questions:
-- "How do you find data within files?"
-- "How do you count data?"
+- "How can I count data?"
+- "How can I find data within files?"
+- "How can I combine existing commands to do new things?"
 objectives:
-- "understand how to count lines, words, and characters with the shell"
-- "understand how to mine files and extract matched lines with the shell"
-- "understand how to combine mining with the shell and regular expressions"
+- "Understand how to count lines, words, and characters with the shell"
+- "Understand how to mine files and extract matched lines with the shell"
+- "Understand how to combine mining with the shell and regular expressions"
+- "Redirect a command’s output to a file."
+- "Process a file instead of keyboard input using redirection."
+- "Construct command pipelines with two or more stages."
+- "Explain Unix’s ‘small pieces, loosely joined’ philosophy."
 keypoints:
 - "`wc` is a command that counts"
 - "use the `wc` command with the flags `-w` and `-l` to count the words and lines in a file or a series of files"
@@ -19,12 +24,13 @@ keypoints:
 - "combine these commands and flags to build complex queries in a way that suggests the potential for using the Unix shell to count and mine your research data and research projects"
 
 ---
-##  Manipulating, counting and mining (research) data
+##  Counting and mining data
 
 Now that you know a little bit about navigating the shell, we will move onto
 learning how to count and mine data using a few of the standard shell commands.
 While these commands are unlikely to revolutionise your work by themselves,
-they're very versatile and will add to your foundation for working in the shell.
+they're very versatile and will add to your foundation for working in the shell
+and for learning to code.
 
 ## Counting and sorting
 
@@ -90,9 +96,10 @@ as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 {: .callout}
 <!-- hm, reminds me of MARC -->
 
-`wc` is the "word count" command: it counts the number of lines, words, and
-characters in files. Let's run the command `wc *.tsv` to get counts for all
-the `.tsv` files in the current directory (it takes a little time to complete):
+`wc` is the "word count" command: it counts the number of lines, words, bytes
+and characters in files. Since we love the wildcard operator, let's run the command
+`wc *.tsv` to get counts for all the `.tsv` files in the current directory
+(it takes a little time to complete):
 
 ~~~~
 $ wc *.tsv
@@ -107,14 +114,18 @@ $ wc *.tsv
 ~~~
 {: .output}
 
+The first three columns contains the number of lines, words and bytes
+(to show number characters you have to use a flag).
+
 If we only have a handful of files to compare, it might be faster or more convenient
 to just check with Microsoft Excel, OpenRefine or your favourite text editor, but
 when we have tens, hundres or thousands of documents, the Unix shell has a clear
 speed advantage. The real power of the shell comes from being able to combine commands
 and automate tasks, though. We will touch upon this slightly.
 
-For now though, we're only interested in the number of lines, so we could use the `-l`
-flag to ask the command for just that:
+For now, we'll see how we can build a simple pipeline to find the shortest file
+in terms of number of lines. We start by adding the `-l` flag to get only the
+number of lines, not the number of words and bytes:
 
 ~~~~
 $ wc -l *.tsv
@@ -125,24 +136,75 @@ $ wc -l *.tsv
     27392 2014-01-31_JA-america.tsv
    507732 2014-01_JA.tsv
      5375 2014-02-02_JA-britain.tsv
-   554211 total~~~
+   554211 total
 ~~~
 {: .output}
 
-But which is the shortest file in terms of number of lines?
+The `wc` command itself doesn't have a flag to sort the output, but as we'll
+see, we can combine three differen shell commands to get what we want.
 
-First: redirect operator (greater than sign)
+First, we have the `wc -l *.tsv` command. We will save the output from this
+command in a new file. To do that, we *redirect* the output from the command
+to a file using the ‘greater than’ sign (>), like so:
 
 ~~~
-$ wc -l *.tsv > counts.txt
+$ wc -l *.tsv > lengths.txt
 ~~~
 {: .bash}
 
-There's no output since the output went into the file `counts.txt`.
+There's no output now since the output went into the file `lengths.txt`, but
+we can check that the output indeed ended up in the file using `cat` or `less`
+(or Notepad or any text editor).
 
-@TODO: Copy stuff from https://swcarpentry.github.io/shell-novice/04-pipefilter/
+~~~~
+$ cat lengths.txt
+~~~~
+{: .bash}
+~~~
+    13712 2014-01-31_JA-africa.tsv
+    27392 2014-01-31_JA-america.tsv
+   507732 2014-01_JA.tsv
+     5375 2014-02-02_JA-britain.tsv
+   554211 total
+~~~
+{: .bash}
 
-Finally:
+Next, there is the `sort` command. We'll use the `-n` flag to specify that we
+want numerical sorting, not lexical sorting, we output the results into
+yet another file, and we use `cat` to check the results:
+
+~~~~
+$ sort -n lengths.txt > sorted-lengths.txt
+$ cat sorted-lengths.txt
+~~~~
+{: .bash}
+~~~
+     5375 2014-02-02_JA-britain.tsv
+    13712 2014-01-31_JA-africa.tsv
+    27392 2014-01-31_JA-america.tsv
+   507732 2014-01_JA.tsv
+   554211 total
+~~~
+{: .output}
+
+Finally we have our old friend `head`, that we can use to get the first line
+of the `sorted-lengths.txt`:
+
+~~~~
+$ head sorted-lengths.txt
+~~~~
+{: .bash}
+~~~
+     5375 2014-02-02_JA-britain.tsv
+~~~
+{: .output}
+
+But we're really just interested in the end result, not the intermediate
+results now stored in `lengths.txt` and `sorted-lengths.txt`. What if we could
+send the results from the first command (`wc -l *.tsv`) directly to the next
+command (`sort -n`) and then the output from that command to `head -n 1`?
+Luckily we can, using a concept called pipes. On the command line, you make a
+pipe with the vertical bar character |. Let's try with one pipe first:
 
 ~~~~
 $ wc -l *.tsv | sort -n
@@ -157,10 +219,23 @@ $ wc -l *.tsv | sort -n
 ~~~
 {: .output}
 
-Notice that no output occurs on the screen before everything suddenly occurs at
-the same time. This is because the `sort` command cannot output anything before
-it's sure about the order, which it cannot be before it has received all the
-output from the `wc` command.
+Notice that this is exactly the same output that ended up in our `sorted-lengths.txt`
+earlier. Let's add another pipe:
+
+~~~~
+$ wc -l *.tsv | sort -n | head -n 1
+~~~~
+{: .bash}
+~~~
+     5375 2014-02-02_JA-britain.tsv
+~~~
+{: .output}
+
+It can take some time to fully grasp pipes and use them efficiently, but it's a
+very powerful concept that you will find not only in the shell, but also in most
+programming languages.
+
+![Redirects and Pipes](../fig/redirects-and-pipes.png)
 
 > ## Pipes and Filters
 > This simple idea is why Unix has been so successful. Instead of creating enormous
@@ -179,25 +254,49 @@ output from the `wc` command.
 {: .callout}
 <!-- Copied from https://swcarpentry.github.io/shell-novice/04-pipefilter/ -->
 
-> ## Findind the shortest file
-> We saw how to use `wc -l *.tsv | sort -n` to output a file list sorted
-> by number of lines. How could you combine this with `head` to print
-> only the shortest file? Tip: Use `man head` or `head --help` if you
-> don't remember the flag to use.
+> ## Adding another pipe
+> We have our `wc -l *.tsv | sort -n | head -n 1` pipeline. What would happen
+> if you piped this into `cat`? Try it!
 >
 > > ## Solution
+> > The `cat` command just outputs whatever it gets as input, so you get exactly
+> > the same output from
+> >
 > > ~~~
 > > $ wc -l *.tsv | sort -n | head -n 1
 > > ~~~
-> > or
+> > {: .bash}
+> >
+> > and
+> >
 > > ~~~
-> > $ wc -l *.tsv | sort -n | head -1
+> > $ wc -l *.tsv | sort -n | head -n 1 | cat
 > > ~~~
 > > {: .bash}
 > {: .solution}
 {: .challenge}
 
-> ## Writing to a file
+> ## Counting number of files, part I
+> Let's make a different pipeline. You want to find out how many files and
+> directories there are in the current directory. Try to see if you can pipe
+> the output from `ls` into `wc` to find the answer, or something close to the
+> answer.
+>
+> > ## Solution
+> > You get close with
+> >
+> > ~~~
+> > $ ls -l | wc -l
+> > ~~~~
+> > {: .bash}
+> >
+> > but the count will be one too high, since the "total" line from `ls`
+> > is included in the count. We'll get back to a way to fix that later
+> > when we've learned about the `grep` command.
+> {: .solution}
+{: .challenge}
+
+> ## Writing to files
 > The `date` command outputs the current date and time. Can you write the
 > current date and time to a new file called `logfile.txt`? Then check
 > the contents of the file.
@@ -206,8 +305,12 @@ output from the `wc` command.
 > > ~~~
 > > $ date > logfile.txt
 > > $ cat logfile.txt
+> > ~~~~
 > > {: .bash}
 > > To check the contents, you could also use `less` or many other commands.
+> >
+> > Beware that `>` will happily overwrite an existing file without warning you,
+> > so please be careful.
 > {: .solution}
 {: .challenge}
 
@@ -219,13 +322,13 @@ output from the `wc` command.
 > > ~~~
 > > $ date >> logfile.txt
 > > $ cat logfile.txt
+> > ~~~~
 > > {: .bash}
 > {: .solution}
 {: .challenge}
 
 ## Mining
 
-The Unix shell can do much more than count the words, characters, and lines within a file.
 The `grep` command (meaning **global regular expression print**) is
 used to search across multiple files for specific strings of characters.
 It is able to do so much faster than the graphical search interface
@@ -465,6 +568,41 @@ Pair up with your neighbor and work on these exercies:
 > > ## Solution
 > > ~~~
 > > grep -iw hero *a.tsv > new2.tsv
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
+> ## Counting number of files, part II
+> In the earlier counting exercise in this episode, you tried counting the number
+> of files and directories in the current directory.
+> * The command `ls -l | wc -l` took us quite far, but the result was one too
+>   high because it included the "total" line in the count.
+> * With the knowledge of `grep`, can you figure out how to exclude the "total"
+>   line from the `ls -l` output?
+> * Hint: You want to exclude any line *starting*
+>   with the text "total", and you've just learned that the hat character (^) is used
+>   in regular expressions to indicate the start of a line.
+>
+> > ## Solution
+> > To find any lines starting with "total", we would use:
+> >
+> > ~~~
+> > $ ls -l | grep -E '^total'
+> > ~~~
+> > {: .bash}
+> >
+> > To *exclude those lines, we add the `-v` flag:
+> >
+> > ~~~
+> > $ ls -l | grep -v -E '^total'
+> > ~~~
+> > {: .bash}
+> >
+> > The grand finale is to pipe this into `wc -l`:
+> >
+> > ~~~
+> > $ ls -l | grep -v -E '^total | wc -l'
 > > ~~~
 > > {: .bash}
 > {: .solution}
