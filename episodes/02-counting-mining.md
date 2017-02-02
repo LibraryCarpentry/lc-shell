@@ -197,6 +197,31 @@ output from the `wc` command.
 > {: .solution}
 {: .challenge}
 
+> ## Writing to a file
+> The `date` command outputs the current date and time. Can you write the
+> current date and time to a new file called `logfile.txt`? Then check
+> the contents of the file.
+>
+> > ## Solution
+> > ~~~
+> > $ date > logfile.txt
+> > $ cat logfile.txt
+> > {: .bash}
+> > To check the contents, you could also use `less` or many other commands.
+> {: .solution}
+{: .challenge}
+
+> ## Appending to a file
+> While `>` writes to a file, `>>` appends something to a file. Try to append the
+> current date and time to the file `logfile.txt`?
+>
+> > ## Solution
+> > ~~~
+> > $ date >> logfile.txt
+> > $ cat logfile.txt
+> > {: .bash}
+> {: .solution}
+{: .challenge}
 
 ## Mining
 
