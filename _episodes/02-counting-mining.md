@@ -123,22 +123,6 @@ $ wc -l 2014-01-31_JA-africa.tsv
 
 Combined with `wc` the flag `-l` prints a line count and the name of the file that has been counted.
 
-Finally, type
-
-~~~
-$ wc -c 2014-01-31_JA-africa.tsv
-~~~
-{: .bash}
-~~~
-3773660 2014-01-31_JA-africa.tsv
-~~~
-{: .output}
-
-and hit enter. This uses  the flag `-c` in combination with the command `wc` to print a character
-count for `2014-01-31_JA-africa.tsv`
-
-**Note: OS X users should replace the -c flag with -m.**
-
 With these three flags, the most obvious thing we can use `wc` for is to
 quickly compare the shape of sources in digital format - for example word
 counts per page of a book, the distribution of characters per page across
