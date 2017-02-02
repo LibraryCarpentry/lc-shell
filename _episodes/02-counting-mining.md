@@ -186,11 +186,11 @@ $ wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
 ~~~
 {: .error}
 
-Here we've received a bash error message letting us know that there isn't a `results/` directory to save our new file in. Let's remedy this by creating that directory.
+Here we've received a bash error message letting us know that there isn't a `results` directory to save our new file in. Let's remedy this by creating that directory.
 
 ~~~
 $ mkdir results
-$ ls -F
+$ ls
 ~~~
 {: .bash}
 ~~~
@@ -200,7 +200,7 @@ $ ls -F
 ~~~
 {: .output}
 
-Ok, once the `results/` directory exists, we can try our `wc` to a file command again.
+Ok, once the `results` directory exists, we can try our `wc` to a file command again.
 
 ~~~
 $ wc -l 2014-01-31_JA-a*.tsv > results/2016-07-19_JA-a-wc.txt
