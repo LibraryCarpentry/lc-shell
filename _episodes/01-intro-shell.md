@@ -266,6 +266,37 @@ As we become more comfortable, we can get very quickly to the directory that we 
 {: .challenge}
 
 
+> ## Find out about advanced `ls` commands
+>
+> Find out, using the manual page, how to list the files in a 
+> directory ordered by their filesize. Try it out in different directories. Can you combine it 
+> with the `-l` *flag* you learned before? 
+> 
+> Afterwards,
+> find out how you can order a list of files based on their last modification date.
+> Try ordering files in different directories.
+>
+> > ## Answer
+> >
+> > To order files in a directory by their filesize, in combination with the `-l` flag:
+> >
+> > ~~~
+> > ls -lS
+> > ~~~
+> > {: .bash}
+> >
+> > Note that the `S` is **case-sensitive!**
+> >
+> > To order files in a directory by their last modification date, in combination with the `-l` flag:
+> >
+> > ~~~
+> > ls -lt
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
+
 ## Working with files and folders
 
 As well as navigating directories, we can interact with files on the command line:
