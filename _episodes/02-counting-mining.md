@@ -335,14 +335,29 @@ expression print**). As the name suggests, it supports regular expressions and
 is therefore only limited by your imagination, the shape of your data, and - when
 working with thousands or millions of files - the processing power at your disposal.
 
-To begin using `grep`, first navigate to the `data` directory (from results/ type `cd ..`).
+To begin using `grep`, first navigate to the `shell-lesson` directory if not already
+there. Then create a new directory "results":
+
+~~~
+$ mkdir results
+~~~
+{: .bash}
+
+
+Now let's try our first search:
 
 ~~~
 $ grep 1999 *.tsv
 ~~~
 {: .bash}
 
-This query looks across all files in  the directory that fit the given criteria (the .tsv files) for instances of the string, or character cluster, '1999'. It then prints them within the shell.
+Remember that the shell will expand `*.tsv` to a list of all the .tsv files in the
+directory. `grep` will then search these for instances of the string "1999" and
+print the matching lines.
+
+> ## Strings
+> A string is a sequence of characters, or "a piece of text".
+{: .callout}
 
 Press the up arrow once in order to cycle back to your most recent action.
 Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and hit enter.
@@ -359,11 +374,11 @@ $ grep -c 1999 *.tsv
 ~~~
 {: .output}
 
-The shell now prints the number of times the string 1999 appeared in each `*.tsv file`.
-If you look at the output from the previous command, this tends to be refer to the
+The shell now prints the number of times the string 1999 appeared in each file.
+If you look at the output from the previous command, this tends to refer to the
 date field for each journal article.
 
-Strings need not be numbers.
+We will try another search:
 
 ~~~
 $ grep -c revolution *.tsv
@@ -377,9 +392,8 @@ $ grep -c revolution *.tsv
 ~~~
 {: .output}
 
-Counts
-the instances of the string `revolution` within the defined files and prints
-those counts to the shell. Now, amend the above command to the below and observer how the outpu of each is different:
+We got back the counts of the instances of the string `revolution` within the files.
+Now, amend the above command to the below and observe how the output of each is different:
 
 ~~~
 $ grep -ci revolution *.tsv
@@ -394,7 +408,7 @@ $ grep -ci revolution *.tsv
 {: .output}
 
 This repeats the query, but prints a case
-insensitive count (including instances of both `revolution` and `Revolution`).
+insensitive count (including instances of both `revolution` and `Revolution` and other variants).
 Note how the count has increased nearly 30 fold for those journal article
 titles that contain the keyword 'america'. As before, cycling back and
 adding `> results/`, followed by a filename (ideally in .txt format), will save the results to a data file.
@@ -419,7 +433,7 @@ $ grep -i revolution *.tsv > results/2016-07-19_JAi-revolution.tsv
 
 This saves the subsetted data to file.
 
-However if we look at this file, it contains every instance of the
+However, if we look at this file, it contains every instance of the
 string 'revolution' including as a single word and as part of other words
 such as 'revolutionary'. This perhaps isn't as useful as we thought...
 Thankfully, the `-w` flag instructs `grep` to look for whole words only,
@@ -447,50 +461,37 @@ $ wc -l results/*.tsv
 ~~~
 {: .output}
 
-Finally, you can use the **regular expression syntax** covered earlier to search for similar words.
+Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
 
-In `gallic.txt` we have the string `fr[ae]nc[eh]`.
+> ## Basic and extended regular expressions
+> There is unfortunately both ["basic" and "extended" regular expressions](https://www.gnu.org/software/grep/manual/html_node/Basic-vs-Extended.html).
+> This is a common cause of confusion, since most tutorials, including ours, teach
+> extended regular expression, but `grep` uses basic by default.
+> Unles you want to remember the details, make your life easy by always using
+> extended regular expressions (`-E` flag) when doing something more complex
+> than searching for a plain string.
+{: .callout}
 
-~~~
-$ cat gallic.txt
-~~~
-{: .bash}
-~~~
-fr[ae]nc[eh]
-~~~
-{: .output}
-
-The square brackets here ask the machine to match any character
-in the range specified. So when used with grep:
-
-~~~
-$ grep -iw --file=gallic.txt *.tsv
-~~~
-{: .bash}
-
-the shell will print out each line containing the string:
+The regular expression 'fr[ae]nc[eh]' will match "france", "french", but also "frence" and "franch".
+It's generally a good idea to enclose the expression in single quotation marks, since
+that ensures the shell sends it directly to grep without any processing (such as trying to
+expand the wildcard operator *).
 
 ~~~
-- france
-- french
-- frence
-- franch
-~~~
-{: .output}
-
-Include the `-o` flag to print only the matching part of the lines e.g. (handy for isolating/checking results).
-
-~~~
-$ grep -iwo revolution *.tsv
+$ grep -iwE 'fr[ae]nc[eh]' *.tsv
 ~~~
 {: .bash}
 
-OR:
+The shell will print out each matching line.
+
+We include the `-o` flag to print only the matching part of the lines e.g.
+(handy for isolating/checking results):
 
 ~~~
-$ grep -iwo --file=gallic.txt *.tsv
+$ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 ~~~
 {: .bash}
+
 
 Pair up with your neighbor and work on these exercies:
 
@@ -501,7 +502,7 @@ Pair up with your neighbor and work on these exercies:
 >
 > > ## Solution
 > > ~~~
-> > grep hero *.tsv
+> > $ grep hero *.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -514,7 +515,7 @@ Pair up with your neighbor and work on these exercies:
 >
 > > ## Solution
 > > ~~~
-> > grep hero *a.tsv
+> > $ grep hero *a.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -527,7 +528,7 @@ Pair up with your neighbor and work on these exercies:
 >
 > > ## Solution
 > > ~~~
-> > grep -c hero *a.tsv
+> > $ grep -c hero *a.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -539,7 +540,7 @@ Pair up with your neighbor and work on these exercies:
 >
 > > ## Solution
 > > ~~~
-> > grep -ci hero *a.tsv
+> > $ grep -ci hero *a.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -547,11 +548,11 @@ Pair up with your neighbor and work on these exercies:
 
 > ## Case insensitive search in select files
 > Search for all case insensitive instances of that
-> word in the 'America' and 'Africa' tsv files in this directory. Print your results to a `new >.tsv` file.
+> word in the 'America' and 'Africa' tsv files in this directory. Print your results to  a file `results/new.tsv`.
 >
 > > ## Solution
 > > ~~~
-> > grep -i hero *a.tsv > new.tsv
+> > $ grep -i hero *a.tsv > results/new.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -559,11 +560,42 @@ Pair up with your neighbor and work on these exercies:
 
 > ## Case insensitive search in select files (whole word)
 > Search for all case insensitive instances of that whole word
-> in the 'America' and 'Africa' tsv files in this directory. Print your results to a new.tsv > file.
+> in the 'America' and 'Africa' tsv files in this directory. Print your results to a file `results/new2.tsv`.
 >
 > > ## Solution
 > > ~~~
-> > grep -iw hero *a.tsv > new2.tsv
+> > $ grep -iw hero *a.tsv > results/new2.tsv
+> > ~~~
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
+> ## Searching with regular expressions
+> Use regular expressions to find all ISSN numbers
+> (four digits followed by hyphen followed by four digits)
+> in `2014-01_JA.tsv` and print the results to a file `results/issns.tsv`.
+>
+> > ## Solution
+> > ~~~
+> > $ grep -E '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
+> > ~~~
+> > {: .bash}
+> >
+> > If you came up with something more advanced, perhaps including word boundaries,
+> > please share your result on the Etherpad and give yourself a pat on the shoulder.
+> >
+> > {: .bash}
+> {: .solution}
+{: .challenge}
+
+> ## Finding unique values
+> If you pipe something to the `uniq` command, it will filter out duplicate lines
+> and only return unique ones. Try piping the output from the command in the last exercise
+> to `uniq` and then to `wc -l` to count the number of unique ISSN values.
+>
+> > ## Solution
+> > ~~~
+> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv | uniq | wc -l
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -572,12 +604,13 @@ Pair up with your neighbor and work on these exercies:
 > ## Counting number of files, part II
 > In the earlier counting exercise in this episode, you tried counting the number
 > of files and directories in the current directory.
-> * The command `ls -l | wc -l` took us quite far, but the result was one too
->   high because it included the "total" line in the count.
+>
+> * Recall that the command `ls -l | wc -l` took us quite far, but the result was one
+>   too high because it included the "total" line in the line count.
 > * With the knowledge of `grep`, can you figure out how to exclude the "total"
 >   line from the `ls -l` output?
 > * Hint: You want to exclude any line *starting*
->   with the text "total", and you've just learned that the hat character (^) is used
+>   with the text "total". The hat character (^) is used
 >   in regular expressions to indicate the start of a line.
 >
 > > ## Solution
@@ -598,19 +631,9 @@ Pair up with your neighbor and work on these exercies:
 > > The grand finale is to pipe this into `wc -l`:
 > >
 > > ~~~
-> > $ ls -l | grep -v -E '^total | wc -l'
+> > $ ls -l | grep -v -E '^total' | wc -l
 > > ~~~
 > > {: .bash}
 > {: .solution}
 {: .challenge}
 
-Compare the line counts of the last two files you created.
-
-~~~
-wc -l FILENAMES
-~~~
-{: .bash}
-
-Open both files in a text editor (Notepad++, Atom, Kate,
-whatever you prefer) or Excel-like program to see the difference
-between searching strings and searching whole words using `grep`.
