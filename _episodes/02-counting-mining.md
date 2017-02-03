@@ -327,17 +327,13 @@ programming languages.
 > {: .solution}
 {: .challenge}
 
-## Mining
+## Mining or searching
 
-The `grep` command (meaning **global regular expression print**) is
-used to search across multiple files for specific strings of characters.
-It is able to do so much faster than the graphical search interface
-offered by most operating systems or office suites. And combined with the `>`
-operator, the `grep` command becomes a powerful research tool can be used
-to mine your data for characteristics or word clusters that appear in
-multiple files and then export that data to a new file. The only limitations
-here are your imagination, the shape of your data, and - when working with
-thousands or millions of files - the processing power at your disposal.
+Searching for something in one or more files is something we'll often need to do,
+so let's introduce a command for doing that: `grep` (short for **global regular
+expression print**). As the name suggests, it supports regular expressions and
+is therefore only limited by your imagination, the shape of your data, and - when
+working with thousands or millions of files - the processing power at your disposal.
 
 To begin using `grep`, first navigate to the `data` directory (from results/ type `cd ..`).
 
