@@ -1,7 +1,7 @@
 ---
 title: "What is the shell?"
 teaching: 60
-exercises: 2
+exercises: 30
 questions:
 - "What is the shell?"
 - "What is the command line?"
@@ -515,6 +515,9 @@ We included the `0` since we weren't interested in the file `gallic.txt`.
 > will pass the expression as a parameter to the command as it is. For example
 > typing `ls *.pdf` results in an error message that there is no file called *.pdf.
 {: .callout}
+
+
+<!-- Timing: Spent 75 minutes to get here -->
 
 ### Moving, copying and deleting files
 
