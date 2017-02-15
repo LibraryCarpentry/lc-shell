@@ -327,6 +327,58 @@ programming languages.
 > {: .solution}
 {: .challenge}
 
+> ## Counting the number of words
+>
+> Check the manual for the `wc` command (either using `man wc` or `wc --help`)
+> to see if you can find out what flag to use to print out the number of words
+> (but not the number of lines and bytes). Try it with the `.tsv` files.
+>
+> If you have time, you can also try to sort the results by piping it to `sort`.
+> And/or explore the other flags of `wc`.
+>
+> > ## Solution
+> >
+> > From `man wc`, you will see that there is a `-w` flag to print the number of
+> > words:
+> >
+> > ~~~
+> >      -w      The number of words in each input file is written to the standard
+> >              output.
+> > ~~~
+> > {: .output}
+> >
+> > So to print the word counts of the `.tsv` files:
+> >
+> > ~~~
+> > $ wc -w *.tsv
+> > ~~~
+> > {: .bash}
+> > ~~~
+> >   511261 2014-01-31_JA-africa.tsv
+> >  1049601 2014-01-31_JA-america.tsv
+> > 17606310 2014-01_JA.tsv
+> >   196999 2014-02-02_JA-britain.tsv
+> > 19364171 total
+> > ~~~
+> > {: .output}
+> >
+> > And to sort the lines numerically:
+> >
+> > ~~~
+> > $ wc -w *.tsv | sort -n
+> > ~~~
+> > {: .bash}
+> > ~~~
+> >   196999 2014-02-02_JA-britain.tsv
+> >   511261 2014-01-31_JA-africa.tsv
+> >  1049601 2014-01-31_JA-america.tsv
+> > 17606310 2014-01_JA.tsv
+> > 19364171 total
+> > ~~~
+> > {: .output}
+> {: .solution}
+{: .challenge}
+
 ## Mining or searching
 
 Searching for something in one or more files is something we'll often need to do,
