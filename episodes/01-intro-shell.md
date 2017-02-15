@@ -375,7 +375,6 @@ total 139M
 -rw-r--r-- 1 riley staff 1.4M Jan 31 18:47 2014-02-02_JA-britain.tsv
 -rw-r--r-- 1 riley staff 583K Feb  1 22:53 33504-0.txt
 -rw-r--r-- 1 riley staff 598K Jan 31 18:47 829-0.txt
--rw-r--r-- 1 riley staff   13 Jan 31 18:47 gallic.txt
 ~~~
 {: .output}
 
@@ -501,11 +500,9 @@ from library search systems. We can use the `*` wildcard to write the above `hea
 command in a more compact way:
 
 ~~~
-$ head *0.txt
+$ head *.txt
 ~~~
 {: .bash}
-
-We included the `0` since we weren't interested in the file `gallic.txt`.
 
 > ## More on wildcards
 > Wildcards are a feature of the shell and will therefore work with *any* command.
@@ -542,7 +539,7 @@ $ ls
 ~~~
 2014-01-31_JA-africa.tsv   2014-02-02_JA-britain.tsv  gulliver.txt
 2014-01-31_JA-america.tsv  33504-0.txt
-2014-01_JA.tsv             gallic.txt
+2014-01_JA.tsv
 ~~~
 {: .output}
 
