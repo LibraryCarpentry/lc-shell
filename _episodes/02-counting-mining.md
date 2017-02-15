@@ -74,7 +74,6 @@ total 139M
 -rw-r--r-- 1 riley staff 583K Feb  1 22:53 33504-0.txt
 drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
 -rw-r--r-- 1 riley staff 598K Jan 31 18:47 gulliver.txt
--rw-r--r-- 1 riley staff   13 Jan 31 18:47 gallic.txt
 ~~~
 {: .output}
 
