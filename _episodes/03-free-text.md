@@ -284,15 +284,20 @@ $ less -N diary.html
       6 
       7 
       8 <script type="text/javascript" src="/static/js/analytics.js"></script>
-      9 <script type="text/javascript">archive_analytics.values.server_name="www      9 b-app6.us.archive.org";archive_analytics.values.server_ms=105;</script>
-     10 <link type="text/css" rel="stylesheet" href="/static/css/banner-styles.c     10 ss"/>
+      9 <script type="text/javascript">archive_analytics.values.server_name="www
+      9 b-app6.us.archive.org";archive_analytics.values.server_ms=105;</script>
+     10 <link type="text/css" rel="stylesheet" href="/static/css/banner-styles.c
+     10 ss"/>
      11 
      12 
      13 <title>Piper's Diary</title>
      14 <meta name="description"
-     15 content="Come visit our shih tzu, Piper.  He has his very own photo gall     15 ary, monthly diary, newsletter, and dog site award.  He also maintains d     15 og book reviews and quotations.  Come check him out!">
+     15 content="Come visit our shih tzu, Piper.  He has his very own photo gall
+     15 ary, monthly diary, newsletter, and dog site award.  He also maintains d
+     15 og book reviews and quotations.  Come check him out!">
      16 <meta name="keywords"
-     17 content="shih tzu, dog, pet, quotations, award, diary, advice, book, rev     17 iew, piper">
+     17 content="shih tzu, dog, pet, quotations, award, diary, advice, book, rev
+     17 iew, piper">
      18 <style TYPE="text/css" TITLE="Basic Fonts">
 
 ~~~
