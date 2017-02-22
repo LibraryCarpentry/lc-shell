@@ -13,9 +13,8 @@ keypoints:
 ### Working with free text
 
 So far we have looked at how to use the Unix shell to manipulate, count, and 
-mine tabulated data. Most libary data, especially digitised documents used by 
-some of research communities libraries support, is much messier than 
-journal article metadata. Nonetheless many of the same techniques can be applied 
+mine tabulated data. Some libary data, especially digitised documents, is much messier than 
+tabular metadata. Nonetheless many of the same techniques can be applied 
 to non-tabulated data, such as free text, we just need to think carefully about 
 what it is we are counting and how we can get the best out of the Unix shell. 
 
@@ -24,15 +23,18 @@ can borrow what they do as an introduction to working with these more complex fi
 So for this final exercise we're going to leap forward a little in terms 
 of difficulty to a scenario where we won't learn about everything that 
 is happening in detail or discuss at length each command. We're going 
-to prepare and pull apart a text to show the potential of using the Unix 
-shell in research. And where commands we've learnt about are used, 
+to prepare and pull apart texts to demonstrate some of the potential applications of the Unix shell. And where commands we've learnt about are used, 
 I've left some of the figuring out to do to you - so please refer to your notes if you get stuck!
 
-**NB: leave 10 minutes at the end to go through final bits**
+Before going an further, speak to the person next to and choose which type of text you'd like to work on together. You have three options:
 
-## Grabbing a text, cleaning it up
+- An example of hand transcribed text: *Gulliver's Travels* (1735)
+- An example of text captured by an optical character recognition process: *General Report on the Physiography of Maryland. A dissertation, etc. (Reprinted from Report of Maryland State Weather Service.) [With maps and illustrations.]* 1898 (from [https://dx.doi.org/10.21250/db12](https://dx.doi.org/10.21250/db12))
+- An example of a webpage: Piper's World (a GeoCities page from 1999 saved at [archive.org](http://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
 
-*Work on this exercise with the person next to you*
+## Option 1: Hand transcribed text
+
+### Grabbing a text, cleaning it up
 
 Head to:
 
@@ -41,7 +43,7 @@ $ cd data
 ~~~
 {: .bash}
 
-We're going to work again with the `gulliver.txt` file we saw earlier.
+We're going to work with `gulliver.txt` file we made in the previous lesson.
 
 Let's look at the file. 
 
@@ -130,59 +132,26 @@ $ tr [:upper:] [:lower:] < gulliver-noheadfootpunct.txt > gulliver-clean.txt
 
 Open the `gulliver-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
-## Pulling a text apart, counting word frequencies
+### Pulling a text apart, counting word frequencies
 
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < gulliver-clean.txt > gulliver-linebyline.txt
+$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -r > gulliver-final.txt
 ~~~
 {: .bash}
 
-This uses the translate command again, this time to translate every blank 
-space into `\n` which renders as a new line. Every word in the file will now have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
-This isn't much use, so to get a better sense of the data we need to use another 
-new command called `sort`.  
+The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
-~~~
-$ sort gulliver-linebyline.txt > gulliver-ordered.txt
-~~~
-{: .bash}
+The third part uses `uniq`, another new command, in combination with the `-c` flag to remove duplicate lines and to produce a word count of those duplicates.
 
-This script uses the `sort` command to rearrange the text from its 
-original order into an alphabetical configuration. Open the file in 
-a text editor and after scrolling past some blank space you will 
-begin to see some numbers and finally words, or at least lots of copies of 'a'!
+The fourth and final part sorts the text again by the counts of duplicates generated in step three.
 
-This is looking more useful, but we can go one step further. 
-
-~~~
-$ uniq -c gulliver-ordered.txt > gulliver-final.txt
-~~~
-{: .bash}
-
-This script uses `uniq`, another new command, in combination 
-with the `-c` flag to both remove duplicate lines and produce a word count of those duplicates.
-
-**Note: there is a windows/linux issue here worth flagging 
-about special characters** 
-
-Might need to use the below to Remove windows line ending.
-
-~~~
-$ tr -d '\r' < stmtn10-lowercase.txt > stmtn10-lowercaself.txt
-~~~
-{: .bash}
-
-Note that these steps can be simplified by building 'pipes'. So:
-
-~~~
-$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c > gulliver-final.txt
-~~~
-{: .bash}
-
-would have done the line-by-line, sorting, and removal of duplicates in one go.
+**note there are a few bits of punctuation in here - I've left these in 
+deliberately as you should always bug fix! The internet is a always a 
+good place to start searching for why this might have happened (something about the `punct` command we used...)**
 
 Either way we have now taken the text apart and produced a 
 count for each word in it. This is data we can prod and poke 
@@ -191,21 +160,223 @@ and can compare with other texts processed in the same way.
 And if we need to run a different set of transformation for 
 a different analysis, we can return to `gulliver-clean.txt` to start that work.
 
+And all this using a few commands on an otherwise unassuming but very powerful command line.
+
+## Option 2: Optical character recognised text
+
+### Grabbing a text, cleaning it up
+
+Head to:
+
+~~~
+$ cd data
+~~~
+{: .bash}
+
+We're going to work with `000003160_01_text.json`.
+
+Let's look at the file. 
+
+~~~
+$ less -N 000003160_01_text.json
+~~~
+{: .bash}
+~~~
+      1 [[1, ""], [2, ""], [3, ""], [4, ""], [5, ""], [6, ""], [7, "A GENERAL RE
+      1 PORT ON THE PHYSIOGRAPHY OF MARYLAND A DISSERTATION PRESENTED TO THE PRE
+      1 SIDENT AND FACULTY OF THE JOHNS HOPKINS UNIVERSITY FOR THE DEGREE OF DOC
+      1 TOR OF PHILOSOPHY BY CLEVELAND ABBE, Jr. BALTIMORE, MD. MAY, 1898."], [8
+      1 , ""], [9, ""], [10, "A MAP S H OW I N G THE PHYSIOGRAPHIC PROVINCES OF
+      1 MARYLAND AND Their Subdivisions Scale 1 : 2,000.000. 32 Miles-1 Inch"],
+      1 [11, "A GENERAL REPORT ON THE PHYSIOGRAPHY OF MARYLAND A DISSERTATION PR
+      1 ESENTED TO THE PRESIDENT AND FACULTY OF THE JOHNS HOPKINS UNIVERSITY FOR
+      1  THE DEGREE OF DOCTOR OF PHILOSOPHY BY CLEVELAND ABBE, Jr. BALTIMORE, MD
+      1 . MAY, 1898."], [12, "PRINTED BY tL%t jfricbcnrtxifti Compang BALTIMORE,
+      1  MD., U. S. A. REPRINTED FROM Report of Maryland State Weather Service,
+      1 Vol. 1, 1899, pp. 41-216."], [13, "A GENERAL REPORT ON THE PHYSIOGRAPHY
+      1 OF MARYLAND Physiographic Processes. INTRODUCTION. From the earliest tim
+      1 es men have observed more or less closely the various phenomena which na
+      1 ture presents, and have sought to find an explanation for them. Among th
+      1 e most interesting of these phe nomena have been those which bear on the
+      1  development of the sur face features of the earth or its topography. Im
+      1 pressed by the size and grandeur of the mountains, their jagged crests a
+      1 nd scarred sides, early students of geographical features were prone to 
+      1 ascribe their origin to great convulsions of the earth's crust, earthqua
+      1 kes and vol canic eruptions. One generation after another comes and goes
+      1 , yet the mountains continue to rear their heads to the same heights, th
+      1 e rivers to run down the mountain sides in the same courses and follow t 
+~~~
+{: .output}
+
+We're going to start by using the `tr` command, used for translating or 
+deleting characters. Type and run:
+
+~~~
+$ tr -d [:punct:] < 000003160_01_text.json > 000003160_01_text-nopunct.txt
+~~~
+{: .bash}
+
+This uses the translate command and a special syntax to remove all punctuation. 
+It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen. 
+
+Finally regularise the text by removing all the uppercase lettering. 
+
+~~~
+$ tr [:upper:] [:lower:] < 000003160_01_text-nopunct.txt > 000003160_01_text-clean.txt
+~~~
+{: .bash}
+
+Open the `000003160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
+
+### Pulling a text apart, counting word frequencies
+
+We are now ready to pull the text apart.
+
+~~~
+$ tr ' ' '\n' < 000003160_01_text-clean.txt | sort | uniq -c | sort -r > 000003160_01_text-final.txt
+~~~
+{: .bash}
+
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+
+The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
+
+The third part uses `uniq`, another new command, in combination with the `-c` flag to remove duplicate lines and to produce a word count of those duplicates.
+
+The fourth and final part sorts the text again by the counts of duplicates generated in step three.
+
+**Note: your final output will have one problem - not all the words counted are real words (see the words counted only 1 or 2 times). To better understand what has happened, search online to find out more about Optical Character Recognition of texts**
+
+Either way we have now taken the text apart and produced a 
+count for each word in it. This is data we can prod and poke 
+and visualise, that can form the basis of our investigations, 
+and can compare with other texts processed in the same way. 
+And if we need to run a different set of transformation for 
+a different analysis, we can return to `000003160_01_text-clean.txt` to start that work.
+
+And all this using a few commands on an otherwise unassuming but very powerful command line.
+
+## Option 3: A webpage
+
+### Grabbing a text, cleaning it up
+
+Head to:
+
+~~~
+$ cd data
+~~~
+{: .bash}
+
+We're going to work with `diary.html`.
+
+Let's look at the file. 
+
+~~~
+$ less -N diary.html
+~~~
+{: .bash}
+~~~
+      1 <!-- This document was created with HomeSite v2.5 -->
+      2 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+      3 <html>
+      4 
+      5 <head>
+      6 
+      7 
+      8 <script type="text/javascript" src="/static/js/analytics.js"></script>
+      9 <script type="text/javascript">archive_analytics.values.server_name="www      9 b-app6.us.archive.org";archive_analytics.values.server_ms=105;</script>
+     10 <link type="text/css" rel="stylesheet" href="/static/css/banner-styles.c     10 ss"/>
+     11 
+     12 
+     13 <title>Piper's Diary</title>
+     14 <meta name="description"
+     15 content="Come visit our shih tzu, Piper.  He has his very own photo gall     15 ary, monthly diary, newsletter, and dog site award.  He also maintains d     15 og book reviews and quotations.  Come check him out!">
+     16 <meta name="keywords"
+     17 content="shih tzu, dog, pet, quotations, award, diary, advice, book, rev     17 iew, piper">
+     18 <style TYPE="text/css" TITLE="Basic Fonts">
+
+~~~
+{: .output}
+
+We're going to start by using the `sed` command. The command allows you to edit files directly.
+
+~~~
+$ sed '265,330d' diary.html > diary-nofoot.txt 
+~~~
+{: .bash}
+
+The command `sed` in combination with the `d` 
+value will look at `diary.html` and delete all 
+values between the rows specified. The `>` action then 
+prompts the script to this edited text to the new file specified.
+
+~~~
+$ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
+~~~
+{: .bash}
+
+This does the same as before, but for the header.
+
+You now have a cleaner text. The next step is to 
+prepare it even further for rigorous analysis.
+
+First we wil remove all the html tags. Type and run:
+
+~~~
+$ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
+~~~
+{: .bash}
+
+Here we are using a regular expression (see the [Library Carpentry regular expression lesson](http://data-lessons.github.io/library-data-intro/04-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them. This is a complex regular expression, do don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
+
+We're going to start by using the `tr` command, used for translating or 
+deleting characters. Type and run:
+
+~~~
+$ tr -d [:punct:] < diary-notags.txt > diary-notagspunct.txt
+~~~
+{: .bash}
+
+This uses the translate command and a special syntax to remove all punctuation.
+
+Finally regularise the text by removing all the uppercase lettering. 
+
+~~~
+$ tr [:upper:] [:lower:] < diary-notagspunct.txt > diary-clean.txt
+~~~
+{: .bash}
+
+Open the `diary-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
+
+### Pulling a text apart, counting word frequencies
+
+We are now ready to pull the text apart.
+
+~~~
+$ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -r > diary-final.txt
+~~~
+{: .bash}
+
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+
+The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
+
+The third part uses `uniq`, another new command, in combination with the `-c` flag to remove duplicate lines and to produce a word count of those duplicates.
+
+The fourth and final part sorts the text again by the counts of duplicates generated in step three.
+
 **note there are a few bits of punctuation in here - I've left these in 
 deliberately as you should always bug fix! The internet is a always a 
 good place to start searching for why this might have happened (something about the `punct` command we used...)**
 
+Either way we have now taken the text apart and produced a 
+count for each word in it. This is data we can prod and poke 
+and visualise, that can form the basis of our investigations, 
+and can compare with other texts processed in the same way. 
+And if we need to run a different set of transformation for 
+a different analysis, we can return to `diary-final.txt` to start that work.
+
 And all this using a few commands on an otherwise unassuming but very powerful command line.
-
-Before we move on, we'll go back to the opening command:
-
-~~~
-$ grep 2009 2014-01_JA.tsv | grep INTERNATIONAL | awk -F '\t' '{print $5}' | sort | uniq -c
-~~~
-{: .bash}
-
-Can you describe - without looking at your notes... - exactly what is going on here? 
-(I'll forgive you not know the `awk` bit given that we've not covered that...)
 
 ## Where to go next
 
@@ -228,48 +399,6 @@ Python is popular in research programming as it is readable, relatively simple, 
 
 Bill Turkel and the Digital History community more broadly. 
 The second lesson you did today was based on a lesson Bill has on [his website](http://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/) and Bill is also a general editor of the [Programming Historian](http://programminghistorian.org/project-team). The Programming Historian is an open, collaborative book aimed at providing programming lessons to historians. Although the lessons are hooked around problems historians have, their lessons - which cover various programming languages - have a wide applicability - indeed today's course is based on two lessons I wrote with Ian Milligan, an historian at Waterloo, Canada - for ProgHist. Bill also has a wonderful tutorial on ['Named Entity Recognition with Command Line Tools in Linux'](http://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) which I thoroughly recommend if you want to automatically find, markup, and count names, places, and organisations in text files...
-
-## NER Demo
-
-Although [Named Entity Recognition](https://en.wikipedia.org/wiki/Named-entity_recognition) relies on a number of processes we need to 
-critique, it can be run across texts quickly and simply from the command line. 
-We start by setting the named entity recognition running on a txt (here on a text with punctuation removed). Check out this website for how the below was put together: [https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/](https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)
-
-~~~
-$ stanford-ner/ner.sh gulliver-noheadfootpunct.txt > gulliver_ner.txt
-~~~
-{: .bash}
-
-Looking at the text now, we can see that the NER has tagged some 
-words with what it thinks are people, places, et al. We then clean up loose tags.
-
-~~~
-$ sed 's/\/O / /g' < gulliver_ner.txt > gulliver_ner-clean.txt`
-~~~
-{: .bash}
-
-From which we can count persons:
-
-~~~
-$ egrep -o -f personpattr gulliver_ner-clean.txt | sed 's/\/PERSON//g' | sort | uniq -c | sort -nr > gulliver_ner-pers-freq.txt
-~~~
-{: .bash}
-
-*Note: `egrep` is merely a variant of grep that looks for patterns*
-
-And count places:
-
-~~~
-$ egrep -o -f locpattr gulliver_ner-clean.txt | sed 's/\/LOCATION//g' | sort | uniq -c | sort -nr > gulliver_ner-loc-freq.txt
-~~~
-{: .bash}
-
-Now the results of this are up for debate. Many persons seem to me to be missing, 
-suggesting the applicability of the software for this purpose may be questionable. 
-But I hope you can see that the process is simple and can be reapplied to other textual 
-data when you want to quickly get a sense of the people or places it contains. And that 
-it is one of many tools (another useful one being `wget`, a command that enables you to archive webpages) 
-that work well on the command line.
 
 ## Conclusion
 
@@ -304,4 +433,3 @@ Ian Milligan and James Baker, 'Introduction to the Bash Command Line', *The Prog
 William J. Turkel, 'Named Entity Recognition with Command Line Tools in Linux' ([30 June 2013](http://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)). The section 'NER Demo' is adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 William J. Turkel, 'Basic Text Analysis with Command Line Tools in Linux' ([15 June 2013](http://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/)). The sections 'Grabbing a text, cleaning it up' and 'Pulling a text apart, counting word frequencies' are adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](http://creativecommons.org/licenses/by-nc-sa/3.0/).
-
