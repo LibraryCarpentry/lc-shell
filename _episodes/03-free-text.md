@@ -152,7 +152,7 @@ The third part uses `uniq`, another new command, in combination with the `-c` fl
 
 The fourth and final part sorts the text again by the counts of duplicates generated in step three.
 
-**note there are a few bits of punctuation in here - I've left these in 
+**Note: there are a few bits of punctuation in here - I've left these in 
 deliberately as you should always bug fix! The internet is a always a 
 good place to start searching for why this might have happened (something about the `punct` command we used...)**
 
@@ -373,11 +373,7 @@ The third part uses `uniq`, another new command, in combination with the `-c` fl
 
 The fourth and final part sorts the text again by the counts of duplicates generated in step three.
 
-**note there are a few bits of punctuation in here - I've left these in 
-deliberately as you should always bug fix! The internet is a always a 
-good place to start searching for why this might have happened (something about the `punct` command we used...)**
-
-Either way we have now taken the text apart and produced a 
+We have now taken the text apart and produced a 
 count for each word in it. This is data we can prod and poke 
 and visualise, that can form the basis of our investigations, 
 and can compare with other texts processed in the same way. 
