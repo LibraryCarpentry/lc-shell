@@ -26,11 +26,11 @@ keypoints:
 ---
 ##  Counting and mining data
 
-Now that you know a little bit about navigating the shell, we will move onto
+Now that you know how to navigate the shell, we will move onto
 learning how to count and mine data using a few of the standard shell commands.
 While these commands are unlikely to revolutionise your work by themselves,
 they're very versatile and will add to your foundation for working in the shell
-and for learning to code.
+and for learning to code. The commands also replicate the sorts of uses library users might make of librart data.
 
 ## Counting and sorting
 
