@@ -52,11 +52,13 @@ $ less -N gulliver.txt
 ~~~
 {: .bash}
 ~~~
-  1 <U+FEFF>The Project Gutenberg eBook, Gulliver's Travels, by Jonatha      1 n Swift
+      1 <U+FEFF>The Project Gutenberg eBook, Gulliver's Travels, by Jonatha
+      1 n Swift
       2 
       3 
       4 This eBook is for the use of anyone anywhere at no cost and with
-      5 almost no restrictions whatsoever.  You may copy it, give it away o      5 r
+      5 almost no restrictions whatsoever.  You may copy it, give it away o
+      5 r
       6 re-use it under the terms of the Project Gutenberg License included
       7 with this eBook or online at www.gutenberg.org
       8 
@@ -82,7 +84,8 @@ $ less -N gulliver.txt
      28 ***START OF THE PROJECT GUTENBERG EBOOK GULLIVER'S TRAVELS***
      29 
      30 
-     31 Transcribed from the 1892 George Bell and Sons edition by David Pri     31 ce,
+     31 Transcribed from the 1892 George Bell and Sons edition by David Pri
+     31 ce,
      32 email ccx074@pglaf.org
      33 
      34 
