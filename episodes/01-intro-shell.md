@@ -44,6 +44,8 @@ The motivations for wanting to learn shell commands are many and various.
 
 The shell is one of the most productive programming environments ever created. Once mastered you can use it to experiment with different commands interactively, then use what they have learned to automate their work. Graphical user interfaces may be better at the first, but the shell is still unbeaten at the second.
 
+*Note to Lesson Instructor: consider providing an example here of how you've used the Unix shell to solve a problem in the last week or month*
+
 [](# From SW Carpentry)
 What you can quickly learn is how to query lots of data for the information you want super fast. Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows us to combine existing tools into powerful pipelines and handle large volumes of data automatically. This automation not only makes us more productive, but also improves the reproducibility of our workflows by allowing us to repeat them with few simple commands.
 [](# Custom addition)
