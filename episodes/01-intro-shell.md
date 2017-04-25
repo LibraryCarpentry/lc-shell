@@ -183,7 +183,7 @@ to any shell command are separated by spaces, so a way to let them know that
 we mean 'one single thing called "Evil plan to destroy the world"', not
 'six different things', is to use (single or double) quotation marks.
 
-We've now seen how we can do 'down' through our directory structure
+We've now seen how we can go 'down' through our directory structure
 (as in into more nested directories). If we want to go back, we can type `cd ..`.
 This moves us 'up' one directory, putting us back where we started.
 **If we ever get completely lost, the command `cd` without any arguments will bring
