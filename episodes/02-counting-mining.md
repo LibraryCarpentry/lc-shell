@@ -275,6 +275,32 @@ programming languages.
 > {: .solution}
 {: .challenge}
 
+> ## Count, sort and print (faded example)
+>Count the total lines in every `tsv` file. Sort. Print the first line of the file.
+>
+>~~~
+>wc -l *.tsv | sort | head -n 1
+>~~~
+>{: .bash}
+>
+>In all `csv` files in a directory count the words for each file, then put them into order. Finally, make an output of the final 10 lines of the file.
+>
+>~~~
+>__ -w *.csv | sort | ____
+>~~~
+>{: .bash}
+>
+> > ## Solution
+> >
+> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 10 lines using the `tail` command. 
+> >~~~
+> > wc -w *.csv | sort | tail -n 10
+> >~~~
+> {: .solution}
+>{: .bash}
+{: .challenge}
+
+
 > ## Counting number of files, part I
 > Let's make a different pipeline. You want to find out how many files and
 > directories there are in the current directory. Try to see if you can pipe
@@ -687,4 +713,3 @@ Pair up with your neighbor and work on these exercies:
 > > {: .bash}
 > {: .solution}
 {: .challenge}
-
