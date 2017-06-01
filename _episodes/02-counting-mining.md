@@ -190,7 +190,7 @@ Finally we have our old friend `head`, that we can use to get the first line
 of the `sorted-lengths.txt`:
 
 ~~~~
-$ head sorted-lengths.txt
+$ head -n 1 sorted-lengths.txt
 ~~~~
 {: .bash}
 ~~~
