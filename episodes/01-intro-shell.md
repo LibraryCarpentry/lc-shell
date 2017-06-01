@@ -39,7 +39,7 @@ interface. This session will cover a small number of basic commands using Git Ba
 Terminal for Mac OS. These commands constitute building blocks upon which more
 complex commands can be constructed to fit your data or project.
 <!-- Mention native Bash in Windows 10 -->
-Even if you do not do your own programming or your work currently does not involve the command line, knowing some basics about the shell can be useful. For example, you may find yourself working with a scholar who primarily works through the shell or you may discover down the road that it is the best way to interact with a repository or archive
+Even if you do not do your own programming or your work currently does not involve the command line, knowing some basics about the shell can be useful.
 
 The shell is one of the most productive programming environments ever created. Once mastered you can use it to experiment with different commands interactively, then use what they have learned to automate their work. Graphical user interfaces may be better at the first, but the shell is still unbeaten at the second.
 
