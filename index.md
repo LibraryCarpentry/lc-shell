@@ -10,6 +10,6 @@ use shell commands to find and manipulate data.
 
 > ## Prerequisites
 >
-> Data: Download the file **[shell-lesson.zip](https://github.com/uio-carpentry/2017-02-02-librarycarpentry/raw/gh-pages/data/shell-lesson.zip)** from GitHub to your *desktop* and extract it there.
+> Data: Download the file **[shell-lesson.zip](https://raw.githubusercontent.com/data-lessons/library-shell/gh-pages/data/shell-lesson.zip)** from GitHub to your *desktop* and extract it there.
 > You should now have a folder called "shell-lesson" there.
 {: .prereq}
