@@ -32,6 +32,10 @@ _____
     *   Workflows can be automated through the use of shell scripts
     *   Built-in commands allow for easy data manipulation (e.g. sort, grep, etc.)
     *   Every step can be captured in the shell script and allow reproducibility and easy troubleshooting
+    
+## Specific issues to note
+
+The grep flags `-o` and `-E` flag is not supported by Git Bash for Windows. Note the sections of [Episode 2](http://data-lessons.github.io/library-shell/02-counting-mining/) that describe this (for example the callout 'Invalid option – o?'). Be prepared to manage this difference between OS behaviour.
 
 ## Overall
 
