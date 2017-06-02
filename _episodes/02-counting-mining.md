@@ -569,6 +569,13 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 ~~~
 {: .bash}
 
+> ## Invalid option -- o?
+> If you get an error message "invalid option -- o" when running the above command, it means you use a version of
+> `grep` that doesn't support the `-o` flag. This is for instance the case with the version of `grep` that comes with
+> Git Bash on Windows. Since the flag is not crucial to this lesson, please just relax and ignore the problem. If you
+> really needed the flag, however, you could have installed another version of `grep`. The situation for Windows users
+> also improves on Windows 10 with the new Bash on Windows.
+{: .callout}
 
 Pair up with your neighbor and work on these exercies:
 
@@ -651,10 +658,19 @@ Pair up with your neighbor and work on these exercies:
 > Use regular expressions to find all ISSN numbers
 > (four digits followed by hyphen followed by four digits)
 > in `2014-01_JA.tsv` and print the results to a file `results/issns.tsv`.
+> Note that you might have to use the `-E` flag (or `-P` with some versions
+> of `grep`, e.g. with Git Bash on Windows.).
 >
 > > ## Solution
 > > ~~~
 > > $ grep -E '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
+> > ~~~
+> > {: .bash}
+> > 
+> > or
+> >
+> > ~~~
+> > $ grep -P '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
 > > ~~~
 > > {: .bash}
 > >
@@ -669,6 +685,8 @@ Pair up with your neighbor and work on these exercies:
 > If you pipe something to the `uniq` command, it will filter out duplicate lines
 > and only return unique ones. Try piping the output from the command in the last exercise
 > to `uniq` and then to `wc -l` to count the number of unique ISSN values.
+> Note: This exercise requires the `-o` flag. See the callout box "Invalid option -- o?"
+> above.
 >
 > > ## Solution
 > > ~~~
