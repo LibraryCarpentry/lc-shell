@@ -5,9 +5,9 @@ exercises: 40
 questions:
 - "How do we work with complex files?"
 objectives:
-- "to understand how to use shell tools to clean and tranform free text"
+- "Use shell tools to clean and tranform free text"
 keypoints:
-- "shell tools can be combined to powerful effect"
+- "Shell tools can be combined to powerful effect"
 ---
 
 ### Working with free text
