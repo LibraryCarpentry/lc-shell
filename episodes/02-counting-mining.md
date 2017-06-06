@@ -276,14 +276,15 @@ programming languages.
 {: .challenge}
 
 > ## Count, sort and print (faded example)
->Count the total lines in every `tsv` file. Sort. Print the first line of the file.
+>To count the total lines in every `tsv` file, sorting the results and then print the first line of the file we use the following:
 >
 >~~~
 >wc -l *.tsv | sort | head -n 1
 >~~~
 >{: .bash}
 >
->In all `csv` files in a directory count the words for each file, then put them into order. Finally, make an output of the final 10 lines of the file.
+>
+>In all `csv` files in a directory count the words for each file, then put them into order. Finally, make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
 >
 >~~~
 >__ -w *.csv | sort | ____
@@ -292,7 +293,7 @@ programming languages.
 >
 > > ## Solution
 > >
-> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 10 lines using the `tail` command. 
+> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 10 lines using the `tail` command.
 > >~~~
 > > wc -w *.csv | sort | tail -n 10
 > >~~~
@@ -666,7 +667,7 @@ Pair up with your neighbor and work on these exercies:
 > > $ grep -E '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
 > > ~~~
 > > {: .bash}
-> > 
+> >
 > > or
 > >
 > > ~~~
