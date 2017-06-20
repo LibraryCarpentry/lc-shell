@@ -1,6 +1,6 @@
 # Library Carpentry
 
-The Library Carpentry module '[Shell Lessons for Libraries](http://data-lessons.github.io/library-shell/)' is maintained by [Belinda Weaver](https://github.com/weaverbel) and [Tim Dennis](https://github.com/jt14den).
+The Library Carpentry module '[Shell Lessons for Librarians](http://data-lessons.github.io/library-shell/)' is maintained by [Belinda Weaver](https://github.com/weaverbel) and [Tim Dennis](https://github.com/jt14den).
 
 ## Background
 
@@ -13,7 +13,7 @@ Library Carpentry is in the commons and for the commons. It is not tied to any i
 There are many ways of contributing to Library Carpentry:
 
 - Join our [Gitter discussion forum](https://gitter.im/weaverbel/LibraryCarpentry).
-- Follow updates on [Twitter](https://twitter.com/search?f=tweets&vertical=default&q=%23librarycarpentry&src=typd).
+- Follow updates on [Twitter](https://twitter.com/LibCarpentry).
 - Make a suggestion or correct an error by [raising an Issue](https://github.com/data-lessons/library-shell/issues).
 
 ## Code of Conduct
