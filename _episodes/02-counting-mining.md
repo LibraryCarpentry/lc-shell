@@ -118,7 +118,7 @@ The first three columns contains the number of lines, words and bytes
 
 If we only have a handful of files to compare, it might be faster or more convenient
 to just check with Microsoft Excel, OpenRefine or your favourite text editor, but
-when we have tens, hundres or thousands of documents, the Unix shell has a clear
+when we have tens, hundreds or thousands of documents, the Unix shell has a clear
 speed advantage. The real power of the shell comes from being able to combine commands
 and automate tasks, though. We will touch upon this slightly.
 
