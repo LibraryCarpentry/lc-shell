@@ -5,12 +5,20 @@ permalink: /guide/
 ---
 
 ____
-# Making a handout
+# Tips and Tricks
+
+____
+## Making a handout
 
 Librarians like handouts. To make a handout for this lesson, adapt/print from http://data-lessons.github.io/library-shell/reference/.
+
+______
+## 02-counting-mining.md
+
+This lesson notes that the grep flags `-o` and `-E` flag are not supported by Git Bash for Windows (see the callout 'Invalid option – o?'). Be prepared to manage these difference in shell behaviour between operating systems.
   
 _____
-# Notes on shell
+# General notes on shell
 
 *   Why do we learn to use the shell?
     *   Allows users to automate repetitive tasks
@@ -26,13 +34,7 @@ _____
     *   Workflows can be automated through the use of shell scripts
     *   Built-in commands allow for easy data manipulation (e.g. sort, grep, etc.)
     *   Every step can be captured in the shell script and allow reproducibility and easy troubleshooting
-    
-______
-## Specific issues to note
 
-The grep flags `-o` and `-E` flag is not supported by Git Bash for Windows. Note the sections of [Episode 2](http://data-lessons.github.io/library-shell/02-counting-mining/) that describe this (for example the callout 'Invalid option – o?'). Be prepared to manage this difference between OS behaviour.
-
-______
 ## Overall
 
 Many people have questioned whether we should still teach the shell.
