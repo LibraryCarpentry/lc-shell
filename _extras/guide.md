@@ -10,7 +10,7 @@ ____
 ____
 ## Making a handout
 
-Librarians like handouts. To make a handout for this lesson, adapt/print from http://data-lessons.github.io/library-shell/reference/.
+Librarians like handouts. To make a handout for this lesson, adapt/print from [http://data-lessons.github.io/library-shell/reference/](http://data-lessons.github.io/library-shell/reference/).
 
 ______
 ## 02-counting-mining.md
