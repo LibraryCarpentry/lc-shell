@@ -15,13 +15,10 @@ objectives:
 - "Construct command pipelines with two or more stages."
 - "Explain Unix’s ‘small pieces, loosely joined’ philosophy."
 keypoints:
-- "`wc` is a command that counts"
-- "Use the `wc` command with the flags `-w` and `-l` to count the words and lines in a file or a series of files"
-- "Use the redirector and structure `> subdirectory/filename` to save results into a subdirectory"
-- "Use the `grep` command to search for instances of a string inside files"
-- "Use `grep` with the `-c` flag to count instances of a string, the `-i` flag to return a case insensitive search for a string, the `-v` flag to exclude a string from the results, and `-w` to return a whole word only search"
-- "Use `--file=list.txt` to use the file `list.txt` as the source of strings used in a query"
-- "Combine these commands and flags to build complex queries in a way that suggests the potential for using the Unix shell to count and mine your research data and research projects"
+- "The shell can be used to count elements of documents"
+- "The shell can be used to search for patterns within files"
+- "Command can be used to count and mine any number of files"
+- "Commands and flags can be combined to build complex queries specific to your work"
 
 ---
 ##  Counting and mining data
