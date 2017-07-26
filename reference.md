@@ -9,18 +9,19 @@ permalink: /reference/
 _____
 ### Shell: Basics
 
-**`pwd`** print working directory
+**`pwd`** - print working directory
 
-**`ls`** list directory
+**`ls`** - list contents of a directory
 
 - `ls -l` - list file information
 - `ls -lh` - list human readable file information
 - `ls -F` - list files and directories (directories will have a trailing `/`)
 - `ls -a` - list all files, including hidden files
+- `ls *.txt` - list all files that end with `.txt`
 
 **`cd`** change directory
 
-  `cd pathname` - takes you to the specified directory
+  `cd pathname` - takes you to the directory specified by `pathname`
   
   `cd ~` -  takes you to your home directory
 
