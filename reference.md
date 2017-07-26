@@ -13,17 +13,23 @@ _____
 
 **`ls`** list directory
 
-- `-l`: list file information
-- `-lh`: list human readable file information
+- `ls -l` - list file information
+- `ls -lh` - list human readable file information
+- `ls -F` - list files and directories (directories will have a trailing `/`)
+- `ls -a` - list all files, including hidden files
 
 **`cd`** change directory
+
+  `cd pathname` - takes you to the specified directory
+  
+  `cd ~` -  takes you to your home directory
 
 ______
 ### Shell: Interacting with Files
 
-**`mkdir`** make directory
+**`mkdir`** make a directory
 
-**`cat`** send file or files to output (in most cases, print to shell)
+**`cat`** print to shell or send file or files to output 
 
 **`head`** output first 10 lines of a file or files
 
@@ -31,11 +37,18 @@ ______
 
 **`mv`** rename or move a file or files. Syntax for renaming a file: `mv FILENAME NEWFILENAME`
 
-**`cp`** copy a file or files. Syntax: `cp FILENAME NEWFILENAME`
+**`cp`** make a backup copy of a file or files. Syntax: `cp FILENAME NEWFILENAME`
 
 **`>`** redirect output. Syntax with `cat`: `cat FILENAME1 FILENAME2 > NEWFILENAME`
 
+**`>>`** redirect output by appending to the filename specified. Syntax with `cat`: `cat FILENAME1 FILENAME2 >> NEWFILENAME`
+
 **`rm`** remove a file or files. NB: *USE WITH EXTREME CAUTION!!!*
+
+**`rmdir -r`** will delete a directory, even if it is not empty.
+
+**`rmdir -r-i`** will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
+
 
 ______
 ### Shell: Wildcards
@@ -48,10 +61,10 @@ ______
 
 *Examples*
 
-- `foobar?`: matches seven character strings starting with `foobar` and ending with one character or number
-- `foobar*`: matches strings starting with `foobar` ending with zero or more further characters or numbers
-- `foobar*txt`: matches strings starting with `foobar` and ending with `txt`
-- `[1-9]foobar?`: matches eight character strings starting that start with a number, have `foobar` after the number, and end with any character or number.
+- `foobar?`: matches 7-character strings starting with `foobar` and ending with one character or number
+- `foobar*`: matches strings that start with `foobar` and end with zero or more other characters or numbers
+- `foobar*txt`: matches strings that start with `foobar` and end with `txt`
+- `[1-9]foobar?`: matches 8-character strings that start that start with a number, have `foobar` after the number, and end with any character or number.
 
 _____
 ### Shell: Counting and Mining
