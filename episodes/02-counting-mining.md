@@ -10,10 +10,10 @@ objectives:
 - "Demonstrate counting lines, words, and characters with the shell command wc and appropriate flags"
 - "Use strings to mine files and extract matched lines with the shell"
 - "Create complex single line commands by combining shell commands and regular expressions to mine files"
-- "Redirect a command’s output to a file."
+- "Redirect a command's output to a file."
 - "Process a file instead of keyboard input using redirection."
 - "Construct command pipelines with two or more stages."
-- "Explain Unix’s ‘small pieces, loosely joined’ philosophy."
+- "Explain Unix's 'small pieces, loosely joined' philosophy."
 keypoints:
 - "The shell can be used to count elements of documents"
 - "The shell can be used to search for patterns within files"
