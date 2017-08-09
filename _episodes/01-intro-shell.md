@@ -13,18 +13,8 @@ objectives:
 - "Use shell commands to find and manipulate data"
 keypoints:
 - "The shell is powerful"
+- "Knowing where you are in your directory structure is key to working with the shell"
 - "The shell can be used to copy, move, and combine multiple files"
-- "Use the command pwd to find out where you are in on your computer"
-- "Use the command ls to list directory contents"
-- "Use flags -l and -lh to guide the output of the ls command"
-- "Use the command cd to move around your computer"
-- "Use the man command to check the manual page"
-- "Use the command `mv` to rename and move files."
-- "Use the command `cp` to create a file from an existing file."
-- "Use the command `cat` to combine more than one file of the same file type."
-- "Use the wildcards `*` and `?` as place holders that delimit which files are to be manipulated by a given an action."
-- "Use the command `echo` to output text to the screen."
-- "Use the `rm` command to delete unwanted files, with caution."
 ---
 ## Introduction
 
