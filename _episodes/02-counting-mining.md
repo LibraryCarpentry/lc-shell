@@ -729,3 +729,42 @@ Pair up with your neighbor and work on these exercies:
 > > {: .bash}
 > {: .solution}
 {: .challenge}
+
+### Using a Loop to Count Words
+
+We will now use a loop to automate the counting of certain words within a document.
+
+Go to http://www.gutenberg.org/cache/epub/514/pg514.txt and save the file to your Desktop.
+
+We will now rename the file.
+
+~~~
+$ mv pg514.txt littlewomen.txt
+~~~
+
+This will rename the file to something easier to type.
+
+Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each girl's name,
+and count the number of times it appears. The results will print to the screen.
+
+~~~
+$ for name in "Jo" "Meg" "Beth" "Amy"
+> do
+>    echo $name
+>    grep $name littlewomen.txt | wc -w
+> done
+~~~
+
+{: .bash}
+
+~~~
+Jo
+18877
+Meg
+8314
+Beth
+5684
+Amy
+7933
+~~~
+{: .output}
