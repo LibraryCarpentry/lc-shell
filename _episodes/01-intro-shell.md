@@ -689,7 +689,7 @@ d.txt
 When the shell sees the keyword `for`,
 it knows to repeat a command (or group of commands) once for each thing `in` a list.
 For each iteration,
-the name of the each thing is sequentially assigned to
+the name of each thing is sequentially assigned to
 the **variable** and the commands inside the loop are executed before moving on to 
 the next thing in the list.
 Inside the loop,
