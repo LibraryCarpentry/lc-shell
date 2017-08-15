@@ -647,3 +647,96 @@ can delete folders with all their content.
 **Unlike deleting from within our graphical user interface, there is *no* warning,
 *no* recycling bin from which you can get the files back and no other undo options!**
 For that reason, please be very careful with `rm` and extremely careful with `rm -r`.
+
+### Writing a Loop
+
+**Loops** are key to productivity improvements through automation as they allow us to execute
+commands repetitively. Similar to wildcards and tab completion, using loops also reduces the
+amount of typing (and typing mistakes).
+Suppose we have several hundred document files named `project_1825.doc`, `project_1863.doc`, `XML_project.doc`and so on.
+We would like to change these files, but also save a version of the original files, naming the copies
+`backup_project_1825.doc` and so on.
+
+We can use a **loop** to do that.
+Here's a simple example that creates a backup copy of four text files in turn.
+
+Let's first create those files:
+
+~~~
+$ touch a.txt b.txt c.txt d.txt
+~~~
+This will create four empty files with those names. It is easy to use the shell to create a batch of files in one go. 
+
+Now we will use a loop to create a backup version of those files. Accordingly, we enter:
+
+~~~
+$ for filename in *.txt
+> do
+>    echo $filename
+>    cp $filename backup_$filename
+> done
+~~~
+{: .bash}
+
+~~~
+a.txt
+b.txt
+c.txt
+d.txt
+~~~
+{: .output}
+
+When the shell sees the keyword `for`,
+it knows to repeat a command (or group of commands) once for each thing `in` a list.
+For each iteration,
+the name of the each thing is sequentially assigned to
+the **variable** and the commands inside the loop are executed before moving on to 
+the next thing in the list.
+Inside the loop,
+we call for the variable's value by putting `$` in front of it.
+The `$` tells the shell interpreter to treat
+the **variable** as a variable name and substitute its value in its place,
+rather than treat it as text or an external command. 
+
+In this example, the list is four filenames: 'a.txt', 'b.txt', 'c.txt', and 'd.txt'
+Each time the loop iterates, it will assign a file name to the variable `filename`
+and run the `cp` command.
+The first time through the loop,
+`$filename` is `a.txt`. 
+The interpreter runs the command `cp` on `a.txt`, 
+and then prints the filename to the screen (because we asked it to echo each filename as it works its way through the loop).
+For the second iteration, `$filename` becomes 
+`b.txt`. This time, the shell runs `cp` on `b.txt`
+and then prints the filename to the screen. The loop performs the same operations for `c.txt` and then for `d.txt` and then, since 
+the list only included these four items, the shell exits the `for` loop at that point.
+
+> ## Follow the Prompt
+>
+> The shell prompt changes from `$` to `>` and back again as we were
+> typing in our loop. The second prompt, `>`, is different to remind
+> us that we haven't finished typing a complete command yet. A semicolon, `;`,
+> can be used to separate two commands written on a single line.
+{: .callout}
+
+> ## Same Symbols, Different Meanings
+>
+> Here we see `>` being used a shell prompt, whereas `>` is also
+> used to redirect output.
+> Similarly, `$` is used as a shell prompt, but, as we saw earlier,
+> it is also used to ask the shell to get the value of a variable.
+>
+> If the *shell* prints `>` or `$` then it expects you to type something,
+> and the symbol is a prompt.
+>
+> If *you* type `>` or `$` yourself, it is an instruction from you that
+> the shell to redirect output or get the value of a variable.
+{: .callout}
+
+We have called the variable in this loop `filename`
+in order to make its purpose clearer to human readers.
+The shell itself doesn't care what the variable is called.
+
+This is our first look at loops. We will run another loop in the Counting and Mining with the Shell segment. 
+
+![For Loop in Action](../fig/shell_script_for_loop_flow_chart.svg)
+
