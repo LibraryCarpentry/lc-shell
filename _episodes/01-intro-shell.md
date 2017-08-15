@@ -18,42 +18,43 @@ keypoints:
 ---
 ## Introduction
 
-In this session we will introduce programming by looking at how data can be manipulated, counted, and mined using the Unix shell,
+In this session we will introduce task automation by looking at how data can be manipulated, counted, and mined using the Unix shell,
 a command line interface to your computer and the files to which it has access.
 
-A Unix shell is a command-line interpreter that provides a user interface for the Linux
-operating system and for Unix-like systems (such as Mac OS).
+The shell is a program that allows you to interact with your computer using commands. It is the interface used on Linux and UNIX-based systems, such as Mac OS, and can be used on Windows, if installed.
 
 For Windows users, popular shells such as Cygwin or Git Bash provide a Unix-like
-interface. This session will cover a small number of basic commands using Git Bash for Windows users,
-Terminal for Mac OS. These commands constitute building blocks upon which more
+interface. In Windows 10, the Power Shell provides that functionality. 
+
+This session will cover a small number of basic commands using Git Bash for Windows users,
+Terminal for Mac OS, and the shell for Linux users. These commands constitute building blocks upon which more
 complex commands can be constructed to fit your data or project.
 <!-- Mention native Bash in Windows 10 -->
 Even if you do not do your own programming or your work currently does not involve the command line, knowing some basics about the shell can be useful.
 
-The shell is one of the most productive programming environments ever created. Once mastered you can use it to experiment with different commands interactively, then use what they have learned to automate their work. Graphical user interfaces may be better at the first, but the shell is still unbeaten at the second.
+The shell is one of the most productive programming environments ever created. Once mastered, you can use it to experiment with different commands interactively, then use what you have learned to automate your work. Graphical user interfaces may be better at the first, but the shell is still unbeaten at the second.
 
 *Note to Lesson Instructor: consider providing an example here of how you've used the Unix shell to solve a problem in the last week or month*
 
 [](# From SW Carpentry)
-What you can quickly learn is how to query lots of data for the information you want super fast. Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows us to combine existing tools into powerful pipelines and handle large volumes of data automatically. This automation not only makes us more productive, but also improves the reproducibility of our workflows by allowing us to repeat them with few simple commands.
+What you can quickly learn is how to query lots of data for the information you want very quickly. Using Bash or any other shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows you to combine existing tools into powerful pipelines and to handle large volumes of data automatically. This automation not only makes you more productive, but also improves the reproducibility of your workflows by allowing you to save and then repeat them with a few simple commands.
 [](# Custom addition)
-Understanding the basics of the shell provides a useful foundation for learning to program, since most programming languages necessitate working with the shell.
+Understanding the basics of the shell provides a useful foundation for learning to program, since some of the tasks you learn here such as loops, and the language - values, variables - will translate to programming.
 
 ## Navigating the shell
 
 We will begin with the basics of navigating the Unix shell.
 
 Let's start by opening the shell. This likely results in seeing a black window with a cursor flashing next to a dollar sign.
-This is our command line, and the `$` is the command **prompt** to show the system is ready for our input.
-The prompt can look somewhat different from system to system, but it usually ends with a `$`.
+This is our command line, and the `$` is the command **prompt** to show that the system is ready for our input.
+The appearance of the prompt will vary from system to system, depending on how the set up has been configured,
+but it usually ends with a `$`.
 
 When working in the shell, you are always *somewhere* in the computer's
 file system, in some folder (directory). We will therefore start by finding out
 where we are by using the `pwd` command, which you can use whenever you are unsure
 about where you are. It stands for "print working directory" and the result of the
-command is printed to your standard output, which is the terminal, not your office
-printer.
+command is printed to your standard output, which is the screen.
 
 Let's type `pwd` and hit enter to execute the command:
 (The `$` sign is used to indicate a command to be typed on the command prompt,
@@ -68,7 +69,7 @@ $ pwd
 ~~~
 {: .output}
 
-The output will be a path to your home directory. Let's check if we recognize it
+The output will be a path to your home directory. Let's check if we recognise it
 by listing the contents of the directory. To do that, we use the `ls` command:
 
 ~~~
@@ -82,9 +83,9 @@ Desktop      Downloads    Movies       Pictures
 {: .output}
 
 We may want more information than just a list of files and directories.
-We can get this by specifying various **flags** (also known as options or switches) to go with our basic commands.
-These are additions to a command that provide the computer with a bit more guidance
-of what sort of output or manipulation you want.
+We can get this by specifying various **flags** (also known as `options`, `parameters`, or, most frequently, 
+`arguments`) to go with our basic commands.
+Arguments modify the workings of the command by telling the computer what sort of output or manipulation we want.
 
 If we type `ls -l` and hit enter, the computer returns a list of files that contains
 information similar to what we would find in our Finder (Mac) or Explorer (Windows):
@@ -156,7 +157,7 @@ $ pwd
 {: .output}
 
 If something had gone wrong, however, the command would have told you. Let's
-see by trying to move into a (hopefully) non-existing directory:
+test that by trying to move into a non-existentdirectory:
 
 ~~~
 $ cd "Evil plan to destroy the world"
@@ -176,7 +177,7 @@ We've now seen how we can go 'down' through our directory structure
 (as in into more nested directories). If we want to go back, we can type `cd ..`.
 This moves us 'up' one directory, putting us back where we started.
 **If we ever get completely lost, the command `cd` without any arguments will bring
-us right back to the home directory, right where we started.**
+us right back to the home directory, the place where we started.**
 
 > ## Previous Directory
 > To switch back and forth between two directories use `cd -`.
@@ -202,9 +203,9 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > ## Getting help
 >
 > Use the `man` command to invoke the manual page (documentation) for a shell command.
-> For example, `man ls` displays all the flags/options available to you - which saves
+> For example, `man ls` displays all the arguments available to you - which saves
 > you remembering them all! Try this for each command you've learned so far.
-> Use the `spacebar` to navigate the manual pages, and `q` to quit.
+> Use the `spacebar` to navigate the manual pages. Use `q` at any time to quit.
 >
 > ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users.
 > If you use windows, you can search for the Shell command on [http://man.he.net/](http://man.he.net/),
@@ -264,7 +265,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 >
 > Find out, using the manual page, how to list the files in a 
 > directory ordered by their filesize. Try it out in different directories. Can you combine it 
-> with the `-l` *flag* you learned before? 
+> with the `-l` *argument* you learned before? 
 > 
 > Afterwards,
 > find out how you can order a list of files based on their last modification date.
@@ -272,7 +273,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 >
 > > ## Answer
 > >
-> > To order files in a directory by their filesize, in combination with the `-l` flag:
+> > To order files in a directory by their filesize, in combination with the `-l` argument:
 > >
 > > ~~~
 > > ls -lS
@@ -281,7 +282,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > >
 > > Note that the `S` is **case-sensitive!**
 > >
-> > To order files in a directory by their last modification date, in combination with the `-l` flag:
+> > To order files in a directory by their last modification date, in combination with the `-l` argument:
 > >
 > > ~~~
 > > ls -lt
@@ -299,11 +300,10 @@ no limit to what we *can* do in the shell, but even experienced shell users stil
 graphical user interfaces (GUIs) for many tasks, such as editing formatted text
 documents (Word or OpenOffice), browsing the web, editing images, etc. But if we
 wanted to make the same crop on hundreds of images, say, the pages of a scanned book,
-then we could automate the cropping using shell commands.
+then we could automate that cropping work by using shell commands.
 
 We will try a few basic ways to interact with files. Let's first move into the
-`shell-lesson` directory on your desktop (if you don't have this directory,
-please use a red sticky note to attract help).
+`shell-lesson` directory on your desktop.
 
 ~~~
 $ cd
@@ -521,7 +521,7 @@ $ mv 829-0.txt gulliver.txt
 
 This is equivalent to the 'rename file' function.
 
-Afterwards, when we perform a `ls` command, we will see that it is now `gulliver.txt`:
+Afterwards, when we perform a `ls` command, we will see that it is now called `gulliver.txt`:
 
 ~~~
 $ ls
@@ -537,8 +537,7 @@ $ ls
 > ## Copying a file
 >
 > Instead of *moving* a file, you might want to *copy* a file (make a duplicate),
-> for instance to make a backup before modifying a file using some script you're
-> not quite sure how works.
+> for instance to make a backup before modifying a file.
 > Just like the `mv` command, the `cp` command takes two arguments: the old name
 > and the new name. How would you make a copy of the file `gulliver.txt` called
 > `gulliver-backup.txt`? Try it!
@@ -593,7 +592,7 @@ $ ls
 > remember how you would express that as regular expressions?
 >
 > (Regular expressions are not a feature of the shell, but some commands support
-> them, we'll get back to that.)
+> them. We'll get back to that.)
 >
 > > ## Answer
 > > * The `?` wildcard matches the regular expression `.` (a dot)
@@ -607,7 +606,10 @@ $ ls
 > a reverse lookup. Hit `Ctrl + r`, then start typing any part of the command you're
 > looking for. The past command will autocomplete. Hit `enter` to run the command again,
 > or press the arrow keys to start editing the command. If you can't find what you're
-> looking for in the reverse lookup, use `Ctrl + c` to return to the prompt.
+> looking for in the reverse lookup, use `Ctrl + c` to return to the prompt. If you want to save your history, maybe to
+> extract some commands from which to build a script later on, you can do that with `history > history.txt`. 
+> This will output all history to 
+> a text file called `history.txt` that you can later edit. To recall a command from history, enter `history`. Note the command number, e.g. 2045. Recall the command by entering `!2045`. This will execute the command.
 {: .challenge}
 
 > ## Using the `echo` command
