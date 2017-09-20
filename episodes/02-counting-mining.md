@@ -281,7 +281,7 @@ programming languages.
 >{: .bash}
 >
 >
->In all `csv` files in a directory count the words for each file, then put them into order. Finally, make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
+>Now let's change the scenario. Imagine that we have a directory containing 100 `csv` files. We want to know the 10 files that contain the most words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
 >
 >~~~
 >__ -w *.csv | sort | ____
