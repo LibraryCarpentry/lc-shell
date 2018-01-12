@@ -736,7 +736,8 @@ We have called the variable in this loop `filename`
 in order to make its purpose clearer to human readers.
 The shell itself doesn't care what the variable is called.
 
-This is our first look at loops. We will run another loop in the Counting and Mining with the Shell segment. 
+This is our first look at loops. We will run another loop in the
+[Counting and Mining with the Shell]({{page.root}}/02-counting-mining) episode. 
 
 ![For Loop in Action](../fig/shell_script_for_loop_flow_chart.svg)
 

@@ -734,7 +734,7 @@ Pair up with your neighbor and work on these exercies:
 
 We will now use a loop to automate the counting of certain words within a document.
 
-Go to http://www.gutenberg.org/cache/epub/514/pg514.txt and save the file to your Desktop.
+Go to <http://www.gutenberg.org/cache/epub/514/pg514.txt> and save the file to your Desktop.
 
 We will now rename the file.
 
