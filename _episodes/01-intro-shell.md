@@ -663,14 +663,14 @@ Here's a simple example that creates a backup copy of four text files in turn.
 Let's first create those files:
 
 ~~~
-$ touch a.txt b.txt c.txt d.txt
+$ touch a.doc b.doc c.doc d.doc
 ~~~
 This will create four empty files with those names. It is easy to use the shell to create a batch of files in one go. 
 
 Now we will use a loop to create a backup version of those files. Accordingly, we enter:
 
 ~~~
-$ for filename in *.txt
+$ for filename in *.doc
 > do
 >    echo $filename
 >    cp $filename backup_$filename
@@ -679,10 +679,10 @@ $ for filename in *.txt
 {: .bash}
 
 ~~~
-a.txt
-b.txt
-c.txt
-d.txt
+a.doc
+b.doc
+c.doc
+d.doc
 ~~~
 {: .output}
 
@@ -698,16 +698,16 @@ The `$` tells the shell interpreter to treat
 the **variable** as a variable name and substitute its value in its place,
 rather than treat it as text or an external command. 
 
-In this example, the list is four filenames: 'a.txt', 'b.txt', 'c.txt', and 'd.txt'
+In this example, the list is four filenames: 'a.doc', 'b.doc', 'c.doc', and 'd.doc'
 Each time the loop iterates, it will assign a file name to the variable `filename`
 and run the `cp` command.
 The first time through the loop,
-`$filename` is `a.txt`. 
-The interpreter runs the command `cp` on `a.txt`, 
+`$filename` is `a.doc`. 
+The interpreter runs the command `cp` on `a.doc`, 
 and then prints the filename to the screen (because we asked it to echo each filename as it works its way through the loop).
 For the second iteration, `$filename` becomes 
-`b.txt`. This time, the shell runs `cp` on `b.txt`
-and then prints the filename to the screen. The loop performs the same operations for `c.txt` and then for `d.txt` and then, since 
+`b.doc`. This time, the shell runs `cp` on `b.doc`
+and then prints the filename to the screen. The loop performs the same operations for `c.doc` and then for `d.doc` and then, since 
 the list only included these four items, the shell exits the `for` loop at that point.
 
 > ## Follow the Prompt
