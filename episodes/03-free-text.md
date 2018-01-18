@@ -36,14 +36,8 @@ Before going any further, speak to the person next to and choose which type of t
 
 ### Grabbing a text, cleaning it up
 
-Head to:
-
-~~~
-$ cd data
-~~~
-{: .bash}
-
-We're going to work with `gulliver.txt` file we made in the previous lesson.
+We're going to work with the `gulliver.txt` file we made in the previous lesson.
+You should (still) be working in the `shell-lesson` directory.
 
 Let's look at the file. 
 
@@ -169,13 +163,6 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 
 ### Grabbing a text, cleaning it up
 
-Head to:
-
-~~~
-$ cd data
-~~~
-{: .bash}
-
 We're going to work with `000003160_01_text.json`.
 
 Let's look at the file. 
@@ -262,13 +249,6 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 ## Option 3: A webpage
 
 ### Grabbing a text, cleaning it up
-
-Head to:
-
-~~~
-$ cd data
-~~~
-{: .bash}
 
 We're going to work with `diary.html`.
 
