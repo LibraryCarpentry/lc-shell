@@ -223,7 +223,7 @@ Open the `000003160_01_text-clean.txt` in a text editor. Note how the text has b
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < 000003160_01_text-clean.txt | sort | uniq -c | sort -r > 000003160_01_text-final.txt
+$ tr ' ' '\n' < 000003160_01_text-clean.txt | sort | uniq -c | sort -nr > 000003160_01_text-final.txt
 ~~~
 {: .bash}
 
