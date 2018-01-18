@@ -721,7 +721,7 @@ the list only included these four items, the shell exits the `for` loop at that 
 > ## Same Symbols, Different Meanings
 >
 > Here we see `>` being used a shell prompt, but `>` can also be
-> used to redirect output from a command (i.e. send it somewhere else instead of displaying the output in the terminal) ---
+> used to redirect output from a command (i.e. send it somewhere else, such as to a file, instead of displaying the output in the terminal) ---
 > we'll use redirection in [episode 2]({{page.root}}/02-counting-mining).
 > Similarly, `$` is used as a shell prompt, but, as we saw earlier,
 > it is also used to ask the shell to get the value of a variable.
