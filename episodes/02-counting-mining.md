@@ -17,7 +17,7 @@ objectives:
 keypoints:
 - "The shell can be used to count elements of documents"
 - "The shell can be used to search for patterns within files"
-- "Command can be used to count and mine any number of files"
+- "Commands can be used to count and mine any number of files"
 - "Commands and flags can be combined to build complex queries specific to your work"
 
 ---
