@@ -137,7 +137,7 @@ $ wc -l *.tsv
 {: .output}
 
 The `wc` command itself doesn't have a flag to sort the output, but as we'll
-see, we can combine three differen shell commands to get what we want.
+see, we can combine three different shell commands to get what we want.
 
 First, we have the `wc -l *.tsv` command. We will save the output from this
 command in a new file. To do that, we *redirect* the output from the command
