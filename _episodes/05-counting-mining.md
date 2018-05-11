@@ -751,7 +751,7 @@ and count the number of times it appears. The results will print to the screen.
 $ for name in "Jo" "Meg" "Beth" "Amy"
 > do
 >    echo $name
->    grep $name littlewomen.txt | wc -w
+>    grep $name littlewomen.txt | wc -l
 > done
 ~~~
 
@@ -768,3 +768,9 @@ Amy
 7933
 ~~~
 {: .output}
+
+What is happening the the loop?  
++ `echo $name` is printing the current value of `$name`
++ `grep $name littlewomen.txt` finds each line that contains the value stored in `$name`
++ The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
++ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurances of each girl's name.
