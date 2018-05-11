@@ -499,7 +499,8 @@ $ grep -i revolution *.tsv
 {: .bash}
 
 This script looks in the defined files and prints any lines containing `revolution`
-(without regard to case) to the shell.
+(without regard to case) to the shell. We add today's date to the filename using 
+[ISO format](https://en.wikipedia.org/wiki/ISO_8601) of `YYYY-MM-DD`.
 
 ~~~
 $ grep -i revolution *.tsv > results/2016-07-19_JAi-revolution.tsv
@@ -515,7 +516,7 @@ Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
 ~~~
-$ grep -iw revolution *.tsv > results/DATE_JAiw-revolution.tsv
+$ grep -iw revolution *.tsv > results/2016-07-19_JAiw-revolution.tsv
 ~~~
 {: .bash}
 
