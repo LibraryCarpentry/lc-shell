@@ -11,7 +11,6 @@ objectives:
 - "Explain why and how to use the command line"
 keypoints:
 - "The shell is powerful"
-- "Knowing where you are in your directory structure is key to working with the shell"
 - "The shell can be used to copy, move, and combine multiple files"
 ---
 
