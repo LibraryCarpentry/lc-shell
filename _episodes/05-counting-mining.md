@@ -499,7 +499,7 @@ $ grep -i revolution *.tsv
 {: .bash}
 
 This script looks in the defined files and prints any lines containing `revolution`
-(without regard to case) to the shell. We add today's date to the filename using 
+(without regard to case) to the shell. We add today's date to the filename using
 [ISO format](https://en.wikipedia.org/wiki/ISO_8601) of `YYYY-MM-DD`.
 
 ~~~
@@ -775,3 +775,60 @@ What is happening the the loop?
 + `grep $name littlewomen.txt` finds each line that contains the value stored in `$name`
 + The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
 + `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurances of each girl's name.
+
+> ## Selecting columns from our article dataset
+> When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Journal`, `ISSN`, and `Title` columns from our article data. With `cut` we'd:
+>~~~
+> cut -f 2,4,5,8 2014-01_JA.tsv | head
+>~~~
+>{: .bash}
+>
+>~~~
+> Creator	Volume	Journal	Citation
+> Nelson, M. C.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 27-48. (1993)
+> Deegan, A. C.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 49-64. (1993)
+> Stone, T.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 65-82. (1993)
+> Adams, W. Y.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 7-18. (1994)
+> Beswick, S. F.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 19-48. (1994)
+> Cheeseboro, A. Q.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 49-74. (1994)
+> Duany, W.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 75-102. (1994)
+> Mohamed Ibrahim Khalil	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 103-118. (1994)
+>~~~
+>{: .output}
+>
+> Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
+> If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
+> ### Now your turn
+>Select the columns `Issue`, `Volume`, `Journal`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivjlp.tsv`.
+>> ## Solution
+>> First, let's see where our desired columns are:
+>>
+>>~~~
+>> head -n 1 2014-01_JA.tsv
+>>~~~
+>>{: .bash}
+>>
+>>~~~
+>>File	Creator	Issue	Volume	Journal	ISSN	ID	Citation	Title	Place Labe	Language	Publisher	Date
+>>~~~
+>>{: .output}
+>>
+>>Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12.
+>> We use thes positional column numbers to construct our `cut` command:
+>>```
+>> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivjlp.tsv
+>>```
+>> We can confirm this worked by running head on the file:
+>>```
+>>head 2014-01_JA_ivjlp.tsv
+>>```
+>>~~~
+>>Issue	Volume	Language	Publisher
+>>1	59	eng	ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY
+>>1	59	eng	ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY
+>>1	59	eng	ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY
+>>1	59	eng	ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY
+>>~~~
+>>{: .output}
+> {: .solution}
+{: .challenge}
