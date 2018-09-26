@@ -119,7 +119,7 @@ The shell itself doesn't care what the variable is called.
 > > ```
 > > for file in *.txt
 > > do
-> > 	echo $file:
+> > 	echo $file
 > > 	head -n 1 $file
 > > 	tail -n 1 $file
 > > done
