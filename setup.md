@@ -26,7 +26,7 @@ If you encounter issues, Software Carpentry maintains a [Configuration Problems 
 
 You need to download some files to follow this lesson:
 
-1. Download [shell-lesson.zip](https://github.com/LibraryCarpentry/lc-shell/blob/gh-pages/data/shell-lesson.zip) and move the file to your Desktop.
+1. Download [shell-lesson.zip](https://github.com/LibraryCarpentry/lc-shell/raw/gh-pages/data/shell-lesson.zip) and move the file to your Desktop.
 2. Unzip/extract the file (ask your instructor if you need help with this step). You should end up with a new folder called `shell-lesson` on your Desktop.
 3. Open a terminal and type:
 
