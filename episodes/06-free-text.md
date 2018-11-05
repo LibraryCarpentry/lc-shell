@@ -137,7 +137,7 @@ $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -r > gulliver-final.t
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](https://librarycarpentry.github.io/lc-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -226,7 +226,7 @@ $ tr ' ' '\n' < 000003160_01_text-clean.txt | sort | uniq -c | sort -nr > 000003
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](https://librarycarpentry.github.io/lc-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -314,7 +314,7 @@ $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
 ~~~
 {: .bash}
 
-Here we are using a regular expression (see the [Library Carpentry regular expression lesson](http://data-lessons.github.io/library-data-intro/04-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them. This is a complex regular expression, do don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
+Here we are using a regular expression (see the [Library Carpentry regular expression lesson](https://librarycarpentry.github.io/lc-data-intro/04-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them. This is a complex regular expression, do don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
 We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
@@ -344,7 +344,7 @@ $ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -r > diary-final.txt
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](http://data-lessons.github.io/library-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](https://librarycarpentry.github.io/lc-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
