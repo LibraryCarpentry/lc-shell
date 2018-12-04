@@ -81,13 +81,15 @@ $ ls -lh
 ~~~
 {: .bash}
 ~~~
-total 139M
--rw-r--r-- 1 riley staff 3.6M Jan 31 18:47 2014-01-31_JA-africa.tsv
--rw-r--r-- 1 riley staff 7.4M Jan 31 18:47 2014-01-31_JA-america.tsv
--rw-rw-r-- 1 riley staff 126M Jun 10  2015 2014-01_JA.tsv
--rw-r--r-- 1 riley staff 1.4M Jan 31 18:47 2014-02-02_JA-britain.tsv
--rw-r--r-- 1 riley staff 583K Feb  1 22:53 33504-0.txt
--rw-r--r-- 1 riley staff 598K Jan 31 18:47 829-0.txt
+total 33M
+-rw-rw-r-- 1 riley staff 383K Feb 22 2017  000003160_01_text.json
+-rw-r--r-- 1 riley staff 3.6M Jan 31 2017  2014-01-31_JA-africa.tsv
+-rw-r--r-- 1 riley staff 7.4M Jan 31 2017  2014-01-31_JA-america.tsv
+-rw-rw-r-- 1 riley staff 125M Jun 10 2015  2014-01_JA.tsv
+-rw-r--r-- 1 riley staff 1.4M Jan 31 2017  2014-02-02_JA-britain.tsv
+-rw-r--r-- 1 riley staff 582K Feb  2 2017  33504-0.txt
+-rw-r--r-- 1 riley staff 598K Jan 31 2017  829-0.txt
+-rw-rw-r-- 1 riley staff  18K Feb 22 2017  diary.html
 ~~~
 {: .output}
 
