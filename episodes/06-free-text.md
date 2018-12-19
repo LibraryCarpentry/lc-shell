@@ -12,9 +12,9 @@ keypoints:
 ### Working with free text
 
 So far we have looked at how to use the Unix shell to manipulate, count, and
-mine tabulated data. Some libary data, especially digitised documents, is much messier than
+mine tabulated data. Some library data, especially digitised documents, is much messier than
 tabular metadata. Nonetheless many of the same techniques can be applied
-to non-tabulated data, such as free text, we just need to think carefully about
+to non-tabulated data, such as free text. We just need to think carefully about
 what it is we are counting and how we can get the best out of the Unix shell.
 
 Thankfully there are plenty of folks out there doing this sort of work and we
