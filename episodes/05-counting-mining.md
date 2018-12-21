@@ -543,7 +543,7 @@ Finally, we'll use the **regular expression syntax** covered earlier to search f
 > There is unfortunately both ["basic" and "extended" regular expressions](https://www.gnu.org/software/grep/manual/html_node/Basic-vs-Extended.html).
 > This is a common cause of confusion, since most tutorials, including ours, teach
 > extended regular expression, but `grep` uses basic by default.
-> Unles you want to remember the details, make your life easy by always using
+> Unless you want to remember the details, make your life easy by always using
 > extended regular expressions (`-E` flag) when doing something more complex
 > than searching for a plain string.
 {: .callout}
@@ -785,6 +785,7 @@ What is happening the the loop?
 >
 >~~~
 > Creator	Volume	Journal	Citation
+> Doolittle, W. E.  59  KIVA -ARIZONA-  KIVA -ARIZONA- 59(1), 7-26. (1993)
 > Nelson, M. C.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 27-48. (1993)
 > Deegan, A. C.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 49-64. (1993)
 > Stone, T.	59	KIVA -ARIZONA-	KIVA -ARIZONA- 59(1), 65-82. (1993)
