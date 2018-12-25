@@ -132,3 +132,30 @@ This is our first look at loops. We will run another loop in the
 [Counting and Mining with the Shell]({{page.root}}/05-counting-mining) episode.
 
 ![For Loop in Action](../fig/shell_script_for_loop_flow_chart.svg)
+
+> ## Running the loop from a Bash script
+>
+> Alternatively, rather than running the loop above on the command line, you can 
+> save it in a script file and run it from the command line without having to rewrite
+> the loop again. This is what is called a Bash script which is a plain text file that 
+> contains a series of commands like the loop you created above. In the example script below, 
+> the first line of the file contains what is called a Shebang (#!) followed by the path to the interpreter 
+> (or program) that will run the rest of the lines in the file (/bin/bash). The second line demonstrates how 
+> comments are made in scripts. This provides you with more information about what the script does. 
+> The remaining lines contain the loop you created above. You can create this file in the same directory 
+> you've been using for the lesson and by using the text editor of your choice (e.g. nano) but when you save the 
+> file, make sure it has the extension **.sh** (e.g. myfirstbashscript.sh). When you've done this, you can run the
+> Bash script by typing the command bash and the file name via the command line (e.g. bash myfirstbashscript.sh). 
+> > ```
+> > #!/bin/bash
+> > # This script loops through txt files, returns the file name, first line, and last line of the file
+> > for file in *.txt
+> > do
+> > 	echo $file
+> > 	head -n 1 $file
+> > 	tail -n 1 $file
+> > done
+> > ```
+> > {: .bash}
+> For more on Bash scripts, see [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/).
+{: .callout}
