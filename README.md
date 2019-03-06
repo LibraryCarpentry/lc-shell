@@ -1,6 +1,6 @@
 # Library Carpentry
 
-The Library Carpentry module '[Shell Lessons for Librarians](https://librarycarpentry.github.io/lc-shell/)' is maintained by [Belinda Weaver](https://github.com/weaverbel), [Tim Dennis](https://github.com/jt14den), [Nilani Ganeshwaran](https://github.com/uom-nilani), and [Danielle Kane](https://github.com/dakane1).
+The Library Carpentry module '[Shell Lessons for Librarians](https://librarycarpentry.github.io/lc-shell/)' is maintained by [Belinda Weaver](https://github.com/weaverbel), [Tim Dennis](https://github.com/jt14den), [Nilani Ganeshwaran](https://github.com/uom-nilani), [John Wright](https://twitter.com/jwscutt) and _[Danielle Kane](https://github.com/dakane1)_.
 
 ## Background
 
