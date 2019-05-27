@@ -137,7 +137,7 @@ $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -r > gulliver-final.t
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](https://librarycarpentry.github.io/lc-shell/05-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -366,7 +366,7 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th edition (2009).
 Invaluable (and not expensive) as a reference guide - especially if you only use the command line sporadically!
 
-[The Command Line Crash Course](http://cli.learncodethehardway.org/book/)
+[The Command Line Crash Course](https://learncodethehardway.org/unix/)
 'learn code the hard way' -- good for reminders of the basics.
 
 [Automate the Boring Stuff](https://automatetheboringstuff.com/)
