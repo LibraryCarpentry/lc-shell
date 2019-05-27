@@ -1,6 +1,5 @@
 ---
 layout: lesson
-root: .
 ---
 This Library Carpentry lesson introduces librarians to the Unix Shell.
 At the conclusion of the lesson you will: understand the basics of the Unix shell;

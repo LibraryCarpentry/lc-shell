@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Setup
-root: .
 ---
 
 To participate in this Library Carpentry lesson, you will need a working UNIX-like shell environment.
