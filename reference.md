@@ -1,7 +1,6 @@
 ---
 layout: reference
 title: Reference
-root: .
 ---
 
 ## Shell Cheat Sheet
