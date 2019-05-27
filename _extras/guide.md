@@ -157,7 +157,7 @@ as long as learners using Windows do not run into roadblocks such as:
     help those who need it.
 
 -   Introducing and navigating the filesystem in the shell (covered in
-    [Navigating Files and Directories]({% link _episode/02-filedir.md %}) section) can be confusing. You may have both terminal and GUI file explorer open side by side so learners can see the content and file structure while they're using terminal to navigate the system.
+    [Navigating Files and Directories]({% link _episodes/02-navigating-the-filesystem.md %}) section) can be confusing. You may have both terminal and GUI file explorer open side by side so learners can see the content and file structure while they're using terminal to navigate the system.
 
 -   Tab completion sounds like a small thing: it isn't.
     Re-running old commands using `!123` or `!wc`
@@ -187,8 +187,8 @@ as long as learners using Windows do not run into roadblocks such as:
 -   If everything is going well, you can drive home the point that file
     extensions are essentially there to help computers (and human
     readers) understand file content and are not a requirement of files
-    (covered briefly in [Navigating Files and Directories]({% link _episodes/02-filedir.md %})).
-    This can be done in the [Pipes and Filters]({% link _episodes/04-pipefilter.md %}) section by showing that you
+    (covered briefly in [Navigating Files and Directories]({% link _episodes/02-navigating-the-filesystem.md %})).
+    This can be done in the [Pipes and Filters]({% link _episodes/04-loops.md %}) section by showing that you
     can redirect standard output to a file without the .txt extension
     (e.g., lengths), and that the resulting file is still a perfectly usable text file.
     Make the point that if double-clicked in the GUI, the computer will
