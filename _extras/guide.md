@@ -9,7 +9,7 @@ ____
 ____
 ## Making a handout
 
-Librarians like handouts. To make a handout for this lesson, adapt/print from [https://librarycarpentry.github.io/lc-shell/reference/](https://librarycarpentry.github.io/lc-shell/reference/).
+Librarians like handouts. To make a handout for this lesson, adapt/print from [the reference]({% link reference.md %}).
 
 ______
 ## 02-counting-mining.md
