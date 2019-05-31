@@ -760,13 +760,13 @@ $ for name in "Jo" "Meg" "Beth" "Amy"
 
 ~~~
 Jo
-18877
+1528
 Meg
-8314
+685
 Beth
-5684
+463
 Amy
-7933
+643
 ~~~
 {: .output}
 
