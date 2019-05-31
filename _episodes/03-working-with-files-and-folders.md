@@ -3,9 +3,8 @@ title: "Working with files and directories"
 teaching: 20
 exercises: 10
 questions:
-- "What is the shell?"
-- "What is the command line?"
-- "Why should I use it?"
+- "How can I create, copy, and delete files and directories?"
+- "How can I read files?"
 objectives:
 - "Create files and directories from the command line"
 - "Use tab completion to limit typing"
