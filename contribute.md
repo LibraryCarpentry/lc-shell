@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Contribute
-permalink: /contribute/
 ---
 There are three main ways to contribute to Library Carpentry:
 
