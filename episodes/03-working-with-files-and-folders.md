@@ -324,15 +324,18 @@ $ ls
 {: .challenge}
 
 > ## Using `history`
-> Use the `history` command to see a list of all the commands
-> you've entered during the current session. You can also use `Ctrl + r` to do
-> a reverse lookup. Hit `Ctrl + r`, then start typing any part of the command you're
-> looking for. The past command will autocomplete. Hit `enter` to run the command again,
-> or press the arrow keys to start editing the command. If you can't find what you're
-> looking for in the reverse lookup, use `Ctrl + c` to return to the prompt. If you want to save your history, maybe to
-> extract some commands from which to build a script later on, you can do that with `history > history.txt`.
-> This will output all history to
-> a text file called `history.txt` that you can later edit. To recall a command from history, enter `history`. Note the command number, e.g. 2045. Recall the command by entering `!2045`. This will execute the command.
+> Use the `history` command to see a list of all the commands you've entered during the 
+> current session. You can also use `Ctrl + r` to do a reverse lookup. Hit `Ctrl + r`, 
+> then start typing any part of the command you're looking for. The past command will 
+> autocomplete. Hit `enter` to run the command again, or press the arrow keys to start 
+> editing the command. If multiple past commands contain the text you input, you can 
+> `Ctrl + r` repeatedly to cycle through them. If you can't find what you're looking for 
+> in the reverse lookup, use `Ctrl + c` to return to the prompt. If you want to save 
+> your history, maybe to extract some commands from which to build a script later on, you 
+> can do that with `history > history.txt`. This will output all history to a text file 
+> called `history.txt` that you can later edit. To recall a command from history, enter 
+> `history`. Note the command number, e.g. 2045. Recall the command by entering 
+> `!2045`. This will execute the command.
 {: .challenge}
 
 > ## Using the `echo` command
