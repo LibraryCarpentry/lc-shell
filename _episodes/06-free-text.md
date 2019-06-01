@@ -226,7 +226,7 @@ $ tr ' ' '\n' < 000003160_01_text-clean.txt | sort | uniq -c | sort -nr > 000003
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](https://librarycarpentry.github.io/lc-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](https://librarycarpentry.org/lc-shell/02-counting-mining). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -344,7 +344,7 @@ $ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -r > diary-final.txt
 ~~~
 {: .bash}
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell](https://librarycarpentry.github.io/lc-shell/02-counting-mining/). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](https://librarycarpentry.org/lc-shell/02-counting-mining). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -367,14 +367,9 @@ Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th e
 Invaluable (and not expensive) as a reference guide - especially if you only use the command line sporadically!
 
 [The Command Line Crash Course](https://learncodethehardway.org/unix/)
-'learn code the hard way' -- good for reminders of the basics.
+'Learn UNIX the Hard Way' -- good for reminders of the basics.
 
 [Automate the Boring Stuff](https://automatetheboringstuff.com/)
-
-[Coursera Computer Science 101](https://www.coursera.org/course/cs101)
-If you feel you need some context to what we've done today, this is ideal
-covering how computers work, jargon, and key concepts in programming (such
-as loops and logic). Free, doesn't have to be taken as a class but in your own time.
 
 Another Coursera course, [Programming for Everybody (Python)](https://www.coursera.org/course/pythonlearn)
 is available and lasts 10 weeks, if you have 2-4 hours to spare per week.
