@@ -735,7 +735,7 @@ Pair up with your neighbor and work on these exercies:
 
 We will now use a loop to automate the counting of certain words within a document.
 
-Go to <http://www.gutenberg.org/cache/epub/514/pg514.txt> and save the file to your Desktop.
+Go to <http://www.gutenberg.org/cache/epub/514/pg514.txt> and save the file to your Desktop. Note, you may receive a welcome prompt from Project Gutenberg. If you do, acknowledge it, and then save the plain text UTF-8 file for _Little Women_.
 
 We will now rename the file.
 
