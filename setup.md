@@ -4,7 +4,7 @@ title: Setup
 ---
 
 To participate in this Library Carpentry lesson, you will need a working UNIX-like shell environment.
-Specifically we will be using Bash ([Bourne Again SHell](https://en.wikipedia.org/wiki/Bash_(Unix_shell))) which is standard on Linux and Mac OS. 
+Specifically we will be using Bash ([Bourne Again Shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell))) which is standard on Linux and Mac OS. 
 Even if you are a Windows user, learning Bash will open up a powerful set of tools on your personal machine, in addition to familiarizing you with the standard remote interface used on almost all servers and super computers. 
 
 ## Terminal Setup
