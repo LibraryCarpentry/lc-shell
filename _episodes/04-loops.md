@@ -86,7 +86,7 @@ the list only included these four items, the shell exits the `for` loop at that 
 >
 > Here we see `>` being used a shell prompt, but `>` can also be
 > used to redirect output from a command (i.e. send it somewhere else, such as to a file, instead of displaying the output in the terminal) ---
-> we'll use redirection in [episode 5]({% link _episodes/05-counting-mining.md %}).
+> we'll use redirection in [episode 5](/05-counting-mining).
 > Similarly, `$` is used as a shell prompt, but, as we saw earlier,
 > it is also used to ask the shell to get the value of a variable.
 >
@@ -129,7 +129,7 @@ The shell itself doesn't care what the variable is called.
 {: .challenge}
 
 This is our first look at loops. We will run another loop in the
-[Counting and Mining with the Shell]({% link _episodes/05-counting-mining.md %}) episode.
+[Counting and Mining with the Shell](/05-counting-mining) episode.
 
 ![For Loop in Action](../fig/shell_script_for_loop_flow_chart.svg)
 
