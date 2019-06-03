@@ -105,7 +105,7 @@ The terminal window erupts and the whole book cascades by (it is printed to
 your terminal). Great, but we can't really make any sense of that amount of text.
 
 > ## Canceling Commands
-> To cancel this print of `829-0.txt`, or indeed any ongoing processes in the Unix shell, hit `Ctrl+C`
+> To cancel this print of `829-0.txt`, or indeed any ongoing processes in the Unix shell, hit <kbd>Ctrl</kbd>+<kbd>C</kbd>
 {: .callout}
 
 Often we just want a quick glimpse of the first or the last part of a file to
@@ -325,12 +325,12 @@ $ ls
 
 > ## Using `history`
 > Use the `history` command to see a list of all the commands you've entered during the 
-> current session. You can also use `Ctrl + r` to do a reverse lookup. Hit `Ctrl + r`, 
+> current session. You can also use <kbd>Ctrl</kbd> + <kbd>r</kbd> to do a reverse lookup. Hit <kbd>Ctrl</kbd> + <kbd>r</kbd>, 
 > then start typing any part of the command you're looking for. The past command will 
 > autocomplete. Hit `enter` to run the command again, or press the arrow keys to start 
 > editing the command. If multiple past commands contain the text you input, you can 
-> `Ctrl + r` repeatedly to cycle through them. If you can't find what you're looking for 
-> in the reverse lookup, use `Ctrl + c` to return to the prompt. If you want to save 
+> <kbd>Ctrl</kbd> + <kbd>r</kbd> repeatedly to cycle through them. If you can't find what you're looking for 
+> in the reverse lookup, use <kbd>Ctrl</kbd> + <kbd>c</kbd> to return to the prompt. If you want to save 
 > your history, maybe to extract some commands from which to build a script later on, you 
 > can do that with `history > history.txt`. This will output all history to a text file 
 > called `history.txt` that you can later edit. To recall a command from history, enter 
