@@ -531,9 +531,9 @@ $ wc -l results/*.tsv
 ~~~
 {: .bash}
 ~~~
-   10695 2016-07-19_JAi-revolution.tsv
-    7859 2016-07-19_JAiw-revolution.tsv
-   18554 total
+   10585 2016-07-19_JAi-revolution.tsv
+    7779 2016-07-19_JAiw-revolution.tsv
+   18364 total
 ~~~
 {: .output}
 
