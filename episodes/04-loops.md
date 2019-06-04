@@ -84,7 +84,7 @@ the list only included these four items, the shell exits the `for` loop at that 
 
 > ## Same Symbols, Different Meanings
 >
-> Here we see `>` being used a shell prompt, but `>` can also be
+> Here we see `>` being used as a shell prompt, but `>` can also be
 > used to redirect output from a command (i.e. send it somewhere else, such as to a file, instead of displaying the output in the terminal) ---
 > we'll use redirection in [episode 5](/lc-shell/05-counting-mining).
 > Similarly, `$` is used as a shell prompt, but, as we saw earlier,
@@ -109,8 +109,8 @@ The shell itself doesn't care what the variable is called.
 > ___ file in *.txt
 > __
 > 	echo _file
-> 	head -n 1 ____
-> 	____
+> 	head -n 1 _____
+> 	____ __ _ _____
 > ____
 > ```
 > {: .bash}
