@@ -18,46 +18,53 @@ _____
 - `ls -a` - list all files, including hidden files
 - `ls *.txt` - list all files that end with `.txt`
 
-**`cd`** change directory
+**`cd`** - change directory
 
-  `cd pathname` - takes you to the directory specified by `pathname`
-  
-  `cd ~` -  takes you to your home directory
+- `cd pathname` - takes you to the directory specified by `pathname`
+- `cd ~` -  takes you to your home directory
+- `cd ..` - takes you up one directory
+
+**`man`** - display the user manual
+
+**`history`** - displays the history list with line numbers, use `n` to limit the list
 
 ______
 ### Shell: Interacting with Files
 
-**`mkdir`** make a directory
+**`mkdir`** - make a directory
 
-**`cat`** print to shell or send file or files to output 
+**`cat`** - print to shell or send file or files to output 
 
-**`head`** output first 10 lines of a file or files
+**`head`** - output first 10 lines of a file or files
 
-**`tail`** output last 10 lines of a file or files
+**`tail`** - output last 10 lines of a file or files
 
-**`mv`** rename or move a file or files. Syntax for renaming a file: `mv FILENAME NEWFILENAME`
+**`less`**
 
-**`cp`** make a backup copy of a file or files. Syntax: `cp FILENAME NEWFILENAME`
+**`mv`** - rename or move a file or files. Syntax for renaming a file: `mv FILENAME NEWFILENAME`
 
-**`>`** redirect output. Syntax with `cat`: `cat FILENAME1 FILENAME2 > NEWFILENAME`
+**`cp`** - make a backup copy of a file or files. Syntax: `cp FILENAME NEWFILENAME`
 
-**`>>`** redirect output by appending to the filename specified. Syntax with `cat`: `cat FILENAME1 FILENAME2 >> NEWFILENAME`
+**`>`** - redirect output. Syntax with `cat`: `cat FILENAME1 FILENAME2 > NEWFILENAME`
 
-**`rm`** remove a file or files. NB: *USE WITH EXTREME CAUTION!!!*
+**`>>`** - redirect output by appending to the filename specified. Syntax with `cat`: `cat FILENAME1 FILENAME2 >> NEWFILENAME`
 
-**`rmdir -r`** will delete a directory, even if it is not empty.
+**`rm`** - remove a file or files. NB: *USE WITH EXTREME CAUTION!!!*
 
-**`rmdir -r-i`** will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
+**`rmdir -r`** - will delete a directory, even if it is not empty.
 
+**`rmdir -r-i`** - will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
+
+**`touch`** - update timestamp information on files
 
 ______
 ### Shell: Wildcards
 
-**`?`** a placeholder for one character or number
+**`?`** - a placeholder for one character or number
 
-**`*`** a placeholder for zero or more characters or numbers
+**`*`** - a placeholder for zero or more characters or numbers
 
-**`[]`** defines a class of characters
+**`[]`** - defines a class of characters
 
 *Examples*
 
@@ -85,3 +92,18 @@ _____
 - `-v`: exclude match
 - `--file=FILENAME.txt`: use the file `FILENAME.txt` as the source of strings used in query
 - `|`: (vertical bar character) send output from one command into another comma
+
+_____
+### Shell: Working With Free Text
+
+**`sed`** - used for modifying files, use `-e` flag to run multiple commands
+
+**`tr`** - translate or delete characters in a file
+
+- `[:punct:]` - punctuation characters
+- `[:upper:]` - upper-case characters 
+- `[:lower:]` - lower-case alphabetic characters
+
+**`'''\n`** - translate every blank space into `\n` then render on a new line
+
+**`uniq`** -  reports or filters repeated lines in a file, use with `-c` to do a word count of the duplicates
