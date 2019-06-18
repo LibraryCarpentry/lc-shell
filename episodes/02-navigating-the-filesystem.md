@@ -174,7 +174,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > Use the `man` command to invoke the manual page (documentation) for a shell command.
 > For example, `man ls` displays all the arguments available to you - which saves
 > you remembering them all! Try this for each command you've learned so far.
-> Use the `spacebar` to navigate the manual pages. Use `q` at any time to quit.
+> Use the <kbd>spacebar</kbd> to navigate the manual pages. Use <kbd>q</kbd> at any time to quit.
 >
 > ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users.
 > If you use windows, you can search for the Shell command on [http://man.he.net/](http://man.he.net/),
