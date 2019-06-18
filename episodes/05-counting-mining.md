@@ -76,7 +76,7 @@ drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
 
 In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains
 journal article metadata, and the three `.tsv` files derived from the original
-dataset. Each of these three .tsv files includes all data where a keyword such
+dataset. Each of these three `.tsv` files includes all data where a keyword such
 as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 
 > ## CSV and TSV Files
@@ -426,7 +426,7 @@ $ grep 1999 *.tsv
 ~~~
 {: .bash}
 
-Remember that the shell will expand `*.tsv` to a list of all the .tsv files in the
+Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in the
 directory. `grep` will then search these for instances of the string "1999" and
 print the matching lines.
 
@@ -522,7 +522,7 @@ $ grep -iw revolution *.tsv > results/2016-07-19_JAiw-revolution.tsv
 
 This script looks in both of the defined files and
 exports any lines containing the whole word `revolution` (without regard to case)
-to the specified .tsv file.
+to the specified `.tsv` file.
 
 We can show the difference between the files we created.
 
@@ -580,7 +580,7 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case sensitive search
 > Search for all case sensitive instances of
-> a word you choose in all four derived tsv files in this directory.
+> a word you choose in all four derived `.tsv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
@@ -593,7 +593,7 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case sensitive search in select files
 > Search for all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' tsv files in this directory.
+> the 'America' and 'Africa' `.tsv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
@@ -606,7 +606,7 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Count words (case sensitive)
 > Count all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' tsv files in this directory.
+> the 'America' and 'Africa' `.tsv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
@@ -618,7 +618,7 @@ Pair up with your neighbor and work on these exercises:
 {: .challenge}
 
 > ## Count words (case insensitive)
-> Count all case insensitive instances of that word in the 'America' and 'Africa' tsv files
+> Count all case insensitive instances of that word in the 'America' and 'Africa' `.tsv` files
 > in this directory. Print your results to the shell.
 >
 > > ## Solution
@@ -631,7 +631,7 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case insensitive search in select files
 > Search for all case insensitive instances of that
-> word in the 'America' and 'Africa' tsv files in this directory. Print your results to  a file `results/new.tsv`.
+> word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to  a file `results/new.tsv`.
 >
 > > ## Solution
 > > ~~~
@@ -643,7 +643,7 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case insensitive search in select files (whole word)
 > Search for all case insensitive instances of that whole word
-> in the 'America' and 'Africa' tsv files in this directory. Print your results to a file `results/new2.tsv`.
+> in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to a file `results/new2.tsv`.
 >
 > > ## Solution
 > > ~~~
