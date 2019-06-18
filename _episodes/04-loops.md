@@ -148,7 +148,7 @@ This is our first look at loops. We will run another loop in the
 > Bash script by typing the command bash and the file name via the command line (e.g. bash myfirstbashscript.sh). 
 > > ```
 > > #!/bin/bash
-> > # This script loops through txt files, returns the file name, first line, and last line of the file
+> > # This script loops through .txt files, returns the file name, first line, and last line of the file
 > > for file in *.txt
 > > do
 > > 	echo $file
