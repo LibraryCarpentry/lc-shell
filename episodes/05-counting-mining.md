@@ -488,7 +488,7 @@ Note how the count has increased nearly 30 fold for those journal article
 titles that contain the keyword 'america'. As before, cycling back and
 adding `> results/`, followed by a filename (ideally in .txt format), will save the results to a data file.
 
-So far we have counted strings in file and printed to the shell or to
+So far we have counted strings in files and printed to the shell or to
 file those counts. But the real power of `grep` comes in that you can
 also use it to create subsets of tabulated data (or indeed any data)
 from one or multiple files.  
@@ -507,7 +507,7 @@ $ grep -i revolution *.tsv > results/2016-07-19_JAi-revolution.tsv
 ~~~
 {: .bash}
 
-This saves the subsetted data to file.
+This saves the subsetted data to a new file.
 
 However, if we look at this file, it contains every instance of the
 string 'revolution' including as a single word and as part of other words
@@ -576,7 +576,7 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > also improves on Windows 10 with the new Bash on Windows.
 {: .callout}
 
-Pair up with your neighbor and work on these exercies:
+Pair up with your neighbor and work on these exercises:
 
 > ## Case sensitive search
 > Search for all case sensitive instances of
@@ -770,7 +770,7 @@ What is happening the the loop?
 + `echo $name` is printing the current value of `$name`
 + `grep $name littlewomen.txt` finds each line that contains the value stored in `$name`
 + The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
-+ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurances of each girl's name.
++ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
 
 > ## Selecting columns from our article dataset
 > When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Journal`, `ISSN`, and `Title` columns from our article data. With `cut` we'd:
@@ -811,7 +811,7 @@ What is happening the the loop?
 >>{: .output}
 >>
 >>Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12.
->> We use thes positional column numbers to construct our `cut` command:
+>> We use these positional column numbers to construct our `cut` command:
 >>```
 >> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivjlp.tsv
 >>```

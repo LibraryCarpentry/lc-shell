@@ -84,4 +84,4 @@ _____
 - `-w`: match whole words
 - `-v`: exclude match
 - `--file=FILENAME.txt`: use the file `FILENAME.txt` as the source of strings used in query
-- `|`: (vertical bar character) send output from one command into another comma
+- `|`: (vertical bar character) send output from one command into another command
