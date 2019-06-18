@@ -200,7 +200,7 @@ results now stored in `lengths.txt` and `sorted-lengths.txt`. What if we could
 send the results from the first command (`wc -l *.tsv`) directly to the next
 command (`sort -n`) and then the output from that command to `head -n 1`?
 Luckily we can, using a concept called pipes. On the command line, you make a
-pipe with the vertical bar character |. Let's try with one pipe first:
+pipe with the vertical bar character `|`. Let's try with one pipe first:
 
 ~~~~
 $ wc -l *.tsv | sort -n
