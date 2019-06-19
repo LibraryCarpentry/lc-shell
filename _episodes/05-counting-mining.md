@@ -674,7 +674,7 @@ Pair up with your neighbor and work on these exercises:
 > > {: .bash}
 > >
 > > If you came up with something more advanced, perhaps including word boundaries,
-> > please share your result on the Etherpad and give yourself a pat on the shoulder.
+> > please share your result in the collaborative document and give yourself a pat on the shoulder.
 > >
 > > {: .bash}
 > {: .solution}
