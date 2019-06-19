@@ -733,7 +733,7 @@ Pair up with your neighbor and work on these exercies:
 
 ### Using a Loop to Count Words
 
-We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside `shell-lesson` named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
+We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
 
 ~~~
 $ mv pg514.txt littlewomen.txt
