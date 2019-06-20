@@ -19,7 +19,7 @@ Even if you are a Windows user, learning Bash will open up a powerful set of too
 >    - Double click the `.exe` to run the installer (for example, `Git-2.13.3-64-bit.exe`) using the default settings.
 >    - Once installed, open the shell by selecting Git Bash from the start menu (in the Git folder).
 >
->If you encounter issues, the Carpentries maintains a [Configuration Problems and Solutions wiki page]>(https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions) that may help.
+>If you encounter issues, the Carpentries maintains a [Configuration Problems and Solutions wiki page](https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions) that may help.
 {: .prereq}
     
 >## Data Files
