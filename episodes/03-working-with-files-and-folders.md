@@ -3,10 +3,10 @@ title: "Working with files and directories"
 teaching: 20
 exercises: 10
 questions:
-- "How can I create, copy, and delete files and directories?"
+- "How can I copy, move, and delete files and directories?"
 - "How can I read files?"
 objectives:
-- "Create files and directories from the command line"
+- "Work with files and directories from the command line"
 - "Use tab completion to limit typing"
 - "Look at all or part of a file using the command line"
 - "Moving and copying files"
