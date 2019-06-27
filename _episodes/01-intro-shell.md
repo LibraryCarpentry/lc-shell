@@ -35,4 +35,4 @@ In this session we will introduce task automation by looking at how data can be 
 
 The shell is a program that is usually launched on your computer much in the way you would start any other program. However, there are numerous kinds of shells with different names, and they may or may not be already installed. The shell is central to Linux-based computers, and MacOS machines ship with Terminal, a shell program. For Windows users, popular shells such as Cygwin or Git Bash provide a Unix-like interface, but may need to be installed separately. In Windows 10, the Power Shell natively provides that functionality.
 
-For this lesson, we will use Git Bash for Windows users, Terminal for Mac OS, and the shell for Linux users.
+For this lesson, we will use Git Bash for Windows users, Terminal for macOS, and the shell for Linux users.
