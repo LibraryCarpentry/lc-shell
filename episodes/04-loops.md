@@ -36,8 +36,8 @@ Now we will use a loop to create a backup version of those files. Accordingly, w
 ~~~
 $ for filename in *.doc
 > do
->    echo $filename
->    cp $filename backup_$filename
+>    echo "$filename"
+>    cp "$filename" backup_"$filename"
 > done
 ~~~
 {: .bash}
@@ -54,13 +54,24 @@ When the shell sees the keyword `for`,
 it knows to repeat a command (or group of commands) once for each thing `in` a list.
 For each iteration,
 the name of each thing is sequentially assigned to
-the **variable** and the commands inside the loop are executed before moving on to
+the **loop variable** and the commands inside the loop are executed before moving on to
 the next thing in the list.
 Inside the loop,
 we call for the variable's value by putting `$` in front of it.
 The `$` tells the shell interpreter to treat
 the **variable** as a variable name and substitute its value in its place,
 rather than treat it as text or an external command.
+
+> ## Double-quoting variable substitutions
+>
+> Because real-world filenames often contain white-spaces,
+> we wrap `$filename` in double quotes (`"`). If we didn't, the
+> shell would treat the white-space within a filename a separator
+> between two different filesnames, which usually results in errors.
+> Therefore, it's best to generally safer to use `"$..."` unless
+> you are absolutely sure that no elements with white-space can ever
+> enter your loop variable (such as in [episode 5]({{ page.root }}/05-counting-mining/index.html#using-a-loop-to-count-words)).
+{: .callout}
 
 In this example, the list is four filenames: 'a.doc', 'b.doc', 'c.doc', and 'd.doc'
 Each time the loop iterates, it will assign a file name to the variable `filename`
@@ -108,9 +119,9 @@ The shell itself doesn't care what the variable is called.
 > ```
 > ___ file in *.txt
 > __
-> 	echo _file
-> 	head -n 1 _____
-> 	____ __ _ _____
+> 	echo "_file"
+> 	head -n 1 _______
+> 	____ __ _ _______
 > ____
 > ```
 > {: .bash}
@@ -119,9 +130,9 @@ The shell itself doesn't care what the variable is called.
 > > ```
 > > for file in *.txt
 > > do
-> > 	echo $file
-> > 	head -n 1 $file
-> > 	tail -n 1 $file
+> > 	echo "$file"
+> > 	head -n 1 "$file"
+> > 	tail -n 1 "$file"
 > > done
 > > ```
 > > {: .bash}
@@ -151,9 +162,9 @@ This is our first look at loops. We will run another loop in the
 > > # This script loops through txt files, returns the file name, first line, and last line of the file
 > > for file in *.txt
 > > do
-> > 	echo $file
-> > 	head -n 1 $file
-> > 	tail -n 1 $file
+> > 	echo "$file"
+> > 	head -n 1 "$file"
+> > 	tail -n 1 "$file"
 > > done
 > > ```
 > > {: .bash}
