@@ -499,11 +499,11 @@ $ grep -i revolution *.tsv
 {: .bash}
 
 This script looks in the defined files and prints any lines containing `revolution`
-(without regard to case) to the shell. We add today's date to the filename using
-[ISO format](https://en.wikipedia.org/wiki/ISO_8601) of `YYYY-MM-DD`.
+(without regard to case) to the shell. We let the shell add today's date to the
+filename:
 
 ~~~
-$ grep -i revolution *.tsv > results/2016-07-19_JAi-revolution.tsv
+$ grep -i revolution *.tsv > results/$(date -I)_JAi-revolution.tsv
 ~~~
 {: .bash}
 
@@ -516,7 +516,7 @@ Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
 ~~~
-$ grep -iw revolution *.tsv > results/2016-07-19_JAiw-revolution.tsv
+$ grep -iw revolution *.tsv > results/$(date -I)_JAiw-revolution.tsv
 ~~~
 {: .bash}
 
@@ -536,6 +536,17 @@ $ wc -l results/*.tsv
    18364 total
 ~~~
 {: .output}
+
+> ## Automatically adding a date prefix
+> Notice how we didn't type the `YYYY-MM-DD` date ourselves, but let
+> `date -I` do that mindless task for us. Find out about this option
+> and the standard format that it uses.
+> 
+> > ## Solution
+> > Using `date --help` will show you that `-I` is short for [--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which essentially avoids the confusion between the European
+> > and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
+> {: .solution}
+{: .challenge}
 
 Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
 
