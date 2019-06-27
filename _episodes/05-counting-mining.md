@@ -558,7 +558,7 @@ $ grep -iwE 'fr[ae]nc[eh]' *.tsv
 ~~~
 {: .bash}
 
-The shell will print out each matching line.
+The shell will print out each matching line. This might go on for a while. If you would like to cancel the command, you can hit <kbd>Ctr</kbd> + <kbd>C</kbd> which you learned about in _Working with files and directories_.
 
 We include the `-o` flag to print only the matching part of the lines e.g.
 (handy for isolating/checking results):
