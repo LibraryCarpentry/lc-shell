@@ -772,6 +772,36 @@ What is happening the the loop?
 + The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
 + `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurances of each girl's name.
 
+> ## Why are the variables double-quoted here?
+>
+> a) In [episode 4]({{ page.root }}/04-loops/index.html)) we learned to
+> use `"$..."` as a safeguard against white-space being misinterpreted.
+> Why _could_ we omit the `"`-quotes in the above example?
+> 
+> b) What happens if you add `"Louisa May Alcott"` to the first line of
+> the loop and remove the `"` from `$name` in the loop's code?
+> 
+>> ## Solutions
+>> 
+>> a) Because we are explicitly listing the names after `in`,
+>> and those contain no white-space. However, for consistency
+>> it's better to use rather once too often than once too rarely.
+>> 
+>> b) Without `"`-quoting `$name`, the last loop will try to execute
+>> `grep Louisa May Alcott littlewomen.txt`. `grep` interprets only the
+>> first word as the search pattern, but `May` and `Alcott` as filenames.
+>> This produces two errors and a possibly untrustworthy count:
+>> ~~~
+>> ...
+>> Louisa May Alcott
+>> grep: May: No such file or directory
+>> grep: Alcott: No such file or directory
+>> 4
+>> ~~~
+>> {: .bash}
+> {: .solution}
+{: .challenge}
+
 > ## Selecting columns from our article dataset
 > When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Journal`, `ISSN`, and `Title` columns from our article data. With `cut` we'd:
 >~~~
