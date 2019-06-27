@@ -658,7 +658,7 @@
        x="28.124039"
        y="60.941799"
        style="font-size:10.99998951px"
-       id="tspan16698">    echo cp $filename original-$filename</tspan><tspan
+       id="tspan16698">    echo cp "$filename" original-"$filename"</tspan><tspan
        sodipodi:role="line"
        x="28.124039"
        y="74.691788"
