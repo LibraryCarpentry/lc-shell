@@ -76,7 +76,7 @@ drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
 
 In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains
 journal article metadata, and the three `.tsv` files derived from the original
-dataset. Each of these three .tsv files includes all data where a keyword such
+dataset. Each of these three `.tsv` files includes all data where a keyword such
 as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 
 > ## CSV and TSV Files
@@ -200,7 +200,7 @@ results now stored in `lengths.txt` and `sorted-lengths.txt`. What if we could
 send the results from the first command (`wc -l *.tsv`) directly to the next
 command (`sort -n`) and then the output from that command to `head -n 1`?
 Luckily we can, using a concept called pipes. On the command line, you make a
-pipe with the vertical bar character |. Let's try with one pipe first:
+pipe with the vertical bar character `|`. Let's try with one pipe first:
 
 ~~~~
 $ wc -l *.tsv | sort -n
@@ -426,7 +426,7 @@ $ grep 1999 *.tsv
 ~~~
 {: .bash}
 
-Remember that the shell will expand `*.tsv` to a list of all the .tsv files in the
+Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in the
 directory. `grep` will then search these for instances of the string "1999" and
 print the matching lines.
 
@@ -488,7 +488,7 @@ Note how the count has increased nearly 30 fold for those journal article
 titles that contain the keyword 'america'. As before, cycling back and
 adding `> results/`, followed by a filename (ideally in .txt format), will save the results to a data file.
 
-So far we have counted strings in file and printed to the shell or to
+So far we have counted strings in files and printed to the shell or to
 file those counts. But the real power of `grep` comes in that you can
 also use it to create subsets of tabulated data (or indeed any data)
 from one or multiple files.  
@@ -507,7 +507,7 @@ $ grep -i revolution *.tsv > results/2016-07-19_JAi-revolution.tsv
 ~~~
 {: .bash}
 
-This saves the subsetted data to file.
+This saves the subsetted data to a new file.
 
 However, if we look at this file, it contains every instance of the
 string 'revolution' including as a single word and as part of other words
@@ -522,7 +522,7 @@ $ grep -iw revolution *.tsv > results/2016-07-19_JAiw-revolution.tsv
 
 This script looks in both of the defined files and
 exports any lines containing the whole word `revolution` (without regard to case)
-to the specified .tsv file.
+to the specified `.tsv` file.
 
 We can show the difference between the files we created.
 
@@ -576,11 +576,11 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > also improves on Windows 10 with the new Bash on Windows.
 {: .callout}
 
-Pair up with your neighbor and work on these exercies:
+Pair up with your neighbor and work on these exercises:
 
 > ## Case sensitive search
 > Search for all case sensitive instances of
-> a word you choose in all four derived tsv files in this directory.
+> a word you choose in all four derived `.tsv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
@@ -593,7 +593,7 @@ Pair up with your neighbor and work on these exercies:
 
 > ## Case sensitive search in select files
 > Search for all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' tsv files in this directory.
+> the 'America' and 'Africa' `.tsv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
@@ -606,7 +606,7 @@ Pair up with your neighbor and work on these exercies:
 
 > ## Count words (case sensitive)
 > Count all case sensitive instances of a word you choose in
-> the 'America' and 'Africa' tsv files in this directory.
+> the 'America' and 'Africa' `.tsv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
@@ -618,7 +618,7 @@ Pair up with your neighbor and work on these exercies:
 {: .challenge}
 
 > ## Count words (case insensitive)
-> Count all case insensitive instances of that word in the 'America' and 'Africa' tsv files
+> Count all case insensitive instances of that word in the 'America' and 'Africa' `.tsv` files
 > in this directory. Print your results to the shell.
 >
 > > ## Solution
@@ -631,7 +631,7 @@ Pair up with your neighbor and work on these exercies:
 
 > ## Case insensitive search in select files
 > Search for all case insensitive instances of that
-> word in the 'America' and 'Africa' tsv files in this directory. Print your results to  a file `results/new.tsv`.
+> word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to  a file `results/new.tsv`.
 >
 > > ## Solution
 > > ~~~
@@ -643,7 +643,7 @@ Pair up with your neighbor and work on these exercies:
 
 > ## Case insensitive search in select files (whole word)
 > Search for all case insensitive instances of that whole word
-> in the 'America' and 'Africa' tsv files in this directory. Print your results to a file `results/new2.tsv`.
+> in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to a file `results/new2.tsv`.
 >
 > > ## Solution
 > > ~~~
@@ -674,7 +674,7 @@ Pair up with your neighbor and work on these exercies:
 > > {: .bash}
 > >
 > > If you came up with something more advanced, perhaps including word boundaries,
-> > please share your result on the Etherpad and give yourself a pat on the shoulder.
+> > please share your result in the collaborative document and give yourself a pat on the shoulder.
 > >
 > > {: .bash}
 > {: .solution}
@@ -770,7 +770,7 @@ What is happening the the loop?
 + `echo $name` is printing the current value of `$name`
 + `grep $name littlewomen.txt` finds each line that contains the value stored in `$name`
 + The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
-+ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurances of each girl's name.
++ `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
 
 > ## Selecting columns from our article dataset
 > When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Journal`, `ISSN`, and `Title` columns from our article data. With `cut` we'd:
@@ -811,7 +811,7 @@ What is happening the the loop?
 >>{: .output}
 >>
 >>Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12.
->> We use thes positional column numbers to construct our `cut` command:
+>> We use these positional column numbers to construct our `cut` command:
 >>```
 >> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivjlp.tsv
 >>```

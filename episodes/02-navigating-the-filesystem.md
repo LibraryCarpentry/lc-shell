@@ -126,7 +126,7 @@ $ pwd
 {: .output}
 
 If something had gone wrong, however, the command would have told you. Let's
-test that by trying to move into a non-existentdirectory:
+test that by trying to move into a non-existent directory:
 
 ~~~
 $ cd "Evil plan to destroy the world"
@@ -174,14 +174,14 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > Use the `man` command to invoke the manual page (documentation) for a shell command.
 > For example, `man ls` displays all the arguments available to you - which saves
 > you remembering them all! Try this for each command you've learned so far.
-> Use the `spacebar` to navigate the manual pages. Use `q` at any time to quit.
+> Use the <kbd>spacebar</kbd> to navigate the manual pages. Use <kbd>q</kbd> at any time to quit.
 >
 > ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users.
 > If you use windows, you can search for the Shell command on [http://man.he.net/](http://man.he.net/),
-> and view the associated manual page. In some systems the command name followed by `-- help` will work, e.g. `ls --help`.
+> and view the associated manual page. In some systems the command name followed by `--help` will work, e.g. `ls --help`.
 > 
-> Also, the manual lists commands individually, e.g., although `-h` can only be used together with the -l option,  
-> you'll find it listed as -h in the manual, not as -lh.
+> Also, the manual lists commands individually, e.g., although `-h` can only be used together with the `-l` option,  
+> you'll find it listed as `-h` in the manual, not as `-lh`.
 >
 > >## Answer
 > >~~~
