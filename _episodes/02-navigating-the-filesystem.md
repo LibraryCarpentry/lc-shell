@@ -161,7 +161,7 @@ us right back to the home directory, the place where we started.**
 > If you run Windows,
 > also try typing `explorer .` to open Explorer for the current directory
 > (the single dot means "current directory"). If you're on a Mac,
-> try `open .` and for Linux try `xdg-open .`.
+> try `open .` and for Linux try `xdg-open .` to open their graphical file manager.
 >
 {: .challenge}
 
