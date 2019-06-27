@@ -631,11 +631,11 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case insensitive search in select files
 > Search for all case insensitive instances of that
-> word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to  a file `results/new.tsv`.
+> word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to  a file `results/hero.tsv`.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -i hero *a.tsv > results/new.tsv
+> > $ grep -i hero *a.tsv > results/hero.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -643,11 +643,11 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case insensitive search in select files (whole word)
 > Search for all case insensitive instances of that whole word
-> in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to a file `results/new2.tsv`.
+> in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to a file `results/hero-i.tsv`.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -iw hero *a.tsv > results/new2.tsv
+> > $ grep -iw hero *a.tsv > results/hero-i.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
