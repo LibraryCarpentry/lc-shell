@@ -10,6 +10,10 @@ _____
 
 **`pwd`** - print working directory
 
+**`man`** - display the user manual
+
+**`history`** - displays the history list with line numbers, use `n` to limit the list
+
 **`ls`** - list contents of a directory
 
 - `ls -l` - list file information
@@ -23,6 +27,8 @@ _____
   `cd pathname` - takes you to the directory specified by `pathname`
   
   `cd ~` -  takes you to your home directory
+  
+  `cd ..` - takes you up one directory
 
 ______
 ### Shell: Interacting with Files
@@ -49,7 +55,7 @@ ______
 
 **`rmdir -r-i`** will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
 
-
+**`touch`** will update timestamp information on files.
 ______
 ### Shell: Wildcards
 
@@ -85,3 +91,18 @@ _____
 - `-v`: exclude match
 - `--file=FILENAME.txt`: use the file `FILENAME.txt` as the source of strings used in query
 - `|`: (vertical bar character) send output from one command into another command
+
+_____
+### Shell: Working with Free Text
+
+**`sed`** is used to modify files, use `-e` flag to run multiple commands
+
+**`tr`** translates or deletes characters in a file
+
+- `[:punct:]`: punctuation characters
+- `[:upper:]`: upper-case characters
+- `[:lower:]`: lower-case alphabetic characters
+
+**`'''\n`** translates every blank space into `\n`, then renders on a new line
+
+**`uniq`** reports or filters repeated lines in a file, use with `-c` to do a word count of the duplicates
