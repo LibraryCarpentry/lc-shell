@@ -56,21 +56,21 @@ $ pwd
 {: .output}
 
 And let's just check what files are in the directory and how large they
-are with `ls -lh`:
+are with `ls -lhS`:
 
 ~~~
-$ ls -lh
+$ ls -lhS
 ~~~
 {: .bash}
 ~~~
 total 139M
--rw-r--r-- 1 riley staff 3.6M Jan 31 18:47 2014-01-31_JA-africa.tsv
--rw-r--r-- 1 riley staff 7.4M Jan 31 18:47 2014-01-31_JA-america.tsv
 -rw-rw-r-- 1 riley staff 126M Jun 10  2015 2014-01_JA.tsv
+-rw-r--r-- 1 riley staff 7.4M Jan 31 18:47 2014-01-31_JA-america.tsv
+-rw-r--r-- 1 riley staff 3.6M Jan 31 18:47 2014-01-31_JA-africa.tsv
 -rw-r--r-- 1 riley staff 1.4M Jan 31 18:47 2014-02-02_JA-britain.tsv
+-rw-r--r-- 1 riley staff 598K Jan 31 18:47 gulliver.txt
 -rw-r--r-- 1 riley staff 583K Feb  1 22:53 33504-0.txt
 drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
--rw-r--r-- 1 riley staff 598K Jan 31 18:47 gulliver.txt
 ~~~
 {: .output}
 
@@ -92,6 +92,36 @@ as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 {: .callout}
 <!-- hm, reminds me of MARC -->
 
+First, let's have a look at the largest data file, using the tools we learned in
+[Reading files]({{ page.root }}/03-working-with-files-and-folders.md/index.html#reading-files):
+
+~~~
+$ cat 2014-01_JA.tsv
+~~~
+{: .bash}
+
+Like `829-0.txt` before, the whole dataset cascades by and can't really make any
+sense of that amount of text. To cancel this on-going con`cat`enation, or indeed any
+process in the Unix shell, press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+
+In most data files a quick glimpse of the first few lines already tells us a lot
+about the structure of the dataset, for example the table/column headers:
+
+~~~
+$ head -n 3 2014-01_JA.tsv
+~~~
+{: .bash}
+~~~
+File    Creator    Issue    Volume    Journal    ISSN    ID    Citation    Title    Place    Labe    Language    Publisher    Date
+History_1a-rdf.tsv  Doolittle, W. E.  1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571862 KIVA -ARIZONA- 59(1), 7-26. (1993)  A Method for Distinguishing between Prehistoric and Recent Water and Soil Control Features  xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
+History_1a-rdf.tsv  Nelson, M. C. 1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571874 KIVA -ARIZONA- 59(1), 27-48. (1993) Classic Mimbres Land Use in the Eastern Mimbres Region, Southwestern New Mexico xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
+
+~~~
+{: .output}
+
+In the header, we can see the common metadata fields of academic papers: `Creator`, `Issue`, `Citation`, etc.
+
+Next, let's learn about a basic data analysis tool:
 `wc` is the "word count" command: it counts the number of lines, words, bytes
 and characters in files. Since we love the wildcard operator, let's run the command
 `wc *.tsv` to get counts for all the `.tsv` files in the current directory
