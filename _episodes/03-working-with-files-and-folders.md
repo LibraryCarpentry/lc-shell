@@ -102,11 +102,8 @@ $ cat 829-0.txt
 {: .bash}
 
 The terminal window erupts and the whole book cascades by (it is printed to
-your terminal). Great, but we can't really make any sense of that amount of text.
-
-> ## Canceling Commands
-> To cancel this print of `829-0.txt`, or indeed any ongoing processes in the Unix shell, hit <kbd>Ctrl</kbd>+<kbd>C</kbd>
-{: .callout}
+your terminal), leaving us with a new prompt and the last few lines of the book
+above this prompt.
 
 Often we just want a quick glimpse of the first or the last part of a file to
 get an idea about what the file is about. To let us do that, the Unix shell
