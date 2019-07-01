@@ -87,7 +87,7 @@ as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 > TSV and variations of them. The simplicity of the formats make them great for
 > exchange and archival. They are not bound to a specific program (unlike Excel
 > files, say, there is no `CSV` program, just lots and lots of programs that
-> support the format, including Excel by the way.), and you wouldn't have any
+> support the format, including Excel), and you wouldn't have any
 > problems opening a 40 year old file today if you came across one.
 {: .callout}
 <!-- hm, reminds me of MARC -->
@@ -100,7 +100,7 @@ $ cat 2014-01_JA.tsv
 ~~~
 {: .bash}
 
-Like `829-0.txt` before, the whole dataset cascades by and can't really make any
+Like `829-0.txt` before, the whole dataset cascades by and we can't really make any
 sense of that amount of text. To cancel this on-going con`cat`enation, or indeed any
 process in the Unix shell, press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
@@ -147,7 +147,7 @@ If we only have a handful of files to compare, it might be faster or more conven
 to just check with Microsoft Excel, OpenRefine or your favourite text editor, but
 when we have tens, hundreds or thousands of documents, the Unix shell has a clear
 speed advantage. The real power of the shell comes from being able to combine commands
-and automate tasks, though. We will touch upon this slightly.
+and automate tasks, though. We will briefly explore this in a moment.
 
 For now, we'll see how we can build a simple pipeline to find the shortest file
 in terms of number of lines. We start by adding the `-l` flag to get only the
@@ -363,7 +363,7 @@ programming languages.
 > > To check the contents, you could also use `less` or many other commands.
 > >
 > > Beware that `>` will happily overwrite an existing file without warning you,
-> > so please be careful.
+> > so be very careful.
 > {: .solution}
 {: .challenge}
 
@@ -567,6 +567,8 @@ $ wc -l results/*.tsv
 ~~~
 {: .output}
 
+## Searching with Regular Expressions
+
 Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
 
 > ## Basic and extended regular expressions
@@ -606,7 +608,7 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 > also improves on Windows 10 with the new Bash on Windows.
 {: .callout}
 
-Pair up with your neighbor and work on these exercises:
+Pair up with your neighbor to work on these exercises:
 
 > ## Case sensitive search
 > Search for all case sensitive instances of
@@ -725,13 +727,13 @@ Pair up with your neighbor and work on these exercises:
 > {: .solution}
 {: .challenge}
 
-> ## Counting number of files, part II
-> In the earlier counting exercise in this episode, you tried counting the number
+> ## Counting number of files and directories, part II
+> In an earlier counting exercise in this episode, you tried counting the number
 > of files and directories in the current directory.
 >
 > * Recall that the command `ls -l | wc -l` took us quite far, but the result was one
 >   too high because it included the "total" line in the line count.
-> * With the knowledge of `grep`, can you figure out how to exclude the "total"
+> * With your knowledge of `grep`, can you figure out how to exclude the "total"
 >   line from the `ls -l` output?
 > * Hint: You want to exclude any line *starting*
 >   with the text "total". The hat character (^) is used
@@ -763,7 +765,7 @@ Pair up with your neighbor and work on these exercises:
 
 ### Using a Loop to Count Words
 
-We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
+We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`.
 
 ~~~
 $ mv pg514.txt littlewomen.txt
@@ -826,7 +828,7 @@ What is happening the the loop?
 > Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
 > If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
 > ### Now your turn
->Select the columns `Issue`, `Volume`, `Journal`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivjlp.tsv`.
+>Select the columns `Issue`, `Volume`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivjlp.tsv`.
 >> ## Solution
 >> First, let's see where our desired columns are:
 >>
