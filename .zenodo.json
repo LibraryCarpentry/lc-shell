@@ -1,0 +1,348 @@
+{
+  "contributors": [
+    {
+      "type": "Editor",
+      "name": "Danielle Kane",
+      "orcid": "0000-0002-4086-0203"
+    },
+    {
+      "type": "Editor",
+      "name": "Nilani Ganeshwaran"
+    },
+    {
+      "type": "Editor",
+      "name": "John Wright"
+    },
+    {
+      "type": "Editor",
+      "name": "Anna Oates"
+    },
+    {
+      "type": "Editor",
+      "name": "Belinda Weaver",
+      "orcid": "0000-0002-6156-7997"
+    },
+    {
+      "type": "Editor",
+      "name": "Tim Dennis",
+      "orcid": "0000-0001-6632-3812"
+    }
+  ],
+  "creators": [
+    {
+      "name": "James Baker",
+      "orcid": "0000-0002-2682-6922"
+    },
+    {
+      "name": "Christopher Erdmann",
+      "orcid": "0000-0003-2554-180X"
+    },
+    {
+      "name": "Tim Dennis",
+      "orcid": "0000-0001-6632-3812"
+    },
+    {
+      "name": "Dan Michael Heggø",
+      "orcid": "0000-0002-6189-5958"
+    },
+    {
+      "name": "Katrin Leinweber",
+      "orcid": "0000-0001-5135-5758"
+    },
+    {
+      "name": "hugolio"
+    },
+    {
+      "name": "Gerard Capes"
+    },
+    {
+      "name": "jenniferleeucalgary"
+    },
+    {
+      "name": "Jeffrey Oliver",
+      "orcid": "0000-0003-2160-1086"
+    },
+    {
+      "name": "Jonah Duckles",
+      "orcid": "0000-0002-8985-3119"
+    },
+    {
+      "name": "BertrandCaron"
+    },
+    {
+      "name": "Alex Mendes"
+    },
+    {
+      "name": "Ana Costa Conrado",
+      "orcid": "0000-0001-6345-987X"
+    },
+    {
+      "name": "Belinda Weaver"
+    },
+    {
+      "name": "Evan Williamson",
+      "orcid": "0000-0002-7990-9924"
+    },
+    {
+      "name": "Ian Lessing",
+      "orcid": "0000-0003-4165-1064"
+    },
+    {
+      "name": "Kunal Marwaha",
+      "orcid": "0000-0001-9084-6971"
+    },
+    {
+      "name": "Michael Lascarides"
+    },
+    {
+      "name": "Michele Hayslett"
+    },
+    {
+      "name": "Travis Lilleberg"
+    },
+    {
+      "name": "Gabriel Devenyi",
+      "orcid": "0000-0002-7766-1187"
+    },
+    {
+      "name": "Ashwin Srinath"
+    },
+    {
+      "name": "colinmorris"
+    },
+    {
+      "name": "Raniere Silva"
+    },
+    {
+      "name": "csqrs"
+    },
+    {
+      "name": "Erin Alison Becker",
+      "orcid": "0000-0002-6832-0233"
+    },
+    {
+      "name": "Rémi Emonet",
+      "orcid": "0000-0002-1870-1329"
+    },
+    {
+      "name": "Colin Sauze",
+      "orcid": "0000-0001-5368-9217"
+    },
+    {
+      "name": "Eric Jankowski"
+    },
+    {
+      "name": "Stéphane Guillou",
+      "orcid": "0000-0001-8992-0951"
+    },
+    {
+      "name": "Jake Cowper Szamosi"
+    },
+    {
+      "name": "Ashwin Srinath"
+    },
+    {
+      "name": "Jarosław Bryk",
+      "orcid": "0000-0002-2791-9709"
+    },
+    {
+      "name": "Marie-Helene Burle",
+      "orcid": "0000-0003-4853-4901"
+    },
+    {
+      "name": "Marisa Lim"
+    },
+    {
+      "name": "Stephen Leak",
+      "orcid": "0000-0003-1991-9300"
+    },
+    {
+      "name": "Christopher Mentzel",
+      "orcid": "0000-0002-2831-5632"
+    },
+    {
+      "name": "Kevin M. Buckley"
+    },
+    {
+      "name": "Laurence"
+    },
+    {
+      "name": "Martha Robinson"
+    },
+    {
+      "name": "Martin Feller"
+    },
+    {
+      "name": "Megan Fritz"
+    },
+    {
+      "name": "Nicola Soranzo",
+      "orcid": "0000-0003-3627-5340"
+    },
+    {
+      "name": "Rafi Ullah",
+      "orcid": "0000-0002-8468-4678"
+    },
+    {
+      "name": "Ruud Steltenpool"
+    },
+    {
+      "name": "Yee Mey"
+    },
+    {
+      "name": "Alex Kassil"
+    },
+    {
+      "name": "Alexander Morley"
+    },
+    {
+      "name": "Elena Denisenko"
+    },
+    {
+      "name": "Halle Burns"
+    },
+    {
+      "name": "Hannah Burkhardt"
+    },
+    {
+      "name": "Jonny Williams"
+    },
+    {
+      "name": "Jason Macklin",
+      "orcid": "0000-0002-3356-3139"
+    },
+    {
+      "name": "reshama shaikh"
+    },
+    {
+      "name": "Thomas Mellan"
+    },
+    {
+      "name": "Adam Huffman"
+    },
+    {
+      "name": "Alexander Konovalov"
+    },
+    {
+      "name": "Andrew Reid",
+      "orcid": "0000-0002-1564-5640"
+    },
+    {
+      "name": "Andrew T. T. McRae"
+    },
+    {
+      "name": "Ariel Rokem",
+      "orcid": "0000-0003-0679-1985"
+    },
+    {
+      "name": "Bagus Tris Atmaja"
+    },
+    {
+      "name": "Benjamin Bolker",
+      "orcid": "0000-0002-2127-0443"
+    },
+    {
+      "name": "Benjamin Gabriel"
+    },
+    {
+      "name": "Brian Ballsun-Stanton"
+    },
+    {
+      "name": "Dave Bridges"
+    },
+    {
+      "name": "David McKain"
+    },
+    {
+      "name": "Dmytro Lituiev"
+    },
+    {
+      "name": "earkpr"
+    },
+    {
+      "name": "ekaterinailin"
+    },
+    {
+      "name": "Farah Shamma"
+    },
+    {
+      "name": "Giuseppe Profiti"
+    },
+    {
+      "name": "Ian van der Linde"
+    },
+    {
+      "name": "Jarno Rantaharju",
+      "orcid": "0000-0002-0072-7707"
+    },
+    {
+      "name": "James Guelfi"
+    },
+    {
+      "name": "John Pellman"
+    },
+    {
+      "name": "Marc Gouw",
+      "orcid": "0000-0001-9248-8450"
+    },
+    {
+      "name": "Michael Zingale",
+      "orcid": "0000-0001-8401-030X"
+    },
+    {
+      "name": "Mike Henry"
+    },
+    {
+      "name": "Morgan Oneka"
+    },
+    {
+      "name": "Murray Hoggett",
+      "orcid": "0000-0002-4694-2621"
+    },
+    {
+      "name": "Nicolas Barral",
+      "orcid": "0000-0003-2079-5819"
+    },
+    {
+      "name": "Noah D Brenowitz"
+    },
+    {
+      "name": "Owen Kaluza",
+      "orcid": "0000-0001-6303-5671"
+    },
+    {
+      "name": "Patrick McCann",
+      "orcid": "0000-0002-9324-2775"
+    },
+    {
+      "name": "Peter Hoyt",
+      "orcid": "0000-0002-2767-0923"
+    },
+    {
+      "name": "sjnair"
+    },
+    {
+      "name": "Stephan Schmeing",
+      "orcid": "0000-0001-9735-2931"
+    },
+    {
+      "name": "Stephen Jones"
+    },
+    {
+      "name": "Susan J Miller",
+      "orcid": "0000-0002-3759-7547"
+    },
+    {
+      "name": "Tom Dowrick"
+    },
+    {
+      "name": "Victor Koppejan"
+    },
+    {
+      "name": "Vikram Chhatre"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-4.0"
+  }
+}
