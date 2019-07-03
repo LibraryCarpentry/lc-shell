@@ -1,31 +1,44 @@
-# Library Carpentry
+# Maintainers for Library Carpentry: The UNIX Shell
 
-The Library Carpentry module '[Shell Lessons for Librarians](https://librarycarpentry.github.io/lc-shell/)' is maintained by [Belinda Weaver](https://github.com/weaverbel), [Tim Dennis](https://github.com/jt14den), [Nilani Ganeshwaran](https://github.com/uom-nilani), [John Wright](https://twitter.com/jwscutt), [Anna Oates](https://twitter.com/annaoates) and _[Danielle Kane](https://github.com/dakane1)_.
+- [Danielle Kane](https://github.com/dakane1) (Lead)
+- [Anna Oates](https://twitter.com/annaoates)
+- [John Wright](https://twitter.com/jwscutt)
+- [Nilani Ganeshwaran](https://github.com/uom-nilani)
+- [Tim Dennis](https://github.com/jt14den)
 
-## Background
+Past Maintainer: 
 
-Library Carpentry is a software skills training programme aimed at library and information professions. It builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/).
+- [Belinda Weaver](https://github.com/weaverbel)
 
-Library Carpentry is in the commons and for the commons. It is not tied to any institution of person. For more information on Library Carpentry, see our website [librarycarpentry.github.io](https://librarycarpentry.github.io/).
+Lesson Maintainers communication is via the [team site](https://github.com/orgs/LibraryCarpentry/teams/lc-shell-maintainers).
 
-## Contribution
+## Library Carpentry
 
-There are many ways of contributing to Library Carpentry:
+[Library Carpentry](https://librarycarpentry.org) is a software and data skills training programme for people working in library- and information-related roles. It builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/). Library Carpentry is an official Lesson Program of [The Carpentries](https://carpentries.org/).
 
-- Join our [Gitter discussion forum](https://gitter.im/LibraryCarpentry/).
-- Follow updates on [Twitter](https://twitter.com/LibCarpentry).
-- Make a suggestion or correct an error by [raising an Issue](https://github.com/librarycarpentry/lc-shell/issues).
+## License
+
+All Software, Data, and Library Carpentry instructional material is made available under the [Creative Commons Attribution
+license](https://github.com/LibraryCarpentry/lc-shell/blob/gh-pages/LICENSE.md).
+
+## Contributing
+
+There are many ways to discuss and contribute to Library Carpentry lessons. Visit the lesson [discussion page](https://librarycarpentry.org/lc-shell/discuss/index.html) to learn more. Also see [Contributing](https://github.com/LibraryCarpentry/lc-shell/blob/gh-pages/CONTRIBUTING.md).
 
 ## Code of Conduct
 
-All participants should agree to abide by the [Software Carpentry Code of Conduct](http://software-carpentry.org/conduct/).
+All participants should agree to abide by The Carpentries [Code of Conduct](https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html).
 
 ## Authors
 
-Library Carpentry is authored and maintained by the [community](https://github.com/librarycarpentry/lc-shell/network/members).
+Library Carpentry is authored and maintained through issues, commits, and pull requests from the community.
 
 ## Citation
 
-Please cite as:
+Library Carpentry: Introduction to UNIX Shell. June 2016. https://librarycarpentry.org/lc-shell/.
 
-Library Carpentry. Shell Intro for Librarians. June 2016. https://librarycarpentry.github.io/lc-shell/.
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266085.svg)](https://doi.org/10.5281/zenodo.3266085)
+
+## Checking and Previewing the Lesson
+
+To check and preview a lesson locally, see [http://carpentries.github.io/lesson-example/07-checking/index.html](http://carpentries.github.io/lesson-example/07-checking/index.html).
