@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266085.svg)](https://doi.org/10.5281/zenodo.3266085)  
+
 # Maintainers for Library Carpentry: The UNIX Shell
 
 - [Danielle Kane](https://github.com/dakane1) (Lead)
@@ -35,7 +37,7 @@ Library Carpentry is authored and maintained through issues, commits, and pull r
 
 ## Citation
 
-Library Carpentry: Introduction to UNIX Shell. June 2016. https://librarycarpentry.org/lc-shell/.
+Danielle Kane (Ed.), Anna Oates (Ed.), John Wright (Ed.), Nilani Ganeshwaran (Ed.), Tim Dennis (Ed.), Belinda Weaver (Ed.), James Baker, Christopher Erdmann, Dan Michael Heggø, Katrin Leinweber, hugolio, … Vikram Chhatre. (2019, July). LibraryCarpentry/lc-shell: Library Carpentry: The UNIX Shell, June 2019 (Version v2019.06.1). Zenodo. http://doi.org/10.5281/zenodo.3266085
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266085.svg)](https://doi.org/10.5281/zenodo.3266085)
 
