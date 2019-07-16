@@ -626,7 +626,7 @@ Pair up with your neighbor and work on these exercises:
 >
 > > ## Solution
 > > ~~~
-> > $ grep hero *.tsv
+> > $ grep -w hero *.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
