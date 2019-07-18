@@ -867,7 +867,7 @@ What is happening the the loop?
 > Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
 > If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
 > ### Now your turn
->Select the columns `Issue`, `Volume`, `Journal`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivjlp.tsv`.
+>Select the columns `Issue`, `Volume`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivjlp.tsv`.
 >> ## Solution
 >> First, let's see where our desired columns are:
 >>
