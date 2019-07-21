@@ -12,7 +12,7 @@ ____
 Librarians like handouts. To make a handout for this lesson, adapt/print from [https://librarycarpentry.org/lc-shell/reference](https://librarycarpentry.org/lc-shell/reference).
 
 ______
-## 02-counting-mining.md
+## 05-counting-mining.md
 
 This lesson notes that the `grep` flags `-o` and `-E` flag are not supported by Git Bash for Windows (see the callout 'Invalid option – o?'). Be prepared to manage these differences in shell behaviour between operating systems.
 
@@ -137,10 +137,10 @@ as long as learners using Windows do not run into roadblocks such as:
 ## Teaching Notes
 
 -   Super cool online resource!
-    <http://explainshell.com/> will dissect any shell command you type in
-    and display help text for each piece. Additional nice manual tool could be <http://tldr-pages.github.io/> with short very descriptive manuals for shell commands, useful especially on Windows while using Git BASH where `man` could not work.
+    <https://explainshell.com/> will dissect any shell command you type in
+    and display help text for each piece. Additional nice manual tool could be <https://tldr.sh/> with short very descriptive manuals for shell commands, useful especially on Windows while using Git BASH where `man` could not work.
 
--   Another super cool online resource is <http://www.shellcheck.net>,
+-   Another super cool online resource is <https://www.shellcheck.net>,
     which will check shell scripts (both uploaded and typed in) for common errors.
 
 -   Resources for "splitting" your shell so that recent commands
@@ -244,14 +244,14 @@ Please see the latest set of installation guidelines for advice,
 and try it out yourself *before* teaching a class.
 Options we have explored include:
 
-1.  [msysGit](http://msysgit.github.io/) (also called "Git Bash"),
+1.  [Git Bash](https://gitforwindows.org/) (previously known as msysGit),
 2.  [Cygwin](http://www.cygwin.com/),
 3.  using a desktop virtual machine, and
 4.  having learners connect to a remote Unix machine (typically a VM in the cloud).
 
 Cygwin was the preferred option until mid-2013,
 but once we started teaching Git,
-msysGit proved to work better.
+Git Bash proved to work better.
 Desktop virtual machines and cloud-based VMs work well for technically sophisticated learners,
 and can reduce installation and configuration at the start of the workshop,
 but:

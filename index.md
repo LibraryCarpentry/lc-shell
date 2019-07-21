@@ -9,5 +9,5 @@ use shell commands to find and manipulate data.
 
 > ## Prerequisites
 >
-> To complete this lesson, you will need a UNIX-like shell environment -see [Setup](https://librarycarpentry.github.io/lc-shell/setup.html). You will also need to download the file **[shell-lesson.zip](https://raw.githubusercontent.com/librarycarpentry/lc-shell/gh-pages/data/shell-lesson.zip)** from GitHub to your *desktop* and extract it there (once you have unzipped/extracted the file, you should end up with a folder called "shell-lesson").
+> To complete this lesson, you will need a UNIX-like shell environment -see [Setup]({{ page.root }}/setup.html). You will also need to download the file **[shell-lesson.zip](https://raw.githubusercontent.com/librarycarpentry/lc-shell/gh-pages/data/shell-lesson.zip)** from GitHub to your *desktop* and extract it there (once you have unzipped/extracted the file, you should end up with a folder called "shell-lesson").
 {: .prereq}

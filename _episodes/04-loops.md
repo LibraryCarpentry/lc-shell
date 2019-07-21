@@ -66,9 +66,9 @@ rather than treat it as text or an external command.
 >
 > Because real-world filenames often contain white-spaces,
 > we wrap `$filename` in double quotes (`"`). If we didn't, the
-> shell would treat the white-space within a filename a separator
-> between two different filesnames, which usually results in errors.
-> Therefore, it's best to generally safer to use `"$..."` unless
+> shell would treat the white-space within a filename as a separator
+> between two different filenames, which usually results in errors.
+> Therefore, it's best and generally safer to use `"$..."` unless
 > you are absolutely sure that no elements with white-space can ever
 > enter your loop variable (such as in [episode 5]({{ page.root }}/05-counting-mining/index.html#using-a-loop-to-count-words)).
 {: .callout}
@@ -97,7 +97,7 @@ the list only included these four items, the shell exits the `for` loop at that 
 >
 > Here we see `>` being used as a shell prompt, but `>` can also be
 > used to redirect output from a command (i.e. send it somewhere else, such as to a file, instead of displaying the output in the terminal) ---
-> we'll use redirection in [episode 5](/lc-shell/05-counting-mining).
+> we'll use redirection in [episode 5]({{ page.root }}/05-counting-mining/).
 > Similarly, `$` is used as a shell prompt, but, as we saw earlier,
 > it is also used to ask the shell to get the value of a variable.
 >
@@ -140,7 +140,7 @@ The shell itself doesn't care what the variable is called.
 {: .challenge}
 
 This is our first look at loops. We will run another loop in the
-[Counting and Mining with the Shell](/lc-shell/05-counting-mining) episode.
+[Counting and Mining with the Shell]({{ page.root }}/05-counting-mining/) episode.
 
 ![For Loop in Action](../fig/shell_script_for_loop_flow_chart.svg)
 
