@@ -103,7 +103,7 @@ as long as learners using Windows do not run into roadblocks such as:
      You can clone the shell-novice directory or use the `Download ZIP`
      button on the right to get the entire [repository](https://github.com/swcarpentry/shell-novice). We also now provide
      a zip file of the `data` directory that can be downloaded on its own
-     from the repository by right-click + save or see the ["setup"]({% link setup.md %}) page on the lesson website for more details.  
+     from the repository by right-click + save or see the ["setup"]({{ page.root }}/setup) page on the lesson website for more details.  
 
 -   Website: various practices have been used.
     -   Option 1: Can give links to learners before the lesson so they can follow along,
