@@ -93,7 +93,7 @@ as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 <!-- hm, reminds me of MARC -->
 
 First, let's have a look at the largest data file, using the tools we learned in
-[Reading files]({{ page.root }}/03-working-with-files-and-folders.md/index.html#reading-files):
+[Reading files]({{ page.root }}/03-working-with-files-and-folders/#reading-files):
 
 ~~~
 $ cat 2014-01_JA.tsv
