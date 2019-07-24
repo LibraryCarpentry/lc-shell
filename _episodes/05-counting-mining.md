@@ -815,7 +815,7 @@ What is happening the the loop?
 
 > ## Why are the variables double-quoted here?
 >
-> a) In [episode 4]({{ page.root }}/04-loops/index.html)) we learned to
+> a) In [episode 4]({{ page.root }}{% link _episodes/04-loops.md %}) we learned to
 > use `"$..."` as a safeguard against white-space being misinterpreted.
 > Why _could_ we omit the `"`-quotes in the above example?
 > 
