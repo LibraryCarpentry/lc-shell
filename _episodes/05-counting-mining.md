@@ -303,10 +303,10 @@ programming languages.
 {: .challenge}
 
 > ## Count, sort and print (faded example)
->To count the total lines in every `tsv` file, sorting the results and then print the first line of the file we use the following:
+>To count the total lines in every `tsv` file, sort the results and then print the first line of the file we use the following:
 >
 >~~~
->wc -l *.tsv | sort | head -n 1
+>wc -l *.tsv | sort -n | head -n 1
 >~~~
 >{: .bash}
 >
@@ -314,15 +314,15 @@ programming languages.
 >Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
 >
 >~~~
->__ -w *.tsv | sort | ____
+>__ -w *.tsv | sort __ | ____
 >~~~
 >{: .bash}
 >
 > > ## Solution
 > >
-> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 10 lines using the `tail` command.
+> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
 > >~~~
-> > wc -w *.tsv | sort | tail -n 10
+> > wc -w *.tsv | sort -n | tail -n 11
 > >~~~
 > {: .solution}
 >{: .bash}
