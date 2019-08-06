@@ -789,7 +789,7 @@ and count the number of times it appears. The results will print to the screen.
 $ for name in "Jo" "Meg" "Beth" "Amy"
 > do
 >    echo "$name"
->    grep "$name" littlewomen.txt | wc -l
+>    grep -wo "$name" littlewomen.txt | wc -l
 > done
 ~~~
 
@@ -797,13 +797,13 @@ $ for name in "Jo" "Meg" "Beth" "Amy"
 
 ~~~
 Jo
-1528
+1355
 Meg
-685
+683
 Beth
-463
+459
 Amy
-643
+645
 ~~~
 {: .output}
 
