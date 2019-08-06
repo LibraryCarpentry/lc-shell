@@ -844,7 +844,7 @@ What is happening the the loop?
 {: .challenge}
 
 > ## Selecting columns from our article dataset
-> When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Journal`, `ISSN`, and `Title` columns from our article data. With `cut` we'd:
+> When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Volume`, 'Journal`, and `Citation` columns from our article data. With `cut` we'd:
 >~~~
 > cut -f 2,4,5,8 2014-01_JA.tsv | head
 >~~~
