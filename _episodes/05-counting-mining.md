@@ -809,7 +809,7 @@ Amy
 
 What is happening in the loop?  
 + `echo "$name"` is printing the current value of `$name`
-+ `grep "$name" littlewomen.txt` finds each line that contains the value stored in `$name'. The '-w' flag finds only the whole word that is the value stored in '$name' and the '-o' flag pulls this value out from the line it is in to give you the actual words to count as lines in themselves.
++ `grep "$name" littlewomen.txt` finds each line that contains the value stored in `$name`. The `-w` flag finds only the whole word that is the value stored in `$name` and the `-o` flag pulls this value out from the line it is in to give you the actual words to count as lines in themselves.
 + The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
 + `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
 
