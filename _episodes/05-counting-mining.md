@@ -93,7 +93,7 @@ as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 <!-- hm, reminds me of MARC -->
 
 First, let's have a look at the largest data file, using the tools we learned in
-[Reading files]({{ page.root }}/03-working-with-files-and-folders.md/index.html#reading-files):
+[Reading files]({{ page.root }}/03-working-with-files-and-folders/#reading-files):
 
 ~~~
 $ cat 2014-01_JA.tsv
@@ -814,7 +814,7 @@ What is happening in the loop?
 
 > ## Why are the variables double-quoted here?
 >
-> a) In [episode 4]({{ page.root }}/04-loops/index.html)) we learned to
+> a) In [episode 4]({{ page.root }}{% link _episodes/04-loops.md %}) we learned to
 > use `"$..."` as a safeguard against white-space being misinterpreted.
 > Why _could_ we omit the `"`-quotes in the above example?
 > 

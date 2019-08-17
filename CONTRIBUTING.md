@@ -51,7 +51,7 @@ and to meet some of our community members.
 
 1.  If you wish to change this lesson,
     please work in <https://github.com/librarycarpentry/lc-data-intro>,
-    which can be viewed at <https://librarycarpentry.github.io/lc-data-intro>.
+    which can be viewed at <https://librarycarpentry.org/lc-data-intro>.
 
 2.  If you wish to change the example lesson,
     please work in <https://github.com/swcarpentry/lesson-example>,
