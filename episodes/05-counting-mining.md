@@ -303,10 +303,10 @@ programming languages.
 {: .challenge}
 
 > ## Count, sort and print (faded example)
->To count the total lines in every `tsv` file, sorting the results and then print the first line of the file we use the following:
+>To count the total lines in every `tsv` file, sort the results and then print the first line of the file we use the following:
 >
 >~~~
->wc -l *.tsv | sort | head -n 1
+>wc -l *.tsv | sort -n | head -n 1
 >~~~
 >{: .bash}
 >
@@ -314,15 +314,15 @@ programming languages.
 >Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
 >
 >~~~
->__ -w *.tsv | sort | ____
+>__ -w *.tsv | sort __ | ____
 >~~~
 >{: .bash}
 >
 > > ## Solution
 > >
-> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 10 lines using the `tail` command.
+> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
 > >~~~
-> > wc -w *.tsv | sort | tail -n 10
+> > wc -w *.tsv | sort -n | tail -n 11
 > >~~~
 > {: .solution}
 >{: .bash}
@@ -626,7 +626,7 @@ Pair up with your neighbor and work on these exercises:
 >
 > > ## Solution
 > > ~~~
-> > $ grep hero *.tsv
+> > $ grep -w hero *.tsv
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -722,15 +722,14 @@ Pair up with your neighbor and work on these exercises:
 {: .challenge}
 
 > ## Finding unique values
-> If you pipe something to the `uniq` command, it will filter out duplicate lines
-> and only return unique ones. Try piping the output from the command in the last exercise
-> to `uniq` and then to `wc -l` to count the number of unique ISSN values.
+> If you pipe something to the `uniq` command, it will filter out adjacent duplicate lines. In order for the 'uniq' command to only return unique values though, it needs to be used with the 'sort' command. Try piping the output from the command in the last exercise
+> to `sort` and then piping these results to 'uniq' and then `wc -l` to count the number of unique ISSN values.
 > Note: This exercise requires the `-o` flag. See the callout box "Invalid option -- o?"
 > above.
 >
 > > ## Solution
 > > ~~~
-> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv | uniq | wc -l
+> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv | sort | uniq | wc -l
 > > ~~~
 > > {: .bash}
 > {: .solution}
@@ -789,7 +788,7 @@ and count the number of times it appears. The results will print to the screen.
 $ for name in "Jo" "Meg" "Beth" "Amy"
 > do
 >    echo "$name"
->    grep "$name" littlewomen.txt | wc -l
+>    grep -wo "$name" littlewomen.txt | wc -l
 > done
 ~~~
 
@@ -797,19 +796,19 @@ $ for name in "Jo" "Meg" "Beth" "Amy"
 
 ~~~
 Jo
-1528
+1355
 Meg
-685
+683
 Beth
-463
+459
 Amy
-643
+645
 ~~~
 {: .output}
 
-What is happening the the loop?  
+What is happening in the loop?  
 + `echo "$name"` is printing the current value of `$name`
-+ `grep "$name" littlewomen.txt` finds each line that contains the value stored in `$name`
++ `grep "$name" littlewomen.txt` finds each line that contains the value stored in `$name`. The `-w` flag finds only the whole word that is the value stored in `$name` and the `-o` flag pulls this value out from the line it is in to give you the actual words to count as lines in themselves.
 + The output from the `grep` command is redirected with the pipe, `|` (without the pipe and the rest of the line, the output from `grep` would print directly to the screen)
 + `wc -l` counts the number of _lines_ (because we used the `-l` flag) sent from `grep`. Because `grep` only returned lines that contained the value stored in `$name`, `wc -l` corresponds to the number of occurrences of each girl's name.
 
@@ -844,7 +843,7 @@ What is happening the the loop?
 {: .challenge}
 
 > ## Selecting columns from our article dataset
-> When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Journal`, `ISSN`, and `Title` columns from our article data. With `cut` we'd:
+> When you receive data it will often contain more columns or variables than you need for your work. If you want to select only the columns you need for your analysis, you can use the `cut` command to do so. `cut` is a tool for extracting sections from a file. For instance, say we want to retain only the `Creator`, `Volume`, `Journal`, and `Citation` columns from our article data. With `cut` we'd:
 >~~~
 > cut -f 2,4,5,8 2014-01_JA.tsv | head
 >~~~
@@ -867,7 +866,7 @@ What is happening the the loop?
 > Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
 > If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
 > ### Now your turn
->Select the columns `Issue`, `Volume`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivjlp.tsv`.
+>Select the columns `Issue`, `Volume`, `Language`, `Publisher` and direct the output into a new file. You can name it something like `2014-01_JA_ivlp.tsv`.
 >> ## Solution
 >> First, let's see where our desired columns are:
 >>
@@ -884,11 +883,11 @@ What is happening the the loop?
 >>Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12.
 >> We use these positional column numbers to construct our `cut` command:
 >>```
->> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivjlp.tsv
+>> cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivlp.tsv
 >>```
 >> We can confirm this worked by running head on the file:
 >>```
->>head 2014-01_JA_ivjlp.tsv
+>>head 2014-01_JA_ivlp.tsv
 >>```
 >>~~~
 >>Issue	Volume	Language	Publisher
