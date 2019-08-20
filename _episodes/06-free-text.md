@@ -133,7 +133,7 @@ Open the `gulliver-clean.txt` in a text editor. Note how the text has been trans
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -r > gulliver-final.txt
+$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
 ~~~
 {: .bash}
 
@@ -345,7 +345,7 @@ Open the `diary-clean.txt` in a text editor. Note how the text has been transfor
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -r > diary-final.txt
+$ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
 ~~~
 {: .bash}
 
