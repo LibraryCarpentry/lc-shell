@@ -122,8 +122,8 @@ History_1a-rdf.tsv  Nelson, M. C. 1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN00157187
 In the header, we can see the common metadata fields of academic papers: `Creator`, `Issue`, `Citation`, etc.
 
 Next, let's learn about a basic data analysis tool:
-`wc` is the "word count" command: it counts the number of lines, words, bytes
-and characters in files. Since we love the wildcard operator, let's run the command
+`wc` is the "word count" command: it counts the number of lines, words, and bytes.
+Since we love the wildcard operator, let's run the command
 `wc *.tsv` to get counts for all the `.tsv` files in the current directory
 (it takes a little time to complete):
 
@@ -140,8 +140,7 @@ $ wc *.tsv
 ~~~
 {: .output}
 
-The first three columns contains the number of lines, words and bytes
-(to show number characters you have to use a flag).
+The first three columns contains the number of lines, words and bytes.
 
 If we only have a handful of files to compare, it might be faster or more convenient
 to just check with Microsoft Excel, OpenRefine or your favourite text editor, but
