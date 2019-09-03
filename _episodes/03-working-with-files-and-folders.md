@@ -89,6 +89,7 @@ total 33M
 -rw-r--r-- 1 riley staff 582K Feb  2 2017  33504-0.txt
 -rw-r--r-- 1 riley staff 598K Jan 31 2017  829-0.txt
 -rw-rw-r-- 1 riley staff  18K Feb 22 2017  diary.html
+drwxr-xr-x 1 riley staff  64B Feb 22 2017  firstdir
 ~~~
 {: .output}
 
