@@ -155,18 +155,18 @@ This is our first look at loops. We will run another loop in the
 > comments are made in scripts. This provides you with more information about what the script does. 
 > The remaining lines contain the loop you created above. You can create this file in the same directory 
 > you've been using for the lesson and by using the text editor of your choice (e.g. nano) but when you save the 
-> file, make sure it has the extension **.sh** (e.g. `myfirstbashscript.sh`). When you've done this, you can run the
-> Bash script by typing the command bash and the file name via the command line (e.g. `bash myfirstbashscript.sh`). 
+> file, make sure it has the extension **.sh** (e.g. `my_first_bash_script.sh`). When you've done this, you can run the
+> Bash script by typing the command bash and the file name via the command line (e.g. `bash my_first_bash_script.sh`). 
 > > ```
 > > #!/bin/bash
 > > # This script loops through .txt files, returns the file name, first line, and last line of the file
 > > for file in *.txt
 > > do
-> > 	echo "$file"
-> > 	head -n 1 "$file"
-> > 	tail -n 1 "$file"
+> > 	echo $file
+> > 	head -n 1 $file
+> > 	tail -n 1 $file
 > > done
 > > ```
 > > {: .bash}
-> For more on Bash scripts, see [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/).
+> Download/copy [my_first_bash_script.sh](https://raw.githubusercontent.com/LibraryCarpentry/lc-shell/gh-pages/files/my_first_bash_script.sh). For more on Bash scripts, see [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/).
 {: .callout}
