@@ -25,9 +25,9 @@ where we are by using the `pwd` command, which you can use whenever you are unsu
 about where you are. It stands for "print working directory" and the result of the
 command is printed to your standard output, which is the screen.
 
-Let's type `pwd` and hit enter to execute the command:
-(The `$` sign is used to indicate a command to be typed on the command prompt,
- but we never type the `$` sign itself, just what follows after it.)
+Let's type `pwd` and hit enter to execute the command
+(Note that the `$` sign is used to indicate a command to be typed on the command prompt,
+ but we never type the `$` sign itself, just what follows after it.):
 
 ~~~
 $ pwd
