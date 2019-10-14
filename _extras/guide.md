@@ -149,7 +149,6 @@ as long as learners using Windows do not run into roadblocks such as:
 -   Running a text editor from the command line can be
     the biggest stumbling block during the entire lesson:
     many will try to run the same editor as the instructor
-    (which may leave them trapped in the awful nether hell that is Vim),
     or will not know how to navigate to the right directory
     to save their file,
     or will run a word processor rather than a plain text editor.
