@@ -31,7 +31,18 @@ $ touch a.doc b.doc c.doc d.doc
 ~~~
 This will create four empty files with those names. It is easy to use the shell to create a batch of files in one go.
 
-Now we will use a loop to create a backup version of those files. Accordingly, we enter:
+Now we will use a loop to create a backup version of those files. First let’s look at the general form of a loop:
+
+```
+for thing in list_of_things
+do
+    operation_using $thing    # Indentation within the loop is not required, but aids legibility
+done
+```
+{: .language-bash}
+
+We can apply this to our example like this:
+
 
 ~~~
 $ for filename in *.doc
