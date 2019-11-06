@@ -233,7 +233,16 @@ as long as learners using Windows do not run into roadblocks such as:
    Your particular shell may have extensions beyond POSIX that are not available
    on other machines, especially the default OSX bash and Windows bash emulators.
    For example, POSIX `ls` does not have an `--ignore=` or `-I` option, and POSIX
-   `head` takes `-n 10` or `-10`, but not the long form of `--lines=10`.
+   `head` takes `-n 10` or `-10`, but not the long form of `--lines=10`.  For example,
+   in Episode 5 when you are teaching grep there is a command in an exercise to prepend
+   dates to filenames that  will rely on the  `-I` option:
+      ~~~
+    $ grep -i revolution *.tsv > results/$(date -I)_JAi-revolution.tsv
+    ~~~
+    The `-I` option for ISO dates may not work with the date command on Mac OSX like it does from BSD through GNU. 
+    If you or your students are on a Mac and `-I` option isn't available, then you could mimic the `-I` option
+    like this:  `echo $(date +%Y-%m-%d)`
+
 
 ## Windows
 
