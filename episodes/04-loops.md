@@ -89,8 +89,7 @@ Each time the loop iterates, it will assign a file name to the variable `filenam
 and run the `cp` command.
 The first time through the loop,
 `$filename` is `a.doc`.
-The interpreter runs the command `cp` on `a.doc`,
-and then prints the filename to the screen (because we asked it to echo each filename as it works its way through the loop).
+The interpreter prints the filename to the screen and then runs the command `cp` on `a.doc`, (because we asked it to echo each filename as it works its way through the loop).
 For the second iteration, `$filename` becomes
 `b.doc`. This time, the shell runs `cp` on `b.doc`
 and then prints the filename to the screen. The loop performs the same operations for `c.doc` and then for `d.doc` and then, since
