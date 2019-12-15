@@ -319,7 +319,7 @@ programming languages.
 >
 > > ## Solution
 > >
-> > Here we use the `wc` command with the `-w` (word) flag on all `csv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
+> > Here we use the `wc` command with the `-w` (word) flag on all `tsv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
 > >~~~
 > > wc -w *.tsv | sort -n | tail -n 11
 > >~~~
