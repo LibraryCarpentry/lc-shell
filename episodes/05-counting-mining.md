@@ -620,7 +620,7 @@ Pair up with your neighbor and work on these exercises:
 
 > ## Case sensitive search
 > Search for all case sensitive instances of
-> a word you choose in all four derived `.tsv` files in this directory.
+> a whole word you choose in all four derived `.tsv` files in this directory.
 > Print your results to the shell.
 >
 > > ## Solution
