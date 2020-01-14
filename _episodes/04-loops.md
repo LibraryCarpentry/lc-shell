@@ -91,8 +91,7 @@ The first time through the loop,
 `$filename` is `a.doc`.
 The interpreter prints the filename to the screen and then runs the command `cp` on `a.doc`, (because we asked it to echo each filename as it works its way through the loop).
 For the second iteration, `$filename` becomes
-`b.doc`. This time, the shell runs `cp` on `b.doc`
-and then prints the filename to the screen. The loop performs the same operations for `c.doc` and then for `d.doc` and then, since
+`b.doc`. This time, the shell prints the filename `b.doc` to the screen, then runs `cp` on `b.doc`. The loop performs the same operations for `c.doc` and then for `d.doc` and then, since
 the list only included these four items, the shell exits the `for` loop at that point.
 
 > ## Follow the Prompt
