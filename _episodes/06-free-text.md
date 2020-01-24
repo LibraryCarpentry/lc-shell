@@ -206,7 +206,7 @@ We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
 
 ~~~
-$ tr -d [:punct:] < 000003160_01_text.json > 000003160_01_text-nopunct.txt
+$ tr -d [:punct:] < 201403160_01_text.json > 201403160_01_text-nopunct.txt
 ~~~
 {: .bash}
 
@@ -216,18 +216,18 @@ It also requires the use of both the output redirect `>` we have seen and the in
 Finally regularise the text by removing all the uppercase lettering.
 
 ~~~
-$ tr [:upper:] [:lower:] < 000003160_01_text-nopunct.txt > 000003160_01_text-clean.txt
+$ tr [:upper:] [:lower:] < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
 ~~~
 {: .bash}
 
-Open the `000003160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
+Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
 ### Pulling a text apart, counting word frequencies
 
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < 000003160_01_text-clean.txt | sort | uniq -c | sort -nr > 000003160_01_text-final.txt
+$ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403160_01_text-final.txt
 ~~~
 {: .bash}
 
