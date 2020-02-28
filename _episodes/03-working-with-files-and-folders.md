@@ -144,7 +144,7 @@ subscribe to our email newsletter to hear about new eBooks.
 ~~~
 {: .output}
 
-If ten lines is not enough (or too much), we would check `man head`
+If ten lines is not enough (or too much), we would check `man head`(or `ls --help` when using Windows)
 to see if there exists an option to specify the number of lines to get
 (there is: `head -n 20` will print 20 lines).
 
