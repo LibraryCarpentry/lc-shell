@@ -337,11 +337,11 @@ $ ls
 {: .challenge}
 
 > ## Using the `echo` command
-> The `echo` command simply prints out a text you specify. Try it out: `echo "Library Carpentry is awesome!"`.
+> The `echo` command simply prints out a text you specify. Try it out: `echo "Library Carpentry is awesome"`.
 > Interesting, isn't it?
 >
-> You can also specify a variable, for instance `NAME=` followed by your name.
-> Then type `echo "$NAME is a fantastic library carpentry student"`. What happens?
+> You can also specify a variable. First type `NAME=` followed by your name, and hit enter.
+> Then type `echo "$NAME is a fantastic library carpentry student"` and hit enter. What happens?
 >
 > You can combine both text and normal shell commands using `echo`, for example the
 > `pwd` command you have learned earlier today. You do this by enclosing a shell
