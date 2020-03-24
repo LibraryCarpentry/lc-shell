@@ -144,7 +144,7 @@ subscribe to our email newsletter to hear about new eBooks.
 ~~~
 {: .output}
 
-If ten lines is not enough (or too much), we would check `man head`
+If ten lines is not enough (or too much), we would check `man head`(or `ls --help` when using Windows)
 to see if there exists an option to specify the number of lines to get
 (there is: `head -n 20` will print 20 lines).
 
@@ -340,8 +340,8 @@ $ ls
 > The `echo` command prints out a text you specify. Try it out: `echo "Library Carpentry is awesome!"`.
 > Interesting, isn't it?
 >
-> You can also specify a variable, for instance `NAME=` followed by your name.
-> Then type `echo "$NAME is a fantastic library carpentry student"`. What happens?
+> You can also specify a variable. First type `NAME=` followed by your name, and hit enter.
+> Then type `echo "$NAME is a fantastic library carpentry student"` and hit enter. What happens?
 >
 > You can combine both text and normal shell commands using `echo`, for example the
 > `pwd` command you have learned earlier today. You do this by enclosing a shell
