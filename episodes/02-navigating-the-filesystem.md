@@ -177,9 +177,9 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > Use the <kbd>spacebar</kbd> to navigate the manual pages. Use <kbd>q</kbd> at any time to quit.
 >
 > ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users.
-> If you use windows, you can search for the Shell command on [http://man.he.net/](http://man.he.net/),
+> If you use Windows, you can search for the shell command on [http://man.he.net/](http://man.he.net/),
 > and view the associated manual page. In some systems the command name followed by `--help` will work, e.g. `ls --help`.
-> 
+>
 > Also, the manual lists commands individually, e.g., although `-h` can only be used together with the `-l` option,  
 > you'll find it listed as `-h` in the manual, not as `-lh`.
 >
