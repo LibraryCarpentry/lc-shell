@@ -337,7 +337,7 @@ $ ls
 {: .challenge}
 
 > ## Using the `echo` command
-> The `echo` command simply prints out a text you specify. Try it out: `echo "Library Carpentry is awesome"`.
+> The `echo` command prints out a text you specify. Try it out: `echo "Library Carpentry is awesome!"`.
 > Interesting, isn't it?
 >
 > You can also specify a variable. First type `NAME=` followed by your name, and hit enter.
