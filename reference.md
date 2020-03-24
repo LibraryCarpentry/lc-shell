@@ -53,7 +53,7 @@ ______
 
 **`rmdir -r`** will delete a directory, even if it is not empty.
 
-**`rmdir -r-i`** will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
+**`rm -ri`** will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
 
 **`touch`** will update timestamp information on files.
 ______
