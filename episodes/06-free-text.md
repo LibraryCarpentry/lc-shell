@@ -167,12 +167,12 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 
 ### Grabbing a text, cleaning it up
 
-We're going to work with `000003160_01_text.json`.
+We're going to work with `201403160_01_text.json`.
 
 Let's look at the file.
 
 ~~~
-$ less -N 000003160_01_text.json
+$ less -N 201403160_01_text.json
 ~~~
 {: .bash}
 ~~~
@@ -246,7 +246,7 @@ count for each word in it. This is data we can prod and poke
 and visualise, that can form the basis of our investigations,
 and can compare with other texts processed in the same way.
 And if we need to run a different set of transformation for
-a different analysis, we can return to `000003160_01_text-clean.txt` to start that work.
+a different analysis, we can return to `201403160_01_text-clean.txt` to start that work.
 
 And all this using a few commands on an otherwise unassuming but very powerful command line.
 
