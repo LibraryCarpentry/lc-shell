@@ -19,6 +19,16 @@ Even if you are a Windows user, learning Bash will open up a powerful set of too
 >    - Double click the `.exe` to run the installer (for example, `Git-2.13.3-64-bit.exe`) using the default settings.
 >    - Once installed, open the shell by selecting Git Bash from the start menu (in the Git folder).
 >
+>     There are also some more advanced solutions available for running Bash
+>     commands on Windows.  A Bash shell command-line tool is available for
+>     Windows 10, which you can use if you enable the [Windows Subsystem for
+>     Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+>     Additionally, you can run Bash commands on a remote computer or server
+>     that already has a Unix Shell, from your Windows machine.  This can
+>     usually be done through a Secure Shell (SSH) client.  One such client
+>     available for free for Windows computers is
+>     [PuTTY](http://faculty.smu.edu/reynolds/unixtut/windows.html).
+>
 >If you encounter issues, the Carpentries maintains a [Configuration Problems and Solutions wiki page](https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions) that may help.
 {: .prereq}
 
