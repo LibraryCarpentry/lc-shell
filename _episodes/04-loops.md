@@ -31,7 +31,18 @@ $ touch a.doc b.doc c.doc d.doc
 ~~~
 This will create four empty files with those names. It is easy to use the shell to create a batch of files in one go.
 
-Now we will use a loop to create a backup version of those files. Accordingly, we enter:
+Now we will use a loop to create a backup version of those files. First let’s look at the general form of a loop:
+
+```
+for thing in list_of_things
+do
+    operation_using $thing    # Indentation within the loop is not required, but aids legibility
+done
+```
+{: .language-bash}
+
+We can apply this to our example like this:
+
 
 ~~~
 $ for filename in *.doc
@@ -78,11 +89,9 @@ Each time the loop iterates, it will assign a file name to the variable `filenam
 and run the `cp` command.
 The first time through the loop,
 `$filename` is `a.doc`.
-The interpreter runs the command `cp` on `a.doc`,
-and then prints the filename to the screen (because we asked it to echo each filename as it works its way through the loop).
+The interpreter prints the filename to the screen and then runs the command `cp` on `a.doc`, (because we asked it to echo each filename as it works its way through the loop).
 For the second iteration, `$filename` becomes
-`b.doc`. This time, the shell runs `cp` on `b.doc`
-and then prints the filename to the screen. The loop performs the same operations for `c.doc` and then for `d.doc` and then, since
+`b.doc`. This time, the shell prints the filename `b.doc` to the screen, then runs `cp` on `b.doc`. The loop performs the same operations for `c.doc` and then for `d.doc` and then, since
 the list only included these four items, the shell exits the `for` loop at that point.
 
 > ## Follow the Prompt
@@ -155,18 +164,18 @@ This is our first look at loops. We will run another loop in the
 > comments are made in scripts. This provides you with more information about what the script does. 
 > The remaining lines contain the loop you created above. You can create this file in the same directory 
 > you've been using for the lesson and by using the text editor of your choice (e.g. nano) but when you save the 
-> file, make sure it has the extension **.sh** (e.g. `myfirstbashscript.sh`). When you've done this, you can run the
-> Bash script by typing the command bash and the file name via the command line (e.g. `bash myfirstbashscript.sh`). 
+> file, make sure it has the extension **.sh** (e.g. `my_first_bash_script.sh`). When you've done this, you can run the
+> Bash script by typing the command bash and the file name via the command line (e.g. `bash my_first_bash_script.sh`). 
 > > ```
 > > #!/bin/bash
 > > # This script loops through .txt files, returns the file name, first line, and last line of the file
 > > for file in *.txt
 > > do
-> > 	echo "$file"
-> > 	head -n 1 "$file"
-> > 	tail -n 1 "$file"
+> > 	echo $file
+> > 	head -n 1 $file
+> > 	tail -n 1 $file
 > > done
 > > ```
 > > {: .bash}
-> For more on Bash scripts, see [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/).
+> Download/copy [my_first_bash_script.sh](https://raw.githubusercontent.com/LibraryCarpentry/lc-shell/gh-pages/files/my_first_bash_script.sh). For more on Bash scripts, see [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/).
 {: .callout}

@@ -81,7 +81,7 @@ $ ls -lh
 {: .bash}
 ~~~
 total 33M
--rw-rw-r-- 1 riley staff 383K Feb 22 2017  000003160_01_text.json
+-rw-rw-r-- 1 riley staff 383K Feb 22 2017  201403160_01_text.json
 -rw-r--r-- 1 riley staff 3.6M Jan 31 2017  2014-01-31_JA-africa.tsv
 -rw-r--r-- 1 riley staff 7.4M Jan 31 2017  2014-01-31_JA-america.tsv
 -rw-rw-r-- 1 riley staff 125M Jun 10 2015  2014-01_JA.tsv
@@ -89,6 +89,7 @@ total 33M
 -rw-r--r-- 1 riley staff 582K Feb  2 2017  33504-0.txt
 -rw-r--r-- 1 riley staff 598K Jan 31 2017  829-0.txt
 -rw-rw-r-- 1 riley staff  18K Feb 22 2017  diary.html
+drwxr-xr-x 1 riley staff  64B Feb 22 2017  firstdir
 ~~~
 {: .output}
 
@@ -143,7 +144,7 @@ subscribe to our email newsletter to hear about new eBooks.
 ~~~
 {: .output}
 
-If ten lines is not enough (or too much), we would check `man head`
+If ten lines is not enough (or too much), we would check `man head`(or `ls --help` when using Windows)
 to see if there exists an option to specify the number of lines to get
 (there is: `head -n 20` will print 20 lines).
 
@@ -336,11 +337,11 @@ $ ls
 {: .challenge}
 
 > ## Using the `echo` command
-> The `echo` command simply prints out a text you specify. Try it out: `echo "Library Carpentry is awesome!"`.
+> The `echo` command simply prints out a text you specify. Try it out: `echo 'Library Carpentry is awesome!'`.
 > Interesting, isn't it?
 >
-> You can also specify a variable, for instance `NAME=` followed by your name.
-> Then type `echo "$NAME is a fantastic library carpentry student"`. What happens?
+> You can also specify a variable. First type `NAME=` followed by your name, and hit enter.
+> Then type `echo "$NAME is a fantastic library carpentry student"` and hit enter. What happens?
 >
 > You can combine both text and normal shell commands using `echo`, for example the
 > `pwd` command you have learned earlier today. You do this by enclosing a shell

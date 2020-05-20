@@ -25,9 +25,9 @@ where we are by using the `pwd` command, which you can use whenever you are unsu
 about where you are. It stands for "print working directory" and the result of the
 command is printed to your standard output, which is the screen.
 
-Let's type `pwd` and hit enter to execute the command:
-(The `$` sign is used to indicate a command to be typed on the command prompt,
- but we never type the `$` sign itself, just what follows after it.)
+Let's type `pwd` and hit enter to execute the command
+(Note that the `$` sign is used to indicate a command to be typed on the command prompt,
+ but we never type the `$` sign itself, just what follows after it.):
 
 ~~~
 $ pwd
@@ -177,9 +177,9 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > Use the <kbd>spacebar</kbd> to navigate the manual pages. Use <kbd>q</kbd> at any time to quit.
 >
 > ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users.
-> If you use windows, you can search for the Shell command on [http://man.he.net/](http://man.he.net/),
+> If you use Windows, you can search for the shell command on [http://man.he.net/](http://man.he.net/),
 > and view the associated manual page. In some systems the command name followed by `--help` will work, e.g. `ls --help`.
-> 
+>
 > Also, the manual lists commands individually, e.g., although `-h` can only be used together with the `-l` option,  
 > you'll find it listed as `-h` in the manual, not as `-lh`.
 >

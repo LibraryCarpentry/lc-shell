@@ -133,7 +133,7 @@ Open the `gulliver-clean.txt` in a text editor. Note how the text has been trans
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -r > gulliver-final.txt
+$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
 ~~~
 {: .bash}
 
@@ -167,12 +167,12 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 
 ### Grabbing a text, cleaning it up
 
-We're going to work with `000003160_01_text.json`.
+We're going to work with `201403160_01_text.json`.
 
 Let's look at the file.
 
 ~~~
-$ less -N 000003160_01_text.json
+$ less -N 201403160_01_text.json
 ~~~
 {: .bash}
 ~~~
@@ -206,7 +206,7 @@ We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
 
 ~~~
-$ tr -d [:punct:] < 000003160_01_text.json > 000003160_01_text-nopunct.txt
+$ tr -d [:punct:] < 201403160_01_text.json > 201403160_01_text-nopunct.txt
 ~~~
 {: .bash}
 
@@ -216,18 +216,18 @@ It also requires the use of both the output redirect `>` we have seen and the in
 Finally regularise the text by removing all the uppercase lettering.
 
 ~~~
-$ tr [:upper:] [:lower:] < 000003160_01_text-nopunct.txt > 000003160_01_text-clean.txt
+$ tr [:upper:] [:lower:] < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
 ~~~
 {: .bash}
 
-Open the `000003160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
+Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
 ### Pulling a text apart, counting word frequencies
 
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < 000003160_01_text-clean.txt | sort | uniq -c | sort -nr > 000003160_01_text-final.txt
+$ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403160_01_text-final.txt
 ~~~
 {: .bash}
 
@@ -246,7 +246,7 @@ count for each word in it. This is data we can prod and poke
 and visualise, that can form the basis of our investigations,
 and can compare with other texts processed in the same way.
 And if we need to run a different set of transformation for
-a different analysis, we can return to `000003160_01_text-clean.txt` to start that work.
+a different analysis, we can return to `201403160_01_text-clean.txt` to start that work.
 
 And all this using a few commands on an otherwise unassuming but very powerful command line.
 
@@ -345,7 +345,7 @@ Open the `diary-clean.txt` in a text editor. Note how the text has been transfor
 We are now ready to pull the text apart.
 
 ~~~
-$ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -r > diary-final.txt
+$ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
 ~~~
 {: .bash}
 
