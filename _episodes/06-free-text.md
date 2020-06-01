@@ -112,11 +112,12 @@ We now use the `tr` command, used for translating or
 deleting characters. Type and run:
 
 ~~~
-$ tr -d [:punct:] < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
+$ tr -d '[:punct:]\r' < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
 ~~~
 {: .bash}
 
-This uses the translate command and a special syntax to remove all punctuation.
+This uses the translate command and a special syntax to remove all punctuation
+(`[:punct:]`) and carriage returns (`\r`).
 It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
 Finally regularise the text by removing all the uppercase lettering.
@@ -325,11 +326,12 @@ We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
 
 ~~~
-$ tr -d [:punct:] < diary-notags.txt > diary-notagspunct.txt
+$ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
 ~~~
 {: .bash}
 
-This uses the translate command and a special syntax to remove all punctuation.
+This uses the translate command and a special syntax to remove all punctuation
+(`[:punct:]`) and carriage returns (`\r`).
 
 Finally regularise the text by removing all the uppercase lettering.
 
