@@ -579,12 +579,15 @@ $ wc -l results/*.tsv
 
 Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
 
-> ## Basic and extended regular expressions
-> There is unfortunately both ["basic" and "extended" regular expressions](https://www.gnu.org/software/grep/manual/html_node/Basic-vs-Extended.html).
-> This is a common cause of confusion, since most tutorials, including ours, teach
-> extended regular expression, but `grep` uses basic by default.
-> Unless you want to remember the details, make your life easy by always using
-> extended regular expressions (`-E` flag) when doing something more complex
+> ## Basic, extended, and PERL-compatible regular expressions
+> There are, unfortunately, [different ways of writing regular expressions](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html).
+> Across its various versions, `grep` supports "basic", at least two types of "extended",
+> and "PERL-compatible" regular expressions. This is a common cause of confusion, since
+> most tutorials, including ours, teach regular expressions compatible with the PERL
+> programming language, but `grep` uses basic by default.
+> Unless you want to remember the details, make your life easy by always using the
+> most advanced regular expressions your version of `grep` supports (`-E` flag on
+> macOS X, `-P` on most other platforms) or when doing something more complex
 > than searching for a plain string.
 {: .callout}
 
@@ -698,20 +701,27 @@ Pair up with your neighbor and work on these exercises:
 > (four digits followed by hyphen followed by four digits)
 > in `2014-01_JA.tsv` and print the results to a file `results/issns.tsv`.
 > Note that you might have to use the `-E` flag (or `-P` with some versions
-> of `grep`, e.g. with Git Bash on Windows.).
+> of `grep`, e.g. with Git Bash on Windows).
 >
 > > ## Solution
 > > ~~~
-> > $ grep -E '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
+> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
 > > ~~~
 > > {: .bash}
 > >
 > > or
 > >
 > > ~~~
-> > $ grep -P '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
+> > $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
 > > ~~~
 > > {: .bash}
+> >
+> > It is worth checking the file to make sure `grep` has interpreted the pattern
+> > correctly. You could use the `less` command for this.
+> >
+> > The `-o` flag means that only the ISSN itself is printed out, instead of the
+> > whole line. You can leave it out if it causes problems: see the callout box
+> > "Invalid option -- o?" above.
 > >
 > > If you came up with something more advanced, perhaps including word boundaries,
 > > please share your result in the collaborative document and give yourself a pat on the shoulder.
@@ -721,7 +731,9 @@ Pair up with your neighbor and work on these exercises:
 {: .challenge}
 
 > ## Finding unique values
-> If you pipe something to the `uniq` command, it will filter out adjacent duplicate lines. In order for the 'uniq' command to only return unique values though, it needs to be used with the 'sort' command. Try piping the output from the command in the last exercise
+> If you pipe something to the `uniq` command, it will filter out adjacent duplicate lines.
+> In order for the 'uniq' command to only return unique values though, it needs to be used
+> with the 'sort' command. Try piping the output from the command in the last exercise
 > to `sort` and then piping these results to 'uniq' and then `wc -l` to count the number of unique ISSN values.
 > Note: This exercise requires the `-o` flag. See the callout box "Invalid option -- o?"
 > above.
@@ -729,6 +741,12 @@ Pair up with your neighbor and work on these exercises:
 > > ## Solution
 > > ~~~
 > > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv | sort | uniq | wc -l
+> > ~~~
+> > {: .bash}
+> >
+> > or
+> > ~~~
+> > $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv | sort | uniq | wc -l
 > > ~~~
 > > {: .bash}
 > {: .solution}
