@@ -532,11 +532,17 @@ This script looks in the defined files and prints any lines containing `revoluti
 filename:
 
 ~~~
-$ grep -i revolution *.tsv > results/$(date -I)_JAi-revolution.tsv
+$ grep -i revolution *.tsv > results/$(date "+%Y-%m-%d")_JAi-revolution.tsv
 ~~~
 {: .bash}
 
 This saves the subsetted data to a new file.
+
+> ## Alternative date commands
+> This way of writing dates is so common that on some platforms (not macOS X)
+> you can get the same result by typing `$(date -I)` instead of
+> `$(date "+%Y-%m-%d")`.
+{: .callout}
 
 However, if we look at this file, it contains every instance of the
 string 'revolution' including as a single word and as part of other words
@@ -545,7 +551,7 @@ Thankfully, the `-w` flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
 ~~~
-$ grep -iw revolution *.tsv > results/$(date -I)_JAiw-revolution.tsv
+$ grep -iw revolution *.tsv > results/$(date "+%Y-%m-%d")_JAiw-revolution.tsv
 ~~~
 {: .bash}
 
@@ -567,12 +573,19 @@ $ wc -l results/*.tsv
 {: .output}
 
 > ## Automatically adding a date prefix
-> Notice how we didn't type the `YYYY-MM-DD` date ourselves, but let
-> `date -I` do that mindless task for us. Find out about this option
-> and the standard format that it uses.
-> 
+> Notice how we didn't type today's date ourselves, but let the
+> `date` command do that mindless task for us. Find out about the
+> `"+%Y-%m-%d"` option and alternative options we could have used.
+>
 > > ## Solution
-> > Using `date --help` will show you that `-I` is short for [--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which essentially avoids the confusion between the European
+> > Using `date --help` will show you that the `+` option introduces
+> > a date format, where `%Y`, `%m` and `%d` are replaced by the year,
+> > month, and day respectively. There are many other percent-codes
+> > you could use.
+> >
+> > You might also see that `-I` is short for
+> > [--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which
+> > essentially avoids the confusion between the European
 > > and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
 > {: .solution}
 {: .challenge}
