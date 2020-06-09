@@ -1,7 +1,7 @@
 ---
 title: "What is the shell?"
 teaching: 20
-exercises: 10
+exercises: 0
 questions:
 - "What is the shell?"
 - "What is the command line?"
