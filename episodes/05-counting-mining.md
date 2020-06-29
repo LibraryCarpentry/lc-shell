@@ -624,14 +624,6 @@ $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 ~~~
 {: .bash}
 
-> ## Invalid option -- o?
-> If you get an error message "invalid option -- o" when running the above command, it means you use a version of
-> `grep` that doesn't support the `-o` flag. This is for instance the case with the version of `grep` that comes with
-> Git Bash on Windows. Since the flag is not crucial to this lesson, please just relax and ignore the problem. If you
-> really needed the flag, however, you could have installed another version of `grep`. The situation for Windows users
-> also improves on Windows 10 with the new Bash on Windows.
-{: .callout}
-
 Pair up with your neighbor and work on these exercises:
 
 > ## Case sensitive search
@@ -733,8 +725,7 @@ Pair up with your neighbor and work on these exercises:
 > > correctly. You could use the `less` command for this.
 > >
 > > The `-o` flag means that only the ISSN itself is printed out, instead of the
-> > whole line. You can leave it out if it causes problems: see the callout box
-> > "Invalid option -- o?" above.
+> > whole line.
 > >
 > > If you came up with something more advanced, perhaps including word boundaries,
 > > please share your result in the collaborative document and give yourself a pat on the shoulder.
@@ -748,8 +739,6 @@ Pair up with your neighbor and work on these exercises:
 > In order for the 'uniq' command to only return unique values though, it needs to be used
 > with the 'sort' command. Try piping the output from the command in the last exercise
 > to `sort` and then piping these results to 'uniq' and then `wc -l` to count the number of unique ISSN values.
-> Note: This exercise requires the `-o` flag. See the callout box "Invalid option -- o?"
-> above.
 >
 > > ## Solution
 > > ~~~
