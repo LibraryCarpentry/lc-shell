@@ -12,9 +12,19 @@ ____
 Librarians like handouts. To make a handout for this lesson, adapt/print from [https://librarycarpentry.org/lc-shell/reference](https://librarycarpentry.org/lc-shell/reference).
 
 ______
-## 05-counting-mining.md
+## Differences between platforms
 
-This lesson notes that the `grep` flags `-o` and `-E` flag are not supported by Git Bash for Windows (see the callout 'Invalid option – o?'). Be prepared to manage these differences in shell behaviour between operating systems.
+Some of the commands used in this lesson behave differently depending on whether they are run on Git Bash for Windows, macOS X or Linux. Be prepared to manage these differences. Here are some examples from episode 5, "Counting and mining with the shell":
+
+- `grep -E` on macOS X acts like `grep -P` on other platforms. On Windows and Linux, `grep -E` is halfway between `grep -P` and `grep`: it only does what `grep` can do, but uses Perl-compatible syntax to do it.
+
+- The `grep` on Git Bash for Windows prior to version 2.19.0 (September 2018) did not support the `-o` flag. If someone gets an error "invalid option -- o", they are most likely trying to use one of these older versions. They should probably just skip the exercises that use it and upgrade later.
+
+- The episode uses `date +%Y-%m-%d` because `date -I` is not available on macOS X.
+
+- `date --help` is not available on macOS X so `man date` should be used instead.
+
+As noted below, you should avoid demonstrating any more options that only work on certain platforms.
 
 _____
 # General notes on shell
@@ -31,7 +41,7 @@ _____
         -   is hard to troubleshoot, review, or improve
 -   The Shell
     -   Workflows can be automated through the use of shell scripts
-    -   Built-in commands allow for easy data manipulation (e.g. sort, grep, etc.)
+    -   Built-in commands allow for easy data manipulation (e.g. `sort`, `grep`, etc.)
     -   Every step can be captured in the shell script and allow reproducibility and easy troubleshooting
 
 ## Overall
@@ -233,15 +243,7 @@ as long as learners using Windows do not run into roadblocks such as:
    Your particular shell may have extensions beyond POSIX that are not available
    on other machines, especially the default OSX bash and Windows bash emulators.
    For example, POSIX `ls` does not have an `--ignore=` or `-I` option, and POSIX
-   `head` takes `-n 10` or `-10`, but not the long form of `--lines=10`.  For example,
-   in Episode 5 when you are teaching grep there is a command in an exercise to prepend
-   dates to filenames that  will rely on the  `-I` option:
-      ~~~
-    $ grep -i revolution *.tsv > results/$(date -I)_JAi-revolution.tsv
-    ~~~
-    The `-I` option for ISO dates may not work with the date command on Mac OSX like it does from BSD through GNU. 
-    If you or your students are on a Mac and `-I` option isn't available, then you could mimic the `-I` option
-    like this:  `echo $(date +%Y-%m-%d)`
+   `head` takes `-n 10` or `-10`, but not the long form of `--lines=10`.
 
 
 ## Windows
