@@ -103,6 +103,15 @@ drwxr-xr-x+  5 riley  staff   170B Jul 16 11:30 Public
 ~~~
 {: .output}
 
+If you like, you can also create your own commands, so to speak, by creating an "alias" for a command that's built into the shell. 
+For example, suppose you are used to the `dir` command from the shell (or "command prompt") of Microsoft Windows - you could define:
+~~~
+$  alias dir='ls -lh'
+~~~
+{: .bash}
+
+and now, the command `dir` will work as if you had entered `ls -lh`.
+
 We've now spent a great deal of time in our home directory.
 Let's go somewhere else. We can do that through the `cd` or Change Directory command:
 (Note: On Windows and Mac, by default, the case of the file/directory doesn't matter
