@@ -147,11 +147,37 @@ The third part uses `uniq`, another new command, in combination with the `-c` fl
 The fourth and final part sorts the text again by the counts of duplicates generated in step three.
 
 > ## Challenge
-> There are still some remaining punctuation in the text. They are called 'smart' or 'curly' quotes. 
+> There are still some remaining punctuation marks in the text. They are called 'smart' or 'curly' quotes.
 > Can you remove them using `sed`?
 >
+> Hint: These quote marks are not among the 128 characters of the ASCII standard,
+> so in the file they are encoded using a different standard, UTF-8.
+> While this is no problem for `sed`, the window you are typing into may not understand UTF-8.
+> If so you will need to use a Bash script; we encountered these at the end of episode 4,
+> 'Automating the tedious with loops'.
+>
+> As a reminder, use the text editor of your choice to write a file that looks like this:
+> > ```
+> > #!/bin/bash
+> > # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
+> > (replace this line with your solution)
+> > ```
+> > {: .bash}
+> Save the file as `remove-quotes.sh` and run it from the command line like this:
+> > ```
+> > bash remove-quotes.sh
+> > ```
+> > {: .bash}
+>
 > > ## Solution
-> > This allows us to do some bug fixing and search the internet for answers either using 'sed smart quotes' or 'sed curly quotes' as our keywords to start.
+> > ```
+> > #!/bin/bash
+> > # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
+> > sed -Ee 's/[“”‘’]//g' gulliver-clean.txt > gulliver-noquotes.txt
+> > ```
+> > {: .bash}
+> > If this doesn't work for you, you might need to check whether your text editor can
+> > save files using the UTF-8 encoding.
 > {: .solution}
 {: .challenge}
 
