@@ -1,6 +1,6 @@
 ---
 title: "What is the shell?"
-teaching: 20
+teaching: 5
 exercises: 0
 questions:
 - "What is the shell?"
