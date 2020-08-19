@@ -323,8 +323,8 @@ programming languages.
 > >~~~
 > > wc -w *.tsv | sort -n | tail -n 11
 > >~~~
+> >{: .bash}
 > {: .solution}
->{: .bash}
 {: .challenge}
 
 
