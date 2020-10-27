@@ -12,9 +12,9 @@ keypoints:
 ### Working with free text
 
 So far we have looked at how to use the Unix shell to manipulate, count, and
-mine tabulated data. Some library data, especially digitised documents, is much messier than
+mine tabulated data. Some library data, especially digitized documents, is much messier than
 tabular metadata. Nonetheless, many of the same techniques can be applied
-to non-tabulated data such as free text. We need to think carefully about
+to non-tabulated data, such as free text. We need to think carefully about
 what it is we are counting and how we can get the best out of the Unix shell.
 
 Thankfully there are plenty of folks out there doing this sort of work and we
@@ -25,7 +25,7 @@ is happening in detail or discuss at length each command. We're going
 to prepare and pull apart texts to demonstrate some of the potential applications of the Unix shell. And where commands we've learnt about are used,
 I've left some of the figuring out to do to you - so please refer to your notes if you get stuck!
 
-Before going any further, speak to the person next to you and choose which type of text you'd like to work on together. You have three options:
+Before going any further, **type in the Zoom chat** the name(s) of a couple of people in the class you want to work with and choose which type of text you'd like to work on together. We will eventually put you out into a breakout room. You have three options:
 
 - An example of hand transcribed text: *Gulliver's Travels* (1735)
 - An example of text captured by an optical character recognition process: *General Report on the Physiography of Maryland. A dissertation, etc. (Reprinted from Report of Maryland State Weather Service.) [With maps and illustrations.]* 1898 (from [https://doi.org/10.21250/db12](https://doi.org/10.21250/db12))
@@ -120,7 +120,7 @@ This uses the translate command and a special syntax to remove all punctuation
 (`[:punct:]`) and carriage returns (`\r`).
 It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
-Finally regularise the text by removing all the uppercase lettering.
+Finally regularize the text by removing all the uppercase lettering.
 
 ~~~
 $ tr [:upper:] [:lower:] < gulliver-noheadfootpunct.txt > gulliver-clean.txt

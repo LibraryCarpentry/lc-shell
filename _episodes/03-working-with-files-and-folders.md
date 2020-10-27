@@ -166,7 +166,7 @@ To save some typing, we introduce a very useful trick first.
 > On a blank command prompt, hit the up arrow key and notice that the previous
 > command you typed appears before your cursor. We can continue pressing the
 > up arrow to cycle through your previous commands. The down arrow cycles back
-> toward your most recent command. This is another important labour-saving
+> toward your most recent command. This is another important 
 > function and something we'll use a lot.
 {: .callout}
 

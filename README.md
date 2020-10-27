@@ -8,11 +8,15 @@
 - [Nilani Ganeshwaran](https://github.com/uom-nilani)
 - [Tim Dennis](https://github.com/jt14den)
 
-Past Maintainer: 
+Past Maintainer:
 
 - [Belinda Weaver](https://github.com/weaverbel)
 
 Lesson Maintainers communication is via the [team site](https://github.com/orgs/LibraryCarpentry/teams/lc-shell-maintainers).
+
+## About this Version
+
+This version of the course is modified slightly by NYU Data Services
 
 ## Library Carpentry
 
