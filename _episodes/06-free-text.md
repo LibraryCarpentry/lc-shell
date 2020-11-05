@@ -17,9 +17,9 @@ tabular metadata. Nonetheless, many of the same techniques can be applied
 to non-tabulated data, such as free text. We need to think carefully about
 what it is we are counting and how we can get the best out of the Unix shell.
 
-Thankfully there are plenty of folks out there doing this sort of work and we
+Thankfully there are plenty of folks out there doing this sort of work, and we
 can borrow what they do as an introduction to working with these more complex files.
-So for this final exercise we're going to leap forward a little in terms
+For this final exercise we're going to leap forward a little in terms
 of difficulty to a scenario where we won't learn about everything that
 is happening in detail or discuss at length each command. We're going
 to prepare and pull apart texts to demonstrate some of the potential applications of the Unix shell. And where commands we've learnt about are used,
@@ -183,14 +183,14 @@ The fourth and final part sorts the text again by the counts of duplicates gener
 
 We have now taken the text apart and produced a
 count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
+and visualize, that can form the basis of our investigations,
 and can compare with other texts processed in the same way.
 And if we need to run a different set of transformation for
 a different analysis, we can return to `gulliver-clean.txt` to start that work.
 
 And all this using a few commands on an otherwise unassuming but very powerful command line.
 
-## Option 2: Optical character recognised text
+## Option 2: Optical character recognized text
 
 ### Grabbing a text, cleaning it up
 
@@ -240,7 +240,7 @@ $ tr -d [:punct:] < 201403160_01_text.json > 201403160_01_text-nopunct.txt
 This uses the translate command and a special syntax to remove all punctuation.
 It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
-Finally regularise the text by removing all the uppercase lettering.
+Finally regularize the text by removing all the uppercase lettering.
 
 ~~~
 $ tr [:upper:] [:lower:] < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
@@ -270,7 +270,7 @@ The fourth and final part sorts the text again by the counts of duplicates gener
 
 Either way we have now taken the text apart and produced a
 count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
+and visualize, that can form the basis of our investigations,
 and can compare with other texts processed in the same way.
 And if we need to run a different set of transformation for
 a different analysis, we can return to `201403160_01_text-clean.txt` to start that work.
@@ -359,7 +359,7 @@ $ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
 This uses the translate command and a special syntax to remove all punctuation
 (`[:punct:]`) and carriage returns (`\r`).
 
-Finally regularise the text by removing all the uppercase lettering.
+Finally regularize the text by removing all the uppercase lettering.
 
 ~~~
 $ tr [:upper:] [:lower:] < diary-notagspunct.txt > diary-clean.txt
@@ -387,12 +387,23 @@ The fourth and final part sorts the text again by the counts of duplicates gener
 
 We have now taken the text apart and produced a
 count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
+and visualize, that can form the basis of our investigations,
 and can compare with other texts processed in the same way.
 And if we need to run a different set of transformation for
 a different analysis, we can return to `diary-final.txt` to start that work.
 
 And all this using a few commands on an otherwise unassuming but very powerful command line.
+
+## NYU Libraries Option
+
+In addition to these, I have included a sample dataset with some tasks. You can download a CSV of usage data from Ebook Central (NYU only) at [this link](https://drive.google.com/file/d/1rPkAHV82pCbk7DO8R9dv6yGgErqYU7Jp/view?usp=sharing)
+
+The goal is to answer any of the following questions and perform any of the following tasks without using Microsoft Excel
+
+- Imagine that you want to create a few subsets of this data to give to relevant subject specialists. What is your approach? What commands would you use?
+
+- Imagine that you need to figure out how big this file is and you need to generate a list of titles that have been checked out, but you don't need the call numbers? How do you make a new file?
+
 
 ## Where to go next
 

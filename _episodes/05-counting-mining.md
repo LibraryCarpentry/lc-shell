@@ -25,7 +25,7 @@ keypoints:
 
 Now that you know how to navigate the shell, we will move onto
 learning how to count and mine data using a few of the standard shell commands.
-While these commands are unlikely to revolutionise your work by themselves,
+While these commands are unlikely to revolutionize your work by themselves,
 they're very versatile and will add to your foundation for working in the shell
 and for learning to code. The commands also replicate the sorts of uses library users might make of library data.
 
@@ -143,7 +143,7 @@ $ wc *.tsv
 The first three columns contains the number of lines, words and bytes.
 
 If we only have a handful of files to compare, it might be faster or more convenient
-to just check with Microsoft Excel, OpenRefine or your favourite text editor, but
+to just check with Microsoft Excel, OpenRefine or your favorite text editor, but
 when we have tens, hundreds or thousands of documents, the Unix shell has a clear
 speed advantage. The real power of the shell comes from being able to combine commands
 and automate tasks, though. We will touch upon this slightly.
@@ -792,7 +792,7 @@ Pair up with your neighbor and work on these exercises:
 
 ### Using a Loop to Count Words
 
-We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`. 
+We will now use a loop to automate the counting of certain words within a document. For this, we will be using the _[Little Women](http://www.gutenberg.org/cache/epub/514/pg514.txt)_ e-book from [Project Gutenberg](https://www.gutenberg.org/). The file is inside the `shell-lesson` folder and named `pg514.txt`. Let's rename the file to `littlewomen.txt`.
 
 ~~~
 $ mv pg514.txt littlewomen.txt
@@ -836,16 +836,16 @@ What is happening in the loop?
 > a) In [episode 4]({{ page.root }}{% link _episodes/04-loops.md %}) we learned to
 > use `"$..."` as a safeguard against white-space being misinterpreted.
 > Why _could_ we omit the `"`-quotes in the above example?
-> 
+>
 > b) What happens if you add `"Louisa May Alcott"` to the first line of
 > the loop and remove the `"` from `$name` in the loop's code?
-> 
+>
 >> ## Solutions
->> 
+>>
 >> a) Because we are explicitly listing the names after `in`,
 >> and those contain no white-space. However, for consistency
 >> it's better to use rather once too often than once too rarely.
->> 
+>>
 >> b) Without `"`-quoting `$name`, the last loop will try to execute
 >> `grep Louisa May Alcott littlewomen.txt`. `grep` interprets only the
 >> first word as the search pattern, but `May` and `Alcott` as filenames.
