@@ -8,8 +8,8 @@ questions:
 objectives:
 - "Work with files and directories from the command line"
 - "Use tab completion to limit typing"
-- "Look at all or part of a file using the command line"
-- "Moving and copying files"
+- "Use commands to print and view files and parts of files"
+- "Use commands to move/rename, copy, and delete files"
 keypoints:
 - "The shell can be used to copy, move, and combine multiple files"
 ---
