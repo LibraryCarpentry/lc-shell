@@ -23,6 +23,19 @@ documents (Word or OpenOffice), browsing the web, editing images, etc. But if we
 wanted to make the same crop on hundreds of images, say, the pages of a scanned book,
 then we could automate that cropping work by using shell commands.
 
+Before getting started, we will use `ls` to verify where we are. Using `ls` periodically
+to view your options is useful to orient oneself. 
+
+~~~
+$ ls
+~~~
+{: .bash}
+~~~
+Applications Documents    Library      Music        Public
+Desktop      Downloads    Movies       Pictures
+~~~
+{: .output}
+
 We will try a few basic ways to interact with files. Let's first move into the
 `shell-lesson` directory on your desktop.
 
