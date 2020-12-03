@@ -7,7 +7,7 @@ questions:
 - "What is the command line?"
 - "Why should I use it?"
 objectives:
-- "Explain the basics of the Unix shell"
+- "Describe the basics of the Unix shell"
 - "Explain why and how to use the command line"
 keypoints:
 - "The shell is powerful"
