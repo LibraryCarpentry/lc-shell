@@ -6,7 +6,7 @@ questions:
 - "What is a loop?"
 - "How can a loop be used to repeat a task?"
 objectives:
-- "Build a concept for how loops can be used to repeat tasks"
+- "Describe how loops can be used to repeat tasks"
 - "Implement a loop to rename several files"
 keypoints:
 - "Looping is the foundation for working smarter with the command line"
