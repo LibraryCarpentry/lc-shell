@@ -328,7 +328,7 @@ programming languages.
 {: .challenge}
 
 
-> ## Counting number of files, part I
+> ## Counting number of files
 > Let's make a different pipeline. You want to find out how many files and
 > directories there are in the current directory. Try to see if you can pipe
 > the output from `ls` into `wc` to find the answer, or something close to the
