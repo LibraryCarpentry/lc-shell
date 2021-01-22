@@ -17,9 +17,9 @@ keypoints:
 **Loops** are key to productivity improvements through automation as they allow us to execute
 commands repetitively. Similar to wildcards and tab completion, using loops also reduces the
 amount of typing (and typing mistakes).
-Suppose we have several hundred document files named `project_1825.doc`, `project_1863.doc`, `XML_project.doc`and so on.
+Suppose we have several hundred document files named `project_1825.txt`, `project_1863.txt`, `XML_project.txt` and so on.
 We would like to change these files, but also save a version of the original files, naming the copies
-`backup_project_1825.doc` and so on.
+`backup_project_1825.txt` and so on.
 
 We can use a **loop** to do that.
 Here's a simple example that creates a backup copy of four text files in turn.
@@ -27,7 +27,7 @@ Here's a simple example that creates a backup copy of four text files in turn.
 Let's first create those files:
 
 ~~~
-$ touch a.doc b.doc c.doc d.doc
+$ touch a.txt b.txt c.txt d.txt
 ~~~
 This will create four empty files with those names. It is easy to use the shell to create a batch of files in one go.
 
@@ -45,7 +45,7 @@ We can apply this to our example like this:
 
 
 ~~~
-$ for filename in *.doc
+$ for filename in *.txt
 > do
 >    echo "$filename"
 >    cp "$filename" backup_"$filename"
@@ -54,10 +54,10 @@ $ for filename in *.doc
 {: .bash}
 
 ~~~
-a.doc
-b.doc
-c.doc
-d.doc
+a.txt
+b.txt
+c.txt
+d.txt
 ~~~
 {: .output}
 
@@ -84,14 +84,14 @@ rather than treat it as text or an external command.
 > enter your loop variable (such as in [episode 5]({{ page.root }}/05-counting-mining/index.html#using-a-loop-to-count-words)).
 {: .callout}
 
-In this example, the list is four filenames: 'a.doc', 'b.doc', 'c.doc', and 'd.doc'
+In this example, the list is four filenames: 'a.txt', 'b.txt', 'c.txt', and 'd.txt'
 Each time the loop iterates, it will assign a file name to the variable `filename`
 and run the `cp` command.
 The first time through the loop,
-`$filename` is `a.doc`.
-The interpreter prints the filename to the screen and then runs the command `cp` on `a.doc`, (because we asked it to echo each filename as it works its way through the loop).
+`$filename` is `a.txt`.
+The interpreter prints the filename to the screen and then runs the command `cp` on `a.txt`, (because we asked it to echo each filename as it works its way through the loop).
 For the second iteration, `$filename` becomes
-`b.doc`. This time, the shell prints the filename `b.doc` to the screen, then runs `cp` on `b.doc`. The loop performs the same operations for `c.doc` and then for `d.doc` and then, since
+`b.txt`. This time, the shell prints the filename `b.txt` to the screen, then runs `cp` on `b.txt`. The loop performs the same operations for `c.txt` and then for `d.txt` and then, since
 the list only included these four items, the shell exits the `for` loop at that point.
 
 > ## Follow the Prompt
