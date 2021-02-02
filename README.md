@@ -6,11 +6,13 @@
 - [Anna Oates](https://twitter.com/annaoates)
 - [John Wright](https://twitter.com/jwscutt)
 - [Nilani Ganeshwaran](https://github.com/uom-nilani)
-- [Tim Dennis](https://github.com/jt14den)
+- [Jamie Jamison](https://github.com/jmjamison)
 
 Past Maintainer: 
 
 - [Belinda Weaver](https://github.com/weaverbel)
+- [Tim Dennis](https://github.com/jt14den)
+
 
 Lesson Maintainers communication is via the [team site](https://github.com/orgs/LibraryCarpentry/teams/lc-shell-maintainers).
 
