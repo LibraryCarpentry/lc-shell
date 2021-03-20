@@ -14,10 +14,10 @@ keypoints:
 
 We will begin with the basics of navigating the Unix shell.
 
-Let's start by opening the shell. This likely results in seeing a black window with a cursor flashing next to a dollar sign.
+Let's start by opening the shell. This likely results in seeing a black or white window with a cursor flashing next to a dollar sign.
 This is our command line, and the `$` is the command **prompt** to show that the system is ready for our input.
-The appearance of the prompt will vary from system to system, depending on how the set up has been configured,
-but it usually ends with a `$`.
+The appearance of the prompt will vary from system to system, depending on how the set up has been configured.
+Other common prompts include the `%` or `#` signs, but we will use `$` in this lesson to represent the prompt generally.
 
 When working in the shell, you are always *somewhere* in the computer's
 file system, in some folder (directory). We will therefore start by finding out
@@ -180,7 +180,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > If you use Windows, you can search for the shell command on [http://man.he.net/](http://man.he.net/),
 > and view the associated manual page. In some systems the command name followed by `--help` will work, e.g. `ls --help`.
 >
-> Also, the manual lists commands individually, e.g., although `-h` can only be used together with the `-l` option,  
+> Also, the manual lists commands individually, e.g., although `-h` can only be used together with the `-l` option,
 > you'll find it listed as `-h` in the manual, not as `-lh`.
 >
 > >## Answer
