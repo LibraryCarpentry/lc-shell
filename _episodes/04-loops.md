@@ -45,7 +45,7 @@ We can apply this to our example like this:
 
 
 ~~~
-$ for filename in *.txt
+$ for filename in ?.txt
 > do
 >    echo "$filename"
 >    cp "$filename" backup_"$filename"
