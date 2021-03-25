@@ -710,14 +710,14 @@ Pair up with your neighbor and work on these exercises:
 >
 > > ## Solution
 > > ~~~
-> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
+> > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv > results/issns.tsv
 > > ~~~
 > > {: .bash}
 > >
 > > or
 > >
 > > ~~~
-> > $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv > issns.tsv
+> > $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv > results/issns.tsv
 > > ~~~
 > > {: .bash}
 > >
