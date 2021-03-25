@@ -331,20 +331,13 @@ programming languages.
 > ## Counting number of files
 > Let's make a different pipeline. You want to find out how many files and
 > directories there are in the current directory. Try to see if you can pipe
-> the output from `ls` into `wc` to find the answer, or something close to the
-> answer.
+> the output from `ls` into `wc` to find the answer.
 >
 > > ## Solution
-> > You get close with
-> >
 > > ~~~
-> > $ ls -l | wc -l
+> > $ ls | wc -l
 > > ~~~~
 > > {: .bash}
-> >
-> > but the count will be one too high, since the "total" line from `ls`
-> > is included in the count. We'll get back to a way to fix that later
-> > when we've learned about the `grep` command.
 > {: .solution}
 {: .challenge}
 
@@ -749,42 +742,6 @@ Pair up with your neighbor and work on these exercises:
 > > or
 > > ~~~
 > > $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv | sort | uniq | wc -l
-> > ~~~
-> > {: .bash}
-> {: .solution}
-{: .challenge}
-
-> ## Counting number of files, part II
-> In the earlier counting exercise in this episode, you tried counting the number
-> of files and directories in the current directory.
->
-> * Recall that the command `ls -l | wc -l` took us quite far, but the result was one
->   too high because it included the "total" line in the line count.
-> * With the knowledge of `grep`, can you figure out how to exclude the "total"
->   line from the `ls -l` output?
-> * Hint: You want to exclude any line *starting*
->   with the text "total". The hat character (^) is used
->   in regular expressions to indicate the start of a line.
->
-> > ## Solution
-> > To find any lines starting with "total", we would use:
-> >
-> > ~~~
-> > $ ls -l | grep -E '^total'
-> > ~~~
-> > {: .bash}
-> >
-> > To *exclude those lines, we add the `-v` flag:
-> >
-> > ~~~
-> > $ ls -l | grep -v -E '^total'
-> > ~~~
-> > {: .bash}
-> >
-> > The grand finale is to pipe this into `wc -l`:
-> >
-> > ~~~
-> > $ ls -l | grep -v -E '^total' | wc -l
 > > ~~~
 > > {: .bash}
 > {: .solution}
