@@ -301,7 +301,7 @@ programming languages.
 > {: .solution}
 {: .challenge}
 
-> ## Count, sort and print (faded example)
+> ## Count the number of words, sort and print (faded example)
 >To count the total lines in every `tsv` file, sort the results and then print the first line of the file we use the following:
 >
 >~~~
@@ -310,10 +310,11 @@ programming languages.
 >{: .bash}
 >
 >
->Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
+>Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Check the manual for the `wc` command (either using `man wc` or `wc --help`)
+> to see if you can find out what flag to use to print out the number of words (but not the number of lines and bytes). Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
 >
 >~~~
->__ -w *.tsv | sort __ | ____
+>wc __ *.tsv | sort __ | ____
 >~~~
 >{: .bash}
 >
@@ -374,9 +375,7 @@ programming languages.
 
 > ## Counting the number of words
 >
-> Check the manual for the `wc` command (either using `man wc` or `wc --help`)
-> to see if you can find out what flag to use to print out the number of words
-> (but not the number of lines and bytes). Try it with the `.tsv` files.
+> We learned about the -w flag above, so now try using it with the `.tsv` files.
 >
 > If you have time, you can also try to sort the results by piping it to `sort`.
 > And/or explore the other flags of `wc`.
