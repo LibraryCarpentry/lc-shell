@@ -346,7 +346,7 @@ $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
 ~~~
 {: .bash}
 
-Here we are using a regular expression (see the [Library Carpentry regular expression lesson]({{ page.root }}/lc-data-intro/04-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them. This is a complex regular expression, do don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
+Here we are using a regular expression (see the [Library Carpentry regular expression lesson]({{ page.root }}/lc-data-intro/04-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them. This is a complex regular expression, so don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
 We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
