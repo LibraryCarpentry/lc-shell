@@ -123,7 +123,7 @@ It also requires the use of both the output redirect `>` we have seen and the in
 Finally regularise the text by removing all the uppercase lettering.
 
 ~~~
-$ tr [:upper:] [:lower:] < gulliver-noheadfootpunct.txt > gulliver-clean.txt
+$ tr '[:upper:]' '[:lower:]' < gulliver-noheadfootpunct.txt > gulliver-clean.txt
 ~~~
 {: .bash}
 
