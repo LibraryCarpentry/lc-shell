@@ -245,7 +245,7 @@ $ wc -l *.tsv | sort -n
 {: .output}
 
 Notice that this is exactly the same output that ended up in our `sorted-lengths.txt`
-earlier. Let's add another pipe:
+earlier. Let's add another pipe - so that with one pipeline we can count the total lines in every .tsv file, then sort those results numerically, and then print only the first line of the results to the screen:
 
 ~~~~
 $ wc -l *.tsv | sort -n | head -n 1
@@ -255,6 +255,8 @@ $ wc -l *.tsv | sort -n | head -n 1
      5375 2014-02-02_JA-britain.tsv
 ~~~
 {: .output}
+
+Now we know that the shortest file in terms of number of lines is: 2014-02-02_JA-britain.tsv
 
 It can take some time to fully grasp pipes and use them efficiently, but it's a
 very powerful concept that you will find not only in the shell, but also in most
@@ -298,40 +300,14 @@ programming languages.
 > > $ wc -l *.tsv | sort -n | head -n 1 | cat
 > > ~~~
 > > {: .bash}
-> {: .solution}
-{: .challenge}
-
-> ## Count, sort and print (faded example)
->To count the total lines in every `tsv` file, sort the results and then print the first line of the file we use the following:
->
->~~~
->wc -l *.tsv | sort -n | head -n 1
->~~~
->{: .bash}
->
->
->Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
->
->~~~
->__ -w *.tsv | sort __ | ____
->~~~
->{: .bash}
->
-> > ## Solution
-> >
-> > Here we use the `wc` command with the `-w` (word) flag on all `tsv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
-> >~~~
-> > wc -w *.tsv | sort -n | tail -n 11
-> >~~~
-> >{: .bash}
-> {: .solution}
-{: .challenge}
-
+> {: .solution} {: .challenge}
 
 > ## Counting number of files
 > Let's make a different pipeline. You want to find out how many files and
 > directories there are in the current directory. Try to see if you can pipe
 > the output from `ls` into `wc` to find the answer.
+> 
+> Hint: We know that `ls` will list the content of the directory. Adding a pipe through to the `wc` command will tell the Shell to count the output of  the `ls` command.
 >
 > > ## Solution
 > > ~~~
@@ -341,6 +317,7 @@ programming languages.
 > {: .solution}
 {: .challenge}
 
+> Instead of counting _within_ files, `wc -l` is counting the number of 'lines' (i.e. file / folder names) in the directory.
 > ## Writing to files
 > The `date` command outputs the current date and time. Can you write the
 > current date and time to a new file called `logfile.txt`? Then check
@@ -450,14 +427,17 @@ $ grep 1999 *.tsv
 
 Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in the
 directory. `grep` will then search these for instances of the string "1999" and
-print the matching lines.
+print the matching lines (of which there are many!).
 
 > ## Strings
 > A string is a sequence of characters, or "a piece of text".
 {: .callout}
 
+> ## Counting the occurrence of particular strings
+
 Press the up arrow once in order to cycle back to your most recent action.
-Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and hit enter.
+Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and press enter.
+Adding `-c` to the command instructs the shell to print the count of instances of the 1999 string, rather than printing every matching line.
 
 ~~~
 $ grep -c 1999 *.tsv
@@ -471,11 +451,11 @@ $ grep -c 1999 *.tsv
 ~~~
 {: .output}
 
-The shell now prints the number of times the string 1999 appeared in each file.
+The shell now prints the number of times the numerical string 1999 appeared in each file.
 If you look at the output from the previous command, this tends to refer to the
 date field for each journal article.
 
-We will try another search:
+We will try another search, this time for a textual string:
 
 ~~~
 $ grep -c revolution *.tsv
@@ -490,7 +470,7 @@ $ grep -c revolution *.tsv
 {: .output}
 
 We got back the counts of the instances of the string `revolution` within the files.
-Now, amend the above command to the below and observe how the output of each is different:
+Now, amend the above command to the below by adding `i` to the `-c` flag and observe how the output of each is different:
 
 ~~~
 $ grep -ci revolution *.tsv
@@ -504,11 +484,12 @@ $ grep -ci revolution *.tsv
 ~~~
 {: .output}
 
-This repeats the query, but prints a case
-insensitive count (including instances of both `revolution` and `Revolution` and other variants).
+Adding the 'i' to the count flag (-c) repeats the same query, but this time has printed a case
+_insensitive_ count (including instances of both `revolution` and `Revolution` and other variants).
 Note how the count has increased nearly 30 fold for those journal article
 titles that contain the keyword 'america'. As before, cycling back and
 adding `> results/`, followed by a filename (ideally in .txt format), will save the results to a data file.
+e.g.: `> results/revolutionCount.txt`
 
 So far we have counted strings in files and printed to the shell or to
 file those counts. But the real power of `grep` comes in that you can
@@ -520,27 +501,23 @@ $ grep -i revolution *.tsv
 ~~~
 {: .bash}
 
-This script looks in the defined files and prints any lines containing `revolution`
-(without regard to case) to the shell. We let the shell add today's date to the
-filename:
+The script above looks in the defined files and prints any lines containing `revolution`
+(without regard to case) to the shell.
+This time we will send the results to a new `tsv` file.
+We'll also use the `$` instruction to add the current date (in a particular format) into the new filename. We'll explain the date format a little further down.
 
 ~~~
 $ grep -i revolution *.tsv > results/$(date "+%Y-%m-%d")_JAi-revolution.tsv
 ~~~
 {: .bash}
 
-This saves the subsetted data to a new file.
-
-> ## Alternative date commands
-> This way of writing dates is so common that on some platforms (not macOS X)
-> you can get the same result by typing `$(date -I)` instead of
-> `$(date "+%Y-%m-%d")`.
-{: .callout}
+This saves the subsetted data (all lines containing the word `revolution` or `Revolution`) to a new file.
+Note: there may be duplicates in this subset because the search has returned results from both the master file and all three earlier subsets)
 
 However, if we look at this file, it contains every instance of the
 string 'revolution' including as a single word and as part of other words
 such as 'revolutionary'. This perhaps isn't as useful as we thought...
-Thankfully, the `-w` flag instructs `grep` to look for whole words only,
+Thankfully, the `-w` flag, added to the `-i` (case insensitive) flag instructs `grep` to look for whole words only,
 giving us greater precision in our search.
 
 ~~~
@@ -548,11 +525,11 @@ $ grep -iw revolution *.tsv > results/$(date "+%Y-%m-%d")_JAiw-revolution.tsv
 ~~~
 {: .bash}
 
-This script looks in both of the defined files and
+This script looks in all the `.tsv` files and
 exports any lines containing the whole word `revolution` (without regard to case)
-to the specified `.tsv` file.
+to a new `.tsv` file where we have included the _w_ in the filename to indicate it contains instances of the whole word only.
 
-We can show the difference between the files we created.
+Let's compare the difference in the number of lines between the two files we created:
 
 ~~~
 $ wc -l results/*.tsv
@@ -564,11 +541,16 @@ $ wc -l results/*.tsv
    18364 total
 ~~~
 {: .output}
+> 
+> The inclusion of the `-w` flag has reduced the count to a more accurate result for the word 'revolution'. As you can see from the the line count in the second file, it removed nearly 3,000 incorrect instances of the word!
 
 > ## Automatically adding a date prefix
-> Notice how we didn't type today's date ourselves, but let the
-> `date` command do that mindless task for us. Find out about the
-> `"+%Y-%m-%d"` option and alternative options we could have used.
+> Notice how when we included the date in the filename, we didn't type today's date ourselves, but let the
+> `date` command do that mindless task for us.
+> 
+> We used the `$` to tell the shell to get the variable date value, and then specified the format for the date display: $ grep -iw revolution *.tsv > results/$(date "+%Y-%m-%d")_JAiw-revolution.tsv
+> 
+> Find out about the `"+%Y-%m-%d"` option and alternative options we could have used.
 >
 > > ## Solution
 > > Using `date --help` will show you that the `+` option introduces
@@ -577,8 +559,7 @@ $ wc -l results/*.tsv
 > > you could use.
 > >
 > > You might also see that `-I` is short for
-> > [--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which
-> > essentially avoids the confusion between the European
+> > [--iso-8601](https://en.wikipedia.org/wiki/ISO_8601). ISO 8601 specifies that date values are ordered from the largest to smallest unit of time: YYYY-MM-DD, which helps to avoid the confusion between the European
 > > and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
 > {: .solution}
 {: .challenge}
