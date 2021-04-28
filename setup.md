@@ -38,15 +38,19 @@ Even if you are a Windows user, learning Bash will open up a powerful set of too
 >
 >1. Download [shell-lesson.zip]({{ page.root }}/data/shell-lesson.zip) and move the file to your Desktop.
 >2. Unzip/extract the file (ask your instructor if you need help with this step). You should end up with a new folder called `shell-lesson` on your Desktop.
->3. Open the terminal and type `cd` followed by the <kbd>enter</kbd> key.
+>3. Open the terminal and type `ls` followed by the <kbd>enter</kbd> key.
+>~~~~
+>$ ls
+>~~~~
+>{: .bash}
+> You should see a list of files and folders in your current directory.
 >4. Then type:
 >
 >~~~
 >$ pwd
 ~~~~
 >{: .bash}
->
-> This command will show you where you are in your file system, which should now be your home directory. In the lesson, you will find out more about the command `cd`, `pwd` and how to work with the data in `shell-lesson` folder.
+> This command will show you where you are in your file system, which should now be your home directory. In the lesson, you will find out more about the commands `ls`, `pwd` and how to work with the data in `shell-lesson` folder.
 {: .prereq}
 
 [template]: {{ site.workshop_repo }}
