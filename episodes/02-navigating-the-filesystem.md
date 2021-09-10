@@ -129,17 +129,17 @@ If something had gone wrong, however, the command would have told you. Let's
 test that by trying to move into a non-existent directory:
 
 ~~~
-$ cd "Evil plan to destroy the world"
+$ cd "things to learn about the shell"
 ~~~
 {: .bash}
 ~~~
-bash: cd: Evil plan to destroy the world: No such file or directory
+bash: cd: things to learn about the shell: No such file or directory
 ~~~
 {: .output}
 
 Notice that we surrounded the name by quotation marks. The *arguments* given
 to any shell command are separated by spaces, so a way to let them know that
-we mean 'one single thing called "Evil plan to destroy the world"', not
+we mean 'one single thing called "things to learn about the shell"', not
 'six different things', is to use (single or double) quotation marks.
 
 We've now seen how we can go 'down' through our directory structure
