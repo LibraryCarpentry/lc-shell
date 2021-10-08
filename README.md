@@ -7,6 +7,7 @@
 - [John Wright](https://twitter.com/jwscutt)
 - [Nilani Ganeshwaran](https://github.com/uom-nilani)
 - [Jamie Jamison](https://github.com/jmjamison)
+- [Kaitlin Newson](https://github.com/kaitlinnewson)
 
 Past Maintainer: 
 
