@@ -27,7 +27,7 @@ Even if you are a Windows user, learning Bash will open up a powerful set of too
 >     that already has a Unix Shell, from your Windows machine.  This can
 >     usually be done through a Secure Shell (SSH) client.  One such client
 >     available for free for Windows computers is
->     [PuTTY](http://faculty.smu.edu/reynolds/unixtut/windows.html).
+>     [PuTTY](https://www.putty.org/).
 >
 >If you encounter issues, the Carpentries maintains a [Configuration Problems and Solutions wiki page](https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions) that may help.
 {: .prereq}
