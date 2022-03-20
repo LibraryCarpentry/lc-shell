@@ -6,6 +6,9 @@ title: Setup
 To participate in this Library Carpentry lesson, you will need a working UNIX-like shell environment.
 Specifically we will be using Bash ([Bourne Again Shell](https://en.wikipedia.org/wiki/Bash_(Unix_shell))) which is standard on Linux and macOS. macOS Catalina users will have zsh (Z shell) as their default version.
 Even if you are a Windows user, learning Bash will open up a powerful set of tools on your personal machine, in addition to familiarizing you with the standard remote interface used on almost all servers and super computers.
+UNIX風の環境が必要です。bashを使います。Bourne Again Shell
+macOS Catalina はzchがデフォルトです。
+
 
 >## Terminal Setup
 >
