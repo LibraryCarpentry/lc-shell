@@ -3,12 +3,12 @@ title: "What is the shell?シェルって何？"
 teaching: 5
 exercises: 0
 questions:
-- "What is the shell?"
-- "What is the command line?"
-- "Why should I use it?"
+- "What is the shell?シェルって何？"
+- "What is the command line?コマンドラインって何？"
+- "Why should I use it?どうして使わないといけないの？"
 objectives:
-- "Describe the basics of the Unix shell"
-- "Explain why and how to use the command line"
+- "Describe the basics of the Unix shellシェルの基本を説明できるようになる。"
+- "Explain why and how to use the command lineなぜ使わないといけないようになるか説明が必要になる。"
 keypoints:
 - "The shell is powerful"
 - "The shell can be used to copy, move, and combine multiple files"
@@ -17,10 +17,16 @@ keypoints:
 ## Introduction: What is the shell, and why should I use it?
 
 If you've ever had to deal with large amounts of data or large numbers of digital files scattered across your computer or a remote server, you know that copying, moving, renaming, counting, searching through, or otherwise processing those files manually can be immensely time-consuming and error-prone. Fortunately, there is an extraordinarily powerful and flexible tool designed for just that purpose.
+大量のデジタルファイルを自分のコンピュータとリモートにある大量のファイルを扱うには、ファイルのリネーム、集計、検索、
 
 The shell (sometimes referred to as the "Unix shell", for the operating system where it was first developed) is a program that allows you to interact with your computer using typed text commands. It is the primary interface used on Linux and Unix-based systems, such as macOS, and can be installed optionally on other operating systems such as Windows. 
 
 It is the definitive example of a "command line interface", where instructions are given to the computer by typing in commands, and the computer responds by performing a task or generating an output. This output is often directed to the screen, but can be directed to a file, or even to other commands, creating powerful chains of actions with very little effort.
+テキストのコマンドを使ってテキストのファイルを操作することができるプログラムです。コマンドを打ってプログラムを動かす。
+ShellはLinuxやUnixベースのシステムの主要なインターフェースです。Windowsのような主要なOSでも利用できます。
+コマンドを打つと何かタスクを実行するとか、出力を生成することで反応するインターフェースです。
+出力は画面に表示されますが、出力にファイルに保存することもできます。他のコマンドに出力にコマンドを受け渡すこともできます。
+他のコマンドに出力を渡すことで、操作のチェーン、わずかな力で実行することができます。
 
 Using a shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows you to combine existing tools into powerful pipelines and to handle large volumes of data automatically. This automation not only makes you more productive, but also improves the reproducibility of your workflows by allowing you to save and then repeat them with a few simple commands. Understanding the basics of the shell provides a useful foundation for learning to program, since some of the concepts you will learn here—such as loops, values, and variables—will translate to programming.
 
