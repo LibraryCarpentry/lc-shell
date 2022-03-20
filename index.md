@@ -15,4 +15,5 @@ UNIXシェルというのの基本が何かというのが説明できるよう�
 >
 > To complete this lesson, you will need a UNIX-like shell environment -see [Setup]({{ page.root }}{% link setup.md %}). You will also need to download the file **[shell-lesson.zip](https://raw.githubusercontent.com/librarycarpentry/lc-shell/gh-pages/data/shell-lesson.zip)** from GitHub to your *desktop* and extract it there (once you have unzipped/extracted the file, you should end up with a folder called "shell-lesson").
 > UNIX風のシェル環境が必要です。githubからZipをダウンロードして、デスクトップディレクトリにおいてください。
+> 
 {: .prereq}
