@@ -6,6 +6,10 @@ At the conclusion of the lesson you will: describe the basics of the Unix shell;
 explain why and how to use the command line;
 use shell commands to work with directories and files;
 use shell commands to find and manipulate data.
+このライブラリーカーペントリーレッスンはライブラリアンの方にUNIXシェルを紹介します。
+UNIXシェルというのの基本が何かというのが説明できるようになります。
+コマンドラインがなぜ必要になるのか、どうやって使うのか説明できるようになります。
+ファイルの操作やデータを発見することができるようになります。
 
 > ## Prerequisites
 >
