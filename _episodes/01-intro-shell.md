@@ -22,7 +22,7 @@ If you've ever had to deal with large amounts of data or large numbers of digita
 
 The shell (sometimes referred to as the "Unix shell", for the operating system where it was first developed) is a program that allows you to interact with your computer using typed text commands. It is the primary interface used on Linux and Unix-based systems, such as macOS, and can be installed optionally on other operating systems such as Windows. 
 
-シェル（最初に開発されたところのOSではUnixシェルと呼ばれてたこともありました。）は、入力したテキストコマンドを使ってコンピューターと対話することを可能にするプログラムです。それは、LinuxやUnixを元にしたシステムを利用したシステムの主要なインターフェースで、macOSもそうで、Windowsも同様に、他のOSに追加してインストールできます。
+シェル（最初に開発されたところのOSではUnixシェルと呼ばれてたこともありました。）は、入力したテキストコマンドを使ってコンピューターと対話することを可能にするプログラムです。それは、LinuxやUnixを元にしたシステムの主要なインターフェースで、macOSもそうで、Windowsも同様に、他のOSに追加してインストールできます。
 
 It is the definitive example of a "command line interface", where instructions are given to the computer by typing in commands, and the computer responds by performing a task or generating an output. This output is often directed to the screen, but can be directed to a file, or even to other commands, creating powerful chains of actions with very little effort.
 テキストのコマンドを使ってテキストのファイルを操作することができるプログラムです。コマンドを打ってプログラムを動かす。
