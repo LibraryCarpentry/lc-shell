@@ -14,7 +14,8 @@ keypoints:
 - "The shell can be used to copy, move, and combine multiple files"；シェルは、複数のファイルをコピーしたり、移動したり、結合するために使うことができます。
 ---
 
-## Introduction: What is the shell, and why should I use it?；初めに：シェルって何ですか？何故、シェルを使うべきなの？
+## Introduction: What is the shell, and why should I use it?
+初めに：シェルって何ですか？何故、シェルを使うべきなの？
 
 If you've ever had to deal with large amounts of data or large numbers of digital files scattered across your computer or a remote server, you know that copying, moving, renaming, counting, searching through, or otherwise processing those files manually can be immensely time-consuming and error-prone. Fortunately, there is an extraordinarily powerful and flexible tool designed for just that purpose.
 大量のデジタルファイルを自分のコンピュータとリモートにある大量のファイルを扱うには、ファイルのリネーム、集計、検索、
