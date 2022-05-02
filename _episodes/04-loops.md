@@ -29,7 +29,7 @@ Let's first create those files:
 ~~~
 $ touch a.txt b.txt c.txt d.txt
 ~~~
-This will create four empty files with those names. It is easy to use the shell to create a batch of files in one go.
+This will create four empty files with those names.
 
 Now we will use a loop to create a backup version of those files. First let’s look at the general form of a loop:
 
