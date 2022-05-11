@@ -113,8 +113,11 @@ the list only included these four items, the shell exits the `for` loop at that 
 > If the *shell* prints `>` or `$` then it expects you to type something,
 > and the symbol is a prompt.
 >
-> If *you* type `>` or `$` yourself, it is an instruction from you that
-> the shell to redirect output or get the value of a variable.
+> If *you* type `>` in the shell, it is an instruction from you to
+> the shell to redirect output.
+>
+> If *you* type `$` in the shell, it is an instruction from you to
+> the shell to get the value of a variable.
 {: .callout}
 
 We have called the variable in this loop `filename`
