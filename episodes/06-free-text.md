@@ -35,7 +35,7 @@ Before going any further, speak to the person next to you and choose which type 
 
 ### Grabbing a text, cleaning it up
 
-We're going to work with the `gulliver.txt` file we made in the previous lesson.
+We're going to work with the `gulliver.txt` file, which we made in [Episode 3, 'Working with files and directories']({{ page.root }}{% link _episodes/03-working-with-files-and-folders.md %}).
 You should (still) be working in the `shell-lesson` directory.
 
 Let's look at the file.
