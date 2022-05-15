@@ -22,9 +22,18 @@ graphical user interfaces (GUIs) for many tasks, such as editing formatted text
 documents (Word or OpenOffice), browsing the web, editing images, etc. But if we
 wanted to make the same crop on hundreds of images, say, the pages of a scanned book,
 then we could automate that cropping work by using shell commands.
+コマンドラインで
+タブ補完で節約します。
+一部を表示します。ファイルの移動、名前の変更、コピー、削除のコマンド
+ディレクトリの移動と同様に
+何でもできます。でもまぁ経験のあるユーザーでもそういう編集でもWebの閲覧とか編集とか
+コマンドラインを行き来します。しかし、もしこの何百個の画像を切り抜きたい
+本の画像を切り出したいとか
+Shellコマンドを使って自動化したくなる
 
 Before getting started, we will use `ls` to verify where we are. Using `ls` periodically
-to view your options is useful to orient oneself. 
+to view your options is useful to orient oneself.
+このｌｓを使って、いるディレクトリを確認しましょう。Shell lessonファイルがいる
 
 ~~~
 $ ls
@@ -38,6 +47,7 @@ Desktop      Downloads    Movies       Pictures
 
 We will try a few basic ways to interact with files. Let's first move into the
 `shell-lesson` directory on your desktop.
+シェルレッスンディレクトリに移動してください。
 
 ~~~
 $ cd
@@ -70,6 +80,7 @@ $ cd ..
 
 Instead of typing `cd firstdir`, let's try to type `cd f` and then hit the Tab key.
 We notice that the shell completes the line to `cd firstdir/`.
+上のディレクトリに戻ります。補完してくれる
 
 > ## Tab for Auto-complete
 > Hitting tab at any time within the shell will prompt it to attempt to auto-complete
@@ -79,14 +90,18 @@ We notice that the shell completes the line to `cd firstdir/`.
 > try using tab again. We would encourage using this method throughout
 > today to see how it behaves (as it saves loads of time and effort!).
 {: .callout}
+同じ文字で始まっている場合、違いがあるところまで補完してくれる自分で続きを追加したあと
+もう一回TABキーを押すことができます。今日これからの作業はTABキーを使って作業しましょう。
 
-### Reading files
+### Reading files　ファイルを読む
 
 If you are in `firstdir`, use `cd ..` to get back to the `shell-lesson` directory.
+戻りましょう
 
 Here there are copies of two public domain books downloaded from
 [Project Gutenberg](https://www.gutenberg.org/) along with other files we will
 cover later.
+プロジェクトグーテンベルグからダウンロードした2つのファイルがある
 
 ~~~
 $ ls -lh
@@ -118,10 +133,12 @@ $ cat 829-0.txt
 The terminal window erupts and the whole book cascades by (it is printed to
 your terminal), leaving us with a new prompt and the last few lines of the book
 above this prompt.
+いきなり動いて本の中身が全部でてきます。
 
 Often we just want a quick glimpse of the first or the last part of a file to
 get an idea about what the file is about. To let us do that, the Unix shell
 provides us with the commands `head` and `tail`.
+最初のほうや最後のほうをもう少しゆっくりみていきたい
 
 ~~~
 $ head 829-0.txt
@@ -165,6 +182,8 @@ Another way to navigate files is to view the contents one screen at a time.
 Type `less 829-0.txt` to see the first screen, `spacebar` to see the
 next screen and so on, then `q` to quit (return to the command prompt).
 
+他のコマンドもあります。スペースキー
+
 ~~~
 $ less 829-0.txt
 ~~~
@@ -174,6 +193,8 @@ Like many other shell commands, the commands `cat`, `head`, `tail` and `less`
 can take any number of arguments (they can work with any number of files).
 We will see how we can get the first lines of several files at once.
 To save some typing, we introduce a very useful trick first.
+
+
 
 > ## Re-using commands
 > On a blank command prompt, hit the up arrow key and notice that the previous
@@ -186,6 +207,7 @@ To save some typing, we introduce a very useful trick first.
 Hit the up arrow until you get to the `head 829-0.txt` command. Add a space
 and then `33504-0.txt` (Remember your friend Tab? Type `3` followed by Tab to
 get `33504-0.txt`), to produce the following command:
+2つ以上でもできる
 
 ~~~
 $ head 829-0.txt 33504-0.txt
@@ -232,10 +254,10 @@ $ head *.txt
 > ## More on wildcards
 > Wildcards are a feature of the shell and will therefore work with *any* command.
 > The shell will expand wildcards to a list of files and/or directories before
-> the command is executed, and the command will never see the wildcards.
+> the command is executed, and the command will never see the wildcards.　?は一文字、＊は全部
 > As an exception, if a wildcard expression does not match any file, Bash
-> will pass the expression as a parameter to the command as it is. For example
-> typing `ls *.pdf` results in an error message that there is no file called *.pdf.
+> will pass the expression as a parameter to the command as it is. For example　例外としてワイルドカードがどのファイルにもあたらない場合は直接コマンドに引き渡されます。
+> typing `ls *.pdf` results in an error message that there is no file called *.pdf.　
 {: .callout}
 
 
