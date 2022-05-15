@@ -204,19 +204,19 @@ As we become more comfortable, we can get very quickly to the directory that we 
 
 > ## Getting help
 >
-> Use the `man` command to invoke the manual page (documentation) for a shell command.
+> Use the `man` command to invoke the manual page (documentation) for a shell command.manコマンドでマニュアルを表示できます。
 > For example, `man ls` displays all the arguments available to you - which saves
-> you remembering them all! Try this for each command you've learned so far.
-> Use the <kbd>spacebar</kbd> to navigate the manual pages. Use <kbd>q</kbd> at any time to quit.
->
+> you remembering them all! Try this for each command you've learned so far.調べてみましょう。
+> Use the <kbd>spacebar</kbd> to navigate the manual pages. Use <kbd>q</kbd> at any time to quit.読み進めるにはスペースキーで、qで終了します。
+
 > ***Note*: this command is for Mac and Linux users only**. It does not work directly for Windows users.
 > If you use Windows, you can search for the shell command on [http://man.he.net/](http://man.he.net/),
-> and view the associated manual page. In some systems the command name followed by `--help` will work, e.g. `ls --help`.
+> and view the associated manual page. In some systems the command name followed by `--help` will work, e.g. `ls --help`.　いくつかのコマンドでは --helpででてくる
 >
 > Also, the manual lists commands individually, e.g., although `-h` can only be used together with the `-l` option,  
 > you'll find it listed as `-h` in the manual, not as `-lh`.
 >
-> >## Answer
+> >## Answer　答え
 > >~~~
 > >$ man ls
 > >~~~
@@ -281,7 +281,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > > To order files in a directory by their filesize, in combination with the `-l` argument:
 > >
 > > ~~~
-> > ls -lS
+> > ls -lS 答えはS
 > > ~~~
 > > {: .bash}
 > >
@@ -290,7 +290,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > > To order files in a directory by their last modification date, in combination with the `-l` argument:
 > >
 > > ~~~
-> > ls -lt
+> > ls -lt　答えはt
 > > ~~~
 > > {: .bash}
 > {: .solution}
