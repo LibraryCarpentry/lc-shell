@@ -269,7 +269,7 @@ We may also want to change the file name to something more descriptive.
 We can **move** it to a new name by using the `mv` or move command,
 giving it the old name as the first argument and the new name as the second
 argument:
-
+名前を変えたいことがあります。元の名前を一番目の引数に、新しい名前を二番目の引数に指定します。
 ~~~
 $ mv 829-0.txt gulliver.txt
 ~~~
@@ -293,7 +293,7 @@ $ ls
 > ## Copying a file
 >
 > Instead of *moving* a file, you might want to *copy* a file (make a duplicate),
-> for instance to make a backup before modifying a file.
+> for instance to make a backup before modifying a file.動かすかわりにコピーしたくなります。
 > Just like the `mv` command, the `cp` command takes two arguments: the old name
 > and the new name. How would you make a copy of the file `gulliver.txt` called
 > `gulliver-backup.txt`? Try it!
@@ -310,7 +310,7 @@ $ ls
 >
 > Renaming a directory works in the same way as renaming a file. Try using the
 > `mv` command to rename the `firstdir` directory to `backup`.
->
+>firstdirをbackupにリネームしてみましょう。
 > > ## Answer
 > > ~~~
 > > mv firstdir backup
@@ -341,11 +341,11 @@ $ ls
 > {: .solution}
 {: .challenge}
 
-> ## The wildcards and regular expressions
+> ## The wildcards and regular expressions ワイルドカードと正規表現
 >
-> The `?` wildcard matches one character. The `*` wildcard matches zero or
-> more characters. If you attended the lesson on regular expressions, do you
-> remember how you would express that as regular expressions?
+> The `?` wildcard matches one character. ？は一つの文字　The `*` wildcard matches zero or
+> more characters. ゼロもしくは複数の文字　If you attended the lesson on regular expressions, do you
+> remember how you would express that as regular expressions?　正規表現の講義でどうやって表現するか覚えていますか？
 >
 > (Regular expressions are not a feature of the shell, but some commands support
 > them. We'll get back to that.)
@@ -356,7 +356,7 @@ $ ls
 > {: .solution}
 {: .challenge}
 
-> ## Using `history`
+> ## Using `history`　ヒストリーコマンド
 > Use the `history` command to see a list of all the commands you've entered during the 
 > current session. You can also use <kbd>Ctrl</kbd> + <kbd>r</kbd> to do a reverse lookup. Hit <kbd>Ctrl</kbd> + <kbd>r</kbd>, 
 > then start typing any part of the command you're looking for. The past command will 
@@ -368,41 +368,44 @@ $ ls
 > can do that with `history > history.txt`. This will output all history to a text file 
 > called `history.txt` that you can later edit. To recall a command from history, enter 
 > `history`. Note the command number, e.g. 2045. Recall the command by entering 
-> `!2045`. This will execute the command.
+> `!2045`. This will execute the command.　コントロール＋Rを何かも押すと
+> history > history.txt 保存ができます。あとから編集することができます。この結果から特定のコマンドを実行したい。番号をみて、ビックリマークで番号を打つ
 {: .challenge}
 
-> ## Using the `echo` command
+> ## Using the `echo` command　エコーコマンド
 > The `echo` command simply prints out a text you specify. Try it out: `echo 'Library Carpentry is awesome!'`.
-> Interesting, isn't it?
+> Interesting, isn't it?　指定したテキストを単純に表示します。
 >
 > You can also specify a variable. First type `NAME=` followed by your name, and hit enter.
-> Then type `echo "$NAME is a fantastic library carpentry student"` and hit enter. What happens?
+> Then type `echo "$NAME is a fantastic library carpentry student"` and hit enter. What happens? 変数を指定することができます。
 >
 > You can combine both text and normal shell commands using `echo`, for example the
 > `pwd` command you have learned earlier today. You do this by enclosing a shell
 > command in `$(` and `)`, for instance `$(pwd)`. Now, try out the following:
-> `echo "Finally, it is nice and sunny on" $(date)`.
+> `echo "Finally, it is nice and sunny on" $(date)`.テキストとシェルのコマンドをエコーを使って組み合わせることができます。
 > Note that the output of the `date` command is printed together with the text
-> you specified. You can try the same with some of the other commands you have learned so far.
+> you specified. You can try the same with some of the other commands you have learned so far.囲います。
 >
 > **Why do you think the echo command is actually quite important in the shell environment?**
 >
 > > ## Answer
 > > You may think there is not much value in such a basic command like `echo`. However, from the moment you
 > > start writing automated shell scripts, it becomes very useful. For instance, you often need
-> > to output text to the screen, such as the current status of a script.
+> > to output text to the screen, such as the current status of a script.　非常に重要です。
 > >
 > > Moreover, you just used a shell variable for the first time, which can be used to temporarily store information,
-> > that you can reuse later on. It will give many opportunities from the moment you start writing automated scripts.
+> > that you can reuse later on. It will give many opportunities from the moment you start writing automated scripts.　一時的に保存していろんなことに使えるようになります。
 > {: .solution}
 {: .challenge}
 
 Finally, onto deleting. We won't use it now, but if you do want to delete a file,
-for whatever reason, the command is `rm`, or remove.
+for whatever reason, the command is `rm`, or remove.　今日はやりませんが削除はrmというコマンドがあります。rmもワイルドカードをつけることができます。
 
-Using wildcards, we can even delete lots of files. And adding the `-r` flag we
+Using wildcards, we can even delete lots of files. And adding the `-r` flag we　-rをつけるとフォルダを指定することもできます。
 can delete folders with all their content.
 
 **Unlike deleting from within our graphical user interface, there is *no* warning,
-*no* recycling bin from which you can get the files back and no other undo options!**
+*no* recycling bin from which you can get the files back and no other undo options!注意もでません。4個以上ファイルを消す場合は警告がでる。ゴミ箱もありません。削除の取り消しはできません。**
 For that reason, please be very careful with `rm` and extremely careful with `rm -r`.
+
+複数ファイルを結合するのに使えます・
