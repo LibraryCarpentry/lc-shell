@@ -457,7 +457,7 @@ print the matching lines.
 {: .callout}
 
 Press the up arrow once in order to cycle back to your most recent action.
-Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and hit enter.
+Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and press enter.
 
 ~~~
 $ grep -c 1999 *.tsv
