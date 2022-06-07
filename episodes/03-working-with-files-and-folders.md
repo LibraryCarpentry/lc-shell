@@ -68,11 +68,11 @@ $ cd ..
 ~~~
 {: .bash}
 
-Instead of typing `cd firstdir`, let's try to type `cd f` and then hit the Tab key.
+Instead of typing `cd firstdir`, let's try to type `cd f` and then press the Tab key.
 We notice that the shell completes the line to `cd firstdir/`.
 
 > ## Tab for Auto-complete
-> Hitting tab at any time within the shell will prompt it to attempt to auto-complete
+> Pressing tab at any time within the shell will prompt it to attempt to auto-complete
 > the line based on the files or sub-directories in the current directory.
 > Where two or more files have the same characters, the auto-complete will only fill up to the
 > first point of difference, after which we can add more characters, and
@@ -176,14 +176,14 @@ We will see how we can get the first lines of several files at once.
 To save some typing, we introduce a very useful trick first.
 
 > ## Re-using commands
-> On a blank command prompt, hit the up arrow key and notice that the previous
+> On a blank command prompt, press the up arrow key and notice that the previous
 > command you typed appears before your cursor. We can continue pressing the
 > up arrow to cycle through your previous commands. The down arrow cycles back
 > toward your most recent command. This is another important labour-saving
 > function and something we'll use a lot.
 {: .callout}
 
-Hit the up arrow until you get to the `head 829-0.txt` command. Add a space
+Press the up arrow until you get to the `head 829-0.txt` command. Add a space
 and then `33504-0.txt` (Remember your friend Tab? Type `3` followed by Tab to
 get `33504-0.txt`), to produce the following command:
 
@@ -336,9 +336,9 @@ $ ls
 
 > ## Using `history`
 > Use the `history` command to see a list of all the commands you've entered during the 
-> current session. You can also use <kbd>Ctrl</kbd> + <kbd>r</kbd> to do a reverse lookup. Hit <kbd>Ctrl</kbd> + <kbd>r</kbd>, 
+> current session. You can also use <kbd>Ctrl</kbd> + <kbd>r</kbd> to do a reverse lookup. Press <kbd>Ctrl</kbd> + <kbd>r</kbd>, 
 > then start typing any part of the command you're looking for. The past command will 
-> autocomplete. Hit `enter` to run the command again, or press the arrow keys to start 
+> autocomplete. Press `enter` to run the command again, or press the arrow keys to start 
 > editing the command. If multiple past commands contain the text you input, you can 
 > <kbd>Ctrl</kbd> + <kbd>r</kbd> repeatedly to cycle through them. If you can't find what you're looking for 
 > in the reverse lookup, use <kbd>Ctrl</kbd> + <kbd>c</kbd> to return to the prompt. If you want to save 
@@ -353,8 +353,8 @@ $ ls
 > The `echo` command simply prints out a text you specify. Try it out: `echo 'Library Carpentry is awesome!'`.
 > Interesting, isn't it?
 >
-> You can also specify a variable. First type `NAME=` followed by your name, and hit enter.
-> Then type `echo "$NAME is a fantastic library carpentry student"` and hit enter. What happens?
+> You can also specify a variable. First type `NAME=` followed by your name, and press enter.
+> Then type `echo "$NAME is a fantastic library carpentry student"` and press enter. What happens?
 >
 > You can combine both text and normal shell commands using `echo`, for example the
 > `pwd` command you have learned earlier today. You do this by enclosing a shell

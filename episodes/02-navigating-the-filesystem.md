@@ -25,7 +25,7 @@ where we are by using the `pwd` command, which you can use whenever you are unsu
 about where you are. It stands for "print working directory" and the result of the
 command is printed to your standard output, which is the screen.
 
-Let's type `pwd` and hit enter to execute the command
+Let's type `pwd` and press enter to execute the command
 (Note that the `$` sign is used to indicate a command to be typed on the command prompt,
  but we never type the `$` sign itself, just what follows after it.):
 
@@ -56,7 +56,7 @@ We can get this by specifying various **flags** (also known as `options`, `param
 `arguments`) to go with our basic commands.
 Arguments modify the workings of the command by telling the computer what sort of output or manipulation we want.
 
-If we type `ls -l` and hit enter, the computer returns a list of files that contains
+If we type `ls -l` and press enter, the computer returns a list of files that contains
 information similar to what we would find in our Finder (Mac) or Explorer (Windows):
 the size of the files in bytes, the date it was created or last modified, and the file name.
 
@@ -83,7 +83,7 @@ Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to reduce the
 number of digits to three or less using base 2 for sizes.
 
 Now `ls -h` won't work on its own. When we want to combine two flags,
-we can just run them together. So, by typing `ls -lh` and hitting
+we can just run them together. So, by typing `ls -lh` and pressing
 enter we receive an output in a human-readable format (note: the order here doesn't matter).
 
 ~~~
