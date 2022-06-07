@@ -362,7 +362,7 @@ This uses the translate command and a special syntax to remove all punctuation
 Finally regularise the text by removing all the uppercase lettering.
 
 ~~~
-$ tr [:upper:] [:lower:] < diary-notagspunct.txt > diary-clean.txt
+$ tr '[:upper:]' '[:lower:]' < diary-notagspunct.txt > diary-clean.txt
 ~~~
 {: .bash}
 
