@@ -123,7 +123,7 @@ It also requires the use of both the output redirect `>` we have seen and the in
 Finally regularise the text by removing all the uppercase lettering.
 
 ~~~
-$ tr [:upper:] [:lower:] < gulliver-noheadfootpunct.txt > gulliver-clean.txt
+$ tr '[:upper:]' '[:lower:]' < gulliver-noheadfootpunct.txt > gulliver-clean.txt
 ~~~
 {: .bash}
 
@@ -233,7 +233,7 @@ We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
 
 ~~~
-$ tr -d [:punct:] < 201403160_01_text.json > 201403160_01_text-nopunct.txt
+$ tr -d '[:punct:]' < 201403160_01_text.json > 201403160_01_text-nopunct.txt
 ~~~
 {: .bash}
 
@@ -243,7 +243,7 @@ It also requires the use of both the output redirect `>` we have seen and the in
 Finally regularise the text by removing all the uppercase lettering.
 
 ~~~
-$ tr [:upper:] [:lower:] < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
+$ tr '[:upper:]' '[:lower:]' < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
 ~~~
 {: .bash}
 
