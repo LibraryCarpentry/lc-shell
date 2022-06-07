@@ -8,7 +8,7 @@
 
 ## Contributor Agreement
 
-By contributing, you agree that we may redistribute your work under [our license](LICENSE.md). In exchange, we will address your issues and/or assess your change proposal as promptly as we can, and help you become a member of our community. Everyone involved in [Software Carpentry][swc-site], [Data Carpentry][dc-site], and [Library Carpentry](lc-site) agrees to abide by our [code of conduct](CODE_OF_CONDUCT.md).
+By contributing, you agree that we may redistribute your work under [our license](LICENSE.md). In exchange, we will address your issues and/or assess your change proposal as promptly as we can, and help you become a member of our community. Everyone involved in [Software Carpentry][swc-site], [Data Carpentry][dc-site], and [Library Carpentry](lc-site) agrees to abide by our [code of conduct](conduct).
 
 ## How to Contribute
 
@@ -55,6 +55,7 @@ Each lesson has two maintainers who review issues and pull requests or encourage
 
 General discussion of [Software Carpentry][swc-site], [Data Carpentry][dc-site], and [Library Carpentry][lc-site] happens on the [discussion mailing lists][discuss-list], which everyone are welcome to join. You can also [reach us by email][contact].
 
+[conduct]: https://docs.carpentries.org/topic_folders/policies/code-of-conduct.html
 [contact]: mailto:admin@software-carpentry.org
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
 [dc-lessons]: http://datacarpentry.org/lessons/
