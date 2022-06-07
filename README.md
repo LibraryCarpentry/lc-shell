@@ -1,6 +1,6 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266085.svg)](https://doi.org/10.5281/zenodo.3266085)  
+# Library Carpentry: The UNIX Shell
 
-# Maintainers for Library Carpentry: The UNIX Shell
+## Maintainers for Library Carpentry: The UNIX Shell
 
 - [Danielle Kane](https://github.com/dakane1) (Lead)
 - [Anna Oates](https://twitter.com/annaoates)
@@ -9,11 +9,10 @@
 - [Jamie Jamison](https://github.com/jmjamison)
 - [Kaitlin Newson](https://github.com/kaitlinnewson)
 
-Past Maintainer: 
+### Past Maintainers
 
 - [Belinda Weaver](https://github.com/weaverbel)
 - [Tim Dennis](https://github.com/jt14den)
-
 
 Lesson Maintainers communication is via the [team site](https://github.com/orgs/LibraryCarpentry/teams/lc-shell-maintainers).
 
