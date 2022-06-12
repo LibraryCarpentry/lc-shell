@@ -3,26 +3,26 @@ title: "Automating the tedious with loops"
 teaching: 20
 exercises: 10
 questions:
-- "What is a loop?"
-- "How can a loop be used to repeat a task?"
+- "What is a loop?""ループとはなにか"
+- "How can a loop be used to repeat a task?"”繰り返しの仕事をするのにどのようにループを使うか。”
 objectives:
-- "Describe how loops can be used to repeat tasks"
+- "Describe how loops can be used to repeat tasks""ループを使って複数のファイルを繰り返しリネームできるようになる。"
 - "Implement a loop to rename several files"
 keypoints:
-- "Looping is the foundation for working smarter with the command line"
-- "Loops help us to do the same (or similar) things to a bunch of items"
+- "Looping is the foundation for working smarter with the command line""ループは生産性向上の鍵"
+- "Loops help us to do the same (or similar) things to a bunch of items""なぜならこれは繰り返し実行することでワイルドカードやタブ補完とどうようにタイピングの量と間違いを避けることｇできる"
 ---
 ### Writing a Loop
 
 **Loops** are key to productivity improvements through automation as they allow us to execute
 commands repetitively. Similar to wildcards and tab completion, using loops also reduces the
 amount of typing (and typing mistakes).
-Suppose we have several hundred document files named `project_1825.txt`, `project_1863.txt`, `XML_project.txt` and so on.
-We would like to change these files, but also save a version of the original files, naming the copies
-`backup_project_1825.txt` and so on.
+Suppose we have several hundred document files named `project_1825.txt`, `project_1863.txt`, `XML_project.txt` and so on.100個くらいあるとしましょう
+We would like to change these files, but also save a version of the original files, naming the copiesもとのファイルはバックアップを作っておきたい
+`backup_project_1825.txt` and so on.とします・
 
-We can use a **loop** to do that.
-Here's a simple example that creates a backup copy of four text files in turn.
+We can use a **loop** to do that.そういうことをするためにループが使えます。
+Here's a simple example that creates a backup copy of four text files in turn.バックアップをすることができます。
 
 Let's first create those files:
 
@@ -34,9 +34,9 @@ This will create four empty files with those names. It is easy to use the shell 
 Now we will use a loop to create a backup version of those files. First let’s look at the general form of a loop:
 
 ```
-for thing in list_of_things
-do
-    operation_using $thing    # Indentation within the loop is not required, but aids legibility
+for thing in list_of_things　リストがあって
+do　do
+    operation_using $thing    # Indentation within the loop is not required, but aids legibility ここにdoとdoneの間に作業を書くインデントを書くと見やすくなります。
 done
 ```
 {: .language-bash}
@@ -72,6 +72,13 @@ we call for the variable's value by putting `$` in front of it.
 The `$` tells the shell interpreter to treat
 the **variable** as a variable name and substitute its value in its place,
 rather than treat it as text or an external command.
+コマンドにあるリストに伝わります。
+各繰り返しの中でそれぞれのリストの中の一個一個の名前はループ変数が一個一個に割り当てられます。
+ループの中のコマンドが次のリストに行く前に実行されます。
+変数にはドルマークが頭につきます。
+ドルマークはシェルのインタープリターのプログラムに＄は変数だよというのを伝えて実際の値を代入します。
+リストの値で置き換えてください。なんとかテキストというのは４つあって、この一個一個をdoからdoneの間に
+入って、cp a.txt backup_a.txt繰り返されるという仕組み。
 
 > ## Double-quoting variable substitutions
 >
@@ -81,18 +88,19 @@ rather than treat it as text or an external command.
 > between two different filenames, which usually results in errors.
 > Therefore, it's best and generally safer to use `"$..."` unless
 > you are absolutely sure that no elements with white-space can ever
-> enter your loop variable (such as in [episode 5]({{ page.root }}/05-counting-mining/index.html#using-a-loop-to-count-words)).
+> enter your loop variable (such as in [episode 5]({{ page.root }}/05-counting-mining/index.html#using-a-loop-to-count-words)).実際のファイルネームにはスペースを含むことがあるので変数をダブルクォート、タブルクォートしないとコマンドの区切りとします。これも大抵エラーになります。なので変数はダブルクォートで囲うのがベストで安全です。
+> どのファイルにもスペースが含まれていないと確信していない場合は囲むほうがいいです。
 {: .callout}
 
 In this example, the list is four filenames: 'a.txt', 'b.txt', 'c.txt', and 'd.txt'
 Each time the loop iterates, it will assign a file name to the variable `filename`
-and run the `cp` command.
-The first time through the loop,
+and run the `cp` command.上記の例ではファイル名は4つです。ファイル名を代入します。コピーコマンドを実行します。
+The first time through the loop,最初のループはa.txt
 `$filename` is `a.txt`.
-The interpreter prints the filename to the screen and then runs the command `cp` on `a.txt`, (because we asked it to echo each filename as it works its way through the loop).
+The interpreter prints the filename to the screen and then runs the command `cp` on `a.txt`, (because we asked it to echo each filename as it works its way through the loop).ファイル名を出力します。コピーコマンドを実行します。
 For the second iteration, `$filename` becomes
-`b.txt`. This time, the shell prints the filename `b.txt` to the screen, then runs `cp` on `b.txt`. The loop performs the same operations for `c.txt` and then for `d.txt` and then, since
-the list only included these four items, the shell exits the `for` loop at that point.
+`b.txt`. This time, the shell prints the filename `b.txt` to the screen, then runs `cp` on `b.txt`. The loop performs the same operations for `c.txt` and then for `d.txt` and then, since　ループが実行されていればファイル名を表示するようにしています。2番目はb、3番めはc
+the list only included these four items, the shell exits the `for` loop at that point.4つ全部終わったらこのシェルが終了します。
 
 > ## Follow the Prompt
 >
