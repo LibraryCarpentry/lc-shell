@@ -2,10 +2,7 @@
 
 ## Maintainers for Library Carpentry: The UNIX Shell
 
-- [Danielle Kane](https://github.com/dakane1) (Lead)
 - [Anna Oates](https://twitter.com/annaoates)
-- [John Wright](https://twitter.com/jwscutt)
-- [Nilani Ganeshwaran](https://github.com/uom-nilani)
 - [Jamie Jamison](https://github.com/jmjamison)
 - [Kaitlin Newson](https://github.com/kaitlinnewson)
 
@@ -13,6 +10,9 @@
 
 - [Belinda Weaver](https://github.com/weaverbel)
 - [Tim Dennis](https://github.com/jt14den)
+- [Danielle Kane](https://github.com/dakane1)
+- [John Wright](https://twitter.com/jwscutt)
+- [Nilani Ganeshwaran](https://github.com/uom-nilani)
 
 Lesson Maintainers communication is via the [team site](https://github.com/orgs/LibraryCarpentry/teams/lc-shell-maintainers).
 
