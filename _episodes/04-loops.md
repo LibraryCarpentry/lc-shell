@@ -187,6 +187,10 @@ This is our first look at loops. We will run another loop in the
 > you've been using for the lesson and by using the text editor of your choice (e.g. nano) but when you save the 
 > file, make sure it has the extension **.sh** (e.g. `my_first_bash_script.sh`). When you've done this, you can run the
 > Bash script by typing the command bash and the file name via the command line (e.g. `bash my_first_bash_script.sh`). 
+> バッシュスクリプトといいます。コマンドを書いたプレーンテキストです。下のレーンのようにシェバンっていうのがあって
+> 2番めの行はコメントです。
+> 3番目からの行はプログラム保存することができます。
+> ただしそのときに.shで作ってください。
 > > ```
 > > #!/bin/bash
 > > # This script loops through .txt files, returns the file name, first line, and last line of the file
