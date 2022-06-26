@@ -108,6 +108,8 @@ the list only included these four items, the shell exits the `for` loop at that 
 > typing in our loop. The second prompt, `>`, is different to remind
 > us that we haven't finished typing a complete command yet. A semicolon, `;`,
 > can be used to separate two commands written on a single line.
+> シェルプロンプトはドルマークから大なり記号に変わります。大なり記号はループの入力を完了していないことを示します。
+> 2つ以上使うときはセミコロンで区切る。
 {: .callout}
 
 > ## Same Symbols, Different Meanings
@@ -123,16 +125,27 @@ the list only included these four items, the shell exits the `for` loop at that 
 >
 > If *you* type `>` or `$` yourself, it is an instruction from you that
 > the shell to redirect output or get the value of a variable.
+> 同じ文字で違う意味
+> プロンプトで大なり記号を使いましたが、大なり記号は出力をリダイレクトするのに使います。
+> 例えば端末する代わりにファイルに出力
+> これはリダイレクションといった5章で紹介します。
+> ドルマークはシェルプロンプトでも使いますが変数を使うときにも使います。
+> もしこのシェルの出力で大なり記号やドルマークがでてきたとき待っている状態です。
+> この記号はプロンプトです。
+> シェルの中で大なり記号を入力した場合、リダイレクトすることの指示です。
+> 変数の中身を取得するという指令になります。意味が違います。
 {: .callout}
 
 We have called the variable in this loop `filename`
 in order to make its purpose clearer to human readers.
 The shell itself doesn't care what the variable is called.
+私たちはファイルの中の変数をファイルネーム
+シェル自身はこの名前について気にしません。
 
 > ## For loop exercise
 > Complete the blanks in the for loop below to print the name, first line, and last line
 > of each text file in the current directory.
->
+>練習問題穴埋めです。
 > ```
 > ___ file in *.txt
 > __
