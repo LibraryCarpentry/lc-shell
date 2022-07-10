@@ -27,17 +27,18 @@ Now that you know how to navigate the shell, we will move onto
 learning how to count and mine data using a few of the standard shell commands.
 While these commands are unlikely to revolutionise your work by themselves,
 they're very versatile and will add to your foundation for working in the shell
-and for learning to code. The commands also replicate the sorts of uses library users might make of library data.
+and for learning to code. The commands also replicate the sorts of uses library users might make of library data.シェルの操作方法を皆様覚えたのでシェルコマンドを数えたり集計、発見したりする方法を学んでいきましょう。これらのコマンドでは単体では革命が起きたりすることはなさそうですが、シェルで操作をしたり、習得とかコードの勉強とかにすごくいろんな用途に使います。これらのコマンドは図書館、はい。図書館からデータを公開するときにユーザーが操作できたりするようになる。
 
 ## Counting and sorting
 
 We will begin by counting the contents of files using the Unix shell.
 We can use the Unix shell to quickly generate counts from across files,
-something that is tricky to achieve using the graphical user interfaces of standard office suites.
+something that is tricky to achieve using the graphical user interfaces of standard office suites.シェルを使ってファイルのコンテントを数える方法から始めます。
 
 Let's start by navigating to the directory that contains our data using the
 `cd` command:
-
+ファイルを使って簡単に数を数えることができます。
+そのファイルの数を数えるというのがオフィスのGUDを使うとUNIXシェルを使うと簡単にできます。データを含んでいるシェルに移動しましょう。
 ~~~
 $ cd shell-lesson
 ~~~
@@ -45,7 +46,7 @@ $ cd shell-lesson
 
 Remember, if at any time you are not sure where you are in your directory structure,
 use the `pwd` command to find out:
-
+もしどこにいっているかわからない場合はpwdを押してください。
 ~~~
 $ pwd
 ~~~
@@ -57,7 +58,7 @@ $ pwd
 
 And let's just check what files are in the directory and how large they
 are with `ls -lhS`:
-
+ls -lhSを押すとファイルのサイズをみることができます。
 ~~~
 $ ls -lhS
 ~~~
@@ -78,7 +79,8 @@ In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains
 journal article metadata, and the three `.tsv` files derived from the original
 dataset. Each of these three `.tsv` files includes all data where a keyword such
 as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
-
+論文のメタデータが入っている。オリジナルデータセットここから派生している
+これらのTSVファイル、アフリカ、アメリカとか入っているのがこれ。切り出し済み
 > ## CSV and TSV Files
 > CSV (Comma-separated values) is a common plain text format for storing tabular
 > data, where each record occupies one line and the values are separated by commas.
@@ -90,9 +92,15 @@ as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 > support the format, including Excel by the way.), and you wouldn't have any
 > problems opening a 40 year old file today if you came across one.
 {: .callout}
+各レコードは一行、値がカンマで区切られています。これはカンマではなくタブで区切られている。
+CSVという言葉はCSVとかTSVのフォーマットを総称して呼ぶことがあります。単純なのでデータの交換とか
+アーカイブにとても役立ちます。
+特定のプログラムにしばられません。CSVという名前のプログラムはありません。
+CSVをサポートするプログラムもたくさんあります。なので40年前にできたファイルを使うのもなんの問題もありません。
 <!-- hm, reminds me of MARC -->
 
 First, let's have a look at the largest data file, using the tools we learned in
+一番
 [Reading files]({{ page.root }}/03-working-with-files-and-folders/#reading-files):
 
 ~~~
@@ -103,6 +111,8 @@ $ cat 2014-01_JA.tsv
 Like `829-0.txt` before, the whole dataset cascades by and can't really make any
 sense of that amount of text. To cancel this on-going con`cat`enation, or indeed any
 process in the Unix shell, press <kbd>Ctrl</kbd>+<kbd>C</kbd>.
+データセット自体が全部表示されます。役に立ちません。シェルの作業を途中で止めるには
+大抵のデータは最初の何行かをみると簡単なデータが書いてある。
 
 In most data files a quick glimpse of the first few lines already tells us a lot
 about the structure of the dataset, for example the table/column headers:
@@ -116,6 +126,7 @@ File    Creator    Issue    Volume    Journal    ISSN    ID    Citation    Title
 History_1a-rdf.tsv  Doolittle, W. E.  1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571862 KIVA -ARIZONA- 59(1), 7-26. (1993)  A Method for Distinguishing between Prehistoric and Recent Water and Soil Control Features  xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
 History_1a-rdf.tsv  Nelson, M. C. 1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571874 KIVA -ARIZONA- 59(1), 27-48. (1993) Classic Mimbres Land Use in the Eastern Mimbres Region, Southwestern New Mexico xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
 
+最初の三行をみてみます。こんな感じ。ヘッダの行にはメタデータの項目が入っています。じゃあ簡単なデータ分析
 ~~~
 {: .output}
 
@@ -126,6 +137,11 @@ Next, let's learn about a basic data analysis tool:
 Since we love the wildcard operator, let's run the command
 `wc *.tsv` to get counts for all the `.tsv` files in the current directory
 (it takes a little time to complete):
+WCはデータカウントコマンド、私たちはワイルドカードコマンドが大好きなので全部のTSVファイルの数を数えてみましょう。
+ちょっと時間がかかります。
+ちょっとやってみましょう。行の数、単語の数、ファイル数、ファイルがちょっとしかない場合はテキストエディタを使ったほうが良い
+100個とかあったら、コマンドを使ったほうがよい、コマンドを駆使しして、自動化できるちょっとずつやっていきます。
+とりあえずは簡単なパイプライン
 
 ~~~~
 $ wc *.tsv
