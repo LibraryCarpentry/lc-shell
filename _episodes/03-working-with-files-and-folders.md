@@ -23,7 +23,7 @@ documents (Word or OpenOffice), browsing the web, editing images, etc. But if we
 wanted to make the same crop on hundreds of images, say, the pages of a scanned book,
 then we could automate that cropping work by using shell commands.
 
-Before getting started, we will use `ls` to verify where we are. Using `ls` periodically
+Before getting started, we will use `ls` to list the content of our current directory. Using `ls` periodically
 to view your options is useful to orient oneself. 
 
 ~~~
