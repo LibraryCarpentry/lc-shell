@@ -755,7 +755,7 @@ We will now use a loop to automate the counting of certain words within a docume
 $ mv pg514.txt littlewomen.txt
 ~~~
 
-This renames the file to something easier to type.
+This renames the file to something easier to memorize.
 
 Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each girl's name,
 and count the number of times it appears. The results will print to the screen.
