@@ -246,7 +246,7 @@ send the results from the first command (`wc -l *.tsv`) directly to the next
 command (`sort -n`) and then the output from that command to `head -n 1`?
 Luckily we can, using a concept called pipes. On the command line, you make a
 pipe with the vertical bar character `|`. Let's try with one pipe first:
-
+ここでは一番短いファイル
 ~~~~
 $ wc -l *.tsv | sort -n
 ~~~~
@@ -262,7 +262,8 @@ $ wc -l *.tsv | sort -n
 
 Notice that this is exactly the same output that ended up in our `sorted-lengths.txt`
 earlier. Let's add another pipe:
-
+行数が短いファイルをみつける簡単なパイプラインを作ってみましょう。
+-lオプションを使います。tsvファイルの行数がでてきました。wcコマンド自体は出力をsortする機能はありません。
 ~~~~
 $ wc -l *.tsv | sort -n | head -n 1
 ~~~~
@@ -275,6 +276,16 @@ $ wc -l *.tsv | sort -n | head -n 1
 It can take some time to fully grasp pipes and use them efficiently, but it's a
 very powerful concept that you will find not only in the shell, but also in most
 programming languages.
+
+3つのシェルコマンドと使って実行できます。
+出力をリダイレクトします。
+リダイレクトをだいなり記号を使います。
+この記号を使ってリダイレクトします。
+何も出力されません。
+実際のcatとかlessとか
+確認してみましょう。
+中身がでてきました。
+sortして文字順にすることができます。
 
 ![Redirects and Pipes](../fig/redirects-and-pipes.png)
 
@@ -294,7 +305,20 @@ programming languages.
 > you and other people can put those programs into pipes to multiply their power.
 {: .callout}
 <!-- Copied from https://swcarpentry.github.io/shell-novice/04-pipefilter/ -->
-
+理解するのに少し時間がかかるかもしれません。ただ、強力なコマンドです。
+だいなり記号がつくとファイルが出力される。
+いろんな形で切り分けられる
+パイプとフィルター
+入力の流れを出力の流れに変換するプログラム
+ほとんどの標準のUNIXツールはこのように動きます。
+特に指定がない限りフィルターもツールは標準入力からデータを読み込んで
+読み込んだデータを標準出力に出力します。
+ここでの鍵はこの標準入力からテキストを読み込んで、標準出力に結果を書き出すプログラム
+他のどのプログラムとも組み合わせることができる
+あなたがプログラムを書くときには
+さらに有効活用できるようになりますし、そういうプログラムを書くべきです。
+パイプでつなげるようにプログラムを書きましょう。
+画面にでてくるように作りましょう。
 > ## Adding another pipe
 > We have our `wc -l *.tsv | sort -n | head -n 1` pipeline. What would happen
 > if you piped this into `cat`? Try it!
