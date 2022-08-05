@@ -12,8 +12,8 @@ Even if you are a Windows user, learning Bash will open up a powerful set of too
 >Bash is the default shell on most Linux distributions and macOS.
 >Windows users will need to install Git Bash to provide a UNIX-like environment.
 >
->- **Linux:** The default shell is usually Bash, but if your machine is set up differently you can run it by opening a terminal >and typing `bash`.  There is no need to install anything. Look for Terminal in your applications to start the Bash shell.
->- **macOS:** Bash is the default shell in all versions of macOS prior to Catalina, you do not need to install anything. Open Terminal from >`/Applications/Utilities` or spotlight search to start the Bash shell. zsh is the default in Catalina.
+>- **Linux:** The default shell is usually Bash, but if your machine is set up differently you can run it by opening a terminal and typing `bash`. There is no need to install anything. Look for Terminal in your applications to start the Bash shell.
+>- **macOS:** Open Terminal from >`/Applications/Utilities` or spotlight search. In all versions of macOS prior to Catalina, Bash is the default shell so you do not need to do anything further. In macOS Catalina onwards, the default shell is zsh, which is broadly similar but may behave differently from Bash in certain circumstances. To switch to Bash, enter the command `bash` in your terminal window.
 >- **Windows:** On Windows, CMD or PowerShell are normally available as the default shell environments. These use a syntax and set of applications unique to Windows systems and are incompatible with the more widely used UNIX utilities. However, a Bash shell can be installed on Windows to provide a UNIX-like environment. For this lesson we suggest using Git Bash, part of the >[Git for Windows](https://gitforwindows.org/) package:
 >    - Download the latest Git for Windows [installer](https://gitforwindows.org/).
 >    - Double click the `.exe` to run the installer (for example, `Git-2.13.3-64-bit.exe`) using the default settings.
