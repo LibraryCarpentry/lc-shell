@@ -488,7 +488,8 @@ working with thousands or millions of files - the processing power at your dispo
 
 To begin using `grep`, first navigate to the `shell-lesson` directory if not already
 there. Then create a new directory "results":
-
+Grepを使う。想像力次第で思い通りにできる
+移動しましょう。リザルトディレクトリを作ります。
 ~~~
 $ mkdir results
 ~~~
@@ -506,9 +507,12 @@ Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in
 directory. `grep` will then search these for instances of the string "1999" and
 print the matching lines.
 
+ここでいうstring テキストの固まり
+
 > ## Strings
 > A string is a sequence of characters, or "a piece of text".
 {: .callout}
+
 
 Press the up arrow once in order to cycle back to your most recent action.
 Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and hit enter.
@@ -528,6 +532,9 @@ $ grep -c 1999 *.tsv
 The shell now prints the number of times the string 1999 appeared in each file.
 If you look at the output from the previous command, this tends to refer to the
 date field for each journal article.
+
+大文字小文字を区別しない
+
 
 We will try another search:
 
@@ -636,6 +643,8 @@ $ wc -l results/*.tsv
 > > and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
 > {: .solution}
 {: .challenge}
+
+オプションを探してみましょう。dateのヘルプをみると
 
 Finally, we'll use the **regular expression syntax** covered earlier to search for similar words.
 
