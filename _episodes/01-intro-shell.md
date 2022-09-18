@@ -41,6 +41,8 @@ This output is often directed to the screen, but can be directed to a file, or e
 
 <2022−09−18＞
 
+
+
 Using a shell sometimes feels more like programming than like using a mouse. Commands are terse (often only a couple of characters long), their names are frequently cryptic, and their output is lines of text rather than something visual like a graph. On the other hand, with only a few keystrokes, the shell allows you to combine existing tools into powerful pipelines and to handle large volumes of data automatically. This automation not only makes you more productive, but also improves the reproducibility of your workflows by allowing you to save and then repeat them with a few simple commands. Understanding the basics of the shell provides a useful foundation for learning to program, since some of the concepts you will learn here—such as loops, values, and variables—will translate to programming.
 
 シェルを使うというのはマウスを使うというよりはプログラミングという感じです。コマンドは簡単、簡略（たいてい数文字の簡潔でコマンドの名前は暗号みたいな）、出力はグラフのようなものではなくって何行かのテキストです。一方数文字のキーの入力で既存のツールを組み合わせて、強力なパイプラインを作り上げることができるし、大量のデータを自動的に処理することができます。この自動化はあなたの生産性を向上するだけではなくて、単純なコマンドの組み合わせを保存したり、繰り返したりすることでワークフローの再現性をあげることができる。マウスの繰り返しでできなくはないけどシェルの基本を理解することはこのプログラムを学ぶことの基礎になります。ここで学ぶいくつかのコンセプト、ループ（繰り返し処理ができる）、値、変数はプログラミングに変換されるからです。
