@@ -41,7 +41,7 @@ Let's start by navigating to the directory that contains our data using the
 ~~~
 $ cd shell-lesson
 ~~~
-{: .bash}
+{: .language-bash}
 
 Remember, if at any time you are not sure where you are in your directory structure,
 use the `pwd` command to find out:
@@ -49,7 +49,7 @@ use the `pwd` command to find out:
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 /Users/riley/Desktop/shell-lesson
 ~~~
@@ -61,7 +61,7 @@ are with `ls -lhS`:
 ~~~
 $ ls -lhS
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 total 139M
 -rw-rw-r-- 1 riley staff 126M Jun 10  2015 2014-01_JA.tsv
@@ -98,7 +98,7 @@ First, let's have a look at the largest data file, using the tools we learned in
 ~~~
 $ cat 2014-01_JA.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 
 Like `829-0.txt` before, the whole dataset cascades by and can't really make any
 sense of that amount of text. To cancel this on-going con`cat`enation, or indeed any
@@ -110,7 +110,7 @@ about the structure of the dataset, for example the table/column headers:
 ~~~
 $ head -n 3 2014-01_JA.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 File    Creator    Issue    Volume    Journal    ISSN    ID    Citation    Title    Place    Labe    Language    Publisher    Date
 History_1a-rdf.tsv  Doolittle, W. E.  1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN001571862 KIVA -ARIZONA- 59(1), 7-26. (1993)  A Method for Distinguishing between Prehistoric and Recent Water and Soil Control Features  xxu eng ARIZONA ARCHAEOLOGICAL AND HISTORICAL SOCIETY 1993
@@ -130,7 +130,7 @@ Since we love the wildcard operator, let's run the command
 ~~~~
 $ wc *.tsv
 ~~~~
-{: .bash}
+{: .language-bash}
 ~~~
     13712    511261   3773660 2014-01-31_JA-africa.tsv
     27392   1049601   7731914 2014-01-31_JA-america.tsv
@@ -155,7 +155,7 @@ number of lines, not the number of words and bytes:
 ~~~~
 $ wc -l *.tsv
 ~~~~
-{: .bash}
+{: .language-bash}
 ~~~
     13712 2014-01-31_JA-africa.tsv
     27392 2014-01-31_JA-america.tsv
@@ -175,7 +175,7 @@ to a file using the ‘greater than’ sign (>), like so:
 ~~~
 $ wc -l *.tsv > lengths.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 There's no output now since the output went into the file `lengths.txt`, but
 we can check that the output indeed ended up in the file using `cat` or `less`
@@ -184,7 +184,7 @@ we can check that the output indeed ended up in the file using `cat` or `less`
 ~~~~
 $ cat lengths.txt
 ~~~~
-{: .bash}
+{: .language-bash}
 ~~~
     13712 2014-01-31_JA-africa.tsv
     27392 2014-01-31_JA-america.tsv
@@ -192,7 +192,7 @@ $ cat lengths.txt
      5375 2014-02-02_JA-britain.tsv
    554211 total
 ~~~
-{: .bash}
+{: .language-bash}
 
 Next, there is the `sort` command. We'll use the `-n` flag to specify that we
 want numerical sorting, not lexical sorting, we output the results into
@@ -202,7 +202,7 @@ yet another file, and we use `cat` to check the results:
 $ sort -n lengths.txt > sorted-lengths.txt
 $ cat sorted-lengths.txt
 ~~~~
-{: .bash}
+{: .language-bash}
 ~~~
      5375 2014-02-02_JA-britain.tsv
     13712 2014-01-31_JA-africa.tsv
@@ -218,7 +218,7 @@ of the `sorted-lengths.txt`:
 ~~~~
 $ head -n 1 sorted-lengths.txt
 ~~~~
-{: .bash}
+{: .language-bash}
 ~~~
      5375 2014-02-02_JA-britain.tsv
 ~~~
@@ -234,7 +234,7 @@ pipe with the vertical bar character `|`. Let's try with one pipe first:
 ~~~~
 $ wc -l *.tsv | sort -n
 ~~~~
-{: .bash}
+{: .language-bash}
 ~~~
      5375 2014-02-02_JA-britain.tsv
     13712 2014-01-31_JA-africa.tsv
@@ -250,7 +250,7 @@ earlier. Let's add another pipe:
 ~~~~
 $ wc -l *.tsv | sort -n | head -n 1
 ~~~~
-{: .bash}
+{: .language-bash}
 ~~~
      5375 2014-02-02_JA-britain.tsv
 ~~~
@@ -290,14 +290,14 @@ programming languages.
 > > ~~~
 > > $ wc -l *.tsv | sort -n | head -n 1
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > and
 > >
 > > ~~~
 > > $ wc -l *.tsv | sort -n | head -n 1 | cat
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -307,7 +307,7 @@ programming languages.
 >~~~
 >wc -l *.tsv | sort -n | head -n 1
 >~~~
->{: .bash}
+>{: .language-bash}
 >
 >
 >Now let's change the scenario. We want to know the 10 files that contain _the most_ words. Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
@@ -315,7 +315,7 @@ programming languages.
 >~~~
 >__ -w *.tsv | sort __ | ____
 >~~~
->{: .bash}
+>{: .language-bash}
 >
 > > ## Solution
 > >
@@ -323,7 +323,7 @@ programming languages.
 > >~~~
 > > wc -w *.tsv | sort -n | tail -n 11
 > >~~~
-> >{: .bash}
+> >{: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -337,7 +337,7 @@ programming languages.
 > > ~~~
 > > $ ls | wc -l
 > > ~~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -351,7 +351,7 @@ programming languages.
 > > $ date > logfile.txt
 > > $ cat logfile.txt
 > > ~~~~
-> > {: .bash}
+> > {: .language-bash}
 > > To check the contents, you could also use `less` or many other commands.
 > >
 > > Beware that `>` will happily overwrite an existing file without warning you,
@@ -368,7 +368,7 @@ programming languages.
 > > $ date >> logfile.txt
 > > $ cat logfile.txt
 > > ~~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -397,7 +397,7 @@ programming languages.
 > > ~~~
 > > $ wc -w *.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > > ~~~
 > >   511261 2014-01-31_JA-africa.tsv
 > >  1049601 2014-01-31_JA-america.tsv
@@ -412,7 +412,7 @@ programming languages.
 > > ~~~
 > > $ wc -w *.tsv | sort -n
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > > ~~~
 > >   196999 2014-02-02_JA-britain.tsv
 > >   511261 2014-01-31_JA-africa.tsv
@@ -438,7 +438,7 @@ there. Then create a new directory "results":
 ~~~
 $ mkdir results
 ~~~
-{: .bash}
+{: .language-bash}
 
 
 Now let's try our first search:
@@ -446,7 +446,7 @@ Now let's try our first search:
 ~~~
 $ grep 1999 *.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 
 Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in the
 directory. `grep` will then search these for instances of the string "1999" and
@@ -462,7 +462,7 @@ Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and press enter.
 ~~~
 $ grep -c 1999 *.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 2014-01-31_JA-africa.tsv:804
 2014-01-31_JA-america.tsv:1478
@@ -480,7 +480,7 @@ We will try another search:
 ~~~
 $ grep -c revolution *.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 2014-01-31_JA-africa.tsv:20
 2014-01-31_JA-america.tsv:34
@@ -495,7 +495,7 @@ Now, amend the above command to the below and observe how the output of each is 
 ~~~
 $ grep -ci revolution *.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 2014-01-31_JA-africa.tsv:118
 2014-01-31_JA-america.tsv:1018
@@ -518,7 +518,7 @@ from one or multiple files.
 ~~~
 $ grep -i revolution *.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 
 This script looks in the defined files and prints any lines containing `revolution`
 (without regard to case) to the shell. We let the shell add today's date to the
@@ -527,7 +527,7 @@ filename:
 ~~~
 $ grep -i revolution *.tsv > results/$(date "+%Y-%m-%d")_JAi-revolution.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 
 This saves the subsetted data to a new file.
 
@@ -546,7 +546,7 @@ giving us greater precision in our search.
 ~~~
 $ grep -iw revolution *.tsv > results/$(date "+%Y-%m-%d")_JAiw-revolution.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 
 This script looks in both of the defined files and
 exports any lines containing the whole word `revolution` (without regard to case)
@@ -557,7 +557,7 @@ We can show the difference between the files we created.
 ~~~
 $ wc -l results/*.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
    10585 2016-07-19_JAi-revolution.tsv
     7779 2016-07-19_JAiw-revolution.tsv
@@ -605,7 +605,7 @@ expand the wildcard operator *).
 ~~~
 $ grep -iwE 'fr[ae]nc[eh]' *.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 
 The shell will print out each matching line.
 
@@ -615,7 +615,7 @@ We include the `-o` flag to print only the matching part of the lines e.g.
 ~~~
 $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
 ~~~
-{: .bash}
+{: .language-bash}
 
 Pair up with your neighbor and work on these exercises:
 
@@ -628,7 +628,7 @@ Pair up with your neighbor and work on these exercises:
 > > ~~~
 > > $ grep -w hero *.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -641,7 +641,7 @@ Pair up with your neighbor and work on these exercises:
 > > ~~~
 > > $ grep hero *a.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -654,7 +654,7 @@ Pair up with your neighbor and work on these exercises:
 > > ~~~
 > > $ grep -c hero *a.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -666,7 +666,7 @@ Pair up with your neighbor and work on these exercises:
 > > ~~~
 > > $ grep -ci hero *a.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -678,7 +678,7 @@ Pair up with your neighbor and work on these exercises:
 > > ~~~
 > > $ grep -i hero *a.tsv > results/hero.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -690,7 +690,7 @@ Pair up with your neighbor and work on these exercises:
 > > ~~~
 > > $ grep -iw hero *a.tsv > results/hero-i.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -705,14 +705,14 @@ Pair up with your neighbor and work on these exercises:
 > > ~~~
 > > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv > results/issns.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > or
 > >
 > > ~~~
 > > $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv > results/issns.tsv
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > It is worth checking the file to make sure `grep` has interpreted the pattern
 > > correctly. You could use the `less` command for this.
@@ -723,7 +723,7 @@ Pair up with your neighbor and work on these exercises:
 > > If you came up with something more advanced, perhaps including word boundaries,
 > > please share your result in the collaborative document and give yourself a pat on the shoulder.
 > >
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -737,13 +737,13 @@ Pair up with your neighbor and work on these exercises:
 > > ~~~
 > > $ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv | sort | uniq | wc -l
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > or
 > > ~~~
 > > $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv | sort | uniq | wc -l
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -768,7 +768,7 @@ $ for name in "Jo" "Meg" "Beth" "Amy"
 > done
 ~~~
 
-{: .bash}
+{: .language-bash}
 
 ~~~
 Jo
@@ -814,7 +814,7 @@ What is happening in the loop?
 >> grep: Alcott: No such file or directory
 >> 4
 >> ~~~
->> {: .bash}
+>> {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -823,7 +823,7 @@ What is happening in the loop?
 >~~~
 > cut -f 2,4,5,8 2014-01_JA.tsv | head
 >~~~
->{: .bash}
+>{: .language-bash}
 >
 >~~~
 > Creator	Volume	Journal	Citation
@@ -849,7 +849,7 @@ What is happening in the loop?
 >>~~~
 >> head -n 1 2014-01_JA.tsv
 >>~~~
->>{: .bash}
+>>{: .language-bash}
 >>
 >>~~~
 >>File	Creator	Issue	Volume	Journal	ISSN	ID	Citation	Title	Place Labe	Language	Publisher	Date
