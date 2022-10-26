@@ -43,7 +43,7 @@ Let's look at the file.
 ~~~
 $ less -N gulliver.txt
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
       1 <U+FEFF>The Project Gutenberg eBook, Gulliver's Travels, by Jonatha
       1 n Swift
@@ -91,7 +91,7 @@ We're going to start by using the `sed` command. The command allows you to edit 
 ~~~
 $ sed '9352,9714d' gulliver.txt > gulliver-nofoot.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 The command `sed` in combination with the `d`
 value will look at `gulliver.txt` and delete all
@@ -101,7 +101,7 @@ prompts the script to this edited text to the new file specified.
 ~~~
 $ sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 This does the same as before, but for the header.
 
@@ -114,7 +114,7 @@ deleting characters. Type and run:
 ~~~
 $ tr -d '[:punct:]\r' < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 This uses the translate command and a special syntax to remove all punctuation
 (`[:punct:]`) and carriage returns (`\r`).
@@ -125,7 +125,7 @@ Finally regularise the text by removing all the uppercase lettering.
 ~~~
 $ tr '[:upper:]' '[:lower:]' < gulliver-noheadfootpunct.txt > gulliver-clean.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Open the `gulliver-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
@@ -136,7 +136,7 @@ We are now ready to pull the text apart.
 ~~~
 $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
@@ -162,12 +162,12 @@ The fourth and final part sorts the text again by the counts of duplicates gener
 > > # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
 > > (replace this line with your solution)
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > Save the file as `remove-quotes.sh` and run it from the command line like this:
 > > ```
 > > bash remove-quotes.sh
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 >
 > > ## Solution
 > > ```
@@ -175,7 +175,7 @@ The fourth and final part sorts the text again by the counts of duplicates gener
 > > # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
 > > sed -Ee 's/[“”‘’]//g' gulliver-clean.txt > gulliver-noquotes.txt
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > > If this doesn't work for you, you might need to check whether your text editor can
 > > save files using the UTF-8 encoding.
 > {: .solution}
@@ -201,7 +201,7 @@ Let's look at the file.
 ~~~
 $ less -N 201403160_01_text.json
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
       1 [[1, ""], [2, ""], [3, ""], [4, ""], [5, ""], [6, ""], [7, "A GENERAL RE
       1 PORT ON THE PHYSIOGRAPHY OF MARYLAND A DISSERTATION PRESENTED TO THE PRE
@@ -235,7 +235,7 @@ deleting characters. Type and run:
 ~~~
 $ tr -d '[:punct:]' < 201403160_01_text.json > 201403160_01_text-nopunct.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 This uses the translate command and a special syntax to remove all punctuation.
 It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
@@ -245,7 +245,7 @@ Finally regularise the text by removing all the uppercase lettering.
 ~~~
 $ tr '[:upper:]' '[:lower:]' < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
@@ -256,7 +256,7 @@ We are now ready to pull the text apart.
 ~~~
 $ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403160_01_text-final.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
@@ -288,7 +288,7 @@ Let's look at the file.
 ~~~
 $ less -N diary.html
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
       1 <!-- This document was created with HomeSite v2.5 -->
       2 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
@@ -322,7 +322,7 @@ We're going to start by using the `sed` command. The command allows you to edit 
 ~~~
 $ sed '265,330d' diary.html > diary-nofoot.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 The command `sed` in combination with the `d`
 value will look at `diary.html` and delete all
@@ -332,7 +332,7 @@ prompts the script to this edited text to the new file specified.
 ~~~
 $ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 This does the same as before, but for the header.
 
@@ -344,7 +344,7 @@ First we wil remove all the html tags. Type and run:
 ~~~
 $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Here we are using a regular expression (see the [Library Carpentry regular expression lesson](https://librarycarpentry.org/lc-data-intro/01-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them). This is a complex regular expression, so don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
@@ -354,7 +354,7 @@ deleting characters. Type and run:
 ~~~
 $ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 This uses the translate command and a special syntax to remove all punctuation
 (`[:punct:]`) and carriage returns (`\r`).
@@ -364,7 +364,7 @@ Finally regularise the text by removing all the uppercase lettering.
 ~~~
 $ tr '[:upper:]' '[:lower:]' < diary-notagspunct.txt > diary-clean.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Open the `diary-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
@@ -375,7 +375,7 @@ We are now ready to pull the text apart.
 ~~~
 $ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
