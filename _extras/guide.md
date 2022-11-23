@@ -250,6 +250,7 @@ And please also make use of our [Software Carpentry Windows Installer][windows-i
     Have them create the example directory for the shell exercises there
     so that they can find it easily and watch it evolve.
 
+- On Windows, Microsoft OneDrive may appear in the home directory list as of 2022. Desktop is often found inside the OneDrive directory.
 ___
 
 [shebang]: http://www.in-ulm.de/~mascheck/various/shebang/
