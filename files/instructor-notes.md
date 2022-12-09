@@ -13,7 +13,7 @@ wget github.com/LibraryCarpentry/lc-shell/raw/gh-pages/data/shell-lesson.zip
 unzip shell-lesson.zip
 
 Before we had graphical interfaces we had command line interface
-UNIX Shell began in 1970s
+Unix Shell began in 1970s
 https://en.wikipedia.org/wiki/History_of_Unix#/media/File:Ken_Thompson_(sitting)_and_Dennis_Ritchie_at_PDP-11_(2876612463).jpg
 Work at a terminal but now you can work on your laptop or remotely
 
@@ -23,7 +23,7 @@ Most popular version is BASH which we will be using
 Shell is still useful in programming, data science work, research computing
 
 I've used Shell for wrangling with and cleaning lots of data/files
-Example: ORCID data dump via Figshare 
+Example: ORCID data dump via Figshare
 https://orcid.figshare.com/articles/ORCID_Public_Data_File_2018/7234028
 Example: Mining journal article PDFs at the European Southern Observatory
 https://www.eso.org/sci/libraries/telbib_methodology.html
@@ -63,7 +63,7 @@ cd firstdirectory
 cd ..
 
 ls -lh
-cat - concatenate files and print on the standard output 
+cat - concatenate files and print on the standard output
 (in other words open and print a file to screen)
 type 82 + [TAB]
 cat 829-0.txt
@@ -74,7 +74,7 @@ What is the title of 829-0?
 ANSWER:
 GULLIVER’S TRAVELS
 
-head 
+head
 output the first part of files (first 10 lines)
 head 829-0.txt
 
@@ -89,7 +89,7 @@ How can you return the last 30 lines of 829-0.txt?
 ANSWER:
 head -n20 829-0.txt
 tail -n30 829-0.txt
-Example: Sometimes files are too big to open and head and tail can be a lightweight way 
+Example: Sometimes files are too big to open and head and tail can be a lightweight way
 to peak inside or to get header information in automated way.
 
 less - allows you to scroll/page through file
