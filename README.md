@@ -1,6 +1,6 @@
-# Library Carpentry: The UNIX Shell
+# Library Carpentry: The Unix Shell
 
-## Maintainers for Library Carpentry: The UNIX Shell
+## Maintainers for Library Carpentry: The Unix Shell
 
 - [Anna Oates](https://twitter.com/annaoates)
 - [Jamie Jamison](https://github.com/jmjamison)
