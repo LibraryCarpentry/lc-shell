@@ -570,7 +570,8 @@ $ wc -l results/*.tsv
 > `"+%Y-%m-%d"` option and alternative options we could have used.
 >
 > > ## Solution
-> > Using `date --help` will show you that the `+` option introduces
+> > Using `date --help` (Windows/Linux) or `man date` (macOS/Linux)
+> > will show you that the `+` option introduces
 > > a date format, where `%Y`, `%m` and `%d` are replaced by the year,
 > > month, and day respectively. There are many other percent-codes
 > > you could use.
