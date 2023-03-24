@@ -51,7 +51,7 @@ $ for filename in ?.txt
 >    cp "$filename" backup_"$filename"
 > done
 ~~~
-{: .bash}
+{: .language-bash}
 
 ~~~
 a.txt
@@ -136,7 +136,7 @@ The shell itself doesn't care what the variable is called.
 > 	____ __ _ _______
 > ____
 > ```
-> {: .bash}
+> {: .language-bash}
 >
 > > ## Solution
 > > ```
@@ -147,7 +147,7 @@ The shell itself doesn't care what the variable is called.
 > > 	tail -n 1 "$file"
 > > done
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -179,6 +179,6 @@ This is our first look at loops. We will run another loop in the
 > > 	tail -n 1 $file
 > > done
 > > ```
-> > {: .bash}
+> > {: .language-bash}
 > Download/copy [my_first_bash_script.sh](https://raw.githubusercontent.com/LibraryCarpentry/lc-shell/gh-pages/files/my_first_bash_script.sh). For more on Bash scripts, see [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/).
 {: .callout}

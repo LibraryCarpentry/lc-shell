@@ -29,7 +29,7 @@ to view your options is useful to orient oneself.
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
@@ -44,7 +44,7 @@ $ cd
 $ cd Desktop/shell-lesson
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 /Users/riley/Desktop/shell-lesson
 ~~~
@@ -56,7 +56,7 @@ Here, we will create a new directory and move into it:
 $ mkdir firstdir
 $ cd firstdir
 ~~~
-{: .bash}
+{: .language-bash}
 
 Here we used the `mkdir` command (meaning 'make directories') to create a directory
 named 'firstdir'. Then we moved into that directory using the `cd` command.
@@ -66,7 +66,7 @@ But wait! There's a trick to make things a bit quicker. Let's go up one director
 ~~~
 $ cd ..
 ~~~
-{: .bash}
+{: .language-bash}
 
 Instead of typing `cd firstdir`, let's try to type `cd f` and then press the Tab key.
 We notice that the shell completes the line to `cd firstdir/`.
@@ -91,7 +91,7 @@ cover later.
 ~~~
 $ ls -lh
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 total 33M
 -rw-rw-r-- 1 riley staff 383K Feb 22 2017  201403160_01_text.json
@@ -113,7 +113,7 @@ we try the `cat` command to read the text of the first file:
 ~~~
 $ cat 829-0.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 The terminal window erupts and the whole book cascades by (it is printed to
 your terminal), leaving us with a new prompt and the last few lines of the book
@@ -126,7 +126,7 @@ provides us with the commands `head` and `tail`.
 ~~~
 $ head 829-0.txt
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
 
@@ -144,7 +144,7 @@ whereas `tail 829-0.txt` provides a perspective on the last ten lines:
 ~~~
 $ tail 829-0.txt
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 Most people start at our Web site which has the main PG search facility:
 
@@ -168,7 +168,7 @@ next screen and so on, then `q` to quit (return to the command prompt).
 ~~~
 $ less 829-0.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 Like many other shell commands, the commands `cat`, `head`, `tail` and `less`
 can take any number of arguments (they can work with any number of files).
@@ -190,7 +190,7 @@ get `33504-0.txt`), to produce the following command:
 ~~~
 $ head 829-0.txt 33504-0.txt
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 ==> 829-0.txt <==
 The Project Gutenberg eBook, Gulliver's Travels, by Jonathan Swift
@@ -227,7 +227,7 @@ command in a more compact way:
 ~~~
 $ head *.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 > ## More on wildcards
 > Wildcards are a feature of the shell and will therefore work with *any* command.
@@ -251,7 +251,7 @@ argument:
 ~~~
 $ mv 829-0.txt gulliver.txt
 ~~~
-{: .bash}
+{: .language-bash}
 
 This is equivalent to the 'rename file' function.
 
@@ -260,7 +260,7 @@ Afterwards, when we perform a `ls` command, we will see that it is now called `g
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 2014-01-31_JA-africa.tsv   2014-02-02_JA-britain.tsv  gulliver.txt
 2014-01-31_JA-america.tsv  33504-0.txt
@@ -280,7 +280,7 @@ $ ls
 > > ~~~
 > > cp gulliver.txt gulliver-backup.txt
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -293,7 +293,7 @@ $ ls
 > > ~~~
 > > mv firstdir backup
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
@@ -308,14 +308,14 @@ $ ls
 > > ~~~
 > > mv gulliver-backup.txt backup
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > This would also work:
 > >
 > > ~~~
 > > mv gulliver-backup.txt backup/gulliver-backup.txt
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
 
