@@ -32,7 +32,7 @@ Let's type `pwd` and press enter to execute the command
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 /Users/riley
 ~~~
@@ -44,7 +44,7 @@ by looking at the contents of the directory. To do that, we use the `ls` command
 ~~~
 $ ls
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 Applications Documents    Library      Music        Public
 Desktop      Downloads    Movies       Pictures
@@ -63,7 +63,7 @@ the size of the files in bytes, the date it was created or last modified, and th
 ~~~
 $ ls -l
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 total 0
 drwx------+  6 riley  staff   204 Jul 16 11:50 Desktop
@@ -89,7 +89,7 @@ enter we receive an output in a human-readable format (note: the order here does
 ~~~
 $ ls -lh
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 total 0
 drwx------+  6 riley  staff   204B Jul 16 11:50 Desktop
@@ -111,7 +111,7 @@ On Linux it does.)
 ~~~
 $ cd Desktop
 ~~~
-{: .bash}
+{: .language-bash}
 
 Notice that the command didn't output anything. This means that it was carried
 out successfully. Let's check by using `pwd`:
@@ -119,7 +119,7 @@ out successfully. Let's check by using `pwd`:
 ~~~
 $ pwd
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 /Users/riley/Desktop
 ~~~
@@ -131,7 +131,7 @@ test that by trying to move into a non-existent directory:
 ~~~
 $ cd "things to learn about the shell"
 ~~~
-{: .bash}
+{: .language-bash}
 ~~~
 bash: cd: things to learn about the shell: No such file or directory
 ~~~
@@ -187,7 +187,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > >~~~
 > >$ man ls
 > >~~~
-> >{: .bash}
+> >{: .language-bash}
 > >~~~
 > >LS(1)                     BSD General Commands Manual                    LS(1)
 > >
@@ -250,7 +250,7 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > > ~~~
 > > ls -lS
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > >
 > > Note that the `S` is **case-sensitive!**
 > >
@@ -259,6 +259,6 @@ As we become more comfortable, we can get very quickly to the directory that we 
 > > ~~~
 > > ls -lt
 > > ~~~
-> > {: .bash}
+> > {: .language-bash}
 > {: .solution}
 {: .challenge}
