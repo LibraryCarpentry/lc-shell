@@ -58,7 +58,9 @@ Arguments modify the workings of the command by telling the computer what sort o
 
 If we type `ls -l` and press enter, the computer returns a list of files that contains
 information similar to what we would find in our Finder (Mac) or Explorer (Windows):
-the size of the files in bytes, the date it was created or last modified, and the file name.
+the size of the files in bytes, the date it was created or last modified, and the file name (these correspond to the last three columns of the output).
+In addition, `ls -l` also provides further information that is not commonly found in the aforementioned programs:
+the file permissions, the number of (hard) links, the file owner's user name, and the file owner's user group (these properties are of no direct importance to the remainder of this course, and we will therefore ignore them for the time being).
 
 ~~~
 $ ls -l
