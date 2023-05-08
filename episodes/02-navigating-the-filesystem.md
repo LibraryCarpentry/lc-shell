@@ -154,7 +154,6 @@ us right back to the home directory, the place where we started.**
 
 To switch back and forth between two directories use `cd -`.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge

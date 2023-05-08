@@ -18,7 +18,7 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-### Writing a Loop
+## Writing a Loop
 
 **Loops** are key to productivity improvements through automation as they allow us to execute
 commands repetitively. Similar to wildcards and tab completion, using loops also reduces the
@@ -88,7 +88,6 @@ Therefore, it's best and generally safer to use `"$..."` unless
 you are absolutely sure that no elements with white-space can ever
 enter your loop variable (such as in [episode 5](05-counting-mining.md)).
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 In this example, the list is four filenames: 'a.txt', 'b.txt', 'c.txt', and 'd.txt'
@@ -110,7 +109,6 @@ typing in our loop. The second prompt, `>`, is different to remind
 us that we haven't finished typing a complete command yet. A semicolon, `;`,
 can be used to separate two commands written on a single line.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -131,7 +129,6 @@ the shell to redirect output.
 
 If *you* type `$` in the shell, it is an instruction from you to
 the shell to get the value of a variable.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -193,8 +190,6 @@ you've been using for the lesson and by using the text editor of your choice (e.
 file, make sure it has the extension **.sh** (e.g. `my_first_bash_script.sh`). When you've done this, you can run the
 Bash script by typing the command bash and the file name via the command line (e.g. `bash my_first_bash_script.sh`).
 
-:::::::::::::::::::::::::::::::::::  language-bash
-
 ```
 #!/bin/bash
 # This script loops through .txt files, returns the file name, first line, and last line of the file
@@ -206,11 +201,7 @@ do
 done
 ```
 
-
-Download/copy [my\_first\_bash\_script.sh](https://raw.githubusercontent.com/LibraryCarpentry/lc-shell/gh-pages/files/my_first_bash_script.sh). For more on Bash scripts, see [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/).
-
-
-::::::::::::::::::::::::::::::::::::::::::::::::::
+Download/copy [my\_first\_bash\_script.sh](files/my_first_bash_script.sh). For more on Bash scripts, see [Bash Scripting Tutorial - Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

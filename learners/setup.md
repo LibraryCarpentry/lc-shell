@@ -38,31 +38,30 @@ If you encounter issues, the Carpentries maintains a [Configuration Problems and
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-> ## Data Files
-> 
-> You need to download some files to follow this lesson:
-> 
-> 1. Download [shell-lesson.zip](data/shell-lesson.zip) and move the file to your Desktop.
-> 2. Unzip/extract the file (ask your instructor if you need help with this step). You should end up with a new folder called `shell-lesson` on your Desktop.
-> 3. Open the terminal and type `ls` followed by the <kbd>enter</kbd> key.
-> 
-> ```bash
-> $ ls
-> ```
-> 
-> You should see a list of files and folders in your current directory.
-> 4\. Then type:
-> 
-> ```
-> $ pwd
-> ```
+::::::::::::::::::::::::::::::::::::::::::  prereq
 
-```
->{: .language-bash}
-> This command will show you where you are in your file system, which should now be your home directory. In the lesson, you will find out more about the commands `ls`, `pwd` and how to work with the data in `shell-lesson` folder.
-{: .prereq}
+## Data Files
 
-[template]: {{site.workshop_repo}}
+You need to download some files to follow this lesson:
+
+1. Download [shell-lesson.zip](data/shell-lesson.zip) and move the file to your Desktop.
+2. Unzip/extract the file (ask your instructor if you need help with this step). You should end up with a new folder called `shell-lesson` on your Desktop.
+3. Open the terminal and type `ls` followed by the <kbd>enter</kbd> key.
+
+```bash
+$ ls
 ```
+
+You should see a list of files and folders in your current directory.
+4\. Then type:
+
+```bash
+$ pwd
+```
+
+This command will show you where you are in your file system, which should now be your home directory. In the lesson, you will find out more about the commands `ls`, `pwd` and how to work with the data in `shell-lesson` folder.
+
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 

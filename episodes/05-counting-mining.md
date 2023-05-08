@@ -93,7 +93,6 @@ files, say, there is no `CSV` program, just lots and lots of programs that
 support the format, including Excel by the way.), and you wouldn't have any
 problems opening a 40 year old file today if you came across one.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 <!-- hm, reminds me of MARC -->
@@ -276,7 +275,6 @@ lines of text to standard output can be combined with every other program that
 behaves this way as well. You can and should write your programs this way so that
 you and other people can put those programs into pipes to multiply their power.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 <!-- Copied from https://swcarpentry.github.io/shell-novice/04-pipefilter/ -->
@@ -381,8 +379,6 @@ To check the contents, you could also use `less` or many other commands.
 
 Beware that `>` will happily overwrite an existing file without warning you,
 so please be careful.
-
-
 
 :::::::::::::::::::::::::
 
@@ -492,7 +488,6 @@ print the matching lines.
 
 A string is a sequence of characters, or "a piece of text".
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Press the up arrow once in order to cycle back to your most recent action.
@@ -573,7 +568,6 @@ This way of writing dates is so common that on some platforms (not macOS X)
 you can get the same result by typing `$(date -I)` instead of
 `$(date "+%Y-%m-%d")`.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 However, if we look at this file, it contains every instance of the
@@ -624,8 +618,6 @@ You might also see that `-I` is short for
 essentially avoids the confusion between the European
 and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
 
-
-
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -645,7 +637,6 @@ Unless you want to remember the details, make your life easy by always using the
 most advanced regular expressions your version of `grep` supports (`-E` flag on
 macOS X, `-P` on most other platforms) or when doing something more complex
 than searching for a plain string.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 

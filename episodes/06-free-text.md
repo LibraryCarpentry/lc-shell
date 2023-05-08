@@ -162,17 +162,17 @@ If so you will need to use a Bash script; we encountered these at the end of epi
 
 As a reminder, use the text editor of your choice to write a file that looks like this:
 
-> ```bash
-> #!/bin/bash
-> # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
-> (replace this line with your solution)
-> ```
-> 
-> Save the file as `remove-quotes.sh` and run it from the command line like this:
-> 
-> ```bash
-> bash remove-quotes.sh
-> ```
+```bash
+#!/bin/bash
+# This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
+(replace this line with your solution)
+```
+
+Save the file as `remove-quotes.sh` and run it from the command line like this:
+
+```bash
+bash remove-quotes.sh
+```
 
 :::::::::::::::  solution
 
@@ -186,8 +186,6 @@ sed -Ee 's/[""‘']//g' gulliver-clean.txt > gulliver-noquotes.txt
 
 If this doesn't work for you, you might need to check whether your text editor can
 save files using the UTF-8 encoding.
-
-
 
 :::::::::::::::::::::::::
 
@@ -350,7 +348,7 @@ First we wil remove all the html tags. Type and run:
 $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
 ```
 
-Here we are using a regular expression (see the [Library Carpentry regular expression lesson](https://librarycarpentry.org/lc-data-intro/01-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them). This is a complex regular expression, so don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
+Here we are using a regular expression (see the [Library Carpentry regular expression lesson](https://librarycarpentry.org/lc-data-intro/01-regular-expressions) to find all valid html tags (anything within angle brackets) and delete them). This is a complex regular expression, so don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
 We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:

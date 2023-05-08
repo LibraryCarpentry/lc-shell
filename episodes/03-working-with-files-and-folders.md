@@ -85,7 +85,6 @@ first point of difference, after which we can add more characters, and
 try using tab again. We would encourage using this method throughout
 today to see how it behaves (as it saves loads of time and effort!).
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Reading files
@@ -188,7 +187,6 @@ up arrow to cycle through your previous commands. The down arrow cycles back
 toward your most recent command. This is another important labour-saving
 function and something we'll use a lot.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 Press the up arrow until you get to the `head 829-0.txt` command. Add a space
@@ -245,7 +243,6 @@ the command is executed, and the command will never see the wildcards.
 As an exception, if a wildcard expression does not match any file, Bash
 will pass the expression as a parameter to the command as it is. For example
 typing `ls *.pdf` results in an error message that there is no file called \*.pdf.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -361,8 +358,6 @@ them. We'll get back to that.)
 
 - The `?` wildcard matches the regular expression `.` (a dot)
 - The `*` wildcard matches the regular expression `.*`
-  
-  
 
 :::::::::::::::::::::::::
 
@@ -384,7 +379,6 @@ can do that with `history > history.txt`. This will output all history to a text
 called `history.txt` that you can later edit. To recall a command from history, enter
 `history`. Note the command number, e.g. 2045. Recall the command by entering
 `!2045`. This will execute the command.
-
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -417,8 +411,6 @@ to output text to the screen, such as the current status of a script.
 
 Moreover, you just used a shell variable for the first time, which can be used to temporarily store information,
 that you can reuse later on. It will give many opportunities from the moment you start writing automated scripts.
-
-
 
 :::::::::::::::::::::::::
 
