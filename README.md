@@ -18,7 +18,7 @@ Lesson Maintainers communication is via the [team site](https://github.com/orgs/
 
 ## Library Carpentry
 
-[Library Carpentry](https://librarycarpentry.org) is a software and data skills training programme for people working in library- and information-related roles. It builds on the work of [Software Carpentry](http://software-carpentry.org/) and [Data Carpentry](http://www.datacarpentry.org/). Library Carpentry is an official Lesson Program of [The Carpentries](https://carpentries.org/).
+[Library Carpentry](https://librarycarpentry.org) is a software and data skills training programme for people working in library- and information-related roles. It builds on the work of [Software Carpentry](https://software-carpentry.org/) and [Data Carpentry](https://www.datacarpentry.org/). Library Carpentry is an official Lesson Program of [The Carpentries](https://carpentries.org/).
 
 ## License
 
@@ -39,10 +39,12 @@ Library Carpentry is authored and maintained through issues, commits, and pull r
 
 ## Citation
 
-Danielle Kane (Ed.), Anna Oates (Ed.), John Wright (Ed.), Nilani Ganeshwaran (Ed.), Tim Dennis (Ed.), Belinda Weaver (Ed.), James Baker, Christopher Erdmann, Dan Michael Heggø, Katrin Leinweber, hugolio, … Vikram Chhatre. (2019, July). LibraryCarpentry/lc-shell: Library Carpentry: The UNIX Shell, June 2019 (Version v2019.06.1). Zenodo. http://doi.org/10.5281/zenodo.3266085
+Danielle Kane (Ed.), Anna Oates (Ed.), John Wright (Ed.), Nilani Ganeshwaran (Ed.), Tim Dennis (Ed.), Belinda Weaver (Ed.), James Baker, Christopher Erdmann, Dan Michael Heggø, Katrin Leinweber, hugolio, … Vikram Chhatre. (2019, July). LibraryCarpentry/lc-shell: Library Carpentry: The UNIX Shell, June 2019 (Version v2019.06.1). Zenodo. [http://doi.org/10.5281/zenodo.3266085](https://doi.org/10.5281/zenodo.3266085)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3266085.svg)](https://doi.org/10.5281/zenodo.3266085)
 
 ## Checking and Previewing the Lesson
 
-To check and preview a lesson locally, see [http://carpentries.github.io/lesson-example/07-checking/index.html](http://carpentries.github.io/lesson-example/07-checking/index.html).
+To check and preview a lesson locally, see [http://carpentries.github.io/lesson-example/07-checking/index.html](https://carpentries.github.io/lesson-example/07-checking/index.html).
+
+

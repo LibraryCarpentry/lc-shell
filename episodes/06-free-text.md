@@ -1,14 +1,21 @@
 ---
-title: "Working with free text"
+title: Working with free text
 teaching: 20
 exercises: 40
-questions:
-- "How do we work with complex files?"
-objectives:
-- "Use shell tools to clean and transform free text"
-keypoints:
-- "Shell tools can be combined to powerful effect"
 ---
+
+::::::::::::::::::::::::::::::::::::::: objectives
+
+- Use shell tools to clean and transform free text
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+:::::::::::::::::::::::::::::::::::::::: questions
+
+- How do we work with complex files?
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
 ### Working with free text
 
 So far we have looked at how to use the Unix shell to manipulate, count, and
@@ -29,22 +36,22 @@ Before going any further, speak to the person next to you and choose which type 
 
 - An example of hand transcribed text: *Gulliver's Travels* (1735)
 - An example of text captured by an optical character recognition process: *General Report on the Physiography of Maryland. A dissertation, etc. (Reprinted from Report of Maryland State Weather Service.) [With maps and illustrations.]* 1898 (from [https://doi.org/10.21250/db12](https://doi.org/10.21250/db12))
-- An example of a webpage: Piper's World (a GeoCities page from 1999 saved at [archive.org](http://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
+- An example of a webpage: Piper's World (a GeoCities page from 1999 saved at [archive.org](https://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
 
 ## Option 1: Hand transcribed text
 
 ### Grabbing a text, cleaning it up
 
-We're going to work with the `gulliver.txt` file, which we made in [Episode 3, 'Working with files and directories']({{ page.root }}{% link _episodes/03-working-with-files-and-folders.md %}).
+We're going to work with the `gulliver.txt` file, which we made in [Episode 3, 'Working with files and directories'](03-working-with-files-and-folders.md).
 You should (still) be working in the `shell-lesson` directory.
 
 Let's look at the file.
 
-~~~
+```bash
 $ less -N gulliver.txt
-~~~
-{: .language-bash}
-~~~
+```
+
+```output
       1 <U+FEFF>The Project Gutenberg eBook, Gulliver's Travels, by Jonatha
       1 n Swift
       2
@@ -83,25 +90,22 @@ $ less -N gulliver.txt
      33
      34
      35
-~~~
-{: .output}
+```
 
 We're going to start by using the `sed` command. The command allows you to edit files directly.
 
-~~~
+```bash
 $ sed '9352,9714d' gulliver.txt > gulliver-nofoot.txt
-~~~
-{: .language-bash}
+```
 
 The command `sed` in combination with the `d`
 value will look at `gulliver.txt` and delete all
 values between the rows specified. The `>` action then
 prompts the script to this edited text to the new file specified.
 
-~~~
+```bash
 $ sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
-~~~
-{: .language-bash}
+```
 
 This does the same as before, but for the header.
 
@@ -111,10 +115,9 @@ prepare it even further for rigorous analysis.
 We now use the `tr` command, used for translating or
 deleting characters. Type and run:
 
-~~~
+```bash
 $ tr -d '[:punct:]\r' < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
-~~~
-{: .language-bash}
+```
 
 This uses the translate command and a special syntax to remove all punctuation
 (`[:punct:]`) and carriage returns (`\r`).
@@ -122,10 +125,9 @@ It also requires the use of both the output redirect `>` we have seen and the in
 
 Finally regularise the text by removing all the uppercase lettering.
 
-~~~
+```bash
 $ tr '[:upper:]' '[:lower:]' < gulliver-noheadfootpunct.txt > gulliver-clean.txt
-~~~
-{: .language-bash}
+```
 
 Open the `gulliver-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
@@ -133,12 +135,11 @@ Open the `gulliver-clean.txt` in a text editor. Note how the text has been trans
 
 We are now ready to pull the text apart.
 
-~~~
+```bash
 $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
-~~~
-{: .language-bash}
+```
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](05-counting-mining.md). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -146,40 +147,51 @@ The third part uses `uniq`, another new command, in combination with the `-c` fl
 
 The fourth and final part sorts the text again by the counts of duplicates generated in step three.
 
-> ## Challenge
-> There are still some remaining punctuation marks in the text. They are called 'smart' or 'curly' quotes.
-> Can you remove them using `sed`?
->
-> Hint: These quote marks are not among the 128 characters of the ASCII standard,
-> so in the file they are encoded using a different standard, UTF-8.
-> While this is no problem for `sed`, the window you are typing into may not understand UTF-8.
-> If so you will need to use a Bash script; we encountered these at the end of episode 4,
-> 'Automating the tedious with loops'.
->
-> As a reminder, use the text editor of your choice to write a file that looks like this:
-> > ```
-> > #!/bin/bash
-> > # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
-> > (replace this line with your solution)
-> > ```
-> > {: .language-bash}
+:::::::::::::::::::::::::::::::::::::::  challenge
+
+## Challenge
+
+There are still some remaining punctuation marks in the text. They are called 'smart' or 'curly' quotes.
+Can you remove them using `sed`?
+
+Hint: These quote marks are not among the 128 characters of the ASCII standard,
+so in the file they are encoded using a different standard, UTF-8.
+While this is no problem for `sed`, the window you are typing into may not understand UTF-8.
+If so you will need to use a Bash script; we encountered these at the end of episode 4,
+'Automating the tedious with loops'.
+
+As a reminder, use the text editor of your choice to write a file that looks like this:
+
+> ```bash
+> #!/bin/bash
+> # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
+> (replace this line with your solution)
+> ```
+> 
 > Save the file as `remove-quotes.sh` and run it from the command line like this:
-> > ```
-> > bash remove-quotes.sh
-> > ```
-> > {: .language-bash}
->
-> > ## Solution
-> > ```
-> > #!/bin/bash
-> > # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
-> > sed -Ee 's/[“”‘’]//g' gulliver-clean.txt > gulliver-noquotes.txt
-> > ```
-> > {: .language-bash}
-> > If this doesn't work for you, you might need to check whether your text editor can
-> > save files using the UTF-8 encoding.
-> {: .solution}
-{: .challenge}
+> 
+> ```bash
+> bash remove-quotes.sh
+> ```
+
+:::::::::::::::  solution
+
+## Solution
+
+```bash
+#!/bin/bash
+# This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
+sed -Ee 's/[""‘']//g' gulliver-clean.txt > gulliver-noquotes.txt
+```
+
+If this doesn't work for you, you might need to check whether your text editor can
+save files using the UTF-8 encoding.
+
+
+
+:::::::::::::::::::::::::
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 We have now taken the text apart and produced a
 count for each word in it. This is data we can prod and poke
@@ -198,11 +210,11 @@ We're going to work with `201403160_01_text.json`.
 
 Let's look at the file.
 
-~~~
+```bash
 $ less -N 201403160_01_text.json
-~~~
-{: .language-bash}
-~~~
+```
+
+```output
       1 [[1, ""], [2, ""], [3, ""], [4, ""], [5, ""], [6, ""], [7, "A GENERAL RE
       1 PORT ON THE PHYSIOGRAPHY OF MARYLAND A DISSERTATION PRESENTED TO THE PRE
       1 SIDENT AND FACULTY OF THE JOHNS HOPKINS UNIVERSITY FOR THE DEGREE OF DOC
@@ -226,26 +238,23 @@ $ less -N 201403160_01_text.json
       1 kes and vol canic eruptions. One generation after another comes and goes
       1 , yet the mountains continue to rear their heads to the same heights, th
       1 e rivers to run down the mountain sides in the same courses and follow t
-~~~
-{: .output}
+```
 
 We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
 
-~~~
+```bash
 $ tr -d '[:punct:]' < 201403160_01_text.json > 201403160_01_text-nopunct.txt
-~~~
-{: .language-bash}
+```
 
 This uses the translate command and a special syntax to remove all punctuation.
 It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
 Finally regularise the text by removing all the uppercase lettering.
 
-~~~
+```bash
 $ tr '[:upper:]' '[:lower:]' < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
-~~~
-{: .language-bash}
+```
 
 Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
@@ -253,12 +262,11 @@ Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has b
 
 We are now ready to pull the text apart.
 
-~~~
+```bash
 $ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403160_01_text-final.txt
-~~~
-{: .language-bash}
+```
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](05-counting-mining.md). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -285,11 +293,11 @@ We're going to work with `diary.html`.
 
 Let's look at the file.
 
-~~~
+```bash
 $ less -N diary.html
-~~~
-{: .language-bash}
-~~~
+```
+
+```output
       1 <!-- This document was created with HomeSite v2.5 -->
       2 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
       3 <html>
@@ -314,25 +322,22 @@ $ less -N diary.html
      17 iew, piper">
      18 <style TYPE="text/css" TITLE="Basic Fonts">
 
-~~~
-{: .output}
+```
 
 We're going to start by using the `sed` command. The command allows you to edit files directly.
 
-~~~
+```bash
 $ sed '265,330d' diary.html > diary-nofoot.txt
-~~~
-{: .language-bash}
+```
 
 The command `sed` in combination with the `d`
 value will look at `diary.html` and delete all
 values between the rows specified. The `>` action then
 prompts the script to this edited text to the new file specified.
 
-~~~
+```bash
 $ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
-~~~
-{: .language-bash}
+```
 
 This does the same as before, but for the header.
 
@@ -341,30 +346,27 @@ prepare it even further for rigorous analysis.
 
 First we wil remove all the html tags. Type and run:
 
-~~~
+```bash
 $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
-~~~
-{: .language-bash}
+```
 
 Here we are using a regular expression (see the [Library Carpentry regular expression lesson](https://librarycarpentry.org/lc-data-intro/01-regular-expressions/) to find all valid html tags (anything within angle brackets) and delete them). This is a complex regular expression, so don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
 We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
 
-~~~
+```bash
 $ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
-~~~
-{: .language-bash}
+```
 
 This uses the translate command and a special syntax to remove all punctuation
 (`[:punct:]`) and carriage returns (`\r`).
 
 Finally regularise the text by removing all the uppercase lettering.
 
-~~~
+```bash
 $ tr '[:upper:]' '[:lower:]' < diary-notagspunct.txt > diary-clean.txt
-~~~
-{: .language-bash}
+```
 
 Open the `diary-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
 
@@ -372,12 +374,11 @@ Open the `diary-clean.txt` in a text editor. Note how the text has been transfor
 
 We are now ready to pull the text apart.
 
-~~~
+```bash
 $ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
-~~~
-{: .language-bash}
+```
 
-Here we've made extended use of the pipes we saw in [Counting and mining with the shell]({{ page.root }}{% link _episodes/05-counting-mining.md %}). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
+Here we've made extended use of the pipes we saw in [Counting and mining with the shell](05-counting-mining.md). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
 
 The second part uses the `sort` command to rearrange the text from its original order into an alphabetical configuration.
 
@@ -409,7 +410,7 @@ is available and lasts 10 weeks, if you have 2-4 hours to spare per week.
 Python is popular in research programming as it is readable, relatively simple, and very powerful.
 
 Bill Turkel and the Digital History community more broadly.
-The second lesson you did today was based on a lesson Bill has on [his website](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/) and Bill is also a general editor of the [Programming Historian](https://programminghistorian.org/project-team). The Programming Historian is an open, collaborative book aimed at providing programming lessons to historians. Although the lessons are hooked around problems historians have, their lessons - which cover various programming languages - have a wide applicability - indeed today's course is based on two lessons I wrote with Ian Milligan, an historian at Waterloo, Canada - for ProgHist. Bill also has a wonderful tutorial on ['Named Entity Recognition with Command Line Tools in Linux'](http://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) which I thoroughly recommend if you want to automatically find, markup, and count names, places, and organisations in text files...
+The second lesson you did today was based on a lesson Bill has on [his website](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/) and Bill is also a general editor of the [Programming Historian](https://programminghistorian.org/project-team). The Programming Historian is an open, collaborative book aimed at providing programming lessons to historians. Although the lessons are hooked around problems historians have, their lessons - which cover various programming languages - have a wide applicability - indeed today's course is based on two lessons I wrote with Ian Milligan, an historian at Waterloo, Canada - for ProgHist. Bill also has a wonderful tutorial on ['Named Entity Recognition with Command Line Tools in Linux'](https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) which I thoroughly recommend if you want to automatically find, markup, and count names, places, and organisations in text files...
 
 ## Conclusion
 
@@ -441,6 +442,14 @@ James Baker and Ian Milligan, 'Counting and mining research data with Unix', *Th
 
 Ian Milligan and James Baker, 'Introduction to the Bash Command Line', *The Programming Historian* ([2014](https://programminghistorian.org/lessons/intro-to-bash))
 
-William J. Turkel, 'Named Entity Recognition with Command Line Tools in Linux' ([30 June 2013](http://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)). The section 'NER Demo' is adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
+William J. Turkel, 'Named Entity Recognition with Command Line Tools in Linux' ([30 June 2013](https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)). The section 'NER Demo' is adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 William J. Turkel, 'Basic Text Analysis with Command Line Tools in Linux' ([15 June 2013](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/)). The sections 'Grabbing a text, cleaning it up' and 'Pulling a text apart, counting word frequencies' are adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
+
+:::::::::::::::::::::::::::::::::::::::: keypoints
+
+- Shell tools can be combined to powerful effect
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
+
+

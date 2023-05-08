@@ -1,11 +1,11 @@
 ---
-layout: reference
 title: Reference
 ---
 
 ## Shell Cheat Sheet
 
-_____
+***
+
 ### Shell: Basics
 
 **`pwd`** - print working directory
@@ -24,18 +24,19 @@ _____
 
 **`cd`** change directory
 
-  `cd pathname` - takes you to the directory specified by `pathname`
-  
-  `cd ~` -  takes you to your home directory
-  
-  `cd ..` - takes you up one directory
+`cd pathname` - takes you to the directory specified by `pathname`
 
-______
+`cd ~` -  takes you to your home directory
+
+`cd ..` - takes you up one directory
+
+***
+
 ### Shell: Interacting with Files
 
 **`mkdir`** make a directory
 
-**`cat`** print to shell or send file or files to output 
+**`cat`** print to shell or send file or files to output
 
 **`head`** output first 10 lines of a file or files
 
@@ -56,7 +57,9 @@ ______
 **`rm -ri`** will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
 
 **`touch`** will update timestamp information on files.
-______
+
+***
+
 ### Shell: Wildcards
 
 **`?`** a placeholder for one character or number
@@ -72,7 +75,8 @@ ______
 - `foobar*txt`: matches strings that start with `foobar` and end with `txt`
 - `[1-9]foobar?`: matches 8-character strings that start that start with a number, have `foobar` after the number, and end with any character or number.
 
-_____
+***
+
 ### Shell: Counting and Mining
 
 **`wc`** word count
@@ -81,7 +85,7 @@ _____
 - `-l`: count lines
 - `-c`: count characters
 
-**sort** sort input 
+**sort** sort input
 
 **`grep`** global regular expression print
 
@@ -92,7 +96,8 @@ _____
 - `--file=FILENAME.txt`: use the file `FILENAME.txt` as the source of strings used in query
 - `|`: (vertical bar character) send output from one command into another command
 
-_____
+***
+
 ### Shell: Working with Free Text
 
 **`sed`** is used to modify files, use `-e` flag to run multiple commands
@@ -106,3 +111,5 @@ _____
 **`'''\n`** translates every blank space into `\n`, then renders on a new line
 
 **`uniq`** reports or filters repeated lines in a file, use with `-c` to do a word count of the duplicates
+
+
