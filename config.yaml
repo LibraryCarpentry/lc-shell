@@ -14,7 +14,7 @@ carpentry: 'lc'
 title: 'Library Carpentry: The Unix Shell'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
-created: 
+created: '2018-04-12'
 
 # Comma-separated list of keywords for the lesson
 keywords: 'software, data, lesson, The Carpentries'
@@ -27,7 +27,7 @@ life_cycle: 'transition-step-1'
 license: 'CC-BY 4.0'
 
 # Link to the source repository for this lesson
-source: 'https://github.com/fishtree-attempt/lc-shell/'
+source: 'https://github.com/librarycarpentry/lc-shell'
 
 # Default branch of your lesson
 branch: 'main'
@@ -81,7 +81,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
-url: https://preview.carpentries.org/lc-shell
+url: 'https://librarycarpentry.github.io/lc-shell'
 analytics: carpentries
 lang: en
-workbench-beta: 'true'
