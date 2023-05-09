@@ -28,10 +28,16 @@
     <loc>https://librarycarpentry.github.io/lc-shell/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-shell/aio.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-shell/contribute.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-shell/discuss.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-shell/images.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-shell/index.html</loc>
@@ -64,19 +70,37 @@
     <loc>https://librarycarpentry.github.io/lc-shell/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-shell/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-shell/instructor/contribute.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-shell/instructor/discuss.html</loc>
   </url>
   <url>
+    <loc>https://librarycarpentry.github.io/lc-shell/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://librarycarpentry.github.io/lc-shell/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-shell/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-shell/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-shell/instructor/profiles.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-shell/instructor/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-shell/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://librarycarpentry.github.io/lc-shell/key-points.html</loc>
   </url>
   <url>
     <loc>https://librarycarpentry.github.io/lc-shell/profiles.html</loc>
