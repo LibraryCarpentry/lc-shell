@@ -564,7 +564,7 @@ This saves the subsetted data to a new file.
 
 ## Alternative date commands
 
-This way of writing dates is so common that on some platforms (not macOS X)
+This way of writing dates is so common that on some platforms
 you can get the same result by typing `$(date -I)` instead of
 `$(date "+%Y-%m-%d")`.
 
