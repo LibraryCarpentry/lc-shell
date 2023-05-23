@@ -340,12 +340,12 @@ Inside the loop, we call for the variable’s value by putting
 interpreter to treat the <strong>variable</strong> as a variable name
 and substitute its value in its place, rather than treat it as text or
 an external command.</p>
-<div id="callout1" class="callout callout">
+<div id="double-quoting-variable-substitutions" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="double-quoting-variable-substitutions" class="callout-inner">
-<h3 class="callout-title">Double-quoting variable substitutions<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Double-quoting variable substitutions<a class="anchor" aria-label="anchor" href="#double-quoting-variable-substitutions"></a>
 </h3>
 <div class="callout-content">
 <p>Because real-world filenames often contain white-spaces, we wrap
@@ -372,12 +372,12 @@ the loop). For the second iteration, <code>$filename</code> becomes
 <code>c.txt</code> and then for <code>d.txt</code> and then, since the
 list only included these four items, the shell exits the
 <code>for</code> loop at that point.</p>
-<div id="callout2" class="callout callout">
+<div id="follow-the-prompt" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="follow-the-prompt" class="callout-inner">
-<h3 class="callout-title">Follow the Prompt<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Follow the Prompt<a class="anchor" aria-label="anchor" href="#follow-the-prompt"></a>
 </h3>
 <div class="callout-content">
 <p>The shell prompt changes from <code>$</code> to <code>&gt;</code> and
@@ -388,12 +388,12 @@ to separate two commands written on a single line.</p>
 </div>
 </div>
 </div>
-<div id="callout3" class="callout callout">
+<div id="same-symbols-different-meanings" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="same-symbols-different-meanings" class="callout-inner">
-<h3 class="callout-title">Same Symbols, Different Meanings<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Same Symbols, Different Meanings<a class="anchor" aria-label="anchor" href="#same-symbols-different-meanings"></a>
 </h3>
 <div class="callout-content">
 <p>Here we see <code>&gt;</code> being used as a shell prompt, but
@@ -414,12 +414,12 @@ instruction from you to the shell to get the value of a variable.</p>
 <p>We have called the variable in this loop <code>filename</code> in
 order to make its purpose clearer to human readers. The shell itself
 doesn’t care what the variable is called.</p>
-<div id="challenge1" class="callout challenge">
+<div id="for-loop-exercise" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="for-loop-exercise" class="callout-inner">
-<h3 class="callout-title">For loop exercise<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">For loop exercise<a class="anchor" aria-label="anchor" href="#for-loop-exercise"></a>
 </h3>
 <div class="callout-content">
 <p>Complete the blanks in the for loop below to print the name, first
@@ -444,7 +444,7 @@ line, and last line of each text file in the current directory.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -462,12 +462,12 @@ line, and last line of each text file in the current directory.</p>
 </div>
 <p>This is our first look at loops. We will run another loop in the <a href="05-counting-mining.html">Counting and Mining with the Shell</a>
 episode.</p>
-<figure><img src="../fig/shell_script_for_loop_flow_chart.svg" alt="For Loop in Action" class="figure mx-auto d-block"></figure><div id="callout4" class="callout callout">
+<figure><img src="../fig/shell_script_for_loop_flow_chart.svg" alt="For Loop in Action" class="figure mx-auto d-block"></figure><div id="running-the-loop-from-a-bash-script" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="running-the-loop-from-a-bash-script" class="callout-inner">
-<h3 class="callout-title">Running the loop from a Bash script<a class="anchor" aria-label="anchor" href="#callout4"></a>
+<h3 class="callout-title">Running the loop from a Bash script<a class="anchor" aria-label="anchor" href="#running-the-loop-from-a-bash-script"></a>
 </h3>
 <div class="callout-content">
 <p>Alternatively, rather than running the loop above on the command
@@ -546,7 +546,7 @@ items</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -570,7 +570,7 @@ items</li>
   "identifier": "https://librarycarpentry.github.io/lc-shell/instructor/04-loops.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2023-05-08",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>

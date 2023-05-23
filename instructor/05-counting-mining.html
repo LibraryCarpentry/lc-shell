@@ -356,12 +356,12 @@ the three <code>.tsv</code> files derived from the original dataset.
 Each of these three <code>.tsv</code> files includes all data where a
 keyword such as <code>africa</code> or <code>america</code> appears in
 the ‘Title’ field of <code>2014-01_JA.tsv</code>.</p>
-<div id="callout1" class="callout callout">
+<div id="csv-and-tsv-files" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="csv-and-tsv-files" class="callout-inner">
-<h3 class="callout-title">CSV and TSV Files<a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">CSV and TSV Files<a class="anchor" aria-label="anchor" href="#csv-and-tsv-files"></a>
 </h3>
 <div class="callout-content">
 <p>CSV (Comma-separated values) is a common plain text format for
@@ -553,12 +553,12 @@ the command line, you make a pipe with the vertical bar character
 <p>It can take some time to fully grasp pipes and use them efficiently,
 but it’s a very powerful concept that you will find not only in the
 shell, but also in most programming languages.</p>
-<figure><img src="../fig/redirects-and-pipes.png" alt="Redirects and Pipes" class="figure mx-auto d-block"></figure><div id="callout2" class="callout callout">
+<figure><img src="../fig/redirects-and-pipes.png" alt="Redirects and Pipes" class="figure mx-auto d-block"></figure><div id="pipes-and-filters" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="pipes-and-filters" class="callout-inner">
-<h3 class="callout-title">Pipes and Filters<a class="anchor" aria-label="anchor" href="#callout2"></a>
+<h3 class="callout-title">Pipes and Filters<a class="anchor" aria-label="anchor" href="#pipes-and-filters"></a>
 </h3>
 <div class="callout-content">
 <p>This simple idea is why Unix has been so successful. Instead of
@@ -580,12 +580,12 @@ programs into pipes to multiply their power.</p>
 </div>
 </div>
 <!-- Copied from https://swcarpentry.github.io/shell-novice/04-pipefilter/ -->
-<div id="challenge1" class="callout challenge">
+<div id="adding-another-pipe" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="adding-another-pipe" class="callout-inner">
-<h3 class="callout-title">Adding another pipe<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Adding another pipe<a class="anchor" aria-label="anchor" href="#adding-another-pipe"></a>
 </h3>
 <div class="callout-content">
 <p>We have our <code>wc -l *.tsv | sort -n | head -n 1</code> pipeline.
@@ -600,7 +600,7 @@ What would happen if you piped this into <code>cat</code>? Try it!</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <p>The <code>cat</code> command just outputs whatever it gets as input,
 so you get exactly the same output from</p>
@@ -619,13 +619,13 @@ so you get exactly the same output from</p>
 </div>
 </div>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="count-the-number-of-words-sort-and-print-faded-example" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="count-the-number-of-words-sort-and-print-faded-example" class="callout-inner">
 <h3 class="callout-title">Count the number of words, sort and print
-(faded example)<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+(faded example)<a class="anchor" aria-label="anchor" href="#count-the-number-of-words-sort-and-print-faded-example"></a>
 </h3>
 <div class="callout-content">
 <p>To count the total lines in every <code>tsv</code> file, sort the
@@ -659,7 +659,7 @@ order, and then make an output of the 10 files with the most words
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>Here we use the <code>wc</code> command with the <code>-w</code>
 (word) flag on all <code>tsv</code> files, <code>sort</code> them and
@@ -674,12 +674,12 @@ then output the last 11 lines (10 files and the total) using the
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="counting-number-of-files" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="counting-number-of-files" class="callout-inner">
-<h3 class="callout-title">Counting number of files<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Counting number of files<a class="anchor" aria-label="anchor" href="#counting-number-of-files"></a>
 </h3>
 <div class="callout-content">
 <p>Let’s make a different pipeline. You want to find out how many files
@@ -696,7 +696,7 @@ the answer.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb29">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -707,12 +707,12 @@ the answer.</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="writing-to-files" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="writing-to-files" class="callout-inner">
-<h3 class="callout-title">Writing to files<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Writing to files<a class="anchor" aria-label="anchor" href="#writing-to-files"></a>
 </h3>
 <div class="callout-content">
 <p>The <code>date</code> command outputs the current date and time. Can
@@ -728,7 +728,7 @@ you write the current date and time to a new file called
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb30">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -744,12 +744,12 @@ without warning you, so please be careful.</p>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="appending-to-a-file" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="appending-to-a-file" class="callout-inner">
-<h3 class="callout-title">Appending to a file<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Appending to a file<a class="anchor" aria-label="anchor" href="#appending-to-a-file"></a>
 </h3>
 <div class="callout-content">
 <p>While <code>&gt;</code> writes to a file, <code>&gt;&gt;</code>
@@ -765,7 +765,7 @@ the file <code>logfile.txt</code>?</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb31">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -777,12 +777,12 @@ the file <code>logfile.txt</code>?</p>
 </div>
 </div>
 </div>
-<div id="challenge6" class="callout challenge">
+<div id="counting-the-number-of-words" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="counting-the-number-of-words" class="callout-inner">
-<h3 class="callout-title">Counting the number of words<a class="anchor" aria-label="anchor" href="#challenge6"></a>
+<h3 class="callout-title">Counting the number of words<a class="anchor" aria-label="anchor" href="#counting-the-number-of-words"></a>
 </h3>
 <div class="callout-content">
 <p>We learned about the -w flag above, so now try using it with the
@@ -800,7 +800,7 @@ to <code>sort</code>. And/or explore the other flags of
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <p>From <code>man wc</code>, you will see that there is a
 <code>-w</code> flag to print the number of words:</p>
@@ -871,12 +871,12 @@ new directory “results”:</p>
 all the <code>.tsv</code> files in the directory. <code>grep</code> will
 then search these for instances of the string “1999” and print the
 matching lines.</p>
-<div id="callout3" class="callout callout">
+<div id="strings" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="strings" class="callout-inner">
-<h3 class="callout-title">Strings<a class="anchor" aria-label="anchor" href="#callout3"></a>
+<h3 class="callout-title">Strings<a class="anchor" aria-label="anchor" href="#strings"></a>
 </h3>
 <div class="callout-content">
 <p>A string is a sequence of characters, or “a piece of text”.</p>
@@ -957,12 +957,12 @@ shell. We let the shell add today’s date to the filename:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-i</span> revolution <span class="pp">*</span>.tsv <span class="op">&gt;</span> results/<span class="va">$(</span><span class="fu">date</span> <span class="st">"+%Y-%m-%d"</span><span class="va">)</span>_JAi-revolution.tsv</span></code></pre>
 </div>
 <p>This saves the subsetted data to a new file.</p>
-<div id="callout4" class="callout callout">
+<div id="alternative-date-commands" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="alternative-date-commands" class="callout-inner">
-<h3 class="callout-title">Alternative date commands<a class="anchor" aria-label="anchor" href="#callout4"></a>
+<h3 class="callout-title">Alternative date commands<a class="anchor" aria-label="anchor" href="#alternative-date-commands"></a>
 </h3>
 <div class="callout-content">
 <p>This way of writing dates is so common that on some platforms (not
@@ -998,12 +998,12 @@ case) to the specified <code>.tsv</code> file.</p>
     7779 2016-07-19_JAiw-revolution.tsv
    18364 total</code></pre>
 </div>
-<div id="challenge7" class="callout challenge">
+<div id="automatically-adding-a-date-prefix" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="automatically-adding-a-date-prefix" class="callout-inner">
-<h3 class="callout-title">Automatically adding a date prefix<a class="anchor" aria-label="anchor" href="#challenge7"></a>
+<h3 class="callout-title">Automatically adding a date prefix<a class="anchor" aria-label="anchor" href="#automatically-adding-a-date-prefix"></a>
 </h3>
 <div class="callout-content">
 <p>Notice how we didn’t type today’s date ourselves, but let the
@@ -1020,7 +1020,7 @@ have used.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <p>Using <code>date --help</code> will show you that the <code>+</code>
 option introduces a date format, where <code>%Y</code>, <code>%m</code>
@@ -1035,13 +1035,13 @@ formats <code>DD.MM.YYYY</code> and <code>MM/DD/YYYY</code>.</p>
 </div>
 <p>Finally, we’ll use the <strong>regular expression syntax</strong>
 covered earlier to search for similar words.</p>
-<div id="callout5" class="callout callout">
+<div id="basic-extended-and-perl-compatible-regular-expressions" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="basic-extended-and-perl-compatible-regular-expressions" class="callout-inner">
 <h3 class="callout-title">Basic, extended, and PERL-compatible regular
-expressions<a class="anchor" aria-label="anchor" href="#callout5"></a>
+expressions<a class="anchor" aria-label="anchor" href="#basic-extended-and-perl-compatible-regular-expressions"></a>
 </h3>
 <div class="callout-content">
 <p>There are, unfortunately, <a href="https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html" class="external-link">different
@@ -1077,12 +1077,12 @@ of the lines e.g. (handy for isolating/checking results):</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> grep <span class="at">-iwEo</span> <span class="st">'fr[ae]nc[eh]'</span> <span class="pp">*</span>.tsv</span></code></pre>
 </div>
 <p>Pair up with your neighbor and work on these exercises:</p>
-<div id="challenge8" class="callout challenge">
+<div id="case-sensitive-search" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="case-sensitive-search" class="callout-inner">
-<h3 class="callout-title">Case sensitive search<a class="anchor" aria-label="anchor" href="#challenge8"></a>
+<h3 class="callout-title">Case sensitive search<a class="anchor" aria-label="anchor" href="#case-sensitive-search"></a>
 </h3>
 <div class="callout-content">
 <p>Search for all case sensitive instances of a whole word you choose in
@@ -1098,7 +1098,7 @@ results to the shell.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb52">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1109,12 +1109,12 @@ results to the shell.</p>
 </div>
 </div>
 </div>
-<div id="challenge9" class="callout challenge">
+<div id="case-sensitive-search-in-select-files" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="case-sensitive-search-in-select-files" class="callout-inner">
-<h3 class="callout-title">Case sensitive search in select files<a class="anchor" aria-label="anchor" href="#challenge9"></a>
+<h3 class="callout-title">Case sensitive search in select files<a class="anchor" aria-label="anchor" href="#case-sensitive-search-in-select-files"></a>
 </h3>
 <div class="callout-content">
 <p>Search for all case sensitive instances of a word you choose in the
@@ -1130,7 +1130,7 @@ your results to the shell.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb53">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1141,12 +1141,12 @@ your results to the shell.</p>
 </div>
 </div>
 </div>
-<div id="challenge10" class="callout challenge">
+<div id="count-words-case-sensitive" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="count-words-case-sensitive" class="callout-inner">
-<h3 class="callout-title">Count words (case sensitive)<a class="anchor" aria-label="anchor" href="#challenge10"></a>
+<h3 class="callout-title">Count words (case sensitive)<a class="anchor" aria-label="anchor" href="#count-words-case-sensitive"></a>
 </h3>
 <div class="callout-content">
 <p>Count all case sensitive instances of a word you choose in the
@@ -1162,7 +1162,7 @@ your results to the shell.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb54">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1173,12 +1173,12 @@ your results to the shell.</p>
 </div>
 </div>
 </div>
-<div id="challenge11" class="callout challenge">
+<div id="count-words-case-insensitive" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="count-words-case-insensitive" class="callout-inner">
-<h3 class="callout-title">Count words (case insensitive)<a class="anchor" aria-label="anchor" href="#challenge11"></a>
+<h3 class="callout-title">Count words (case insensitive)<a class="anchor" aria-label="anchor" href="#count-words-case-insensitive"></a>
 </h3>
 <div class="callout-content">
 <p>Count all case insensitive instances of that word in the ‘America’
@@ -1194,7 +1194,7 @@ results to the shell.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution11" class="accordion-collapse collapse" aria-labelledby="headingSolution11" data-bs-parent="#accordionSolution11">
+<div id="collapseSolution11" class="accordion-collapse collapse" data-bs-parent="#accordionSolution11" aria-labelledby="headingSolution11">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb55">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1205,12 +1205,12 @@ results to the shell.</p>
 </div>
 </div>
 </div>
-<div id="challenge12" class="callout challenge">
+<div id="case-insensitive-search-in-select-files" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="case-insensitive-search-in-select-files" class="callout-inner">
-<h3 class="callout-title">Case insensitive search in select files<a class="anchor" aria-label="anchor" href="#challenge12"></a>
+<h3 class="callout-title">Case insensitive search in select files<a class="anchor" aria-label="anchor" href="#case-insensitive-search-in-select-files"></a>
 </h3>
 <div class="callout-content">
 <p>Search for all case insensitive instances of that word in the
@@ -1226,7 +1226,7 @@ your results to a file <code>results/hero.tsv</code>.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution12" class="accordion-collapse collapse" aria-labelledby="headingSolution12" data-bs-parent="#accordionSolution12">
+<div id="collapseSolution12" class="accordion-collapse collapse" data-bs-parent="#accordionSolution12" aria-labelledby="headingSolution12">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb56">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1237,13 +1237,13 @@ your results to a file <code>results/hero.tsv</code>.</p>
 </div>
 </div>
 </div>
-<div id="challenge13" class="callout challenge">
+<div id="case-insensitive-search-in-select-files-whole-word" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="case-insensitive-search-in-select-files-whole-word" class="callout-inner">
 <h3 class="callout-title">Case insensitive search in select files (whole
-word)<a class="anchor" aria-label="anchor" href="#challenge13"></a>
+word)<a class="anchor" aria-label="anchor" href="#case-insensitive-search-in-select-files-whole-word"></a>
 </h3>
 <div class="callout-content">
 <p>Search for all case insensitive instances of that whole word in the
@@ -1259,7 +1259,7 @@ your results to a file <code>results/hero-i.tsv</code>.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution13" class="accordion-collapse collapse" aria-labelledby="headingSolution13" data-bs-parent="#accordionSolution13">
+<div id="collapseSolution13" class="accordion-collapse collapse" data-bs-parent="#accordionSolution13" aria-labelledby="headingSolution13">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb57">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1270,12 +1270,12 @@ your results to a file <code>results/hero-i.tsv</code>.</p>
 </div>
 </div>
 </div>
-<div id="challenge14" class="callout challenge">
+<div id="searching-with-regular-expressions" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="searching-with-regular-expressions" class="callout-inner">
-<h3 class="callout-title">Searching with regular expressions<a class="anchor" aria-label="anchor" href="#challenge14"></a>
+<h3 class="callout-title">Searching with regular expressions<a class="anchor" aria-label="anchor" href="#searching-with-regular-expressions"></a>
 </h3>
 <div class="callout-content">
 <p>Use regular expressions to find all ISSN numbers (four digits
@@ -1294,7 +1294,7 @@ followed by hyphen followed by four digits) in
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution14" class="accordion-collapse collapse" aria-labelledby="headingSolution14" data-bs-parent="#accordionSolution14">
+<div id="collapseSolution14" class="accordion-collapse collapse" data-bs-parent="#accordionSolution14" aria-labelledby="headingSolution14">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb58">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1319,12 +1319,12 @@ give yourself a pat on the shoulder.</p>
 </div>
 </div>
 </div>
-<div id="challenge15" class="callout challenge">
+<div id="finding-unique-values" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="finding-unique-values" class="callout-inner">
-<h3 class="callout-title">Finding unique values<a class="anchor" aria-label="anchor" href="#challenge15"></a>
+<h3 class="callout-title">Finding unique values<a class="anchor" aria-label="anchor" href="#finding-unique-values"></a>
 </h3>
 <div class="callout-content">
 <p>If you pipe something to the <code>uniq</code> command, it will
@@ -1343,7 +1343,7 @@ command. Try piping the output from the command in the last exercise to
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution15" class="accordion-collapse collapse" aria-labelledby="headingSolution15" data-bs-parent="#accordionSolution15">
+<div id="collapseSolution15" class="accordion-collapse collapse" data-bs-parent="#accordionSolution15" aria-labelledby="headingSolution15">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb60">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1415,12 +1415,12 @@ used the <code>-l</code> flag) sent from <code>grep</code>. Because
 <code>grep</code> only returned lines that contained the value stored in
 <code>$name</code>, <code>wc -l</code> corresponds to the number of
 occurrences of each girl’s name.</li>
-</ul><div id="challenge16" class="callout challenge">
+</ul><div id="why-are-the-variables-double-quoted-here" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="why-are-the-variables-double-quoted-here" class="callout-inner">
-<h3 class="callout-title">Why are the variables double-quoted here?<a class="anchor" aria-label="anchor" href="#challenge16"></a>
+<h3 class="callout-title">Why are the variables double-quoted here?<a class="anchor" aria-label="anchor" href="#why-are-the-variables-double-quoted-here"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: lower-alpha"><li><p>In <a href="04-loops.html">episode 4</a> we learned to use
@@ -1440,7 +1440,7 @@ first line of the loop and remove the <code>"</code> from
   Solutions
   </h4>
 </button>
-<div id="collapseSolution16" class="accordion-collapse collapse" aria-labelledby="headingSolution16" data-bs-parent="#accordionSolution16">
+<div id="collapseSolution16" class="accordion-collapse collapse" data-bs-parent="#accordionSolution16" aria-labelledby="headingSolution16">
 <div class="accordion-body">
 <ol style="list-style-type: lower-alpha"><li><p>Because we are explicitly listing the names after
 <code>in</code>, and those contain no white-space. However, for
@@ -1464,13 +1464,13 @@ two errors and a possibly untrustworthy count:</p></li>
 </div>
 </div>
 </div>
-<div id="challenge17" class="callout challenge">
+<div id="selecting-columns-from-our-article-dataset" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="selecting-columns-from-our-article-dataset" class="callout-inner">
 <h3 class="callout-title">Selecting columns from our article
-dataset<a class="anchor" aria-label="anchor" href="#challenge17"></a>
+dataset<a class="anchor" aria-label="anchor" href="#selecting-columns-from-our-article-dataset"></a>
 </h3>
 <div class="callout-content">
 <p>When you receive data it will often contain more columns or variables
@@ -1523,7 +1523,7 @@ a new file. You can name it something like
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution17" class="accordion-collapse collapse" aria-labelledby="headingSolution17" data-bs-parent="#accordionSolution17">
+<div id="collapseSolution17" class="accordion-collapse collapse" data-bs-parent="#accordionSolution17" aria-labelledby="headingSolution17">
 <div class="accordion-body">
 <p>First, let’s see where our desired columns are:</p>
 <div class="codewrapper sourceCode" id="cb68">
@@ -1602,7 +1602,7 @@ to your work</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -1626,7 +1626,7 @@ to your work</li>
   "identifier": "https://librarycarpentry.github.io/lc-shell/instructor/05-counting-mining.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2023-05-08",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
