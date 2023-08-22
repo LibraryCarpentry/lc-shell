@@ -45,6 +45,6 @@ Danielle Kane (Ed.), Anna Oates (Ed.), John Wright (Ed.), Nilani Ganeshwaran (Ed
 
 ## Checking and Previewing the Lesson
 
-To check and preview a lesson locally, see [http://carpentries.github.io/lesson-example/07-checking/index.html](https://carpentries.github.io/lesson-example/07-checking/index.html).
+To check and preview a lesson locally, see [the lesson infrastructure documentation](https://carpentries.github.io/sandpaper-docs/).
 
 
