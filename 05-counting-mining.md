@@ -608,10 +608,10 @@ Notice how we didn't type today's date ourselves, but let the
 
 ## Solution
 
-Using `date --help` will show you that the `+` option introduces
-a date format, where `%Y`, `%m` and `%d` are replaced by the year,
-month, and day respectively. There are many other percent-codes
-you could use.
+Using `date --help` (on Git Bash for Windows or Linux) or `man date` (on macOS or Linux)
+will show you that the `+` option introduces a date format,
+where `%Y`, `%m` and `%d` are replaced by the year, month, and day respectively.
+There are many other percent-codes you could use.
 
 You might also see that `-I` is short for
 [\--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which
