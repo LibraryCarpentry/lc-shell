@@ -185,7 +185,7 @@ we can check that the output indeed ended up in the file using `cat` or `less`
 $ cat lengths.txt
 ```
 
-```bash
+```output
     13712 2014-01-31_JA-africa.tsv
     27392 2014-01-31_JA-america.tsv
    507732 2014-01_JA.tsv
