@@ -108,7 +108,7 @@ drwxr-xr-x+  5 riley  staff   170B Jul 16 11:30 Public
 
 We've now spent a great deal of time in our home directory.
 Let's go somewhere else. We can do that through the `cd` or Change Directory command:
-(Note: On Windows and Mac, by default, the case of the file/directory doesn't matter
+(Note: On Windows and Mac, by default, the case of the file/directory doesn't matter.
 On Linux it does.)
 
 ```bash
