@@ -23,7 +23,7 @@ Windows users will need to install Git Bash to provide a Unix-like environment.
   - Double click the `.exe` file to run the installer (for example, `Git-2.42.0.2-64-bit.exe`) using the default settings.
   - Once installed, open the shell by selecting Git Bash from the start menu (in the Git folder).
 
-There are also some more advanced solutions available for running Bash commands on Windows. A Bash shell command-line tool is available for Windows 10, which you can use if you enable the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10). You can also run Bash commands on a remote computer or server that already has a Unix Shell from your Windows machine. This can be done through a Secure Shell (SSH) client. One client available for free for Windows is [PuTTY](https://www.putty.org/).
+  There are also some more advanced solutions available for running Bash commands on Windows. A Bash shell command-line tool is available for Windows 10, which you can use if you enable the [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10). You can also run Bash commands on a remote computer or server that already has a Unix Shell from your Windows machine. This can be done through a Secure Shell (SSH) client. One client available for free for Windows is [PuTTY](https://www.putty.org/).
 
 If you encounter issues, the Carpentries has a [Configuration Problems and Solutions wiki page](https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions) that may help.
 
@@ -39,17 +39,18 @@ You need to download some files to follow this lesson:
 2. Unzip/extract the file (ask your instructor if you need help with this step). You should end up with a new folder called `shell-lesson` on your Desktop.
 3. Open the terminal and type `ls` followed by the <kbd>enter</kbd> key.
 
-```bash
-$ ls
-```
+    ```bash
+    $ ls
+    ```
 
-You should see a list of files and folders in your current directory.
-4\. Then type:
+    You should see a list of files and folders in your current directory.
 
-```bash
-$ pwd
-```
+4. Then type:
 
-This command will show you where you are in your file system, which should now be your home directory. In the lesson, you will find out more about the commands `ls`, `pwd` and how to work with the data in `shell-lesson` folder.
+    ```bash
+    $ pwd
+    ```
+
+    This command will show you where you are in your file system, which should now be your home directory. In the lesson, you will find out more about the commands `ls`, `pwd` and how to work with the data in `shell-lesson` folder.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
