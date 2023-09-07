@@ -20,7 +20,7 @@
       <div class="large-logo">
         <img alt="Library Carpentry" src="../assets/images/library-logo.svg"></div>
     </div>
-    <div class="selector-container ">
+    <div class="selector-container">
       
       
       <div class="dropdown">
@@ -87,9 +87,11 @@
 </aside><div class="container">
       <div class="row">
         <!-- START: inst/pkgdown/templates/navbar.html -->
-  <div id="sidebar-col" class="col-lg-4">
-    <div id="sidebar" class="sidebar">
-      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="close menu" alt="close menu" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle"><i class="search-icon" data-feather="x" role="img"></i></button>
+<div id="sidebar-col" class="col-lg-4">
+  <div id="sidebar" class="sidebar">
+      <nav aria-labelledby="flush-headingEleven"><button role="button" aria-label="close menu" alt="close menu" aria-expanded="true" aria-controls="sidebar" class="collapse-toggle">
+          <i class="search-icon" data-feather="x" role="img"></i>
+        </button>
         <div class="sidebar-inner">
           <div class="row mobile-row">
             <div class="col">
@@ -219,6 +221,7 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
+            
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
             
@@ -242,11 +245,12 @@
       
 
 <p>This Library Carpentry lesson introduces librarians to the Unix
-Shell. At the conclusion of the lesson you will: describe the basics of
-the Unix shell; explain why and how to use the command line; use shell
-commands to work with directories and files; use shell commands to find
-and manipulate data.</p>
-<div id="prerequisites" class="callout prereq">
+Shell. At the conclusion of the lesson you will be able to:</p>
+<ul><li>describe the basics of the Unix shell;</li>
+<li>explain why and how to use the command line;</li>
+<li>use shell commands to work with directories and files;</li>
+<li>use shell commands to find and manipulate data.</li>
+</ul><div id="prerequisites" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
@@ -255,7 +259,7 @@ and manipulate data.</p>
 </h3>
 <div class="callout-content">
 <p>To complete this lesson, you will need a Unix-like shell environment
--see <a href="index.html#setup">Setup</a>. You will also need to download the
+(see <a href="index.html#setup">Setup</a>). You will also need to download the
 file <strong><a href="https://raw.githubusercontent.com/librarycarpentry/lc-shell/gh-pages/data/shell-lesson.zip" class="external-link">shell-lesson.zip</a></strong>
 from GitHub to your <em>desktop</em> and extract it there (once you have
 unzipped/extracted the file, you should end up with a folder called
@@ -338,13 +342,12 @@ Finish
       The actual schedule may vary slightly depending on the topics and exercises chosen by the instructor.
       </p>
       </section><section id="setup"><p>To participate in this Library Carpentry lesson, you will need a
-working Unix-like shell environment. Specifically we will be using Bash
-(<a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" class="external-link">Bourne Again
-Shell</a>) which is standard on Linux and macOS. macOS Catalina users
-will have zsh (Z shell) as their default version. Even if you are a
-Windows user, learning Bash will open up a powerful set of tools on your
-personal machine, in addition to familiarizing you with the standard
-remote interface used on almost all servers and super computers.</p>
+working Unix-like shell environment. We will be using Bash (<a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)" class="external-link">Bourne Again
+Shell</a>) which is standard on Linux and macOS. Some macOS users
+(Catalina or later) will have zsh (Z shell) as their default version.
+Even if you are a Windows user, learning Bash will open up a powerful
+set of tools on your personal machine, and familiarize you with the
+standard remote interface used on most servers and supercomputers.</p>
 <div id="terminal-setup" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
@@ -353,17 +356,21 @@ remote interface used on almost all servers and super computers.</p>
 <h3 class="callout-title">Terminal Setup<a class="anchor" aria-label="anchor" href="#terminal-setup"></a>
 </h3>
 <div class="callout-content">
-<p>Bash is the default shell on most Linux distributions and macOS.
-Windows users will need to install Git Bash to provide a Unix-like
-environment.</p>
+<p>Bash is the default shell on most Linux distributions and older
+versions of macOS. Windows users will need to install Git Bash to
+provide a Unix-like environment.</p>
 <ul><li><p><strong>Linux:</strong> The default shell is usually Bash, but if
 your machine is set up differently you can run it by opening a terminal
-&gt;and typing <code>bash</code>. There is no need to install anything.
-Look for Terminal in your applications to start the Bash shell.</p></li>
-<li><p><strong>macOS:</strong> Bash is the default shell in all versions
-of macOS prior to Catalina, you do not need to install anything. Open
-Terminal from &gt;<code>/Applications/Utilities</code> or spotlight
-search to start the Bash shell. zsh is the default in Catalina.</p></li>
+and typing <code>bash</code> followed by the <kbd>enter</kbd> key. There
+is no need to install anything. Look for Terminal in your applications
+to start the Bash shell.</p></li>
+<li><p><strong>macOS:</strong> Open Terminal from
+<code>/Applications/Utilities</code> or Spotlight Search. In versions
+before Catalina, Bash is the default shell, so you do not need to do
+anything further. In Catalina and onwards, the default shell is zsh,
+which is similar but may behave differently from Bash in some cases. To
+switch to Bash, enter the command <code>bash</code> in your terminal
+window followed by the <kbd>enter</kbd> key.</p></li>
 <li>
 <p><strong>Windows:</strong> On Windows, CMD or PowerShell are
 normally available as the default shell environments. These use a syntax
@@ -372,20 +379,20 @@ with the more widely used Unix utilities. However, a Bash shell can be
 installed on Windows to provide a Unix-like environment. For this lesson
 we suggest using Git Bash, part of the &gt;<a href="https://gitforwindows.org/" class="external-link">Git for Windows</a> package:</p>
 <ul><li>Download the latest Git for Windows <a href="https://gitforwindows.org/" class="external-link">installer</a>.</li>
-<li>Double click the <code>.exe</code> to run the installer (for
-example, <code>Git-2.13.3-64-bit.exe</code>) using the default
+<li>Double click the <code>.exe</code> file to run the installer (for
+example, <code>Git-2.42.0.2-64-bit.exe</code>) using the default
 settings.</li>
 <li>Once installed, open the shell by selecting Git Bash from the start
 menu (in the Git folder).</li>
 </ul><p>There are also some more advanced solutions available for running
 Bash commands on Windows. A Bash shell command-line tool is available
 for Windows 10, which you can use if you enable the <a href="https://docs.microsoft.com/en-us/windows/wsl/install-win10" class="external-link">Windows
-Subsystem for Linux</a>. Additionally, you can run Bash commands on a
-remote computer or server that already has a Unix Shell, from your
-Windows machine. This can usually be done through a Secure Shell (SSH)
-client. One such client available for free for Windows computers is <a href="https://www.putty.org/" class="external-link">PuTTY</a>.</p>
+Subsystem for Linux</a>. You can also run Bash commands on a remote
+computer or server that already has a Unix Shell from your Windows
+machine. This can be done through a Secure Shell (SSH) client. One
+client available for free for Windows is <a href="https://www.putty.org/" class="external-link">PuTTY</a>.</p>
 </li>
-</ul><p>If you encounter issues, the Carpentries maintains a <a href="https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions" class="external-link">Configuration
+</ul><p>If you encounter issues, the Carpentries has a <a href="https://github.com/carpentries/workshop-template/wiki/Configuration-Problems-and-Solutions" class="external-link">Configuration
 Problems and Solutions wiki page</a> that may help.</p>
 </div>
 </div>
@@ -399,20 +406,24 @@ Problems and Solutions wiki page</a> that may help.</p>
 </h3>
 <div class="callout-content">
 <p>You need to download some files to follow this lesson:</p>
-<ol style="list-style-type: decimal"><li>Download <a href="../data/shell-lesson.zip">shell-lesson.zip</a> and
-move the file to your Desktop.</li>
-<li>Unzip/extract the file (ask your instructor if you need help with
+<ol style="list-style-type: decimal"><li><p>Download <a href="../data/shell-lesson.zip">shell-lesson.zip</a> and
+move the file to your Desktop.</p></li>
+<li><p>Unzip/extract the file (ask your instructor if you need help with
 this step). You should end up with a new folder called
-<code>shell-lesson</code> on your Desktop.</li>
-<li>Open the terminal and type <code>ls</code> followed by the
-<kbd>enter</kbd> key.</li>
-</ol><div class="codewrapper sourceCode" id="cb1">
+<code>shell-lesson</code> on your Desktop.</p></li>
+<li>
+<p>Open the terminal and type <code>ls</code> followed by the
+<kbd>enter</kbd> key.</p>
+<div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls</span></code></pre>
 </div>
-<p>You should see a list of files and folders in your current directory.
-4. Then type:</p>
+<p>You should see a list of files and folders in your current
+directory.</p>
+</li>
+<li>
+<p>Then type:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -422,7 +433,8 @@ this step). You should end up with a new folder called
 should now be your home directory. In the lesson, you will find out more
 about the commands <code>ls</code>, <code>pwd</code> and how to work
 with the data in <code>shell-lesson</code> folder.</p>
-</div>
+</li>
+</ol></div>
 </div>
 </div>
 
@@ -454,9 +466,9 @@ with the data in <code>shell-lesson</code> folder.</p>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.4" class="external-link">sandpaper (0.12.4)</a>,
-        <a href="https://github.com/carpentries/pegboard/tree/0.6.0" class="external-link">pegboard (0.6.0)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.2.18" class="external-link">varnish (0.2.18)</a>.</p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.13.0" class="external-link">sandpaper (0.13.0)</a>,
+        <a href="https://github.com/carpentries/pegboard/tree/0.6.1" class="external-link">pegboard (0.6.1)</a>,
+      and <a href="https://github.com/carpentries/varnish/tree/0.3.0" class="external-link">varnish (0.3.0)</a>.</p>
 			</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
@@ -477,8 +489,8 @@ with the data in <code>shell-lesson</code> folder.</p>
   "url": "https://librarycarpentry.github.io/lc-shell/instructor/index.html",
   "identifier": "https://librarycarpentry.github.io/lc-shell/instructor/index.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-09-06",
-  "datePublished": "2023-09-06"
+  "dateModified": "2023-09-07",
+  "datePublished": "2023-09-07"
 }
 
   </script><script>
