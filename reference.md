@@ -56,7 +56,7 @@ title: Reference
 
 **`rm -ri`** will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
 
-**`touch`** will update timestamp information on files.
+**`touch`** will update timestamp information on files, or create a file or files if they don't exist.
 
 ***
 
