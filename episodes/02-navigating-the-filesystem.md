@@ -81,10 +81,10 @@ drwx------+  3 riley  staff   102 Jul 16 11:30 Pictures
 drwxr-xr-x+  5 riley  staff   170 Jul 16 11:30 Public
 ```
 
-In everyday usage we are more used to units of measurement like kilobytes, megabytes, and gigabytes.
-Luckily, there's another flag `-h` that when used with the -l option, use unit suffixes:
+In everyday usage we are more accustomed to units of measurement like kilobytes, megabytes, and gigabytes.
+Luckily, there's another flag `-h` that when used with the -l option, prints unit suffixes:
 Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to reduce the
-number of digits to three or less using base 2 for sizes.
+number of digits to three or fewer using base 2 for sizes.
 
 Now `ls -h` won't work on its own. When we want to combine two flags,
 we can just run them together. So, by typing `ls -lh` and pressing
