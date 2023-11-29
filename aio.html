@@ -414,7 +414,7 @@ macOS, and the shell for Linux users.</p>
 </div>
 </section></section><section id="aio-02-navigating-the-filesystem"><p>Content from <a href="02-navigating-the-filesystem.html">Navigating the filesystem</a></p>
 <hr>
-<p> Last updated on 2023-09-06 | 
+<p> Last updated on 2023-11-29 | 
         
         <a href="https://github.com/librarycarpentry/lc-shell/edit/main/episodes/02-navigating-the-filesystem.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -521,11 +521,12 @@ drwx------+  3 riley  staff   102 Jul 16 11:30 Music
 drwx------+  3 riley  staff   102 Jul 16 11:30 Pictures
 drwxr-xr-x+  5 riley  staff   170 Jul 16 11:30 Public</code></pre>
 </div>
-<p>In everyday usage we are more used to units of measurement like
+<p>In everyday usage we are more accustomed to units of measurement like
 kilobytes, megabytes, and gigabytes. Luckily, there’s another flag
-<code>-h</code> that when used with the -l option, use unit suffixes:
+<code>-h</code> that when used with the -l option, prints unit suffixes:
 Byte, Kilobyte, Megabyte, Gigabyte, Terabyte and Petabyte in order to
-reduce the number of digits to three or less using base 2 for sizes.</p>
+reduce the number of digits to three or fewer using base 2 for
+sizes.</p>
 <p>Now <code>ls -h</code> won’t work on its own. When we want to combine
 two flags, we can just run them together. So, by typing
 <code>ls -lh</code> and pressing enter we receive an output in a
@@ -777,7 +778,7 @@ with the shell</li>
 </div>
 </section></section><section id="aio-03-working-with-files-and-folders"><p>Content from <a href="03-working-with-files-and-folders.html">Working with files and directories</a></p>
 <hr>
-<p> Last updated on 2023-05-08 | 
+<p> Last updated on 2023-11-29 | 
         
         <a href="https://github.com/librarycarpentry/lc-shell/edit/main/episodes/03-working-with-files-and-folders.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -824,9 +825,9 @@ documents (Word or OpenOffice), browsing the web, editing images, etc.
 But if we wanted to make the same crop on hundreds of images, say, the
 pages of a scanned book, then we could automate that cropping work by
 using shell commands.</p>
-<p>Before getting started, we will use <code>ls</code> to verify where
-we are. Using <code>ls</code> periodically to view your options is
-useful to orient oneself.</p>
+<p>Before getting started, we will use <code>ls</code> to list the
+contents of our current directory. Using <code>ls</code> periodically to
+view your options is useful to orient oneself.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -1120,7 +1121,7 @@ you make a copy of the file <code>gulliver.txt</code> called
   Answer
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1152,7 +1153,7 @@ directory to <code>backup</code>.</p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1186,7 +1187,7 @@ folder.</p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1227,7 +1228,7 @@ commands support them. We’ll get back to that.)</p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ul>
 <li>The <code>?</code> wildcard matches the regular expression
@@ -1304,7 +1305,7 @@ in the shell environment?</strong></p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>You may think there is not much value in such a basic command like
 <code>echo</code>. However, from the moment you start writing automated
@@ -1613,7 +1614,7 @@ items</li>
 </div>
 </section></section><section id="aio-05-counting-mining"><p>Content from <a href="05-counting-mining.html">Counting and mining with the shell</a></p>
 <hr>
-<p> Last updated on 2023-08-29 | 
+<p> Last updated on 2023-11-29 | 
         
         <a href="https://github.com/librarycarpentry/lc-shell/edit/main/episodes/05-counting-mining.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -2732,7 +2733,7 @@ Gutenberg</a>. The file is inside the <code>shell-lesson</code> folder
 and named <code>pg514.txt</code>. Let’s rename the file to
 <code>littlewomen.txt</code>.</p>
 <pre><code>$ mv pg514.txt littlewomen.txt</code></pre>
-<p>This renames the file to something easier to type.</p>
+<p>This renames the file to something easier to remember.</p>
 <p>Now let’s create our loop. In the loop, we will ask the computer to
 go through the text, looking for each girl’s name, and count the number
 of times it appears. The results will print to the screen.</p>
@@ -3172,7 +3173,7 @@ command line like this:</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3525,9 +3526,9 @@ Commons Attribution-NonCommercial-ShareAlike 3.0 Unported</a>.</p>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.14.1" class="external-link">sandpaper (0.14.1)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.15.0" class="external-link">sandpaper (0.15.0)</a>,
         <a href="https://github.com/carpentries/pegboard/tree/0.7.3" class="external-link">pegboard (0.7.3)</a>,
-      and <a href="https://github.com/carpentries/varnish/tree/0.3.3" class="external-link">varnish (0.3.3)</a>.</p>
+      and <a href="https://github.com/carpentries/varnish/tree/0.4.0" class="external-link">varnish (0.4.0)</a>.</p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -3549,8 +3550,8 @@ Commons Attribution-NonCommercial-ShareAlike 3.0 Unported</a>.</p>
   "url": "https://librarycarpentry.github.io/lc-shell/aio.html",
   "identifier": "https://librarycarpentry.github.io/lc-shell/aio.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-11-28",
-  "datePublished": "2023-11-28"
+  "dateModified": "2023-11-29",
+  "datePublished": "2023-11-29"
 }
 
   </script><script>
