@@ -84,6 +84,13 @@ first point of difference, after which we can add more characters, and
 try using tab again. We would encourage using this method throughout
 today to see how it behaves (as it saves loads of time and effort!).
 
+Caveat: the exact behaviour of your shell's tab completion may differ slightly.
+For example, when multiple files start with the same characters, you may actually find
+that pressing tab does *not* fill up to the first point of difference. This could be
+because you are using a [non-bash shell](https://scriptingosx.com/2019/07/moving-to-zsh-part-5-completions/), 
+or even just because your bash settings are slightly different. It's best to 
+stick with your current settings for now.
+
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Reading files
