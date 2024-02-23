@@ -26,27 +26,19 @@ exercises: 30
 
 ## Counting and mining data
 
-Now that you know how to navigate the shell, we will move onto
-learning how to count and mine data using a few of the standard shell commands.
-While these commands are unlikely to revolutionise your work by themselves,
-they're very versatile and will add to your foundation for working in the shell
-and for learning to code. The commands also replicate the sorts of uses library users might make of library data.
+Now that you know how to navigate the shell, we will move onto learning how to count and mine data using a few of the standard shell commands. While these commands are unlikely to revolutionise your work by themselves, they're very versatile and will add to your foundation for working in the shell and for learning to code. The commands also replicate the sorts of uses library users might make of library data.
 
 ## Counting and sorting
 
-We will begin by counting the contents of files using the Unix shell.
-We can use the Unix shell to quickly generate counts from across files,
-something that is tricky to achieve using the graphical user interfaces of standard office suites.
+We will begin by counting the contents of files using the Unix shell. We can use the Unix shell to quickly generate counts from across files, something that is tricky to achieve using the graphical user interfaces of standard office suites.
 
-Let's start by navigating to the directory that contains our data using the
-`cd` command:
+Let's start by navigating to the directory that contains our data using the `cd` command:
 
 ```bash
 $ cd shell-lesson
 ```
 
-Remember, if at any time you are not sure where you are in your directory structure,
-use the `pwd` command to find out:
+Remember, if at any time you are not sure where you are in your directory structure, use the `pwd` command to find out:
 
 ```bash
 $ pwd
@@ -56,8 +48,7 @@ $ pwd
 /Users/riley/Desktop/shell-lesson
 ```
 
-And let's just check what files are in the directory and how large they
-are with `ls -lhS`:
+And let's just check what files are in the directory and how large they are with `ls -lhS`:
 
 ```bash
 $ ls -lhS
@@ -74,42 +65,27 @@ total 139M
 drwxr-xr-x 2 riley staff   68 Feb  2 00:58 backup
 ```
 
-In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains
-journal article metadata, and the three `.tsv` files derived from the original
-dataset. Each of these three `.tsv` files includes all data where a keyword such
-as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
+In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains journal article metadata, and the three `.tsv` files derived from the original dataset. Each of these three `.tsv` files includes all data where a keyword such as `africa` or `america` appears in the 'Title' field of `2014-01_JA.tsv`.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ## CSV and TSV Files
 
-CSV (Comma-separated values) is a common plain text format for storing tabular
-data, where each record occupies one line and the values are separated by commas.
-TSV (Tab-separated values) is just the same except that values are separated by
-tabs rather than commas. Confusingly, CSV is sometimes used to refer to both CSV,
-TSV and variations of them. The simplicity of the formats make them great for
-exchange and archival. They are not bound to a specific program (unlike Excel
-files, say, there is no `CSV` program, just lots and lots of programs that
-support the format, including Excel by the way.), and you wouldn't have any
-problems opening a 40 year old file today if you came across one.
+CSV (Comma-separated values) is a common plain text format for storing tabular data, where each record occupies one line and the values are separated by commas. TSV (Tab-separated values) is just the same except that values are separated by tabs rather than commas. Confusingly, CSV is sometimes used to refer to both CSV, TSV and variations of them. The simplicity of the formats make them great for exchange and archival. They are not bound to a specific program (unlike Excel files, say, there is no `CSV` program, just lots and lots of programs that support the format, including Excel by the way.), and you wouldn't have any problems opening a 40 year old file today if you came across one.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 <!-- hm, reminds me of MARC -->
 
-First, let's have a look at the largest data file, using the tools we learned in
-[Reading files](03-working-with-files-and-folders.md):
+First, let's have a look at the largest data file, using the tools we learned in [Reading files](03-working-with-files-and-folders.md):
 
 ```bash
 $ cat 2014-01_JA.tsv
 ```
 
-Like `829-0.txt` before, the whole dataset cascades by and can't really make any
-sense of that amount of text. To cancel this on-going con`cat`enation, or indeed any
-process in the Unix shell, press <kbd>Ctrl</kbd>\+<kbd>C</kbd>.
+Like `829-0.txt` before, the whole dataset cascades by and can't really make any sense of that amount of text. To cancel this on-going con`cat`enation, or indeed any process in the Unix shell, press <kbd>Ctrl</kbd>\+<kbd>C</kbd>.
 
-In most data files a quick glimpse of the first few lines already tells us a lot
-about the structure of the dataset, for example the table/column headers:
+In most data files a quick glimpse of the first few lines already tells us a lot about the structure of the dataset, for example the table/column headers:
 
 ```bash
 $ head -n 3 2014-01_JA.tsv
@@ -124,11 +100,7 @@ History_1a-rdf.tsv  Nelson, M. C. 1 59  KIVA -ARIZONA-  0023-1940 (Uk)RN00157187
 
 In the header, we can see the common metadata fields of academic papers: `Creator`, `Issue`, `Citation`, etc.
 
-Next, let's learn about a basic data analysis tool:
-`wc` is the "word count" command: it counts the number of lines, words, and bytes.
-Since we love the wildcard operator, let's run the command
-`wc *.tsv` to get counts for all the `.tsv` files in the current directory
-(it takes a little time to complete):
+Next, let's learn about a basic data analysis tool: `wc` is the "word count" command: it counts the number of lines, words, and bytes. Since we love the wildcard operator, let's run the command `wc *.tsv` to get counts for all the `.tsv` files in the current directory (it takes a little time to complete):
 
 ```bash
 $ wc *.tsv
@@ -144,15 +116,9 @@ $ wc *.tsv
 
 The first three columns contains the number of lines, words and bytes.
 
-If we only have a handful of files to compare, it might be faster or more convenient
-to just check with Microsoft Excel, OpenRefine or your favourite text editor, but
-when we have tens, hundreds or thousands of documents, the Unix shell has a clear
-speed advantage. The real power of the shell comes from being able to combine commands
-and automate tasks, though. We will touch upon this slightly.
+If we only have a handful of files to compare, it might be faster or more convenient to just check with Microsoft Excel, OpenRefine or your favourite text editor, but when we have tens, hundreds or thousands of documents, the Unix shell has a clear speed advantage. The real power of the shell comes from being able to combine commands and automate tasks, though. We will touch upon this slightly.
 
-For now, we'll see how we can build a simple pipeline to find the shortest file
-in terms of number of lines. We start by adding the `-l` flag to get only the
-number of lines, not the number of words and bytes:
+For now, we'll see how we can build a simple pipeline to find the shortest file in terms of number of lines. We start by adding the `-l` flag to get only the number of lines, not the number of words and bytes:
 
 ```bash
 $ wc -l *.tsv
@@ -166,20 +132,15 @@ $ wc -l *.tsv
    554211 total
 ```
 
-The `wc` command itself doesn't have a flag to sort the output, but as we'll
-see, we can combine three different shell commands to get what we want.
+The `wc` command itself doesn't have a flag to sort the output, but as we'll see, we can combine three different shell commands to get what we want.
 
-First, we have the `wc -l *.tsv` command. We will save the output from this
-command in a new file. To do that, we *redirect* the output from the command
-to a file using the ‘greater than' sign (>), like so:
+First, we have the `wc -l *.tsv` command. We will save the output from this command in a new file. To do that, we *redirect* the output from the command to a file using the ‘greater than' sign (>), like so:
 
 ```bash
 $ wc -l *.tsv > lengths.txt
 ```
 
-There's no output now since the output went into the file `lengths.txt`, but
-we can check that the output indeed ended up in the file using `cat` or `less`
-(or Notepad or any text editor).
+There's no output now since the output went into the file `lengths.txt`, but we can check that the output indeed ended up in the file using `cat` or `less` (or Notepad or any text editor).
 
 ```bash
 $ cat lengths.txt
@@ -193,9 +154,7 @@ $ cat lengths.txt
    554211 total
 ```
 
-Next, there is the `sort` command. We'll use the `-n` flag to specify that we
-want numerical sorting, not lexical sorting, we output the results into
-yet another file, and we use `cat` to check the results:
+Next, there is the `sort` command. We'll use the `-n` flag to specify that we want numerical sorting, not lexical sorting, we output the results into yet another file, and we use `cat` to check the results:
 
 ```bash
 $ sort -n lengths.txt > sorted-lengths.txt
@@ -210,8 +169,7 @@ $ cat sorted-lengths.txt
    554211 total
 ```
 
-Finally we have our old friend `head`, that we can use to get the first line
-of the `sorted-lengths.txt`:
+Finally we have our old friend `head`, that we can use to get the first line of the `sorted-lengths.txt`:
 
 ```bash
 $ head -n 1 sorted-lengths.txt
@@ -221,12 +179,7 @@ $ head -n 1 sorted-lengths.txt
      5375 2014-02-02_JA-britain.tsv
 ```
 
-But we're really just interested in the end result, not the intermediate
-results now stored in `lengths.txt` and `sorted-lengths.txt`. What if we could
-send the results from the first command (`wc -l *.tsv`) directly to the next
-command (`sort -n`) and then the output from that command to `head -n 1`?
-Luckily we can, using a concept called pipes. On the command line, you make a
-pipe with the vertical bar character `|`. Let's try with one pipe first:
+But we're really just interested in the end result, not the intermediate results now stored in `lengths.txt` and `sorted-lengths.txt`. What if we could send the results from the first command (`wc -l *.tsv`) directly to the next command (`sort -n`) and then the output from that command to `head -n 1`? Luckily we can, using a concept called pipes. On the command line, you make a pipe with the vertical bar character `|`. Let's try with one pipe first:
 
 ```bash
 $ wc -l *.tsv | sort -n
@@ -240,8 +193,7 @@ $ wc -l *.tsv | sort -n
    554211 total
 ```
 
-Notice that this is exactly the same output that ended up in our `sorted-lengths.txt`
-earlier. Let's add another pipe:
+Notice that this is exactly the same output that ended up in our `sorted-lengths.txt` earlier. Let's add another pipe:
 
 ```bash
 $ wc -l *.tsv | sort -n | head -n 1
@@ -251,9 +203,7 @@ $ wc -l *.tsv | sort -n | head -n 1
      5375 2014-02-02_JA-britain.tsv
 ```
 
-It can take some time to fully grasp pipes and use them efficiently, but it's a
-very powerful concept that you will find not only in the shell, but also in most
-programming languages.
+It can take some time to fully grasp pipes and use them efficiently, but it's a very powerful concept that you will find not only in the shell, but also in most programming languages.
 
 ![](fig/redirects-and-pipes.png){alt='Redirects and Pipes'}
 
@@ -261,19 +211,9 @@ programming languages.
 
 ## Pipes and Filters
 
-This simple idea is why Unix has been so successful. Instead of creating enormous
-programs that try to do many different things, Unix programmers focus on creating
-lots of simple tools that each do one job well, and that work well with each other.
-This programming model is called "pipes and filters". We've already seen pipes; a
-filter is a program like `wc` or `sort` that transforms a stream of input into a
-stream of output. Almost all of the standard Unix tools can work this way: unless
-told to do otherwise, they read from standard input, do something with what they've
-read, and write to standard output.
+This simple idea is why Unix has been so successful. Instead of creating enormous programs that try to do many different things, Unix programmers focus on creating lots of simple tools that each do one job well, and that work well with each other. This programming model is called "pipes and filters". We've already seen pipes; a filter is a program like `wc` or `sort` that transforms a stream of input into a stream of output. Almost all of the standard Unix tools can work this way: unless told to do otherwise, they read from standard input, do something with what they've read, and write to standard output.
 
-The key is that any program that reads lines of text from standard input and writes
-lines of text to standard output can be combined with every other program that
-behaves this way as well. You can and should write your programs this way so that
-you and other people can put those programs into pipes to multiply their power.
+The key is that any program that reads lines of text from standard input and writes lines of text to standard output can be combined with every other program that behaves this way as well. You can and should write your programs this way so that you and other people can put those programs into pipes to multiply their power.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -283,15 +223,13 @@ you and other people can put those programs into pipes to multiply their power.
 
 ## Adding another pipe
 
-We have our `wc -l *.tsv | sort -n | head -n 1` pipeline. What would happen
-if you piped this into `cat`? Try it!
+We have our `wc -l *.tsv | sort -n | head -n 1` pipeline. What would happen if you piped this into `cat`? Try it!
 
 :::::::::::::::  solution
 
 ## Solution
 
-The `cat` command just outputs whatever it gets as input, so you get exactly
-the same output from
+The `cat` command just outputs whatever it gets as input, so you get exactly the same output from
 
 ```bash
 $ wc -l *.tsv | sort -n | head -n 1
@@ -317,8 +255,7 @@ To count the total lines in every `tsv` file, sort the results and then print th
 wc -l *.tsv | sort -n | head -n 1
 ```
 
-Now let's change the scenario. We want to know the 10 files that contain *the most* words. Check the manual for the `wc` command (either using `man wc` or `wc --help`)
-to see if you can find out what flag to use to print out the number of words (but not the number of lines and bytes). Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
+Now let's change the scenario. We want to know the 10 files that contain *the most* words. Check the manual for the `wc` command (either using `man wc` or `wc --help`) to see if you can find out what flag to use to print out the number of words (but not the number of lines and bytes). Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
 
 ```bash
 wc __ *.tsv | sort __ | ____
@@ -342,9 +279,7 @@ wc -w *.tsv | sort -n | tail -n 11
 
 ## Counting number of files
 
-Let's make a different pipeline. You want to find out how many files and
-directories there are in the current directory. Try to see if you can pipe
-the output from `ls` into `wc` to find the answer.
+Let's make a different pipeline. You want to find out how many files and directories there are in the current directory. Try to see if you can pipe the output from `ls` into `wc` to find the answer.
 
 :::::::::::::::  solution
 
@@ -362,9 +297,7 @@ $ ls | wc -l
 
 ## Writing to files
 
-The `date` command outputs the current date and time. Can you write the
-current date and time to a new file called `logfile.txt`? Then check
-the contents of the file.
+The `date` command outputs the current date and time. Can you write the current date and time to a new file called `logfile.txt`? Then check the contents of the file.
 
 :::::::::::::::  solution
 
@@ -377,8 +310,7 @@ $ cat logfile.txt
 
 To check the contents, you could also use `less` or many other commands.
 
-Beware that `>` will happily overwrite an existing file without warning you,
-so please be careful.
+Beware that `>` will happily overwrite an existing file without warning you, so please be careful.
 
 :::::::::::::::::::::::::
 
@@ -388,8 +320,7 @@ so please be careful.
 
 ## Appending to a file
 
-While `>` writes to a file, `>>` appends something to a file. Try to append the
-current date and time to the file `logfile.txt`?
+While `>` writes to a file, `>>` appends something to a file. Try to append the current date and time to the file `logfile.txt`?
 
 :::::::::::::::  solution
 
@@ -410,15 +341,13 @@ $ cat logfile.txt
 
 We learned about the -w flag above, so now try using it with the `.tsv` files.
 
-If you have time, you can also try to sort the results by piping it to `sort`.
-And/or explore the other flags of `wc`.
+If you have time, you can also try to sort the results by piping it to `sort`. And/or explore the other flags of `wc`.
 
 :::::::::::::::  solution
 
 ## Solution
 
-From `man wc`, you will see that there is a `-w` flag to print the number of
-words:
+From `man wc`, you will see that there is a `-w` flag to print the number of words:
 
 ```output
      -w      The number of words in each input file is written to the standard
@@ -459,14 +388,9 @@ $ wc -w *.tsv | sort -n
 
 ## Mining or searching
 
-Searching for something in one or more files is something we'll often need to do,
-so let's introduce a command for doing that: `grep` (short for **global regular
-expression print**). As the name suggests, it supports regular expressions and
-is therefore only limited by your imagination, the shape of your data, and - when
-working with thousands or millions of files - the processing power at your disposal.
+Searching for something in one or more files is something we'll often need to do, so let's introduce a command for doing that: `grep` (short for **global regular expression print**). As the name suggests, it supports regular expressions and is therefore only limited by your imagination, the shape of your data, and - when working with thousands or millions of files - the processing power at your disposal.
 
-To begin using `grep`, first navigate to the `shell-lesson` directory if not already
-there. Then create a new directory "results":
+To begin using `grep`, first navigate to the `shell-lesson` directory if not already there. Then create a new directory "results":
 
 ```bash
 $ mkdir results
@@ -478,9 +402,7 @@ Now let's try our first search:
 $ grep 1999 *.tsv
 ```
 
-Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in the
-directory. `grep` will then search these for instances of the string "1999" and
-print the matching lines.
+Remember that the shell will expand `*.tsv` to a list of all the `.tsv` files in the directory. `grep` will then search these for instances of the string "1999" and print the matching lines.
 
 :::::::::::::::::::::::::::::::::::::::::  callout
 
@@ -490,8 +412,7 @@ A string is a sequence of characters, or "a piece of text".
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-Press the up arrow once in order to cycle back to your most recent action.
-Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and press enter.
+Press the up arrow once in order to cycle back to your most recent action. Amend `grep 1999 *.tsv` to `grep -c 1999 *.tsv` and press enter.
 
 ```bash
 $ grep -c 1999 *.tsv
@@ -504,9 +425,7 @@ $ grep -c 1999 *.tsv
 2014-02-02_JA-britain.tsv:284
 ```
 
-The shell now prints the number of times the string 1999 appeared in each file.
-If you look at the output from the previous command, this tends to refer to the
-date field for each journal article.
+The shell now prints the number of times the string 1999 appeared in each file. If you look at the output from the previous command, this tends to refer to the date field for each journal article.
 
 We will try another search:
 
@@ -521,8 +440,7 @@ $ grep -c revolution *.tsv
 2014-02-02_JA-britain.tsv:9
 ```
 
-We got back the counts of the instances of the string `revolution` within the files.
-Now, amend the above command to the below and observe how the output of each is different:
+We got back the counts of the instances of the string `revolution` within the files. Now, amend the above command to the below and observe how the output of each is different:
 
 ```bash
 $ grep -ci revolution *.tsv
@@ -535,24 +453,15 @@ $ grep -ci revolution *.tsv
 2014-02-02_JA-britain.tsv:122
 ```
 
-This repeats the query, but prints a case
-insensitive count (including instances of both `revolution` and `Revolution` and other variants).
-Note how the count has increased nearly 30 fold for those journal article
-titles that contain the keyword 'america'. As before, cycling back and
-adding `> results/`, followed by a filename (ideally in .txt format), will save the results to a data file.
+This repeats the query, but prints a case insensitive count (including instances of both `revolution` and `Revolution` and other variants). Note how the count has increased nearly 30 fold for those journal article titles that contain the keyword 'america'. As before, cycling back and adding `> results/`, followed by a filename (ideally in .txt format), will save the results to a data file.
 
-So far we have counted strings in files and printed to the shell or to
-file those counts. But the real power of `grep` comes in that you can
-also use it to create subsets of tabulated data (or indeed any data)
-from one or multiple files.
+So far we have counted strings in files and printed to the shell or to file those counts. But the real power of `grep` comes in that you can also use it to create subsets of tabulated data (or indeed any data) from one or multiple files.
 
 ```bash
 $ grep -i revolution *.tsv
 ```
 
-This script looks in the defined files and prints any lines containing `revolution`
-(without regard to case) to the shell. We let the shell add today's date to the
-filename:
+This script looks in the defined files and prints any lines containing `revolution` (without regard to case) to the shell. We let the shell add today's date to the filename:
 
 ```bash
 $ grep -i revolution *.tsv > results/$(date "+%Y-%m-%d")_JAi-revolution.tsv
@@ -564,25 +473,17 @@ This saves the subsetted data to a new file.
 
 ## Alternative date commands
 
-This way of writing dates is so common that on most platforms
-you can get the same result by typing `$(date -I)` instead of
-`$(date "+%Y-%m-%d")`.
+This way of writing dates is so common that on most platforms you can get the same result by typing `$(date -I)` instead of `$(date "+%Y-%m-%d")`.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-However, if we look at this file, it contains every instance of the
-string 'revolution' including as a single word and as part of other words
-such as 'revolutionary'. This perhaps isn't as useful as we thought...
-Thankfully, the `-w` flag instructs `grep` to look for whole words only,
-giving us greater precision in our search.
+However, if we look at this file, it contains every instance of the string 'revolution' including as a single word and as part of other words such as 'revolutionary'. This perhaps isn't as useful as we thought... Thankfully, the `-w` flag instructs `grep` to look for whole words only, giving us greater precision in our search.
 
 ```bash
 $ grep -iw revolution *.tsv > results/$(date "+%Y-%m-%d")_JAiw-revolution.tsv
 ```
 
-This script looks in both of the defined files and
-exports any lines containing the whole word `revolution` (without regard to case)
-to the specified `.tsv` file.
+This script looks in both of the defined files and exports any lines containing the whole word `revolution` (without regard to case) to the specified `.tsv` file.
 
 We can show the difference between the files we created.
 
@@ -600,23 +501,15 @@ $ wc -l results/*.tsv
 
 ## Automatically adding a date prefix
 
-Notice how we didn't type today's date ourselves, but let the
-`date` command do that mindless task for us. Find out about the
-`"+%Y-%m-%d"` option and alternative options we could have used.
+Notice how we didn't type today's date ourselves, but let the `date` command do that mindless task for us. Find out about the `"+%Y-%m-%d"` option and alternative options we could have used.
 
 :::::::::::::::  solution
 
 ## Solution
 
-Using `date --help` (on Git Bash for Windows or Linux) or `man date` (on macOS or Linux)
-will show you that the `+` option introduces a date format,
-where `%Y`, `%m` and `%d` are replaced by the year, month, and day respectively.
-There are many other percent-codes you could use.
+Using `date --help` (on Git Bash for Windows or Linux) or `man date` (on macOS or Linux) will show you that the `+` option introduces a date format, where `%Y`, `%m` and `%d` are replaced by the year, month, and day respectively. There are many other percent-codes you could use.
 
-You might also see that `-I` is short for
-[\--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which
-essentially avoids the confusion between the European
-and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
+You might also see that `-I` is short for [\--iso-8601](https://en.wikipedia.org/wiki/ISO_8601), which essentially avoids the confusion between the European and American date formats `DD.MM.YYYY` and `MM/DD/YYYY`.
 
 :::::::::::::::::::::::::
 
@@ -628,22 +521,11 @@ Finally, we'll use the **regular expression syntax** covered earlier to search f
 
 ## Basic, extended, and PERL-compatible regular expressions
 
-There are, unfortunately, [different ways of writing regular expressions](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html).
-Across its various versions, `grep` supports "basic", at least two types of "extended",
-and "PERL-compatible" regular expressions. This is a common cause of confusion, since
-most tutorials, including ours, teach regular expressions compatible with the PERL
-programming language, but `grep` uses basic by default.
-Unless you want to remember the details, make your life easy by always using the
-most advanced regular expressions your version of `grep` supports (`-E` flag on
-macOS X, `-P` on most other platforms) or when doing something more complex
-than searching for a plain string.
+There are, unfortunately, [different ways of writing regular expressions](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html). Across its various versions, `grep` supports "basic", at least two types of "extended", and "PERL-compatible" regular expressions. This is a common cause of confusion, since most tutorials, including ours, teach regular expressions compatible with the PERL programming language, but `grep` uses basic by default. Unless you want to remember the details, make your life easy by always using the most advanced regular expressions your version of `grep` supports (`-E` flag on macOS X, `-P` on most other platforms) or when doing something more complex than searching for a plain string.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The regular expression 'fr[ae]nc[eh]' will match "france", "french", but also "frence" and "franch".
-It's generally a good idea to enclose the expression in single quotation marks, since
-that ensures the shell sends it directly to grep without any processing (such as trying to
-expand the wildcard operator \*).
+The regular expression 'fr[ae]nc[eh]' will match "france", "french", but also "frence" and "franch". It's generally a good idea to enclose the expression in single quotation marks, since that ensures the shell sends it directly to grep without any processing (such as trying to expand the wildcard operator \*).
 
 ```bash
 $ grep -iwE 'fr[ae]nc[eh]' *.tsv
@@ -651,8 +533,7 @@ $ grep -iwE 'fr[ae]nc[eh]' *.tsv
 
 The shell will print out each matching line.
 
-We include the `-o` flag to print only the matching part of the lines e.g.
-(handy for isolating/checking results):
+We include the `-o` flag to print only the matching part of the lines e.g. (handy for isolating/checking results):
 
 ```bash
 $ grep -iwEo 'fr[ae]nc[eh]' *.tsv
@@ -664,9 +545,7 @@ Pair up with your neighbor and work on these exercises:
 
 ## Case sensitive search
 
-Search for all case sensitive instances of
-a whole word you choose in all four derived `.tsv` files in this directory.
-Print your results to the shell.
+Search for all case sensitive instances of a whole word you choose in all four derived `.tsv` files in this directory. Print your results to the shell.
 
 :::::::::::::::  solution
 
@@ -684,9 +563,7 @@ $ grep -w hero *.tsv
 
 ## Case sensitive search in select files
 
-Search for all case sensitive instances of a word you choose in
-the 'America' and 'Africa' `.tsv` files in this directory.
-Print your results to the shell.
+Search for all case sensitive instances of a word you choose in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to the shell.
 
 :::::::::::::::  solution
 
@@ -704,9 +581,7 @@ $ grep hero *a.tsv
 
 ## Count words (case sensitive)
 
-Count all case sensitive instances of a word you choose in
-the 'America' and 'Africa' `.tsv` files in this directory.
-Print your results to the shell.
+Count all case sensitive instances of a word you choose in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to the shell.
 
 :::::::::::::::  solution
 
@@ -724,8 +599,7 @@ $ grep -c hero *a.tsv
 
 ## Count words (case insensitive)
 
-Count all case insensitive instances of that word in the 'America' and 'Africa' `.tsv` files
-in this directory. Print your results to the shell.
+Count all case insensitive instances of that word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to the shell.
 
 :::::::::::::::  solution
 
@@ -743,8 +617,7 @@ $ grep -ci hero *a.tsv
 
 ## Case insensitive search in select files
 
-Search for all case insensitive instances of that
-word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to  a file `results/hero.tsv`.
+Search for all case insensitive instances of that word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to  a file `results/hero.tsv`.
 
 :::::::::::::::  solution
 
@@ -762,8 +635,7 @@ $ grep -i hero *a.tsv > results/hero.tsv
 
 ## Case insensitive search in select files (whole word)
 
-Search for all case insensitive instances of that whole word
-in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to a file `results/hero-i.tsv`.
+Search for all case insensitive instances of that whole word in the 'America' and 'Africa' `.tsv` files in this directory. Print your results to a file `results/hero-i.tsv`.
 
 :::::::::::::::  solution
 
@@ -781,11 +653,7 @@ $ grep -iw hero *a.tsv > results/hero-i.tsv
 
 ## Searching with regular expressions
 
-Use regular expressions to find all ISSN numbers
-(four digits followed by hyphen followed by four digits)
-in `2014-01_JA.tsv` and print the results to a file `results/issns.tsv`.
-Note that you might have to use the `-E` flag (or `-P` with some versions
-of `grep`, e.g. with Git Bash on Windows).
+Use regular expressions to find all ISSN numbers (four digits followed by hyphen followed by four digits) in `2014-01_JA.tsv` and print the results to a file `results/issns.tsv`. Note that you might have to use the `-E` flag (or `-P` with some versions of `grep`, e.g. with Git Bash on Windows).
 
 :::::::::::::::  solution
 
@@ -801,14 +669,11 @@ or
 $ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv > results/issns.tsv
 ```
 
-It is worth checking the file to make sure `grep` has interpreted the pattern
-correctly. You could use the `less` command for this.
+It is worth checking the file to make sure `grep` has interpreted the pattern correctly. You could use the `less` command for this.
 
-The `-o` flag means that only the ISSN itself is printed out, instead of the
-whole line.
+The `-o` flag means that only the ISSN itself is printed out, instead of the whole line.
 
-If you came up with something more advanced, perhaps including word boundaries,
-please share your result in the collaborative document and give yourself a pat on the shoulder.
+If you came up with something more advanced, perhaps including word boundaries, please share your result in the collaborative document and give yourself a pat on the shoulder.
 
 :::::::::::::::::::::::::
 
@@ -818,10 +683,7 @@ please share your result in the collaborative document and give yourself a pat o
 
 ## Finding unique values
 
-If you pipe something to the `uniq` command, it will filter out adjacent duplicate lines.
-In order for the 'uniq' command to only return unique values though, it needs to be used
-with the 'sort' command. Try piping the output from the command in the last exercise
-to `sort` and then piping these results to 'uniq' and then `wc -l` to count the number of unique ISSN values.
+If you pipe something to the `uniq` command, it will filter out adjacent duplicate lines. In order for the 'uniq' command to only return unique values though, it needs to be used with the 'sort' command. Try piping the output from the command in the last exercise to `sort` and then piping these results to 'uniq' and then `wc -l` to count the number of unique ISSN values.
 
 :::::::::::::::  solution
 
@@ -851,8 +713,7 @@ $ mv pg514.txt littlewomen.txt
 
 This renames the file to something easier to remember.
 
-Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each girl's name,
-and count the number of times it appears. The results will print to the screen.
+Now let's create our loop. In the loop, we will ask the computer to go through the text, looking for each girl's name, and count the number of times it appears. The results will print to the screen.
 
 ```bash
 $ for name in "Jo" "Meg" "Beth" "Amy"
@@ -884,25 +745,17 @@ What is happening in the loop?
 
 ## Why are the variables double-quoted here?
 
-a) In [episode 4](04-loops.md) we learned to
-use `"$..."` as a safeguard against white-space being misinterpreted.
-Why *could* we omit the `"`\-quotes in the above example?
+a) In [episode 4](04-loops.md) we learned to use `"$..."` as a safeguard against white-space being misinterpreted. Why *could* we omit the `"`\-quotes in the above example?
 
-b) What happens if you add `"Louisa May Alcott"` to the first line of
-the loop and remove the `"` from `$name` in the loop's code?
+b) What happens if you add `"Louisa May Alcott"` to the first line of the loop and remove the `"` from `$name` in the loop's code?
 
 :::::::::::::::  solution
 
 ## Solutions
 
-a) Because we are explicitly listing the names after `in`,
-and those contain no white-space. However, for consistency
-it's better to use rather once too often than once too rarely.
+a) Because we are explicitly listing the names after `in`, and those contain no white-space. However, for consistency it's better to use rather once too often than once too rarely.
 
-b) Without `"`\-quoting `$name`, the last loop will try to execute
-`grep Louisa May Alcott littlewomen.txt`. `grep` interprets only the
-first word as the search pattern, but `May` and `Alcott` as filenames.
-This produces two errors and a possibly untrustworthy count:
+b) Without `"`\-quoting `$name`, the last loop will try to execute `grep Louisa May Alcott littlewomen.txt`. `grep` interprets only the first word as the search pattern, but `May` and `Alcott` as filenames. This produces two errors and a possibly untrustworthy count:
 
 ```bash
 ...
@@ -939,8 +792,7 @@ Duany, W.	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 75-102. 
 Mohamed Ibrahim Khalil	1	NORTHEAST AFRICAN STUDIES	NORTHEAST AFRICAN STUDIES 1(2/3), 103-118. (1994)
 ```
 
-Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter.
-If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
+Above we used `cut` and the `-f` flag to indicate which columns we want to retain. `cut` works on tab delimited files by default. We can use the flag `-d` to change this to a comma, or semicolon or another delimiter. If you are unsure of your column position and the file has headers on the first line, we can use `head -n 1 <filename>` to print those out.
 
 ### Now your turn
 
@@ -960,8 +812,7 @@ head -n 1 2014-01_JA.tsv
 File	Creator	Issue	Volume	Journal	ISSN	ID	Citation	Title	Place Labe	Language	Publisher	Date
 ```
 
-Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12.
-We use these positional column numbers to construct our `cut` command:
+Ok, now we know `Issue` is column 3, `Volume` 4, `Language` 11, and `Publisher` 12. We use these positional column numbers to construct our `cut` command:
 
 ```
 cut -f 3,4,11,12 2014-01_JA.tsv > 2014-01_JA_ivlp.tsv
