@@ -315,20 +315,20 @@ First let’s look at the general form of a loop:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> thing <span class="kw">in</span> list_of_things</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">operation_using</span> <span class="va">$thing</span>    <span class="co"># Indentation within the loop is not required, but aids legibility</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="cf">for</span> thing <span class="kw">in</span> list_of_things</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>    <span class="ex">operation_using</span> <span class="va">$thing</span>    <span class="co"># Indentation within the loop is not required, but aids legibility</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 <p>We can apply this to our example like this:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> for filename in <span class="pp">?</span>.txt</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> do</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>    echo <span class="st">"</span><span class="va">$filename</span><span class="st">"</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span>    cp <span class="st">"</span><span class="va">$filename</span><span class="st">"</span> backup_<span class="st">"</span><span class="va">$filename</span><span class="st">"</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> for filename in <span class="pp">?</span>.txt</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="op">&gt;</span> do</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="op">&gt;</span>    echo <span class="st">"</span><span class="va">$filename</span><span class="st">"</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="op">&gt;</span>    cp <span class="st">"</span><span class="va">$filename</span><span class="st">"</span> backup_<span class="st">"</span><span class="va">$filename</span><span class="st">"</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="op">&gt;</span> done</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -348,13 +348,12 @@ Inside the loop, we call for the variable’s value by putting
 interpreter to treat the <strong>variable</strong> as a variable name
 and substitute its value in its place, rather than treat it as text or
 an external command.</p>
-<div id="double-quoting-variable-substitutions" class="callout callout">
+<div id="callout1" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="double-quoting-variable-substitutions" class="callout-inner">
-<h3 class="callout-title">Double-quoting variable substitutions<a class="anchor" aria-label="anchor" href="#double-quoting-variable-substitutions"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="double-quoting-variable-substitutions">Double-quoting variable substitutions<a class="anchor" aria-label="anchor" href="#double-quoting-variable-substitutions"></a></h3>
 <div class="callout-content">
 <p>Because real-world filenames often contain white-spaces, we wrap
 <code>$filename</code> in double quotes (<code>"</code>). If we didn’t,
@@ -380,13 +379,12 @@ the loop). For the second iteration, <code>$filename</code> becomes
 <code>c.txt</code> and then for <code>d.txt</code> and then, since the
 list only included these four items, the shell exits the
 <code>for</code> loop at that point.</p>
-<div id="follow-the-prompt" class="callout callout">
+<div id="callout2" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="follow-the-prompt" class="callout-inner">
-<h3 class="callout-title">Follow the Prompt<a class="anchor" aria-label="anchor" href="#follow-the-prompt"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="follow-the-prompt">Follow the Prompt<a class="anchor" aria-label="anchor" href="#follow-the-prompt"></a></h3>
 <div class="callout-content">
 <p>The shell prompt changes from <code>$</code> to <code>&gt;</code> and
 back again as we were typing in our loop. The second prompt,
@@ -396,13 +394,12 @@ to separate two commands written on a single line.</p>
 </div>
 </div>
 </div>
-<div id="same-symbols-different-meanings" class="callout callout">
+<div id="callout3" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="same-symbols-different-meanings" class="callout-inner">
-<h3 class="callout-title">Same Symbols, Different Meanings<a class="anchor" aria-label="anchor" href="#same-symbols-different-meanings"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="same-symbols-different-meanings">Same Symbols, Different Meanings<a class="anchor" aria-label="anchor" href="#same-symbols-different-meanings"></a></h3>
 <div class="callout-content">
 <p>Here we see <code>&gt;</code> being used as a shell prompt, but
 <code>&gt;</code> can also be used to redirect output from a command
@@ -435,12 +432,12 @@ line, and last line of each text file in the current directory.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">___</span> file in <span class="pp">*</span>.txt</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">__</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>	<span class="bu">echo</span> <span class="st">"_file"</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>	<span class="fu">head</span> <span class="at">-n</span> 1 _______</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>	<span class="ex">____</span> __ _ _______</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="ex">____</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">___</span> file in <span class="pp">*</span>.txt</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="ex">__</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>	<span class="bu">echo</span> <span class="st">"_file"</span></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>	<span class="fu">head</span> <span class="at">-n</span> 1 _______</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>	<span class="ex">____</span> __ _ _______</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="ex">____</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -450,17 +447,17 @@ line, and last line of each text file in the current directory.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.txt</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">do</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>	<span class="bu">echo</span> <span class="st">"</span><span class="va">$file</span><span class="st">"</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>	<span class="fu">head</span> <span class="at">-n</span> 1 <span class="st">"</span><span class="va">$file</span><span class="st">"</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>	<span class="fu">tail</span> <span class="at">-n</span> 1 <span class="st">"</span><span class="va">$file</span><span class="st">"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="cf">for</span> file <span class="kw">in</span> <span class="pp">*</span>.txt</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="cf">do</span></span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>	<span class="bu">echo</span> <span class="st">"</span><span class="va">$file</span><span class="st">"</span></span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>	<span class="fu">head</span> <span class="at">-n</span> 1 <span class="st">"</span><span class="va">$file</span><span class="st">"</span></span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>	<span class="fu">tail</span> <span class="at">-n</span> 1 <span class="st">"</span><span class="va">$file</span><span class="st">"</span></span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="cf">done</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -468,13 +465,12 @@ line, and last line of each text file in the current directory.</p>
 </div>
 <p>This is our first look at loops. We will run another loop in the <a href="05-counting-mining.html">Counting and Mining with the Shell</a>
 episode.</p>
-<figure><img src="fig/shell_script_for_loop_flow_chart.svg" alt="For Loop in Action" class="figure mx-auto d-block"></figure><div id="running-the-loop-from-a-bash-script" class="callout callout">
+<figure><img src="fig/shell_script_for_loop_flow_chart.svg" alt="For Loop in Action" class="figure mx-auto d-block"></figure><div id="callout4" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
-<div id="running-the-loop-from-a-bash-script" class="callout-inner">
-<h3 class="callout-title">Running the loop from a Bash script<a class="anchor" aria-label="anchor" href="#running-the-loop-from-a-bash-script"></a>
-</h3>
+<div class="section level3 callout-title callout-inner">
+<h3 class="callout-title" id="running-the-loop-from-a-bash-script">Running the loop from a Bash script<a class="anchor" aria-label="anchor" href="#running-the-loop-from-a-bash-script"></a></h3>
 <div class="callout-content">
 <p>Alternatively, rather than running the loop above on the command
 line, you can save it in a script file and run it from the command line
@@ -581,7 +577,7 @@ items</li>
   "identifier": "https://librarycarpentry.github.io/lc-shell/04-loops.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2024-02-23",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

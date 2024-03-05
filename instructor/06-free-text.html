@@ -340,7 +340,7 @@ in the <code>shell-lesson</code> directory.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> less <span class="at">-N</span> gulliver.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">$</span> less <span class="at">-N</span> gulliver.txt</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -389,7 +389,7 @@ command allows you to edit files directly.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'9352,9714d'</span> gulliver.txt <span class="op">&gt;</span> gulliver-nofoot.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'9352,9714d'</span> gulliver.txt <span class="op">&gt;</span> gulliver-nofoot.txt</span></code></pre>
 </div>
 <p>The command <code>sed</code> in combination with the <code>d</code>
 value will look at <code>gulliver.txt</code> and delete all values
@@ -398,7 +398,7 @@ the script to this edited text to the new file specified.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'1,37d'</span> gulliver-nofoot.txt <span class="op">&gt;</span> gulliver-noheadfoot.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'1,37d'</span> gulliver-nofoot.txt <span class="op">&gt;</span> gulliver-noheadfoot.txt</span></code></pre>
 </div>
 <p>This does the same as before, but for the header.</p>
 <p>You now have a cleaner text. The next step is to prepare it even
@@ -408,7 +408,7 @@ deleting characters. Type and run:</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="at">-d</span> <span class="st">'[:punct:]\r'</span> <span class="op">&lt;</span> gulliver-noheadfoot.txt <span class="op">&gt;</span> gulliver-noheadfootpunct.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="at">-d</span> <span class="st">'[:punct:]\r'</span> <span class="op">&lt;</span> gulliver-noheadfoot.txt <span class="op">&gt;</span> gulliver-noheadfootpunct.txt</span></code></pre>
 </div>
 <p>This uses the translate command and a special syntax to remove all
 punctuation (<code>[:punct:]</code>) and carriage returns
@@ -420,7 +420,7 @@ lettering.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">'[:upper:]'</span> <span class="st">'[:lower:]'</span> <span class="op">&lt;</span> gulliver-noheadfootpunct.txt <span class="op">&gt;</span> gulliver-clean.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">'[:upper:]'</span> <span class="st">'[:lower:]'</span> <span class="op">&lt;</span> gulliver-noheadfootpunct.txt <span class="op">&gt;</span> gulliver-clean.txt</span></code></pre>
 </div>
 <p>Open the <code>gulliver-clean.txt</code> in a text editor. Note how
 the text has been transformed ready for analysis.</p>
@@ -431,7 +431,7 @@ the text has been transformed ready for analysis.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">' '</span> <span class="st">'\n'</span> <span class="op">&lt;</span> gulliver-clean.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-nr</span> <span class="op">&gt;</span> gulliver-final.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">' '</span> <span class="st">'\n'</span> <span class="op">&lt;</span> gulliver-clean.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-nr</span> <span class="op">&gt;</span> gulliver-final.txt</span></code></pre>
 </div>
 <p>Here we’ve made extended use of the pipes we saw in <a href="05-counting-mining.html">Counting and mining with the shell</a>.
 The first part of this script uses the translate command again, this
@@ -467,16 +467,16 @@ that looks like this:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">replace</span> this line with your solution<span class="kw">)</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="co"># This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt</span></span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">(</span><span class="ex">replace</span> this line with your solution<span class="kw">)</span></span></code></pre>
 </div>
 <p>Save the file as <code>remove-quotes.sh</code> and run it from the
 command line like this:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bash</span> remove-quotes.sh</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="fu">bash</span> remove-quotes.sh</span></code></pre>
 </div>
 </div>
 </div>
@@ -486,14 +486,14 @@ command line like this:</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-Ee</span> <span class="st">'s/[""‘'</span>]//g<span class="st">' gulliver-clean.txt &gt; gulliver-noquotes.txt</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="co"># This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt</span></span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="fu">sed</span> <span class="at">-Ee</span> <span class="st">'s/[""‘'</span>]//g<span class="st">' gulliver-clean.txt &gt; gulliver-noquotes.txt</span></span></code></pre>
 </div>
 <p>If this doesn’t work for you, you might need to check whether your
 text editor can save files using the UTF-8 encoding.</p>
@@ -519,7 +519,7 @@ powerful command line.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> less <span class="at">-N</span> 201403160_01_text.json</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">$</span> less <span class="at">-N</span> 201403160_01_text.json</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -553,7 +553,7 @@ translating or deleting characters. Type and run:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="at">-d</span> <span class="st">'[:punct:]'</span> <span class="op">&lt;</span> 201403160_01_text.json <span class="op">&gt;</span> 201403160_01_text-nopunct.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="at">-d</span> <span class="st">'[:punct:]'</span> <span class="op">&lt;</span> 201403160_01_text.json <span class="op">&gt;</span> 201403160_01_text-nopunct.txt</span></code></pre>
 </div>
 <p>This uses the translate command and a special syntax to remove all
 punctuation. It also requires the use of both the output redirect
@@ -564,7 +564,7 @@ lettering.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">'[:upper:]'</span> <span class="st">'[:lower:]'</span> <span class="op">&lt;</span> 201403160_01_text-nopunct.txt <span class="op">&gt;</span> 201403160_01_text-clean.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">'[:upper:]'</span> <span class="st">'[:lower:]'</span> <span class="op">&lt;</span> 201403160_01_text-nopunct.txt <span class="op">&gt;</span> 201403160_01_text-clean.txt</span></code></pre>
 </div>
 <p>Open the <code>201403160_01_text-clean.txt</code> in a text editor.
 Note how the text has been transformed ready for analysis.</p>
@@ -575,7 +575,7 @@ Note how the text has been transformed ready for analysis.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">' '</span> <span class="st">'\n'</span> <span class="op">&lt;</span> 201403160_01_text-clean.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-nr</span> <span class="op">&gt;</span> 201403160_01_text-final.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">' '</span> <span class="st">'\n'</span> <span class="op">&lt;</span> 201403160_01_text-clean.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-nr</span> <span class="op">&gt;</span> 201403160_01_text-final.txt</span></code></pre>
 </div>
 <p>Here we’ve made extended use of the pipes we saw in <a href="05-counting-mining.html">Counting and mining with the shell</a>.
 The first part of this script uses the translate command again, this
@@ -611,7 +611,7 @@ powerful command line.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> less <span class="at">-N</span> diary.html</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="ex">$</span> less <span class="at">-N</span> diary.html</span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -646,7 +646,7 @@ command allows you to edit files directly.</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'265,330d'</span> diary.html <span class="op">&gt;</span> diary-nofoot.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'265,330d'</span> diary.html <span class="op">&gt;</span> diary-nofoot.txt</span></code></pre>
 </div>
 <p>The command <code>sed</code> in combination with the <code>d</code>
 value will look at <code>diary.html</code> and delete all values between
@@ -655,7 +655,7 @@ to this edited text to the new file specified.</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'1,221d'</span> diary-nofoot.txt <span class="op">&gt;</span> diary-noheadfoot.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="ex">$</span> sed <span class="st">'1,221d'</span> diary-nofoot.txt <span class="op">&gt;</span> diary-noheadfoot.txt</span></code></pre>
 </div>
 <p>This does the same as before, but for the header.</p>
 <p>You now have a cleaner text. The next step is to prepare it even
@@ -664,7 +664,7 @@ further for rigorous analysis.</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sed <span class="at">-e</span> <span class="st">'s/&lt;[^&gt;]*&gt;//g'</span> diary-noheadfoot.txt <span class="op">&gt;</span> diary-notags.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="ex">$</span> sed <span class="at">-e</span> <span class="st">'s/&lt;[^&gt;]*&gt;//g'</span> diary-noheadfoot.txt <span class="op">&gt;</span> diary-notags.txt</span></code></pre>
 </div>
 <p>Here we are using a regular expression (see the <a href="https://librarycarpentry.org/lc-data-intro/01-regular-expressions" class="external-link">Library
 Carpentry regular expression lesson</a> to find all valid html tags
@@ -678,7 +678,7 @@ translating or deleting characters. Type and run:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="at">-d</span> <span class="st">'[:punct:]\r'</span> <span class="op">&lt;</span> diary-notags.txt <span class="op">&gt;</span> diary-notagspunct.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="at">-d</span> <span class="st">'[:punct:]\r'</span> <span class="op">&lt;</span> diary-notags.txt <span class="op">&gt;</span> diary-notagspunct.txt</span></code></pre>
 </div>
 <p>This uses the translate command and a special syntax to remove all
 punctuation (<code>[:punct:]</code>) and carriage returns
@@ -688,7 +688,7 @@ lettering.</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">'[:upper:]'</span> <span class="st">'[:lower:]'</span> <span class="op">&lt;</span> diary-notagspunct.txt <span class="op">&gt;</span> diary-clean.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">'[:upper:]'</span> <span class="st">'[:lower:]'</span> <span class="op">&lt;</span> diary-notagspunct.txt <span class="op">&gt;</span> diary-clean.txt</span></code></pre>
 </div>
 <p>Open the <code>diary-clean.txt</code> in a text editor. Note how the
 text has been transformed ready for analysis.</p>
@@ -699,7 +699,7 @@ text has been transformed ready for analysis.</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">' '</span> <span class="st">'\n'</span> <span class="op">&lt;</span> diary-clean.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-nr</span> <span class="op">&gt;</span> diary-final.txt</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="ex">$</span> tr <span class="st">' '</span> <span class="st">'\n'</span> <span class="op">&lt;</span> diary-clean.txt <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="fu">uniq</span> <span class="at">-c</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="at">-nr</span> <span class="op">&gt;</span> diary-final.txt</span></code></pre>
 </div>
 <p>Here we’ve made extended use of the pipes we saw in <a href="05-counting-mining.html">Counting and mining with the shell</a>.
 The first part of this script uses the translate command again, this
@@ -862,7 +862,7 @@ Commons Attribution-NonCommercial-ShareAlike 3.0 Unported</a>.</p>
   "identifier": "https://librarycarpentry.github.io/lc-shell/instructor/06-free-text.html",
   "dateCreated": "2018-04-12",
   "dateModified": "2023-05-08",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
