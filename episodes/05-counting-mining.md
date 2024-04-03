@@ -464,7 +464,8 @@ $ grep -i revolution *.tsv
 This script looks in the defined files and prints any lines containing `revolution` (without regard to case) to the shell. We let the shell add today's date to the filename:
 
 ```bash
-$ grep -i revolution *.tsv > results/$(date "+%Y-%m-%d")_JAi-revolution.tsv
+$ grep -i revolution *.tsv > \
+> results/$(date "+%Y-%m-%d")_JAi-revolution.tsv
 ```
 
 This saves the subsetted data to a new file.
@@ -480,7 +481,8 @@ This way of writing dates is so common that on most platforms you can get the sa
 However, if we look at this file, it contains every instance of the string 'revolution' including as a single word and as part of other words such as 'revolutionary'. This perhaps isn't as useful as we thought... Thankfully, the `-w` flag instructs `grep` to look for whole words only, giving us greater precision in our search.
 
 ```bash
-$ grep -iw revolution *.tsv > results/$(date "+%Y-%m-%d")_JAiw-revolution.tsv
+$ grep -iw revolution *.tsv > \
+> results/$(date "+%Y-%m-%d")_JAiw-revolution.tsv
 ```
 
 This script looks in both of the defined files and exports any lines containing the whole word `revolution` (without regard to case) to the specified `.tsv` file.
@@ -660,13 +662,15 @@ Use regular expressions to find all ISSN numbers (four digits followed by hyphen
 ## Solution
 
 ```bash
-$ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv > results/issns.tsv
+$ grep -Eo '\d{4}-\d{4}' 2014-01_JA.tsv > \
+> results/issns.tsv
 ```
 
 or
 
 ```bash
-$ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv > results/issns.tsv
+$ grep -Po '\d{4}-\d{4}' 2014-01_JA.tsv > \
+> results/issns.tsv
 ```
 
 It is worth checking the file to make sure `grep` has interpreted the pattern correctly. You could use the `less` command for this.
