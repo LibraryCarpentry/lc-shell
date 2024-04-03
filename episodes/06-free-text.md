@@ -116,7 +116,8 @@ We now use the `tr` command, used for translating or
 deleting characters. Type and run:
 
 ```bash
-$ tr -d '[:punct:]\r' < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
+$ tr -d '[:punct:]\r' < gulliver-noheadfoot.txt > \
+> gulliver-noheadfootpunct.txt
 ```
 
 This uses the translate command and a special syntax to remove all punctuation
@@ -126,7 +127,8 @@ It also requires the use of both the output redirect `>` we have seen and the in
 Finally regularise the text by removing all the uppercase lettering.
 
 ```bash
-$ tr '[:upper:]' '[:lower:]' < gulliver-noheadfootpunct.txt > gulliver-clean.txt
+$ tr '[:upper:]' '[:lower:]' < gulliver-noheadfootpunct.txt > \
+> gulliver-clean.txt
 ```
 
 Open the `gulliver-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
@@ -136,7 +138,8 @@ Open the `gulliver-clean.txt` in a text editor. Note how the text has been trans
 We are now ready to pull the text apart.
 
 ```bash
-$ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
+$ tr ' ' '\n' < gulliver-clean.txt | sort | \
+> uniq -c | sort -nr > gulliver-final.txt
 ```
 
 Here we've made extended use of the pipes we saw in [Counting and mining with the shell](05-counting-mining.md). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
@@ -164,7 +167,8 @@ As a reminder, use the text editor of your choice to write a file that looks lik
 
 ```bash
 #!/bin/bash
-# This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
+# This script removes quote marks from gulliver-clean.txt
+# and saves the result as gulliver-noquotes.txt
 (replace this line with your solution)
 ```
 
@@ -180,8 +184,10 @@ bash remove-quotes.sh
 
 ```bash
 #!/bin/bash
-# This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
-sed -Ee 's/[""‘']//g' gulliver-clean.txt > gulliver-noquotes.txt
+# This script removes quote marks from gulliver-clean.txt
+# and saves the result as gulliver-noquotes.txt
+sed -Ee 's/[""‘']//g' gulliver-clean.txt > \
+gulliver-noquotes.txt
 ```
 
 If this doesn't work for you, you might need to check whether your text editor can
@@ -242,7 +248,8 @@ We're going to start by using the `tr` command, used for translating or
 deleting characters. Type and run:
 
 ```bash
-$ tr -d '[:punct:]' < 201403160_01_text.json > 201403160_01_text-nopunct.txt
+$ tr -d '[:punct:]' < 201403160_01_text.json > \
+> 201403160_01_text-nopunct.txt
 ```
 
 This uses the translate command and a special syntax to remove all punctuation.
@@ -251,7 +258,8 @@ It also requires the use of both the output redirect `>` we have seen and the in
 Finally regularise the text by removing all the uppercase lettering.
 
 ```bash
-$ tr '[:upper:]' '[:lower:]' < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
+$ tr '[:upper:]' '[:lower:]' < 201403160_01_text-nopunct.txt > \
+> 201403160_01_text-clean.txt
 ```
 
 Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has been transformed ready for analysis.
@@ -261,7 +269,8 @@ Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has b
 We are now ready to pull the text apart.
 
 ```bash
-$ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403160_01_text-final.txt
+$ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | \
+> uniq -c | sort -nr > 201403160_01_text-final.txt
 ```
 
 Here we've made extended use of the pipes we saw in [Counting and mining with the shell](05-counting-mining.md). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
@@ -373,7 +382,8 @@ Open the `diary-clean.txt` in a text editor. Note how the text has been transfor
 We are now ready to pull the text apart.
 
 ```bash
-$ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
+$ tr ' ' '\n' < diary-clean.txt | sort | \
+> uniq -c | sort -nr > diary-final.txt
 ```
 
 Here we've made extended use of the pipes we saw in [Counting and mining with the shell](05-counting-mining.md). The first part of this script uses the translate command again, this time to translate every blank space into `\n` which renders as a new line. Every word in the file will at this stage have its own line.
