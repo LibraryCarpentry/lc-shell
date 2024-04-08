@@ -14,6 +14,6 @@ At the conclusion of the lesson you will be able to:
 
 ## Prerequisites
 
-To complete this lesson, you will need a Unix-like shell environment (see [Setup](learners/setup.md)). You will also need to download the file **[shell-lesson.zip](https://raw.githubusercontent.com/librarycarpentry/lc-shell/gh-pages/data/shell-lesson.zip)** from GitHub to your *desktop* and extract it there (once you have unzipped/extracted the file, you should end up with a folder called "shell-lesson").
+To complete this lesson, you will need a Unix-like shell environment (see [Setup](learners/setup.md)). You will also need to download the file **[shell-lesson.zip](https://librarycarpentry.org/lc-shell/data/shell-lesson.zip)** from the lesson website to your *desktop* and extract it there (once you have unzipped/extracted the file, you should end up with a folder called "shell-lesson").
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
