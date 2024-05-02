@@ -122,7 +122,7 @@ us right back to the home directory, the place where we started.**
 
 ## Previous Directory
 
-To switch back and forth between two directories use `cd -`.
+To switch back and forth between two directories use `cd -`
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
