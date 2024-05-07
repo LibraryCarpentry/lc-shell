@@ -48,7 +48,7 @@ $ pwd
 /Users/riley/Desktop/shell-lesson
 ```
 
-And let's just check what files are in the directory and how large they are with `ls -lhS`:
+And let's check what files are in the directory and how large they are with `ls -lhS`:
 
 ```bash
 $ ls -lhS
@@ -71,7 +71,7 @@ In this episode we'll focus on the dataset `2014-01_JA.tsv`, that contains journ
 
 ## CSV and TSV Files
 
-CSV (Comma-separated values) is a common plain text format for storing tabular data, where each record occupies one line and the values are separated by commas. TSV (Tab-separated values) is just the same except that values are separated by tabs rather than commas. Confusingly, CSV is sometimes used to refer to both CSV, TSV and variations of them. The simplicity of the formats make them great for exchange and archival. They are not bound to a specific program (unlike Excel files, say, there is no `CSV` program, just lots and lots of programs that support the format, including Excel by the way.), and you wouldn't have any problems opening a 40 year old file today if you came across one.
+CSV (Comma-separated values) is a common plain text format for storing tabular data, where each record occupies one line and the values are separated by commas. TSV (Tab-separated values) is the same except that values are separated by tabs rather than commas. Confusingly, CSV is sometimes used to refer to both CSV, TSV and variations of them. The simplicity of the formats make them great for exchange and archival. They are not bound to a specific program (unlike Excel files, say, there is no `CSV` program, just lots and lots of programs that support the format, including Excel by the way.), and you wouldn't have any problems opening a 40 year old file today if you came across one.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -116,7 +116,7 @@ $ wc *.tsv
 
 The first three columns contains the number of lines, words and bytes.
 
-If we only have a handful of files to compare, it might be faster or more convenient to just check with Microsoft Excel, OpenRefine or your favourite text editor, but when we have tens, hundreds or thousands of documents, the Unix shell has a clear speed advantage. The real power of the shell comes from being able to combine commands and automate tasks, though. We will touch upon this slightly.
+If we only have a handful of files to compare, it might be faster or more convenient to check with Microsoft Excel, OpenRefine or your favourite text editor, but when we have tens, hundreds or thousands of documents, the Unix shell has a clear speed advantage. The real power of the shell comes from being able to combine commands and automate tasks, though. We will touch upon this slightly.
 
 For now, we'll see how we can build a simple pipeline to find the shortest file in terms of number of lines. We start by adding the `-l` flag to get only the number of lines, not the number of words and bytes:
 
@@ -229,7 +229,7 @@ We have our `wc -l *.tsv | sort -n | head -n 1` pipeline. What would happen if y
 
 ## Solution
 
-The `cat` command just outputs whatever it gets as input, so you get exactly the same output from
+The `cat` command outputs whatever it gets as input, so you get exactly the same output from
 
 ```bash
 $ wc -l *.tsv | sort -n | head -n 1
