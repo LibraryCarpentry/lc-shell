@@ -18,19 +18,9 @@ exercises: 40
 
 ### Working with free text
 
-So far we have looked at how to use the Unix shell to manipulate, count, and
-mine tabulated data. Some library data, especially digitised documents, is much messier than
-tabular metadata. Nonetheless, many of the same techniques can be applied
-to non-tabulated data such as free text. We need to think carefully about
-what it is we are counting and how we can get the best out of the Unix shell.
+So far we have looked at how to use the Unix shell to manipulate, count, and mine tabulated data. Some library data, especially digitised documents, is much messier than tabular metadata. Nonetheless, many of the same techniques can be applied to non-tabulated data such as free text. We need to think carefully about what it is we are counting and how we can get the best out of the Unix shell.
 
-Thankfully there are plenty of folks out there doing this sort of work and we
-can borrow what they do as an introduction to working with these more complex files.
-So for this final exercise we're going to leap forward a little in terms
-of difficulty to a scenario where we won't learn about everything that
-is happening in detail or discuss at length each command. We're going
-to prepare and pull apart texts to demonstrate some of the potential applications of the Unix shell. And where commands we've learnt about are used,
-I've left some of the figuring out to do to you - so please refer to your notes if you get stuck!
+Thankfully there are plenty of folks out there doing this sort of work and we can borrow what they do as an introduction to working with these more complex files. So for this final exercise we're going to leap forward a little in terms of difficulty to a scenario where we won't learn about everything that is happening in detail or discuss at length each command. We're going to prepare and pull apart texts to demonstrate some of the potential applications of the Unix shell. And where commands we've learnt about are used, I've left some of the figuring out to do to you - so please refer to your notes if you get stuck!
 
 Before going any further, speak to the person next to you and choose which type of text you'd like to work on together. You have three options:
 
@@ -42,8 +32,7 @@ Before going any further, speak to the person next to you and choose which type 
 
 ### Grabbing a text, cleaning it up
 
-We're going to work with the `gulliver.txt` file, which we made in [Episode 3, 'Working with files and directories'](03-working-with-files-and-folders.md).
-You should (still) be working in the `shell-lesson` directory.
+We're going to work with the `gulliver.txt` file, which we made in [Episode 3, 'Working with files and directories'](03-working-with-files-and-folders.md). You should (still) be working in the `shell-lesson` directory.
 
 Let's look at the file.
 
@@ -98,10 +87,7 @@ We're going to start by using the `sed` command. The command allows you to edit 
 $ sed '9352,9714d' gulliver.txt > gulliver-nofoot.txt
 ```
 
-The command `sed` in combination with the `d`
-value will look at `gulliver.txt` and delete all
-values between the rows specified. The `>` action then
-prompts the script to this edited text to the new file specified.
+The command `sed` in combination with the `d` value will look at `gulliver.txt` and delete all values between the rows specified. The `>` action then prompts the script to this edited text to the new file specified.
 
 ```bash
 $ sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
@@ -109,19 +95,15 @@ $ sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
 
 This does the same as before, but for the header.
 
-You now have a cleaner text. The next step is to
-prepare it even further for rigorous analysis.
+You now have a cleaner text. The next step is to prepare it even further for rigorous analysis.
 
-We now use the `tr` command, used for translating or
-deleting characters. Type and run:
+We now use the `tr` command, used for translating or deleting characters. Type and run:
 
 ```bash
 $ tr -d '[:punct:]\r' < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
 ```
 
-This uses the translate command and a special syntax to remove all punctuation
-(`[:punct:]`) and carriage returns (`\r`).
-It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
+This uses the translate command and a special syntax to remove all punctuation (`[:punct:]`) and carriage returns (`\r`). It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
 Finally regularise the text by removing all the uppercase lettering.
 
@@ -151,14 +133,9 @@ The fourth and final part sorts the text again by the counts of duplicates gener
 
 ## Challenge
 
-There are still some remaining punctuation marks in the text. They are called 'smart' or 'curly' quotes.
-Can you remove them using `sed`?
+There are still some remaining punctuation marks in the text. They are called 'smart' or 'curly' quotes. Can you remove them using `sed`?
 
-Hint: These quote marks are not among the 128 characters of the ASCII standard,
-so in the file they are encoded using a different standard, UTF-8.
-While this is no problem for `sed`, the window you are typing into may not understand UTF-8.
-If so you will need to use a Bash script; we encountered these at the end of episode 4,
-'Automating the tedious with loops'.
+Hint: These quote marks are not among the 128 characters of the ASCII standard, so in the file they are encoded using a different standard, UTF-8. While this is no problem for `sed`, the window you are typing into may not understand UTF-8. If so you will need to use a Bash script; we encountered these at the end of episode 4, 'Automating the tedious with loops'.
 
 As a reminder, use the text editor of your choice to write a file that looks like this:
 
@@ -184,19 +161,13 @@ bash remove-quotes.sh
 sed -Ee 's/[""‘']//g' gulliver-clean.txt > gulliver-noquotes.txt
 ```
 
-If this doesn't work for you, you might need to check whether your text editor can
-save files using the UTF-8 encoding.
+If this doesn't work for you, you might need to check whether your text editor can save files using the UTF-8 encoding.
 
 :::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-We have now taken the text apart and produced a
-count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
-and can compare with other texts processed in the same way.
-And if we need to run a different set of transformation for
-a different analysis, we can return to `gulliver-clean.txt` to start that work.
+We have now taken the text apart and produced a count for each word in it. This is data we can prod and poke and visualise, that can form the basis of our investigations, and can compare with other texts processed in the same way. And if we need to run a different set of transformation for a different analysis, we can return to `gulliver-clean.txt` to start that work.
 
 And all this using a few commands on an otherwise unassuming but very powerful command line.
 
@@ -238,15 +209,13 @@ $ less -N 201403160_01_text.json
       1 e rivers to run down the mountain sides in the same courses and follow t
 ```
 
-We're going to start by using the `tr` command, used for translating or
-deleting characters. Type and run:
+We're going to start by using the `tr` command, used for translating or deleting characters. Type and run:
 
 ```bash
 $ tr -d '[:punct:]' < 201403160_01_text.json > 201403160_01_text-nopunct.txt
 ```
 
-This uses the translate command and a special syntax to remove all punctuation.
-It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
+This uses the translate command and a special syntax to remove all punctuation. It also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
 Finally regularise the text by removing all the uppercase lettering.
 
@@ -274,12 +243,7 @@ The fourth and final part sorts the text again by the counts of duplicates gener
 
 **Note: your final output will have one problem - not all the words counted are real words (see the words counted only 1 or 2 times). To better understand what has happened, search online to find out more about Optical Character Recognition of texts**
 
-Either way we have now taken the text apart and produced a
-count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
-and can compare with other texts processed in the same way.
-And if we need to run a different set of transformation for
-a different analysis, we can return to `201403160_01_text-clean.txt` to start that work.
+Either way we have now taken the text apart and produced a count for each word in it. This is data we can prod and poke and visualise, that can form the basis of our investigations, and can compare with other texts processed in the same way. And if we need to run a different set of transformation for a different analysis, we can return to `201403160_01_text-clean.txt` to start that work.
 
 And all this using a few commands on an otherwise unassuming but very powerful command line.
 
@@ -328,10 +292,7 @@ We're going to start by using the `sed` command. The command allows you to edit 
 $ sed '265,330d' diary.html > diary-nofoot.txt
 ```
 
-The command `sed` in combination with the `d`
-value will look at `diary.html` and delete all
-values between the rows specified. The `>` action then
-prompts the script to this edited text to the new file specified.
+The command `sed` in combination with the `d` value will look at `diary.html` and delete all values between the rows specified. The `>` action then prompts the script to this edited text to the new file specified.
 
 ```bash
 $ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
@@ -339,8 +300,7 @@ $ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
 
 This does the same as before, but for the header.
 
-You now have a cleaner text. The next step is to
-prepare it even further for rigorous analysis.
+You now have a cleaner text. The next step is to prepare it even further for rigorous analysis.
 
 First we wil remove all the html tags. Type and run:
 
@@ -350,15 +310,13 @@ $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
 
 Here we are using a regular expression (see the [Library Carpentry regular expression lesson](https://librarycarpentry.org/lc-data-intro/01-regular-expressions) to find all valid html tags (anything within angle brackets) and delete them). This is a complex regular expression, so don't worry too much about how it works! The script also requires the use of both the output redirect `>` we have seen and the input redirect `<` we haven't seen.
 
-We're going to start by using the `tr` command, used for translating or
-deleting characters. Type and run:
+We're going to start by using the `tr` command, used for translating or deleting characters. Type and run:
 
 ```bash
 $ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
 ```
 
-This uses the translate command and a special syntax to remove all punctuation
-(`[:punct:]`) and carriage returns (`\r`).
+This uses the translate command and a special syntax to remove all punctuation (`[:punct:]`) and carriage returns (`\r`).
 
 Finally regularise the text by removing all the uppercase lettering.
 
@@ -384,65 +342,32 @@ The third part uses `uniq`, another new command, in combination with the `-c` fl
 
 The fourth and final part sorts the text again by the counts of duplicates generated in step three.
 
-We have now taken the text apart and produced a
-count for each word in it. This is data we can prod and poke
-and visualise, that can form the basis of our investigations,
-and can compare with other texts processed in the same way.
-And if we need to run a different set of transformation for
-a different analysis, we can return to `diary-final.txt` to start that work.
+We have now taken the text apart and produced a count for each word in it. This is data we can prod and poke and visualise, that can form the basis of our investigations, and can compare with other texts processed in the same way. And if we need to run a different set of transformation for a different analysis, we can return to `diary-final.txt` to start that work.
 
 And all this using a few commands on an otherwise unassuming but very powerful command line.
 
 ## Where to go next
 
-Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th edition (2009).
-Invaluable (and not expensive) as a reference guide - especially if you only use the command line sporadically!
-
-[The Command Line Crash Course](https://learncodethehardway.org/unix/)
-'Learn UNIX the Hard Way' -- good for reminders of the basics.
-
-[Automate the Boring Stuff](https://automatetheboringstuff.com/)
-
-Another Coursera course, [Programming for Everybody (Python)](https://www.coursera.org/course/pythonlearn)
-is available and lasts 10 weeks, if you have 2-4 hours to spare per week.
-Python is popular in research programming as it is readable, relatively simple, and very powerful.
-
-Bill Turkel and the Digital History community more broadly.
-The second lesson you did today was based on a lesson Bill has on [his website](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/) and Bill is also a general editor of the [Programming Historian](https://programminghistorian.org/project-team). The Programming Historian is an open, collaborative book aimed at providing programming lessons to historians. Although the lessons are hooked around problems historians have, their lessons - which cover various programming languages - have a wide applicability - indeed today's course is based on two lessons I wrote with Ian Milligan, an historian at Waterloo, Canada - for ProgHist. Bill also has a wonderful tutorial on ['Named Entity Recognition with Command Line Tools in Linux'](https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) which I thoroughly recommend if you want to automatically find, markup, and count names, places, and organisations in text files...
+- Deborah S. Ray and Eric J. Ray, *Unix and Linux: visual quickstart guide*, 4th edition (2009). Invaluable (and not expensive) as a reference guide - especially if you only use the command line sporadically!
+- [The Command Line Crash Course](https://learncodethehardway.org/unix/). 'Learn UNIX the Hard Way' -- good for reminders of the basics.
+- [Automate the Boring Stuff](https://automatetheboringstuff.com/).
+- Another Coursera course, [Programming for Everybody (Python)](https://www.coursera.org/course/pythonlearn) is available and lasts 10 weeks, if you have 2-4 hours to spare per week. Python is popular in research programming as it is readable, relatively simple, and very powerful.
+- Bill Turkel and the Digital History community more broadly. The second lesson you did today was based on a lesson Bill has on [his website](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/) and Bill is also a general editor of the [Programming Historian](https://programminghistorian.org/project-team). The Programming Historian is an open, collaborative book aimed at providing programming lessons to historians. Although the lessons are hooked around problems historians have, their lessons - which cover various programming languages - have a wide applicability - indeed today's course is based on two lessons I wrote with Ian Milligan, an historian at Waterloo, Canada - for ProgHist. Bill also has a wonderful tutorial on ['Named Entity Recognition with Command Line Tools in Linux'](https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) which I thoroughly recommend if you want to automatically find, markup, and count names, places, and organisations in text files...
 
 ## Conclusion
 
-In this session you have learned to navigate the Unix shell, to undertake some
-basic file counting, concatenation and deletion, to query across data for common
-strings, to save results and derived data, and to prepare textual data for rigorous computational analysis.
+In this session you have learned to navigate the Unix shell, to undertake some basic file counting, concatenation and deletion, to query across data for common strings, to save results and derived data, and to prepare textual data for rigorous computational analysis.
 
-This only scratches the surface of what the Unix environment is capable of.
-It is hoped, however, that this session has provided a taster sufficient to
-prompt further investigation and productive play.
+This only scratches the surface of what the Unix environment is capable of. It is hoped, however, that this session has provided a taster sufficient to prompt further investigation and productive play.
 
-Keep in mind that the full potential the tools can offer may only
-emerge upon embedding these skills into real projects. Nonetheless,
-being able to manipulate, count and mine thousands of files is extremely useful.
-Even a large collection of files which do not contain any alpha-numeric data
-elements, such as image files, can be easily sorted, selected and queried depending
-on the amount of description, of metadata contained in each filename.
-If not a prerequisite of working with the Unix, then taking the time
-to structure your data in a consistent and predictable manner is
-certainly a significant step towards getting the most out of Unix
-commands. And if you can find a way of using the Unix shell regularly - perhaps
-only to copy or amend files - you'll keep the basics fresh, meaning that
-next time you have cause to use the Unix shell for more complex commands,
-you shouldn't need to learn it all over again.
+Keep in mind that the full potential the tools can offer may only emerge upon embedding these skills into real projects. Nonetheless, being able to manipulate, count and mine thousands of files is extremely useful. Even a large collection of files which do not contain any alpha-numeric data elements, such as image files, can be easily sorted, selected and queried depending on the amount of description, of metadata contained in each filename. If not a prerequisite of working with the Unix, then taking the time to structure your data in a consistent and predictable manner is certainly a significant step towards getting the most out of Unix commands. And if you can find a way of using the Unix shell regularly - perhaps only to copy or amend files - you'll keep the basics fresh, meaning that next time you have cause to use the Unix shell for more complex commands, you shouldn't need to learn it all over again.
 
 ## References
 
-James Baker and Ian Milligan, 'Counting and mining research data with Unix', *The Programming Historian* ([2014](https://programminghistorian.org/lessons/research-data-with-unix))
-
-Ian Milligan and James Baker, 'Introduction to the Bash Command Line', *The Programming Historian* ([2014](https://programminghistorian.org/lessons/intro-to-bash))
-
-William J. Turkel, 'Named Entity Recognition with Command Line Tools in Linux' ([30 June 2013](https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)). The section 'NER Demo' is adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
-
-William J. Turkel, 'Basic Text Analysis with Command Line Tools in Linux' ([15 June 2013](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/)). The sections 'Grabbing a text, cleaning it up' and 'Pulling a text apart, counting word frequencies' are adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
+- James Baker and Ian Milligan, 'Counting and mining research data with Unix', *The Programming Historian* ([2014](https://programminghistorian.org/lessons/research-data-with-unix)).
+- Ian Milligan and James Baker, 'Introduction to the Bash Command Line', *The Programming Historian* ([2014](https://programminghistorian.org/lessons/intro-to-bash)).
+- William J. Turkel, 'Named Entity Recognition with Command Line Tools in Linux' ([30 June 2013](https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)). The section 'NER Demo' is adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
+- William J. Turkel, 'Basic Text Analysis with Command Line Tools in Linux' ([15 June 2013](https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/)). The sections 'Grabbing a text, cleaning it up' and 'Pulling a text apart, counting word frequencies' are adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
