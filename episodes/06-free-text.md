@@ -34,9 +34,9 @@ I've left some of the figuring out to do to you - so please refer to your notes 
 
 Before going any further, speak to the person next to you and choose which type of text you'd like to work on together. You have three options:
 
-- An example of hand transcribed text: *Gulliver's Travels* (1735)
-- An example of text captured by an optical character recognition process: *General Report on the Physiography of Maryland. A dissertation, etc. (Reprinted from Report of Maryland State Weather Service.) [With maps and illustrations.]* 1898 (from [https://doi.org/10.21250/db12](https://doi.org/10.21250/db12))
-- An example of a webpage: Piper's World (a GeoCities page from 1999 saved at [archive.org](https://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
+- [Option 1](#option-1-hand-transcribed-text): An example of hand transcribed text: *Gulliver's Travels* (1735)
+- [Option 2](#option-2-optical-character-recognised-text): An example of text captured by an optical character recognition process: *General Report on the Physiography of Maryland. A dissertation, etc. (Reprinted from Report of Maryland State Weather Service.) [With maps and illustrations.]* 1898 (Retrieved from [doi.org/10.21250/db12](https://doi.org/10.21250/db12))
+- [Option 3](#option-3-a-webpage): An example of a webpage: Piper's World (a GeoCities page from 1999 saved at [archive.org](https://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
 
 ## Option 1: Hand transcribed text
 
