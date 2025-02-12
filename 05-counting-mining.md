@@ -649,6 +649,16 @@ $ grep -iw hero *a.tsv > results/hero-i.tsv
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+:::::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Watch out for different behaviour of the -E option across systems
+
+Learners may encounter some inconsistent behaviour between operating systems when solving the challenge below.
+ `grep -E` on macOS acts like `grep -P` on other platforms. 
+ On Windows and Linux, `grep -E` is halfway between `grep -P` and `grep`: it only does what `grep` can do, but uses Perl-compatible syntax to do it.
+
+:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ## Searching with regular expressions
