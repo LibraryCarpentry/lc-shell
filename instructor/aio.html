@@ -722,7 +722,7 @@ option, you’ll find it listed as <code>-h</code> in the manual, not as
   Answer
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -799,7 +799,7 @@ last modification date. Try ordering files in different directories.</p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <p>To order files in a directory by their filesize, in combination with
 the <code>-l</code> argument:</p>
@@ -1176,7 +1176,7 @@ you make a copy of the file <code>gulliver.txt</code> called
   Answer
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1207,7 +1207,7 @@ directory to <code>backup</code>.</p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1240,7 +1240,7 @@ folder.</p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1280,7 +1280,7 @@ commands support them. We’ll get back to that.)</p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <ul>
 <li>The <code>?</code> wildcard matches the regular expression
@@ -1356,7 +1356,7 @@ in the shell environment?</strong></p>
   Answer
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <p>You may think there is not much value in such a basic command like
 <code>echo</code>. However, from the moment you start writing automated
@@ -1657,7 +1657,7 @@ items</li>
 </div>
 </section></section><section id="aio-05-counting-mining"><p>Content from <a href="05-counting-mining.html">Counting and mining with the shell</a></p>
 <hr>
-<p>Last updated on 2024-05-07 |
+<p>Last updated on 2025-02-12 |
 
         <a href="https://github.com/librarycarpentry/lc-shell/edit/main/episodes/05-counting-mining.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 90 minutes</p>
@@ -2630,6 +2630,23 @@ your results to a file <code>results/hero-i.tsv</code>.</p>
 </div>
 </div>
 </div>
+<div id="accordionInstructor1" class="accordion instructor-note accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button instructor-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseInstructor1" aria-expanded="false" aria-controls="collapseInstructor1">
+  <h3 class="accordion-header" id="headingInstructor1">  <div class="note-square"><i aria-hidden="true" class="callout-icon" data-feather="edit-2"></i></div> Watch out for different behaviour of the -E option across systems </h3>
+</button>
+<div id="collapseInstructor1" class="accordion-collapse collapse" data-bs-parent="#accordionInstructor1" aria-labelledby="headingInstructor1">
+<div class="accordion-body">
+<p>Learners may encounter some inconsistent behaviour between operating
+systems when solving the challenge below. <code>grep -E</code> on macOS
+acts like <code>grep -P</code> on other platforms. On Windows and Linux,
+<code>grep -E</code> is halfway between <code>grep -P</code> and
+<code>grep</code>: it only does what <code>grep</code> can do, but uses
+Perl-compatible syntax to do it.</p>
+</div>
+</div>
+</div>
+</div>
 <div id="searching-with-regular-expressions" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
@@ -3538,8 +3555,8 @@ Commons Attribution-NonCommercial-ShareAlike 3.0 Unported</a>.</li>
   "url": "https://librarycarpentry.github.io/lc-shell/instructor/aio.html",
   "identifier": "https://librarycarpentry.github.io/lc-shell/instructor/aio.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2025-02-11",
-  "datePublished": "2025-02-11"
+  "dateModified": "2025-02-12",
+  "datePublished": "2025-02-12"
 }
 
   </script><script>

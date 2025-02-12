@@ -680,7 +680,18 @@ list. Desktop is often found inside the OneDrive directory.</li>
 <hr class="half-width"></section><section id="03-working-with-files-and-folders"><h2 class="section-heading"><a href="03-working-with-files-and-folders.html">Working with files and directories</a></h2>
 <hr class="half-width"></section><section id="04-loops"><h2 class="section-heading"><a href="04-loops.html">Automating the tedious with loops</a></h2>
 <hr class="half-width"></section><section id="05-counting-mining"><h2 class="section-heading"><a href="05-counting-mining.html">Counting and mining with the shell</a></h2>
-<hr class="half-width"></section><section id="06-free-text"><h2 class="section-heading"><a href="06-free-text.html">Working with free text</a></h2>
+<hr class="half-width">
+<h3 id="05-counting-mining-headingInstructor1">
+<a href="05-counting-mining.html#headingInstructor1">Watch out for different behaviour of the -E option across systems</a><a class="anchor" aria-label="anchor" href="#05-counting-mining-headingInstructor1"></a>
+</h3>
+<p>Learners may encounter some inconsistent behaviour between operating
+systems when solving the challenge below. <code>grep -E</code> on macOS
+acts like <code>grep -P</code> on other platforms. On Windows and Linux,
+<code>grep -E</code> is halfway between <code>grep -P</code> and
+<code>grep</code>: it only does what <code>grep</code> can do, but uses
+Perl-compatible syntax to do it.</p>
+<hr>
+<br></section><section id="06-free-text"><h2 class="section-heading"><a href="06-free-text.html">Working with free text</a></h2>
 <hr class="half-width"></section></section>
 </div>
     </main>
@@ -729,8 +740,8 @@ list. Desktop is often found inside the OneDrive directory.</li>
   "url": "https://librarycarpentry.github.io/lc-shell/instructor/instructor-notes.html",
   "identifier": "https://librarycarpentry.github.io/lc-shell/instructor/instructor-notes.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2025-02-11",
-  "datePublished": "2025-02-11"
+  "dateModified": "2025-02-12",
+  "datePublished": "2025-02-12"
 }
 
   </script><script>
