@@ -24,92 +24,98 @@ title: Reference
 
 **`cd`** change directory
 
-`cd pathname` - takes you to the directory specified by `pathname`
+- `cd pathname` - take you to the directory specified by `pathname`
 
-`cd ~` -  takes you to your home directory
+- `cd ~` -  take you to your home directory
 
-`cd ..` - takes you up one directory
+- `cd ..` - take you up one directory
 
 ***
 
 ### Shell: Interacting with Files
 
-**`mkdir`** make a directory
+**`mkdir`** - make a directory.
 
-**`cat`** print to shell or send file or files to output
+**`cat`** - print to shell or send file or files to output.`
 
-**`head`** output first 10 lines of a file or files
+**`head`** - output first 10 lines of a file or files
 
-**`tail`** output last 10 lines of a file or files
+**`tail`** - output last 10 lines of a file or files
 
-**`mv`** rename or move a file or files. Syntax for renaming a file: `mv FILENAME NEWFILENAME`
+**`mv`** - rename or move a file or files. Syntax for renaming a file: `mv FILENAME NEWFILENAME`
 
-**`cp`** make a backup copy of a file or files. Syntax: `cp FILENAME NEWFILENAME`
+**`cp`** - make a backup copy of a file or files. Syntax: `cp FILENAME NEWFILENAME`
 
-**`>`** redirect output. Syntax with `cat`: `cat FILENAME1 FILENAME2 > NEWFILENAME`
+**`>`** - redirect output. Syntax with `cat`: `cat FILENAME1 FILENAME2 > NEWFILENAME`
 
-**`>>`** redirect output by appending to the filename specified. Syntax with `cat`: `cat FILENAME1 FILENAME2 >> NEWFILENAME`
+**`>>`** - redirect output by appending to the filename specified. Syntax with `cat`: `cat FILENAME1 FILENAME2 >> NEWFILENAME`
 
-**`rm`** remove a file or files. NB: *USE WITH EXTREME CAUTION!!!*
+**`rm`** - remove a file or files. NB: *USE WITH EXTREME CAUTION!!!*
 
-**`rmdir -r`** will delete a directory, even if it is not empty.
+- `rm -ri` - delete a directory, even if it is not empty, but will ask you to confirm each deletion
 
-**`rm -ri`** will delete a directory, even if it is not empty, but will ask you to confirm each deletion.
+**`rmdir -r`** - delete a directory, even if it is not empty
 
-**`touch`** will update timestamp information on files, or create a file or files if they don't exist.
+**`touch`** - update timestamp information on files, or create a file or files if they don't exist
 
 ***
 
 ### Shell: Wildcards
 
-**`?`** a placeholder for one character or number
+**`?`** - a placeholder for one character or number
 
-**`*`** a placeholder for zero or more characters or numbers
+**`*`** - a placeholder for zero or more characters or numbers
 
-**`[]`** defines a class of characters
+**`[]`** - defines a class of characters
 
 *Examples*
 
-- `foobar?`: matches 7-character strings starting with `foobar` and ending with one character or number
-- `foobar*`: matches strings that start with `foobar` and end with zero or more other characters or numbers
-- `foobar*txt`: matches strings that start with `foobar` and end with `txt`
-- `[1-9]foobar?`: matches 8-character strings that start that start with a number, have `foobar` after the number, and end with any character or number.
+- `foobar?` - matches 7-character strings starting with `foobar` and ending with one character or number
+- `foobar*` - matches strings that start with `foobar` and end with zero or more other characters or numbers
+- `foobar*txt` - matches strings that start with `foobar` and end with `txt`
+- `[1-9]foobar?` - matches 8-character strings that start that start with a number, have `foobar` after the number, and end with any character or number
 
 ***
 
 ### Shell: Counting and Mining
 
-**`wc`** word count
+**`wc`** - word count
 
-- `-w`: count words
-- `-l`: count lines
-- `-c`: count characters
+- `wc -w` - count words
+- `wc -l` - count lines
+- `wc -c` - count characters
 
-**sort** sort input
+**sort** - sort input (alphabetic sorting)
 
-**`grep`** global regular expression print
+- `sort -n` - sort input numerically
 
-- `-c`: displays counts of matches for each file
-- `-i`: match with case insensitivity
-- `-w`: match whole words
-- `-v`: exclude match
-- `--file=FILENAME.txt`: use the file `FILENAME.txt` as the source of strings used in query
-- `|`: (vertical bar character) send output from one command into another command
+**`grep`** - global regular expression print
+
+- `grep -c` - displays counts of matches for each file
+- `grep -i` - match with case insensitivity
+- `grep -w` - match whole words
+- `grep -v` - exclude match
+- `grep --file=FILENAME.txt` - use the file `FILENAME.txt` as the source of strings used in query
+
+**`|`** - (vertical bar character) send output from one command into another command. 
+Example: `wc -l *.txt | sort -n`
 
 ***
 
 ### Shell: Working with Free Text
 
-**`sed`** is used to modify files, use `-e` flag to run multiple commands
+**`sed`** - is used to modify files
+- `sed -e` - run multiple commands
 
-**`tr`** translates or deletes characters in a file
+**`tr`** - translates or deletes characters in a file. Some allowed sequences:
 
-- `[:punct:]`: punctuation characters
-- `[:upper:]`: upper-case characters
-- `[:lower:]`: lower-case alphabetic characters
+- `[:punct:]` - punctuation characters
+- `[:upper:]` - upper-case characters
+- `[:lower:]` - lower-case alphabetic characters
 
-**`'''\n`** translates every blank space into `\n`, then renders on a new line
+Example: `tr '''\n` - translate every blank space into `\n`, then renders on a new line
 
-**`uniq`** reports or filters repeated lines in a file, use with `-c` to do a word count of the duplicates
+**`uniq`** - report or filters repeated lines in a file
+- `uniq -c`- do a word count of the duplicates
 
 
