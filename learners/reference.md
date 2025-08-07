@@ -22,7 +22,7 @@ title: Reference
 - `ls -a` - list all files, including hidden files
 - `ls *.txt` - list all files that end with `.txt`
 
-**`cd`** change directory
+**`cd`** - change directory
 
 - `cd pathname` - take you to the directory specified by `pathname`
 
