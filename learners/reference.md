@@ -85,7 +85,7 @@ title: Reference
 - `wc -l` - count lines
 - `wc -c` - count characters
 
-**sort** - sort input (alphabetic sorting)
+**`sort`** - sort input (alphabetic sorting)
 
 - `sort -n` - sort input numerically
 
