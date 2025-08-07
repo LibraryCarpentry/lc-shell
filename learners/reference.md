@@ -12,7 +12,7 @@ title: Reference
 
 **`man`** - display the user manual
 
-**`history`** - displays the history list with line numbers, use `n` to limit the list
+**`history`** - display the history list with line numbers, use `n` to limit the list
 
 **`ls`** - list contents of a directory
 
@@ -66,14 +66,14 @@ title: Reference
 
 **`*`** - a placeholder for zero or more characters or numbers
 
-**`[]`** - defines a class of characters
+**`[]`** - define a class of characters
 
 *Examples*
 
-- `foobar?` - matches 7-character strings starting with `foobar` and ending with one character or number
-- `foobar*` - matches strings that start with `foobar` and end with zero or more other characters or numbers
-- `foobar*txt` - matches strings that start with `foobar` and end with `txt`
-- `[1-9]foobar?` - matches 8-character strings that start that start with a number, have `foobar` after the number, and end with any character or number
+- `foobar?` - match 7-character strings starting with `foobar` and ending with one character or number
+- `foobar*` - match strings that start with `foobar` and end with zero or more other characters or numbers
+- `foobar*txt` - match strings that start with `foobar` and end with `txt`
+- `[1-9]foobar?` - match 8-character strings that start that start with a number, have `foobar` after the number, and end with any character or number
 
 ***
 
@@ -91,7 +91,7 @@ title: Reference
 
 **`grep`** - global regular expression print
 
-- `grep -c` - displays counts of matches for each file
+- `grep -c` - display counts of matches for each file
 - `grep -i` - match with case insensitivity
 - `grep -w` - match whole words
 - `grep -v` - exclude match
