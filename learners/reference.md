@@ -34,7 +34,7 @@ title: Reference
 
 ### Shell: Interacting with Files
 
-**`mkdir`** - make a directory.
+**`mkdir`** - make a directory
 
 **`cat`** - print to shell or send file or files to output
 
