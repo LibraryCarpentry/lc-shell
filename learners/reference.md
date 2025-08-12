@@ -36,7 +36,7 @@ title: Reference
 
 **`mkdir`** - make a directory.
 
-**`cat`** - print to shell or send file or files to output.`
+**`cat`** - print to shell or send file or files to output
 
 **`head`** - output first 10 lines of a file or files
 
