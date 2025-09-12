@@ -25,9 +25,7 @@ title: Reference
 **`cd`** - change directory
 
 - `cd pathname` - take you to the directory specified by `pathname`
-
 - `cd ~` -  take you to your home directory
-
 - `cd ..` - take you up one directory
 
 ***
