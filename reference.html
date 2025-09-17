@@ -305,7 +305,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Reference</h1>
-        <p>Last updated on 2023-09-08 |
+        <p>Last updated on 2025-09-17 |
 
         <a href="https://github.com/librarycarpentry/lc-shell/edit/main/learners/reference.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -321,8 +321,8 @@
 <h3 id="shell-basics">Shell: Basics<a class="anchor" aria-label="anchor" href="#shell-basics"></a></h3>
 <p><strong><code>pwd</code></strong> - print working directory</p>
 <p><strong><code>man</code></strong> - display the user manual</p>
-<p><strong><code>history</code></strong> - displays the history list
-with line numbers, use <code>n</code> to limit the list</p>
+<p><strong><code>history</code></strong> - display the history list with
+line numbers, use <code>n</code> to limit the list</p>
 <p><strong><code>ls</code></strong> - list contents of a directory</p>
 <ul><li>
 <code>ls -l</code> - list file information</li>
@@ -337,108 +337,115 @@ have a trailing <code>/</code>)</li>
 <code>ls *.txt</code> - list all files that end with
 <code>.txt</code>
 </li>
-</ul><p><strong><code>cd</code></strong> change directory</p>
-<p><code>cd pathname</code> - takes you to the directory specified by
-<code>pathname</code></p>
-<p><code>cd ~</code> - takes you to your home directory</p>
-<p><code>cd ..</code> - takes you up one directory</p>
-<hr></div>
+</ul><p><strong><code>cd</code></strong> - change directory</p>
+<ul><li>
+<code>cd pathname</code> - take you to the directory specified by
+<code>pathname</code>
+</li>
+<li>
+<code>cd ~</code> - take you to your home directory</li>
+<li>
+<code>cd ..</code> - take you up one directory</li>
+</ul><hr></div>
 <div class="section level3">
 <h3 id="shell-interacting-with-files">Shell: Interacting with Files<a class="anchor" aria-label="anchor" href="#shell-interacting-with-files"></a></h3>
-<p><strong><code>mkdir</code></strong> make a directory</p>
-<p><strong><code>cat</code></strong> print to shell or send file or
+<p><strong><code>mkdir</code></strong> - make a directory</p>
+<p><strong><code>cat</code></strong> - print to shell or send file or
 files to output</p>
-<p><strong><code>head</code></strong> output first 10 lines of a file or
-files</p>
-<p><strong><code>tail</code></strong> output last 10 lines of a file or
-files</p>
-<p><strong><code>mv</code></strong> rename or move a file or files.
+<p><strong><code>head</code></strong> - output first 10 lines of a file
+or files</p>
+<p><strong><code>tail</code></strong> - output last 10 lines of a file
+or files</p>
+<p><strong><code>mv</code></strong> - rename or move a file or files.
 Syntax for renaming a file: <code>mv FILENAME NEWFILENAME</code></p>
-<p><strong><code>cp</code></strong> make a backup copy of a file or
+<p><strong><code>cp</code></strong> - make a backup copy of a file or
 files. Syntax: <code>cp FILENAME NEWFILENAME</code></p>
-<p><strong><code>&gt;</code></strong> redirect output. Syntax with
+<p><strong><code>&gt;</code></strong> - redirect output. Syntax with
 <code>cat</code>:
 <code>cat FILENAME1 FILENAME2 &gt; NEWFILENAME</code></p>
-<p><strong><code>&gt;&gt;</code></strong> redirect output by appending
+<p><strong><code>&gt;&gt;</code></strong> - redirect output by appending
 to the filename specified. Syntax with <code>cat</code>:
 <code>cat FILENAME1 FILENAME2 &gt;&gt; NEWFILENAME</code></p>
-<p><strong><code>rm</code></strong> remove a file or files. NB: <em>USE
-WITH EXTREME CAUTION!!!</em></p>
-<p><strong><code>rmdir -r</code></strong> will delete a directory, even
-if it is not empty.</p>
-<p><strong><code>rm -ri</code></strong> will delete a directory, even if
-it is not empty, but will ask you to confirm each deletion.</p>
-<p><strong><code>touch</code></strong> will update timestamp information
-on files, or create a file or files if they don’t exist.</p>
+<p><strong><code>rm</code></strong> - remove a file or files. NB:
+<em>USE WITH EXTREME CAUTION!!!</em></p>
+<ul><li>
+<code>rm -ri</code> - delete a directory, even if it is not empty,
+but will ask you to confirm each deletion</li>
+</ul><p><strong><code>rmdir -r</code></strong> - delete a directory, even if
+it is not empty</p>
+<p><strong><code>touch</code></strong> - update timestamp information on
+files, or create a file or files if they don’t exist</p>
 <hr></div>
 <div class="section level3">
 <h3 id="shell-wildcards">Shell: Wildcards<a class="anchor" aria-label="anchor" href="#shell-wildcards"></a></h3>
-<p><strong><code>?</code></strong> a placeholder for one character or
+<p><strong><code>?</code></strong> - a placeholder for one character or
 number</p>
-<p><strong><code>*</code></strong> a placeholder for zero or more
+<p><strong><code>*</code></strong> - a placeholder for zero or more
 characters or numbers</p>
-<p><strong><code>[]</code></strong> defines a class of characters</p>
+<p><strong><code>[]</code></strong> - define a class of characters</p>
 <p><em>Examples</em></p>
 <ul><li>
-<code>foobar?</code>: matches 7-character strings starting with
+<code>foobar?</code> - match 7-character strings starting with
 <code>foobar</code> and ending with one character or number</li>
 <li>
-<code>foobar*</code>: matches strings that start with
+<code>foobar*</code> - match strings that start with
 <code>foobar</code> and end with zero or more other characters or
 numbers</li>
 <li>
-<code>foobar*txt</code>: matches strings that start with
+<code>foobar*txt</code> - match strings that start with
 <code>foobar</code> and end with <code>txt</code>
 </li>
 <li>
-<code>[1-9]foobar?</code>: matches 8-character strings that start
+<code>[1-9]foobar?</code> - match 8-character strings that start
 that start with a number, have <code>foobar</code> after the number, and
-end with any character or number.</li>
+end with any character or number</li>
 </ul><hr></div>
 <div class="section level3">
 <h3 id="shell-counting-and-mining">Shell: Counting and Mining<a class="anchor" aria-label="anchor" href="#shell-counting-and-mining"></a></h3>
-<p><strong><code>wc</code></strong> word count</p>
+<p><strong><code>wc</code></strong> - word count</p>
 <ul><li>
-<code>-w</code>: count words</li>
+<code>wc -w</code> - count words</li>
 <li>
-<code>-l</code>: count lines</li>
+<code>wc -l</code> - count lines</li>
 <li>
-<code>-c</code>: count characters</li>
-</ul><p><strong>sort</strong> sort input</p>
-<p><strong><code>grep</code></strong> global regular expression
+<code>wc -c</code> - count characters</li>
+</ul><p><strong><code>sort</code></strong> - sort input (alphabetic
+sorting)</p>
+<ul><li>
+<code>sort -n</code> - sort input numerically</li>
+</ul><p><strong><code>grep</code></strong> - global regular expression
 print</p>
 <ul><li>
-<code>-c</code>: displays counts of matches for each file</li>
+<code>grep -c</code> - display counts of matches for each file</li>
 <li>
-<code>-i</code>: match with case insensitivity</li>
+<code>grep -i</code> - match with case insensitivity</li>
 <li>
-<code>-w</code>: match whole words</li>
+<code>grep -w</code> - match whole words</li>
 <li>
-<code>-v</code>: exclude match</li>
+<code>grep -v</code> - exclude match</li>
 <li>
-<code>--file=FILENAME.txt</code>: use the file
+<code>grep --file=FILENAME.txt</code> - use the file
 <code>FILENAME.txt</code> as the source of strings used in query</li>
-<li>
-<code>|</code>: (vertical bar character) send output from one
-command into another command</li>
-</ul><hr></div>
+</ul><p><strong><code>|</code></strong> - (vertical bar character) send
+output from one command into another command. Example:
+<code>wc -l *.txt | sort -n</code></p>
+<hr></div>
 <div class="section level3">
 <h3 id="shell-working-with-free-text">Shell: Working with Free Text<a class="anchor" aria-label="anchor" href="#shell-working-with-free-text"></a></h3>
-<p><strong><code>sed</code></strong> is used to modify files, use
-<code>-e</code> flag to run multiple commands</p>
-<p><strong><code>tr</code></strong> translates or deletes characters in
-a file</p>
+<p><strong><code>sed</code></strong> - is used to modify files -
+<code>sed -e</code> - run multiple commands</p>
+<p><strong><code>tr</code></strong> - translates or deletes characters
+in a file. Some allowed sequences:</p>
 <ul><li>
-<code>[:punct:]</code>: punctuation characters</li>
+<code>[:punct:]</code> - punctuation characters</li>
 <li>
-<code>[:upper:]</code>: upper-case characters</li>
+<code>[:upper:]</code> - upper-case characters</li>
 <li>
-<code>[:lower:]</code>: lower-case alphabetic characters</li>
-</ul><p><strong><code>'''\n</code></strong> translates every blank space into
+<code>[:lower:]</code> - lower-case alphabetic characters</li>
+</ul><p>Example: <code>tr '''\n</code> - translate every blank space into
 <code>\n</code>, then renders on a new line</p>
-<p><strong><code>uniq</code></strong> reports or filters repeated lines
-in a file, use with <code>-c</code> to do a word count of the
-duplicates</p>
+<p><strong><code>uniq</code></strong> - report or filters repeated lines
+in a file - <code>uniq -c</code>- do a word count of the duplicates</p>
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -498,8 +505,8 @@ duplicates</p>
   "url": "https://librarycarpentry.github.io/lc-shell/reference.html",
   "identifier": "https://librarycarpentry.github.io/lc-shell/reference.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2023-09-08",
-  "datePublished": "2025-09-16"
+  "dateModified": "2025-09-17",
+  "datePublished": "2025-09-17"
 }
 
   </script><script>

@@ -12,6 +12,6 @@
 "episodes/06-free-text.md" "0189b30bfbfaaa9ab8e754834500b2f0" "site/built/06-free-text.md" "2024-06-05"
 "instructors/instructor-notes.md" "c317e03b34390725b50f49df1bf943b1" "site/built/instructor-notes.md" "2024-02-23"
 "learners/discuss.md" "498cf8840b7e5bb0897f7c15af83c052" "site/built/discuss.md" "2023-08-29"
-"learners/reference.md" "d4c4195030dad8f532e210812c9f90f2" "site/built/reference.md" "2023-09-08"
+"learners/reference.md" "c01796436106c23f7aab6c64254bc0a1" "site/built/reference.md" "2025-09-17"
 "learners/setup.md" "4a305d20703b644b8f6d8b5a8417cffd" "site/built/setup.md" "2024-02-23"
 "profiles/learner-profiles.md" "60b93493cf1da06dfd63255d73854461" "site/built/learner-profiles.md" "2023-05-08"
