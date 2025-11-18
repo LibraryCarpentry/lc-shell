@@ -316,7 +316,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Automating the tedious with loops</h1>
-        <p>Last updated on 2024-02-23 |
+        <p>Last updated on 2025-11-18 |
 
         <a href="https://github.com/librarycarpentry/lc-shell/edit/main/episodes/04-loops.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -508,7 +508,7 @@ line, and last line of each text file in the current directory.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -552,12 +552,13 @@ the extension <strong>.sh</strong>
 can run the Bash script by typing the command bash and the file name via
 the command line (e.g. <code>bash my_first_bash_script.sh</code>).</p>
 <pre><code>#!/bin/bash
-# This script loops through .txt files, returns the file name, first line, and last line of the file
+# This script loops through .txt files, returns the file name,
+# first line, and last line of the file
 for file in *.txt
 do
-	echo $file
-	head -n 1 $file
-	tail -n 1 $file
+	echo "$file"
+	head -n 1 "$file"
+	tail -n 1 "$file"
 done</code></pre>
 <p>Download/copy <a href="../files/my_first_bash_script.sh">my_first_bash_script.sh</a>. For
 more on Bash scripts, see <a href="https://ryanstutorials.net/bash-scripting-tutorial/" class="external-link">Bash
@@ -637,7 +638,7 @@ items</li>
   "url": "https://librarycarpentry.github.io/lc-shell/instructor/04-loops.html",
   "identifier": "https://librarycarpentry.github.io/lc-shell/instructor/04-loops.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-02-23",
+  "dateModified": "2025-11-18",
   "datePublished": "2025-11-18"
 }
 
