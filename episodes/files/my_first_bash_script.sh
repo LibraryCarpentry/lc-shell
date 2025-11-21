@@ -1,6 +1,6 @@
 #!/bin/bash
-# This script loops through .txt files, returns the
-# file name, first line, and last line of the file
+# This script loops through .txt files, returns the file name, 
+# first line, and last line of the file
 
 for filename in *.txt
 do
