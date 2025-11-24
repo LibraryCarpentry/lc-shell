@@ -101,9 +101,9 @@ We have called the variable in this loop `filename` in order to make its purpose
 Complete the blanks in the for loop below to print the name, first line, and last line of each text file in the current directory.
 
 ```bash
-___ file in *.txt
+___ filename in *.txt
 __
-	echo "_file"
+	echo "_filename"
 	head -n 1 _______
 	____ __ _ _______
 ____
@@ -114,11 +114,11 @@ ____
 ## Solution
 
 ```bash
-for file in *.txt
+for filename in *.txt
 do
-	echo "$file"
-	head -n 1 "$file"
-	tail -n 1 "$file"
+	echo "$filename"
+	head -n 1 "$filename"
+	tail -n 1 "$filename"
 done
 ```
 
@@ -141,11 +141,11 @@ Alternatively, rather than running the loop above on the command line, you can s
 # This script loops through .txt files, returns the file name,
 # first line, and last line of the file
 
-for file in *.txt
+for filename in *.txt
 do
-	echo "$file"
-	head -n 1 "$file"
-	tail -n 1 "$file"
+	echo "$filename"
+	head -n 1 "$filename"
+	tail -n 1 "$filename"
 done
 ```
 
