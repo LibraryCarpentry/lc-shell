@@ -140,6 +140,7 @@ Alternatively, rather than running the loop above on the command line, you can s
 #!/bin/bash
 # This script loops through .txt files, returns the file name,
 # first line, and last line of the file
+
 for filename in *.txt
 do
 	echo "$filename"
