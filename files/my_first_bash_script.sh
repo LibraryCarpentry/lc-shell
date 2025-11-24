@@ -1,10 +1,10 @@
 #!/bin/bash
-# This script loops through .txt files, returns the
-# file name, first line, and last line of the file
+# This script loops through .txt files, returns the file name, 
+# first line, and last line of the file
 
-for file in *.txt
+for filename in *.txt
 do
- echo "$file"
- head -n 1 "$file"
- tail -n 1 "$file"
+ echo "$filename"
+ head -n 1 "$filename"
+ tail -n 1 "$filename"
 done
