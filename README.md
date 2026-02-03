@@ -3,6 +3,7 @@
 ## Maintainers for Library Carpentry: The Unix Shell
 
 - [Jamie Jamison](https://github.com/jmjamison)
+- [Jesse Johnston](https://github.com/morskyjezek)
 - [Kaitlin Newson](https://github.com/kaitlinnewson)
 
 ### Past Maintainers
