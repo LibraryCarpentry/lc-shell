@@ -132,6 +132,19 @@ Whatever you use, please *test it yourself* on a Windows machine *before* your w
   ```
   
   ... will always put someone on their desktop. Have them create the example directory for the shell exercises there so that they can find it easily and watch it evolve.
+  
+#### Windows OneDrive Notes
+
+Windows OneDrive might be called 'OneDrive' or have be appended by a local name such as "OneDrive-campus".  
+
+Examples using Git Bash
+
+To check: 
+```base
+$ ls -la OneDrive
+
+$ ls -la OneDrive*
+```
 
   - On Windows, Microsoft OneDrive may appear in the home directory list. Desktop is often found inside the OneDrive directory.
 

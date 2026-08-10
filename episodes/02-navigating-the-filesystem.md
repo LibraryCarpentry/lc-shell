@@ -21,6 +21,11 @@ exercises: 10
 
 We will begin with the basics of navigating the Unix shell.
 
+:::: instructor
+
+For notes about OneDrive, see instructor notes.
+
+::::
 Let's start by opening the shell. This likely results in seeing a black or white window with a cursor flashing next to a dollar sign. This is our command line, and the `$` is the command **prompt** to show that the system is ready for our input. The appearance of the prompt will vary from system to system, depending on how the set up has been configured. Other common prompts include the `%` or `#` signs, but we will use `$` in this lesson to represent the prompt generally.
 
 When working in the shell, you are always *somewhere* in the computer's file system, in some folder (directory). We will therefore start by finding out where we are by using the `pwd` command, which you can use whenever you are unsure about where you are. It stands for "print working directory" and the result of the command is printed to your standard output, which is the screen.
@@ -237,5 +242,4 @@ ls -lt
 - Knowing where you are in your directory structure is key to working with the shell
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
 
