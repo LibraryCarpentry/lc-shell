@@ -249,10 +249,14 @@ $ wc -l *.tsv | sort -n | head -n 1 | cat
 
 ## Count the number of words, sort and print (faded example)
 
-To count the total lines in every `tsv` file, sort the results and then print the first line of the file we use the following:
+The following commands count the total lines in every `tsv` file, sort the results from smallest to largest (based on the first value in the line), then print the first line of the results to the display, thus showing the `tsv` file with the fewest lines:
 
 ```bash
-wc -l *.tsv | sort -n | head -n 1
+$ wc -l *.tsv | sort -n | head -n 1
+```
+
+```output
+    5375 2014-02-02_JA-britain.tsv
 ```
 
 Now let's change the scenario. We want to know the 10 files that contain *the most* words. Check the manual for the `wc` command (either using `man wc` or `wc --help`) to see if you can find out what flag to use to print out the number of words (but not the number of lines and bytes). Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
