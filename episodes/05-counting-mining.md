@@ -269,7 +269,7 @@ wc __ *.tsv | sort __ | ____
 
 ## Solution
 
-Here we use the `wc` command with the `-w` (word) flag on all `tsv` files, `sort` them and then output the last 11 lines (10 files and the total) using the `tail` command.
+Here we use the `wc` command with the `-w` (word) flag on all `tsv` files, `sort` them (in ascending order), and then output the last 11 lines (10 files and the total) using the `tail` command with the `-n 11` flag.
 
 ```bash
 wc -w *.tsv | sort -n | tail -n 11
