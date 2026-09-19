@@ -249,7 +249,7 @@ $ wc -l *.tsv | sort -n | head -n 1 | cat
 
 ## Count the number of words, sort and print (faded example)
 
-The following commands count the total lines in every `tsv` file, sort the results from smallest to largest (based on the first value in the line), then print the first line of the results to the display, thus showing the `tsv` file with the fewest lines:
+As demonstrated above, the following commands pipe data from one to antoher to count the total lines in every `tsv` file, sort the results from smallest to largest (based on the first value in the line), then print the first line of the results to the display, thus showing the `tsv` file with the fewest lines:
 
 ```bash
 $ wc -l *.tsv | sort -n | head -n 1
