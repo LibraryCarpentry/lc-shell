@@ -259,7 +259,7 @@ $ wc -l *.tsv | sort -n | head -n 1
     5375 2014-02-02_JA-britain.tsv
 ```
 
-Now let's change the scenario. We want to know the 10 files that contain *the most* words. Check the manual for the `wc` command (either using `man wc` or `wc --help`) to see if you can find out what flag to use to print out the number of words (but not the number of lines and bytes). Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
+Now, let's change the scenario: instead of the number of lines in the files, which files contain the most *words*? Fill in the blanks below with the appropriate flags and commands so that the command pipeline will return the 10 files ordered from the lowest to highest word count. Check the manual for the `wc` command (either using `man wc` or `wc --help`) to see if you can find out what flag to use to print out the number of words (but not the number of lines and bytes). Fill in the blanks below to count the words for each file, put them into order, and then make an output of the 10 files with the most words (Hint: The sort command sorts in ascending order by default).
 
 ```bash
 wc __ *.tsv | sort __ | ____
