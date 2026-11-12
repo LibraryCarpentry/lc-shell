@@ -338,7 +338,7 @@
       </div>
     </nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Working with free text</h1>
-        <p>Last updated on 2024-06-05 |
+        <p>Last updated on 2026-11-12 |
 
         <a href="https://github.com/librarycarpentry/lc-shell/edit/main/episodes/06-free-text.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -400,8 +400,8 @@ of hand transcribed text: <em>Gulliver’s Travels</em> (1735)</li>
 <a href="#option-2-optical-character-recognised-text">Option 2</a>:
 An example of text captured by an optical character recognition process:
 <em>General Report on the Physiography of Maryland. A dissertation, etc.
-(Reprinted from Report of Maryland State Weather Service.) [With maps
-and illustrations.]</em> 1898 (Retrieved from <a href="https://doi.org/10.21250/db12" class="external-link">doi.org/10.21250/db12</a>)</li>
+(Reprinted from Report of Maryland State Weather Service.) <span class="math display">\[With maps and illustrations.\]</span></em> 1898
+(Retrieved from <a href="https://doi.org/10.21250/db12" class="external-link">doi.org/10.21250/db12</a>)</li>
 <li>
 <a href="#option-3-a-webpage">Option 3</a>: An example of a webpage:
 Piper’s World (a GeoCities page from 1999 saved at <a href="https://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html" class="external-link">archive.org</a>)</li>
@@ -713,8 +713,7 @@ powerful command line.</p>
      16 &lt;meta name="keywords"
      17 content="shih tzu, dog, pet, quotations, award, diary, advice, book, rev
      17 iew, piper"&gt;
-     18 &lt;style TYPE="text/css" TITLE="Basic Fonts"&gt;
-</code></pre>
+     18 &lt;style TYPE="text/css" TITLE="Basic Fonts"&gt;</code></pre>
 </div>
 <p>We’re going to start by using the <code>sed</code> command. The
 command allows you to edit files directly.</p>
@@ -813,19 +812,20 @@ Stuff</a>.</li>
 Everybody (Python)</a> is available and lasts 10 weeks, if you have 2-4
 hours to spare per week. Python is popular in research programming as it
 is readable, relatively simple, and very powerful.</li>
-<li>Bill Turkel and the Digital History community more broadly. The
-second lesson you did today was based on a lesson Bill has on <a href="https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/" class="external-link">his
-website</a> and Bill is also a general editor of the <a href="https://programminghistorian.org/project-team" class="external-link">Programming
-Historian</a>. The Programming Historian is an open, collaborative book
-aimed at providing programming lessons to historians. Although the
-lessons are hooked around problems historians have, their lessons -
-which cover various programming languages - have a wide applicability -
-indeed today’s course is based on two lessons I wrote with Ian Milligan,
-an historian at Waterloo, Canada - for ProgHist. Bill also has a
-wonderful tutorial on <a href="https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/" class="external-link">‘Named
-Entity Recognition with Command Line Tools in Linux’</a> which I
-thoroughly recommend if you want to automatically find, markup, and
-count names, places, and organisations in text files…</li>
+<li>The digital history community more broadly. The second lesson you
+did today was based on a lesson Turkel has on <a href="https://web.archive.org/web/20260123211652/https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/" class="external-link">his
+website (link to archived version)</a>. Turkel has also been an editor
+with the <a href="https://programminghistorian.org/project-team" class="external-link">Programming
+Historian Project</a> (aka PH), an open, collaborative initiative aimed
+at providing programming lessons to historians. Although the lessons are
+centered on historians’ work and methods, their lessons - which cover
+various programming languages - have a wide applicability. The examples
+above are based on two lessons written by James Baker and Ian Milligan,
+an historian at Waterloo, Canada, for PH. Turkel also has a tutorial on
+<a href="https://web.archive.org/web/20250923020615/https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/" class="external-link">‘Named
+Entity Recognition with Command Line Tools in Linux’ (link to archived
+version)</a> that describes was to automatically find, markup, and count
+names, places, and organisations in text files.</li>
 </ul></section><section><h2 class="section-heading" id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a></h2>
 <hr class="half-width"><p>In this session you have learned to navigate the Unix shell, to
 undertake some basic file counting, concatenation and deletion, to query
@@ -855,16 +855,16 @@ with Unix’, <em>The Programming Historian</em> (<a href="https://programminghi
 <li>Ian Milligan and James Baker, ‘Introduction to the Bash Command
 Line’, <em>The Programming Historian</em> (<a href="https://programminghistorian.org/lessons/intro-to-bash" class="external-link">2014</a>).</li>
 <li>William J. Turkel, ‘Named Entity Recognition with Command Line Tools
-in Linux’ (<a href="https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/" class="external-link">30
-June 2013</a>). The section ‘NER Demo’ is adapted from this and shared
-under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" class="external-link">Creative
-Commons Attribution-NonCommercial-ShareAlike 3.0 Unported</a>.</li>
+in Linux’ (<a href="https://web.archive.org/web/20250923020615/https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/" class="external-link">30
+June 2013, link to archived version</a>). The section ‘NER Demo’ is
+adapted from this and shared under a Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported license.</li>
 <li>William J. Turkel, ‘Basic Text Analysis with Command Line Tools in
-Linux’ (<a href="https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/" class="external-link">15
-June 2013</a>). The sections ‘Grabbing a text, cleaning it up’ and
-‘Pulling a text apart, counting word frequencies’ are adapted from this
-and shared under a <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" class="external-link">Creative
-Commons Attribution-NonCommercial-ShareAlike 3.0 Unported</a>.</li>
+Linux’ (<a href="https://web.archive.org/web/20260123211652/https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/" class="external-link">15
+June 2013, link to archived version</a>). The sections ‘Grabbing a text,
+cleaning it up’ and ‘Pulling a text apart, counting word frequencies’
+are adapted from this and shared under a Creative Commons
+Attribution-NonCommercial-ShareAlike 3.0 Unported license.</li>
 </ul><div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -936,8 +936,8 @@ Commons Attribution-NonCommercial-ShareAlike 3.0 Unported</a>.</li>
   "url": "https://librarycarpentry.github.io/lc-shell/instructor/06-free-text.html",
   "identifier": "https://librarycarpentry.github.io/lc-shell/instructor/06-free-text.html",
   "dateCreated": "2018-04-12",
-  "dateModified": "2024-06-05",
-  "datePublished": "2026-11-10"
+  "dateModified": "2026-11-12",
+  "datePublished": "2026-11-12"
 }
 
   </script><script>
