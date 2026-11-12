@@ -25,7 +25,7 @@ Thankfully there are plenty of folks out there doing this sort of work and we ca
 Before going any further, speak to the person next to you and choose which type of text you'd like to work on together. You have three options:
 
 - [Option 1](#option-1-hand-transcribed-text): An example of hand transcribed text: *Gulliver's Travels* (1735)
-- [Option 2](#option-2-optical-character-recognised-text): An example of text captured by an optical character recognition process: *General Report on the Physiography of Maryland. A dissertation, etc. (Reprinted from Report of Maryland State Weather Service.) [With maps and illustrations.]* 1898 (Retrieved from [doi.org/10.21250/db12](https://doi.org/10.21250/db12))
+- [Option 2](#option-2-optical-character-recognised-text): An example of text captured by an optical character recognition process: *General Report on the Physiography of Maryland. A dissertation, etc. (Reprinted from Report of Maryland State Weather Service.) \[With maps and illustrations.\]* 1898 (Retrieved from [doi.org/10.21250/db12](https://doi.org/10.21250/db12))
 - [Option 3](#option-3-a-webpage): An example of a webpage: Piper's World (a GeoCities page from 1999 saved at [archive.org](https://wayback.archive.org/web/20091020080943/http:/geocities.com/Heartland/Hills/7649/diary.html))
 
 ## Option 1: Hand transcribed text
@@ -36,11 +36,11 @@ We're going to work with the `gulliver.txt` file, which we made in [Episode 3, '
 
 Let's look at the file.
 
-```bash
+``` bash
 $ less -N gulliver.txt
 ```
 
-```output
+``` output
       1 <U+FEFF>The Project Gutenberg eBook, Gulliver's Travels, by Jonatha
       1 n Swift
       2
@@ -83,13 +83,13 @@ $ less -N gulliver.txt
 
 We're going to start by using the `sed` command. The command allows you to edit files directly.
 
-```bash
+``` bash
 $ sed '9352,9714d' gulliver.txt > gulliver-nofoot.txt
 ```
 
 The command `sed` in combination with the `d` value will look at `gulliver.txt` and delete all values between the rows specified. The `>` action then prompts the script to this edited text to the new file specified.
 
-```bash
+``` bash
 $ sed '1,37d' gulliver-nofoot.txt > gulliver-noheadfoot.txt
 ```
 
@@ -99,7 +99,7 @@ You now have a cleaner text. The next step is to prepare it even further for rig
 
 We now use the `tr` command, used for translating or deleting characters. Type and run:
 
-```bash
+``` bash
 $ tr -d '[:punct:]\r' < gulliver-noheadfoot.txt > gulliver-noheadfootpunct.txt
 ```
 
@@ -107,7 +107,7 @@ This uses the translate command and a special syntax to remove all punctuation (
 
 Finally regularise the text by removing all the uppercase lettering.
 
-```bash
+``` bash
 $ tr '[:upper:]' '[:lower:]' < gulliver-noheadfootpunct.txt > gulliver-clean.txt
 ```
 
@@ -117,7 +117,7 @@ Open the `gulliver-clean.txt` in a text editor. Note how the text has been trans
 
 We are now ready to pull the text apart.
 
-```bash
+``` bash
 $ tr ' ' '\n' < gulliver-clean.txt | sort | uniq -c | sort -nr > gulliver-final.txt
 ```
 
@@ -129,7 +129,7 @@ The third part uses `uniq`, another new command, in combination with the `-c` fl
 
 The fourth and final part sorts the text again by the counts of duplicates generated in step three.
 
-:::::::::::::::::::::::::::::::::::::::  challenge
+::::::::::::::::::::::::::::::::::::::: challenge
 
 ## Challenge
 
@@ -139,7 +139,7 @@ Hint: These quote marks are not among the 128 characters of the ASCII standard, 
 
 As a reminder, use the text editor of your choice to write a file that looks like this:
 
-```bash
+``` bash
 #!/bin/bash
 # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
 (replace this line with your solution)
@@ -147,15 +147,15 @@ As a reminder, use the text editor of your choice to write a file that looks lik
 
 Save the file as `remove-quotes.sh` and run it from the command line like this:
 
-```bash
+``` bash
 bash remove-quotes.sh
 ```
 
-:::::::::::::::  solution
+::::::::::::::: solution
 
 ## Solution
 
-```bash
+``` bash
 #!/bin/bash
 # This script removes quote marks from gulliver-clean.txt and saves the result as gulliver-noquotes.txt
 sed -Ee 's/[""‘']//g' gulliver-clean.txt > gulliver-noquotes.txt
@@ -179,11 +179,11 @@ We're going to work with `201403160_01_text.json`.
 
 Let's look at the file.
 
-```bash
+``` bash
 $ less -N 201403160_01_text.json
 ```
 
-```output
+``` output
       1 [[1, ""], [2, ""], [3, ""], [4, ""], [5, ""], [6, ""], [7, "A GENERAL RE
       1 PORT ON THE PHYSIOGRAPHY OF MARYLAND A DISSERTATION PRESENTED TO THE PRE
       1 SIDENT AND FACULTY OF THE JOHNS HOPKINS UNIVERSITY FOR THE DEGREE OF DOC
@@ -211,7 +211,7 @@ $ less -N 201403160_01_text.json
 
 We're going to start by using the `tr` command, used for translating or deleting characters. Type and run:
 
-```bash
+``` bash
 $ tr -d '[:punct:]' < 201403160_01_text.json > 201403160_01_text-nopunct.txt
 ```
 
@@ -219,7 +219,7 @@ This uses the translate command and a special syntax to remove all punctuation. 
 
 Finally regularise the text by removing all the uppercase lettering.
 
-```bash
+``` bash
 $ tr '[:upper:]' '[:lower:]' < 201403160_01_text-nopunct.txt > 201403160_01_text-clean.txt
 ```
 
@@ -229,7 +229,7 @@ Open the `201403160_01_text-clean.txt` in a text editor. Note how the text has b
 
 We are now ready to pull the text apart.
 
-```bash
+``` bash
 $ tr ' ' '\n' < 201403160_01_text-clean.txt | sort | uniq -c | sort -nr > 201403160_01_text-final.txt
 ```
 
@@ -255,11 +255,11 @@ We're going to work with `diary.html`.
 
 Let's look at the file.
 
-```bash
+``` bash
 $ less -N diary.html
 ```
 
-```output
+``` output
       1 <!-- This document was created with HomeSite v2.5 -->
       2 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
       3 <html>
@@ -283,18 +283,17 @@ $ less -N diary.html
      17 content="shih tzu, dog, pet, quotations, award, diary, advice, book, rev
      17 iew, piper">
      18 <style TYPE="text/css" TITLE="Basic Fonts">
-
 ```
 
 We're going to start by using the `sed` command. The command allows you to edit files directly.
 
-```bash
+``` bash
 $ sed '265,330d' diary.html > diary-nofoot.txt
 ```
 
 The command `sed` in combination with the `d` value will look at `diary.html` and delete all values between the rows specified. The `>` action then prompts the script to this edited text to the new file specified.
 
-```bash
+``` bash
 $ sed '1,221d' diary-nofoot.txt > diary-noheadfoot.txt
 ```
 
@@ -304,7 +303,7 @@ You now have a cleaner text. The next step is to prepare it even further for rig
 
 First we wil remove all the html tags. Type and run:
 
-```bash
+``` bash
 $ sed -e 's/<[^>]*>//g' diary-noheadfoot.txt > diary-notags.txt
 ```
 
@@ -312,7 +311,7 @@ Here we are using a regular expression (see the [Library Carpentry regular expre
 
 We're going to start by using the `tr` command, used for translating or deleting characters. Type and run:
 
-```bash
+``` bash
 $ tr -d '[:punct:]\r' < diary-notags.txt > diary-notagspunct.txt
 ```
 
@@ -320,7 +319,7 @@ This uses the translate command and a special syntax to remove all punctuation (
 
 Finally regularise the text by removing all the uppercase lettering.
 
-```bash
+``` bash
 $ tr '[:upper:]' '[:lower:]' < diary-notagspunct.txt > diary-clean.txt
 ```
 
@@ -330,7 +329,7 @@ Open the `diary-clean.txt` in a text editor. Note how the text has been transfor
 
 We are now ready to pull the text apart.
 
-```bash
+``` bash
 $ tr ' ' '\n' < diary-clean.txt | sort | uniq -c | sort -nr > diary-final.txt
 ```
 
@@ -352,7 +351,7 @@ And all this using a few commands on an otherwise unassuming but very powerful c
 - [The Command Line Crash Course](https://learncodethehardway.org/unix/). 'Learn UNIX the Hard Way' -- good for reminders of the basics.
 - [Automate the Boring Stuff](https://automatetheboringstuff.com/).
 - Another Coursera course, [Programming for Everybody (Python)](https://www.coursera.org/course/pythonlearn) is available and lasts 10 weeks, if you have 2-4 hours to spare per week. Python is popular in research programming as it is readable, relatively simple, and very powerful.
-- Bill Turkel and the Digital History community more broadly. The second lesson you did today was based on a lesson Bill has on [his website](https://web.archive.org/web/20260123211652/https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/) and Bill is also a general editor of the [Programming Historian](https://programminghistorian.org/project-team). The Programming Historian is an open, collaborative book aimed at providing programming lessons to historians. Although the lessons are hooked around problems historians have, their lessons - which cover various programming languages - have a wide applicability - indeed today's course is based on two lessons I wrote with Ian Milligan, an historian at Waterloo, Canada - for ProgHist. Bill also has a wonderful tutorial on ['Named Entity Recognition with Command Line Tools in Linux'](https://web.archive.org/web/20250923020615/https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) which I thoroughly recommend if you want to automatically find, markup, and count names, places, and organisations in text files...
+- Bill Turkel and the Digital History community more broadly. The second lesson you did today was based on a lesson Bill has on [his website (link to archived version)](https://web.archive.org/web/20260123211652/https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/). Turkel has also been an editor with the [Programming Historian Project](https://programminghistorian.org/project-team) (aka PH), an open, collaborative initiative aimed at providing programming lessons to historians. Although the lessons are centered on historians' work and methods, their lessons - which cover various programming languages - have a wide applicability. The examples above are based on two lessons written with Ian Milligan, an historian at Waterloo, Canada, for PH. Turkel also has a tutorial on ['Named Entity Recognition with Command Line Tools in Linux' (link to archived version)](https://web.archive.org/web/20250923020615/https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/) that describes was to automatically find, markup, and count names, places, and organisations in text files.
 
 ## Conclusion
 
@@ -366,13 +365,11 @@ Keep in mind that the full potential the tools can offer may only emerge upon em
 
 - James Baker and Ian Milligan, 'Counting and mining research data with Unix', *The Programming Historian* ([2014](https://programminghistorian.org/lessons/research-data-with-unix)).
 - Ian Milligan and James Baker, 'Introduction to the Bash Command Line', *The Programming Historian* ([2014](https://programminghistorian.org/lessons/intro-to-bash)).
-- William J. Turkel, 'Named Entity Recognition with Command Line Tools in Linux' ([30 June 2013](https://web.archive.org/web/20250923020615/https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)). The section 'NER Demo' is adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
-- William J. Turkel, 'Basic Text Analysis with Command Line Tools in Linux' ([15 June 2013](https://web.archive.org/web/20260123211652/https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/)). The sections 'Grabbing a text, cleaning it up' and 'Pulling a text apart, counting word frequencies' are adapted from this and shared under a [Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-nc-sa/3.0/).
+- William J. Turkel, 'Named Entity Recognition with Command Line Tools in Linux' ([30 June 2013, link to archived version](https://web.archive.org/web/20250923020615/https://williamjturkel.net/2013/06/30/named-entity-recognition-with-command-line-tools-in-linux/)). The section 'NER Demo' is adapted from this and shared under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported license.
+- William J. Turkel, 'Basic Text Analysis with Command Line Tools in Linux' ([15 June 2013, link to archived version](https://web.archive.org/web/20260123211652/https://williamjturkel.net/2013/06/15/basic-text-analysis-with-command-line-tools-in-linux/)). The sections 'Grabbing a text, cleaning it up' and 'Pulling a text apart, counting word frequencies' are adapted from this and shared under a Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported license.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints
 
 - Shell tools can be combined to powerful effect
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
